@@ -296,6 +296,72 @@
     this.toast(ln ? (branch ? '从「' + s.name + '」绘制 ' + ln.name + ' 支线' : '从「' + s.name + '」延长 ' + ln.name) + '：点击车站或空地连线，右键结束' : '从「' + s.name + '」开始新建线路：点击车站或空地连线', 'info');
   };
 
+  // Named colors remain presentation data; edits use the existing draft/undo flow.
+  UI.prototype.lineColorPicker = function (g, lid, line) {
+    const palette = CM.LineColors, groups = palette.forMap(g.mapId, D.lineColorsNice);
+    const box = h('div', { class: 'line-palette' });
+    const current = line.color.toUpperCase();
+    const currentLabel = palette.currentLabel(g.mapId, D.lineColorsNice, current);
+    const source = h('a', { class: 'line-palette-source', href: groups[0].source || groups[1].source, target: '_blank', rel: 'noopener noreferrer' }, '配色参考：Wikipedia');
+    const hint = h('div', { class: 'line-palette-preview' },
+      h('span', { class: 'line-palette-dot', style: { background: current }, 'aria-hidden': 'true' }),
+      h('span', { class: 'line-palette-caption' }, '当前：' + currentLabel));
+    const describe = function (group, entry) {
+      hint.firstChild.style.background = entry.color;
+      hint.lastChild.textContent = palette.label(group, entry);
+      source.hidden = !group.source;
+      if (group.source) source.href = group.source;
+    };
+    const searchId = U.uid('line-color-search-');
+    const search = h('input', { id: searchId, type: 'search', placeholder: '线路、运营商或 #FF9500', autocomplete: 'off' });
+    const count = h('span', { class: 'tiny muted', role: 'status' });
+    box.addEventListener('pointerleave', function () {
+      hint.firstChild.style.background = current;
+      hint.lastChild.textContent = '当前：' + currentLabel;
+    });
+    box.append(h('div', { class: 'line-palette-search' }, h('label', { for: searchId }, '查找线路色'), count), search, hint);
+    const sections = [];
+    for (const group of groups) {
+      const list = h('div', { class: 'line-palette-swatches', role: 'group', 'aria-label': group.operator + '线路色' });
+      const section = h('div', { class: 'line-palette-group' }, h('div', { class: 'line-palette-heading' }, group.operator), list);
+      const entries = [];
+      for (const entry of group.entries) {
+        const label = palette.label(group, entry);
+        const button = h('button', {
+          type: 'button', class: 'line-color' + (entry.color === current ? ' selected' : ''),
+          title: label, 'data-tip': label, 'aria-label': label, 'aria-pressed': entry.color === current ? 'true' : 'false',
+          style: { background: entry.color, color: palette.ink(entry.color) },
+          onpointerenter: function () { describe(group, entry); }, onfocus: function () { describe(group, entry); },
+          onclick: function () {
+            const active = (g.draft ? g.draft.net : g.net).lines[lid];
+            if (active && active.color.toUpperCase() !== entry.color) g.edit(function (n) { n.lines[lid].color = entry.color; });
+            describe(group, entry);
+          },
+        }, h('span', { 'aria-hidden': 'true' }, entry.code));
+        if (entry.color === current) button.appendChild(h('span', { class: 'line-color-check', 'aria-hidden': 'true' }, ic('check', 10)));
+        list.appendChild(button); entries.push({ entry: entry, button: button });
+      }
+      sections.push({ group: group, section: section, entries: entries }); box.appendChild(section);
+    }
+    const empty = h('div', { class: 'note line-palette-empty', hidden: true }, '没有匹配的线路。试试“銀座”“银座”“JR”或完整色值。');
+    box.append(empty, h('div', { class: 'note line-palette-note' }, '悬停或用 Tab 聚焦查看运营商、线路名和色值。点击加入草案，确认建设后保存。现行配色不受游戏年份限制；同色线路仍分别列出。存档已有颜色会保留。'),
+      source);
+    const filter = function () {
+      let total = 0;
+      for (const s of sections) {
+        let shown = 0;
+        for (const item of s.entries) {
+          const match = palette.matches(s.group, item.entry, search.value);
+          item.button.hidden = !match; if (match) shown++;
+        }
+        s.section.hidden = !shown; total += shown;
+      }
+      count.textContent = total + ' 个选项'; empty.hidden = total !== 0;
+    };
+    search.addEventListener('input', filter); filter();
+    return box;
+  };
+
   // ======================== 页面：线路 ========================
   UI.prototype.page_line = function (key) {
     const g = this.g(), self = this;
@@ -397,9 +463,7 @@
     el.appendChild(this.sec('ln-edit', '线路名称与颜色', '', function () {
       const b = h('div');
       const nameIn = h('input', { type: 'text', value: line.name, maxlength: 14 });
-      const colors = h('div', { class: 'row', style: { flexWrap: 'wrap', gap: '6px', margin: '6px 0' } });
-      for (const c of D.lineColorsNice) colors.appendChild(h('button', { title: c, style: { width: '22px', height: '22px', borderRadius: '6px', border: c === line.color ? '2px solid #1f2630' : '1px solid #ddd', background: c, cursor: 'pointer' }, onclick: function () { g.edit(function (n) { n.lines[lid].color = c; }); } }));
-      b.append(h('div', { class: 'field' }, h('label', null, '名称'), h('div', { class: 'row' }, nameIn, h('button', { class: 'btn sm', onclick: function () { const v = nameIn.value.trim(); if (v) g.edit(function (n) { n.lines[lid].name = v; }); } }, '保存'))), colors);
+      b.append(h('div', { class: 'field' }, h('label', null, '名称'), h('div', { class: 'row' }, nameIn, h('button', { class: 'btn sm', onclick: function () { const v = nameIn.value.trim(); if (v) g.edit(function (n) { n.lines[lid].name = v; }); } }, '保存'))), self.lineColorPicker(g, lid, line));
       b.appendChild(h('div', { class: 'row' },
         h('button', { class: 'btn sm danger', onclick: function () { g.edit(function (n) { for (const s of M.lineSegs(n, lid)) delete n.segments[s.id]; delete n.lines[lid]; }); self.select(null); self.toast('已在草案中拆除 ' + line.name + ' 全部轨道（车站保留，可单独拆除）', 'info'); } }, '拆除整条线路')));
       return b;

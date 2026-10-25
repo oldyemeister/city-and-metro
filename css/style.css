@@ -1583,3 +1583,26 @@ td .tag { margin-left: 4px; padding: 0 6px; font-size: 10px; }
 .tbl tr.clickable { cursor: pointer; }
 .tbl tr.clickable:hover td { background: var(--hover); }
 .tbl td small { font-size: 11px; }
+
+/* Local extension: named rail color library; uses the existing light/dark tokens. */
+.line-palette { margin: 12px 0 16px; }
+.line-palette-search { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.line-palette-search label { font-size: 12px; font-weight: 600; }
+.line-palette > input { width: 100%; min-width: 0; border: 1px solid var(--line-strong); border-radius: 7px; padding: 8px; }
+.line-palette > input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.line-palette-preview { display: flex; align-items: center; gap: 8px; min-height: 50px; padding: 8px 0; font-size: 12px; line-height: 1.5; }
+.line-palette-dot { width: 14px; height: 14px; flex: none; border: 1px solid var(--line-strong); border-radius: 3px; }
+.line-palette-caption { overflow-wrap: anywhere; }
+.line-palette-group { margin: 0 0 12px; }
+.line-palette-heading { color: var(--muted); font-size: 11px; font-weight: 600; margin-bottom: 6px; }
+.line-palette-swatches { display: flex; flex-wrap: wrap; gap: 6px; }
+.line-color { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 32px; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; cursor: pointer; font-size: 10px; font-weight: 700; line-height: 1; }
+.line-color:hover { outline: 2px solid var(--text); outline-offset: 1px; }
+.line-color.selected { outline: 2px solid var(--text); outline-offset: 1px; }
+.line-color:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.line-color-check { position: absolute; right: -3px; top: -4px; display: flex; padding: 1px; border-radius: 50%; background: var(--text); color: var(--surface-solid); }
+.line-color-check .ico { width: 10px; height: 10px; }
+.line-palette [hidden] { display: none !important; }
+.line-palette-note { margin: 10px 0 6px; }
+.line-palette-source { color: var(--accent); font-size: 11px; text-underline-offset: 3px; }
+@media (pointer: coarse) { .line-color { min-width: 44px; min-height: 44px; } }
