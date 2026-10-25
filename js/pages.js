@@ -296,13 +296,88 @@
     this.toast(ln ? (branch ? '从「' + s.name + '」绘制 ' + ln.name + ' 支线' : '从「' + s.name + '」延长 ' + ln.name) + '：点击车站或空地连线，右键结束' : '从「' + s.name + '」开始新建线路：点击车站或空地连线', 'info');
   };
 
+  // Keep preview changes local: a single explicit apply creates one undoable draft edit.
+  UI.prototype.customLineColor = function (g, lid, line) {
+    const palette = CM.LineColors, current = line.color.toUpperCase();
+    let state = this._lineColorEdit;
+    if (!state || state.game !== g || state.lid !== lid || state.base !== current) {
+      state = this._lineColorEdit = { game: g, lid: lid, base: current, raw: current, value: current, hsv: palette.toHSV(current) };
+    }
+    let value = state.value, hsv = Object.assign({}, state.hsv);
+    const id = U.uid('custom-color-');
+    const field = h('fieldset', { class: 'line-custom-color' }, h('legend', null, '自定义颜色'));
+    const hex = h('input', { id: id + '-hex', type: 'text', value: state.raw, placeholder: '#12ABEF', spellcheck: 'false', autocomplete: 'off', autocapitalize: 'characters', 'aria-describedby': id + '-help ' + id + '-error' });
+    const chooser = h('input', { type: 'color', value: current, 'aria-label': '打开颜色选择器', title: '打开颜色选择器' });
+    const sample = h('span', { class: 'line-custom-sample', 'aria-hidden': 'true' });
+    const output = h('output', { class: 'line-custom-output', for: id + '-hex' });
+    const error = h('div', { id: id + '-error', class: 'line-custom-error', role: 'status', hidden: true }, '请输入 6 位十六进制色码（0–9、A–F），例如 12ABEF；# 可省略。');
+    const apply = h('button', { type: 'button', class: 'btn sm', disabled: true, onclick: function () {
+      const color = palette.parseHex(hex.value), active = (g.draft ? g.draft.net : g.net).lines[lid];
+      if (color && active && active.color.toUpperCase() !== color) g.edit(function (net) { net.lines[lid].color = color; });
+      sync();
+    } }, '应用到草案');
+    const sliders = [];
+    const addSlider = function (key, label, max, suffix) {
+      const range = h('input', { id: id + '-' + key, type: 'range', min: 0, max: max, step: 1, value: Math.round(hsv[key]) });
+      const number = h('output', { for: id + '-' + key });
+      range.addEventListener('input', function () {
+        hsv[key] = Number(range.value);
+        value = palette.fromHSV(hsv.h, hsv.s, hsv.v);
+        hex.value = value;
+        sync();
+      });
+      sliders.push({ key: key, range: range, number: number, suffix: suffix });
+      return h('div', { class: 'line-color-slider' }, h('label', { for: id + '-' + key }, label), range, number);
+    };
+    field.append(h('label', { for: id + '-hex', class: 'line-custom-label' }, '六位 HEX 色码'),
+      h('div', { class: 'line-custom-inputs' }, chooser, hex),
+      h('div', { id: id + '-help', class: 'note' }, '输入色码、打开取色器，或拖动滑块调色。'), error,
+      addSlider('h', '色相', 359, '°'), addSlider('s', '饱和度', 100, '%'), addSlider('v', '亮度', 100, '%'),
+      h('div', { class: 'line-custom-actions' }, h('div', { class: 'line-custom-preview' }, sample, output), apply));
+    function sync() {
+      state.raw = hex.value; state.value = value; state.hsv = Object.assign({}, hsv);
+      const valid = palette.parseHex(hex.value);
+      error.hidden = !!valid;
+      hex.setAttribute('aria-invalid', valid ? 'false' : 'true');
+      const active = (g.draft ? g.draft.net : g.net).lines[lid];
+      apply.disabled = !valid || !active || active.color.toUpperCase() === valid;
+      chooser.value = value;
+      sample.style.background = value;
+      output.textContent = value;
+      for (const slider of sliders) {
+        const displayed = slider.key === 'h' ? Math.round(hsv.h) % 360 : Math.round(hsv[slider.key]);
+        slider.range.value = displayed;
+        slider.number.textContent = displayed + slider.suffix;
+      }
+      sliders[1].range.style.background = 'linear-gradient(to right, ' + palette.fromHSV(hsv.h, 0, hsv.v) + ', ' + palette.fromHSV(hsv.h, 100, hsv.v) + ')';
+      sliders[2].range.style.background = 'linear-gradient(to right, #000000, ' + palette.fromHSV(hsv.h, hsv.s, 100) + ')';
+    }
+    hex.addEventListener('input', function () {
+      const parsed = palette.parseHex(hex.value);
+      if (parsed) { value = parsed; hsv = palette.toHSV(value, hsv.h); }
+      sync();
+    });
+    hex.addEventListener('change', function () { if (palette.parseHex(hex.value)) hex.value = value; });
+    hex.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' && !event.isComposing) { event.preventDefault(); apply.click(); }
+    });
+    chooser.addEventListener('input', function () {
+      value = chooser.value.toUpperCase(); hsv = palette.toHSV(value, hsv.h); hex.value = value; sync();
+    });
+    sync();
+    return field;
+  };
+
+
   // Named colors remain presentation data; edits use the existing draft/undo flow.
   UI.prototype.lineColorPicker = function (g, lid, line) {
     const palette = CM.LineColors, groups = palette.forMap(g.mapId, D.lineColorsNice);
     const box = h('div', { class: 'line-palette' });
+    box.appendChild(this.customLineColor(g, lid, line));
     const current = line.color.toUpperCase();
     const currentLabel = palette.currentLabel(g.mapId, D.lineColorsNice, current);
-    const source = h('a', { class: 'line-palette-source', href: groups[0].source || groups[1].source, target: '_blank', rel: 'noopener noreferrer' }, '配色参考：Wikipedia');
+    const firstSource = groups.find(function (group) { return group.source; });
+    const source = h('a', { class: 'line-palette-source', hidden: !firstSource, href: firstSource ? firstSource.source : null, target: '_blank', rel: 'noopener noreferrer' }, '配色参考：Wikipedia');
     const hint = h('div', { class: 'line-palette-preview' },
       h('span', { class: 'line-palette-dot', style: { background: current }, 'aria-hidden': 'true' }),
       h('span', { class: 'line-palette-caption' }, '当前：' + currentLabel));
@@ -313,7 +388,7 @@
       if (group.source) source.href = group.source;
     };
     const searchId = U.uid('line-color-search-');
-    const search = h('input', { id: searchId, type: 'search', placeholder: '线路、运营商或 #FF9500', autocomplete: 'off' });
+    const search = h('input', { id: searchId, type: 'search', placeholder: '线路、运营商或 #12ABEF', autocomplete: 'off' });
     const count = h('span', { class: 'tiny muted', role: 'status' });
     box.addEventListener('pointerleave', function () {
       hint.firstChild.style.background = current;
@@ -343,8 +418,8 @@
       }
       sections.push({ group: group, section: section, entries: entries }); box.appendChild(section);
     }
-    const empty = h('div', { class: 'note line-palette-empty', hidden: true }, '没有匹配的线路。试试“銀座”“银座”“JR”或完整色值。');
-    box.append(empty, h('div', { class: 'note line-palette-note' }, '悬停或用 Tab 聚焦查看运营商、线路名和色值。点击加入草案，确认建设后保存。现行配色不受游戏年份限制；同色线路仍分别列出。存档已有颜色会保留。'),
+    const empty = h('div', { class: 'note line-palette-empty', hidden: true }, '没有匹配的线路。试试线路名、运营商或完整色值。');
+    box.append(empty, h('div', { class: 'note line-palette-note' }, '悬停或用 Tab 聚焦查看运营商、线路名和色值。点击加入草案，确认建设后保存。当前地图的现实参考色不受游戏年份限制；同色线路仍分别列出。存档已有颜色会保留。'),
       source);
     const filter = function () {
       let total = 0;

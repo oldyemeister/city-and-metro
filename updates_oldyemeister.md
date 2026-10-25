@@ -4,6 +4,48 @@
 
 保留原项目的 `LICENSE.txt`、版权与第三方署名；继续遵守非商业使用条款及适用的第三方许可。
 
+## 2026-10-25 · 四城现实线路色与自定义调色
+
+基于上一版个人扩展（`5e978fc`），新增杭州、香港、广州、台北的具名线路色，并为所有地图提供自定义颜色编辑。
+
+| 地图 | 选项数 | 收录范围 |
+| --- | ---: | --- |
+| 杭州 | 13 | 杭州地铁现有 12 条线（区分杭港地铁运营的 1、5 号线），以及杭海城际 |
+| 广州 | 21 | 1–14、18、21、22 号线、广佛线、APM，以及佛山 2、3 号线 |
+| 香港 | 11 | 港铁 9 条市区/通勤线、机场快线，以及轻铁系统代表色；不逐条列出轻铁运营路线 |
+| 台北 | 12 | 台北捷运五条主线、两条支线，新北环状线/淡海轻轨/安坑轻轨/三鶯線，以及桃园机场捷运 |
+| 东京 | 77 | 保留上一版已收录的线路 |
+
+以上合计 134 个具名选项，按当前地图展示。颜色为参考值，不要求对应游戏中的历史年份。各真实地图隐藏重复的原版色板；旧线路的实际 HEX、默认配色数组和存档格式保持不变。虚构教程保留原版色板并支持自定义色。
+
+### 自定义颜色
+
+- 接受六位十六进制输入，支持 `12ABEF` 或 `#12ABEF`，不区分大小写。
+- 提供浏览器原生颜色选择器；HEX、取色器和滑块双向同步。
+- 使用 HSV 色彩模型，分别调节色相（0–359°）、饱和度（0–100%）和亮度（0–100%）。
+- 输入过程中仅更新预览；点击“应用到草案”或在有效 HEX 输入框按 Enter 后，才产生一次草案编辑。仍需原有“确认建设”步骤。
+- 无效或不完整的色码显示就地提示并禁止应用；同色应用也不产生多余撤销记录。
+- 页面因统计更新而重绘时保留尚未应用的颜色输入；切换线路或正式/草案颜色改变时按对应线路重置。
+- 保留悬停/键盘提示中的运营商、现实线路名、HEX；补充简繁体搜索兼容。
+
+### 验证与使用
+
+运行 `node scripts/check-line-colors.mjs` 检查各城路由、线路去重、参考色、简繁体搜索、非法 HEX、4096 组 RGB/HSV 往返和教程回退。可附加一个存档路径，验证该存档的改色、撤销、重做、确认与导出再导入。
+
+用已有东京存档检查了 162 站、14 线的兼容性，以及自定义色、纯黑、纯白的存档往返。构建命令仍为 `node scripts/build.mjs`。
+
+浏览器验证了四城色板切换、非法输入提示、取色器与滑块同步、未应用预览的重绘保留，以及一次应用对应一次草案编辑；检查了窄屏与明暗主题。在实际游戏中打开原有东京存档并预览自定义色，控制台无错误。
+
+入口：线路详情 → 线路名称与颜色 → 自定义颜色；下方为当前城市的现实线路色。旧页面先保存进度再刷新，即可加载新增功能。
+
+### 数据来源（2026-10-25 核对）
+
+- [杭州地铁配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/Hangzhou_Metro)、[运营线路](https://en.wikipedia.org/wiki/Hangzhou_Metro)。
+- [广州地铁配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/Guangzhou_Metro)、[运营线路](https://en.wikipedia.org/wiki/Guangzhou_Metro)、[佛山配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/Foshan_Metro)。
+- [港铁配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/MTR)、[港铁官方线路图](https://www.mtr.com.hk/en/customer/services/system_map.html)。
+- [台北捷运配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/Taipei_Metro)、[新北捷运配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/New_Taipei_Metro)、[桃园捷运配色](https://en.wikipedia.org/wiki/Module:Adjacent_stations/Taoyuan_Metro)。
+- [新北市捷运工程局：三鶯線](https://www.dorts.ntpc.gov.tw/about/route/1MJjdJr7dAv6)，确认 2026-06-30 已通车；没有将其列为未来线路，也未混入其他规划线路。
+
 ## 2026-10-25 · 东京及周边铁路线路色库
 
 基线：v2.0.0，提交 `4102340f8e9dc142024a43b7ddc1dfac60986098`。

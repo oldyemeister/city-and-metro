@@ -1,5 +1,5 @@
 'use strict';
-// Local non-commercial extension: named Tokyo rail colors, researched 2026-10-25.
+// Local non-commercial extension: named rail colors for playable real cities, researched 2026-10-25.
 // Numeric color facts are referenced per operator; see updates_oldyemeister.md.
 // Palette metadata is UI-only. Saved line.color remains a hexadecimal string.
 (function (CM) {
@@ -563,18 +563,426 @@
     ]
   }
 ];
+  // Reference colors for operational systems checked 2026-10-25; not future line proposals.
+  const byMap = {
+  "hz": [
+    {
+      "operator": "杭港地铁",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Hangzhou_Metro",
+      "entries": [
+        {
+          "name": "1号线",
+          "code": "1",
+          "color": "#DF4661",
+          "aliases": "1號線 Line 1"
+        },
+        {
+          "name": "5号线",
+          "code": "5",
+          "color": "#00AEC7",
+          "aliases": "5號線 Line 5"
+        }
+      ]
+    },
+    {
+      "operator": "杭州地铁",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Hangzhou_Metro",
+      "entries": [
+        {
+          "name": "2号线",
+          "code": "2",
+          "color": "#F1803A",
+          "aliases": "2號線 Line 2"
+        },
+        {
+          "name": "3号线",
+          "code": "3",
+          "color": "#FFCD00",
+          "aliases": "3號線 Line 3"
+        },
+        {
+          "name": "4号线",
+          "code": "4",
+          "color": "#6CC24A",
+          "aliases": "4號線 Line 4"
+        },
+        {
+          "name": "6号线",
+          "code": "6",
+          "color": "#0072CE",
+          "aliases": "6號線 Line 6"
+        },
+        {
+          "name": "7号线",
+          "code": "7",
+          "color": "#87189D",
+          "aliases": "7號線 Line 7"
+        },
+        {
+          "name": "8号线",
+          "code": "8",
+          "color": "#AC145A",
+          "aliases": "8號線 Line 8"
+        },
+        {
+          "name": "9号线",
+          "code": "9",
+          "color": "#BE4D00",
+          "aliases": "9號線 Line 9"
+        },
+        {
+          "name": "10号线",
+          "code": "10",
+          "color": "#DAAA00",
+          "aliases": "10號線 Line 10"
+        },
+        {
+          "name": "16号线",
+          "code": "16",
+          "color": "#FFB25B",
+          "aliases": "16號線 Line 16"
+        },
+        {
+          "name": "19号线",
+          "code": "19",
+          "color": "#05C3DD",
+          "aliases": "19號線 Line 19"
+        }
+      ]
+    },
+    {
+      "operator": "浙江轨道集团",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Hangzhou_Metro",
+      "entries": [
+        {
+          "name": "杭海城际",
+          "code": "HH",
+          "color": "#0077C8",
+          "aliases": "杭海城際 Hanghai Hangzhou Haining"
+        }
+      ]
+    }
+  ],
+  "gz": [
+    {
+      "operator": "广州地铁",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Guangzhou_Metro",
+      "entries": [
+        {
+          "name": "1号线",
+          "code": "1",
+          "color": "#F3D03E",
+          "aliases": "1號線 Line 1"
+        },
+        {
+          "name": "2号线",
+          "code": "2",
+          "color": "#00629B",
+          "aliases": "2號線 Line 2"
+        },
+        {
+          "name": "3号线",
+          "code": "3",
+          "color": "#ECA154",
+          "aliases": "3號線 Line 3"
+        },
+        {
+          "name": "4号线",
+          "code": "4",
+          "color": "#00843D",
+          "aliases": "4號線 Line 4"
+        },
+        {
+          "name": "5号线",
+          "code": "5",
+          "color": "#C5003E",
+          "aliases": "5號線 Line 5"
+        },
+        {
+          "name": "6号线",
+          "code": "6",
+          "color": "#80225F",
+          "aliases": "6號線 Line 6"
+        },
+        {
+          "name": "7号线",
+          "code": "7",
+          "color": "#97D700",
+          "aliases": "7號線 Line 7"
+        },
+        {
+          "name": "8号线",
+          "code": "8",
+          "color": "#008C95",
+          "aliases": "8號線 Line 8"
+        },
+        {
+          "name": "9号线",
+          "code": "9",
+          "color": "#71CC98",
+          "aliases": "9號線 Line 9"
+        },
+        {
+          "name": "10号线",
+          "code": "10",
+          "color": "#7389B2",
+          "aliases": "10號線 Line 10"
+        },
+        {
+          "name": "11号线",
+          "code": "11",
+          "color": "#FFB40C",
+          "aliases": "11號線 Line 11"
+        },
+        {
+          "name": "12号线",
+          "code": "12",
+          "color": "#505D12",
+          "aliases": "12號線 Line 12"
+        },
+        {
+          "name": "13号线",
+          "code": "13",
+          "color": "#8E8C13",
+          "aliases": "13號線 Line 13"
+        },
+        {
+          "name": "14号线",
+          "code": "14",
+          "color": "#81312F",
+          "aliases": "14號線 Line 14"
+        },
+        {
+          "name": "18号线",
+          "code": "18",
+          "color": "#0047BA",
+          "aliases": "18號線 Line 18"
+        },
+        {
+          "name": "21号线",
+          "code": "21",
+          "color": "#201747",
+          "aliases": "21號線 Line 21"
+        },
+        {
+          "name": "22号线",
+          "code": "22",
+          "color": "#CD5228",
+          "aliases": "22號線 Line 22"
+        },
+        {
+          "name": "广佛线",
+          "code": "GF",
+          "color": "#C4D600",
+          "aliases": "廣佛線 Guangfo Foshan"
+        },
+        {
+          "name": "珠江新城旅客自动输送系统",
+          "code": "APM",
+          "color": "#00B5E2",
+          "aliases": "珠江新城旅客自動輸送系統 自动旅客捷运 自動旅客捷運 APM Zhujiang New Town"
+        }
+      ]
+    },
+    {
+      "operator": "佛山地铁",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Foshan_Metro",
+      "entries": [
+        {
+          "name": "佛山2号线",
+          "code": "2",
+          "color": "#F5333F",
+          "aliases": "2號線 Line 2"
+        },
+        {
+          "name": "佛山3号线",
+          "code": "3",
+          "color": "#004DB3",
+          "aliases": "3號線 Line 3"
+        }
+      ]
+    }
+  ],
+  "hk": [
+    {
+      "operator": "港鐵 MTR",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/MTR",
+      "entries": [
+        {
+          "name": "觀塘綫",
+          "code": "KTL",
+          "color": "#00AB4E",
+          "aliases": "观塘线 Kwun Tong"
+        },
+        {
+          "name": "荃灣綫",
+          "code": "TWL",
+          "color": "#ED1D24",
+          "aliases": "荃湾线 Tsuen Wan"
+        },
+        {
+          "name": "港島綫",
+          "code": "ISL",
+          "color": "#007DC5",
+          "aliases": "港岛线 Island"
+        },
+        {
+          "name": "將軍澳綫",
+          "code": "TKL",
+          "color": "#7D499D",
+          "aliases": "将军澳线 Tseung Kwan O"
+        },
+        {
+          "name": "東涌綫",
+          "code": "TCL",
+          "color": "#F7943E",
+          "aliases": "东涌线 Tung Chung"
+        },
+        {
+          "name": "東鐵綫",
+          "code": "EAL",
+          "color": "#53B7E8",
+          "aliases": "东铁线 East Rail"
+        },
+        {
+          "name": "屯馬綫",
+          "code": "TML",
+          "color": "#923011",
+          "aliases": "屯马线 Tuen Ma"
+        },
+        {
+          "name": "南港島綫",
+          "code": "SIL",
+          "color": "#BAC429",
+          "aliases": "南港岛线 South Island"
+        },
+        {
+          "name": "機場快綫",
+          "code": "AEL",
+          "color": "#00888A",
+          "aliases": "机场快线 Airport Express"
+        },
+        {
+          "name": "迪士尼綫",
+          "code": "DRL",
+          "color": "#F173AC",
+          "aliases": "迪士尼线 Disneyland Resort"
+        },
+        {
+          "name": "輕鐵（系統代表色）",
+          "code": "LR",
+          "color": "#D3A809",
+          "aliases": "轻铁 系统代表色 Light Rail"
+        }
+      ]
+    }
+  ],
+  "tp": [
+    {
+      "operator": "臺北捷運",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Taipei_Metro",
+      "entries": [
+        {
+          "name": "文湖線",
+          "code": "BR",
+          "color": "#C48C31",
+          "aliases": "文湖线 Wenhu Brown"
+        },
+        {
+          "name": "淡水信義線",
+          "code": "R",
+          "color": "#E3002C",
+          "aliases": "淡水信义线 Tamsui Xinyi Red"
+        },
+        {
+          "name": "松山新店線",
+          "code": "G",
+          "color": "#008659",
+          "aliases": "松山新店线 Songshan Xindian Green"
+        },
+        {
+          "name": "中和新蘆線",
+          "code": "O",
+          "color": "#F8B61C",
+          "aliases": "中和新芦线 Zhonghe Xinlu Orange"
+        },
+        {
+          "name": "板南線",
+          "code": "BL",
+          "color": "#0070BD",
+          "aliases": "板南线 Bannan Blue"
+        },
+        {
+          "name": "新北投支線",
+          "code": "R22A",
+          "color": "#FD92A3",
+          "aliases": "新北投支线 Xinbeitou"
+        },
+        {
+          "name": "小碧潭支線",
+          "code": "G03A",
+          "color": "#CFDB00",
+          "aliases": "小碧潭支线 Xiaobitan"
+        }
+      ]
+    },
+    {
+      "operator": "新北捷運",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/New_Taipei_Metro",
+      "entries": [
+        {
+          "name": "環狀線",
+          "code": "Y",
+          "color": "#FFDB00",
+          "aliases": "环状线 Circular"
+        },
+        {
+          "name": "淡海輕軌",
+          "code": "V",
+          "color": "#E5554F",
+          "aliases": "淡海轻轨 Danhai"
+        },
+        {
+          "name": "安坑輕軌",
+          "code": "K",
+          "color": "#C3B091",
+          "aliases": "安坑轻轨 Ankeng"
+        },
+        {
+          "name": "三鶯線",
+          "code": "LB",
+          "color": "#79BCE8",
+          "aliases": "三莺线 Sanying"
+        }
+      ]
+    },
+    {
+      "operator": "桃園捷運",
+      "source": "https://en.wikipedia.org/wiki/Module:Adjacent_stations/Taoyuan_Metro",
+      "entries": [
+        {
+          "name": "機場捷運",
+          "code": "A",
+          "color": "#8246AF",
+          "aliases": "机场捷运 桃园机场 Taoyuan Airport"
+        }
+      ]
+    }
+  ]
+};
+  byMap.tk = groups;
   const originalTokyo = ['銀座線', '丸ノ内線', '日比谷線', '東西線', '千代田線', '有楽町線', '半蔵門線', '南北線', '副都心線', '浅草線', '三田線', '新宿線', '大江戸線'];
-  const normalize = function (s) { return String(s || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ''); };
+  const normalize = function (s) { return String(s || '').normalize('NFKC').toLowerCase().replace(/綫/g, '线').replace(/線/g, '线').replace(/號/g, '号').replace(/鐵/g, '铁').replace(/捷運/g, '捷运').replace(/臺/g, '台').replace(/園/g, '园').replace(/廣/g, '广').replace(/\s+/g, ''); };
   CM.LineColors = {
     groups: groups,
+    byMap: byMap,
     forMap: function (id, colors) {
-      // Tokyo's old 13 presets represent the same lines as the first two groups.
-      // Hide that duplicate row without changing defaults or saved color strings.
-      if (id === 'tk') return groups;
+      // Named real-world presets replace duplicate legacy rows; existing saved HEX is untouched.
+      if (byMap[id]) return byMap[id];
       const original = { operator: '原版配色', entries: colors.map(function (color, i) {
         return { name: '颜色 ' + (i + 1), code: String(i + 1), color: color.toUpperCase(), aliases: '' };
       }) };
-      return [original].concat(groups);
+      return [original];
     },
     currentLabel: function (id, colors, color) {
       const hex = color.toUpperCase(), names = [];
@@ -584,11 +992,32 @@
       if (names.length) return names.join(' / ') + ' · ' + hex;
       const i = colors.findIndex(function (c) { return c.toUpperCase() === hex; });
       if (id === 'tk' && i >= 0 && originalTokyo[i]) return (i < 9 ? '東京メトロ' : '都営地下鉄') + ' · ' + originalTokyo[i] + '（原版配色） · ' + hex;
-      return '自定义颜色 · ' + hex;
+      return (i >= 0 ? '原版配色 · ' : '自定义颜色 · ') + hex;
     },
     label: function (group, entry) { return (entry.operator || group.operator) + ' · ' + entry.name + ' · ' + entry.color.toUpperCase(); },
     matches: function (group, entry, query) {
-      return normalize([group.operator, entry.name, entry.code, entry.color, entry.aliases].join(' ')).includes(normalize(query));
+      return normalize([group.operator, entry.operator, entry.name, entry.code, entry.color, entry.aliases].join(' ')).includes(normalize(query));
+    },
+    parseHex: function (value) {
+      const match = /^#?([0-9a-f]{6})$/i.exec(String(value).trim());
+      return match ? '#' + match[1].toUpperCase() : null;
+    },
+    toHSV: function (hex, fallbackHue) {
+      const rgb = hex.slice(1).match(/../g).map(function (c) { return parseInt(c, 16) / 255; });
+      const r = rgb[0], g = rgb[1], b = rgb[2], max = Math.max(r, g, b), min = Math.min(r, g, b), delta = max - min;
+      let hue = fallbackHue || 0;
+      if (delta) {
+        hue = max === r ? (g - b) / delta : max === g ? (b - r) / delta + 2 : (r - g) / delta + 4;
+        hue = ((hue * 60) + 360) % 360;
+      }
+      return { h: hue, s: max ? delta / max * 100 : 0, v: max * 100 };
+    },
+    fromHSV: function (hue, saturation, brightness) {
+      const h = ((hue % 360) + 360) % 360 / 60;
+      const s = Math.min(100, Math.max(0, saturation)) / 100, v = Math.min(100, Math.max(0, brightness)) / 100;
+      const c = v * s, x = c * (1 - Math.abs(h % 2 - 1)), m = v - c;
+      const rgb = h < 1 ? [c, x, 0] : h < 2 ? [x, c, 0] : h < 3 ? [0, c, x] : h < 4 ? [0, x, c] : h < 5 ? [x, 0, c] : [c, 0, x];
+      return '#' + rgb.map(function (n) { return Math.round((n + m) * 255).toString(16).padStart(2, '0'); }).join('').toUpperCase();
     },
     ink: function (hex) {
       const v = hex.slice(1).match(/../g).map(function (c) { const s = parseInt(c, 16) / 255; return s <= 0.04045 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4); });

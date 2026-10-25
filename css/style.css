@@ -1606,3 +1606,24 @@ td .tag { margin-left: 4px; padding: 0 6px; font-size: 10px; }
 .line-palette-note { margin: 10px 0 6px; }
 .line-palette-source { color: var(--accent); font-size: 11px; text-underline-offset: 3px; }
 @media (pointer: coarse) { .line-color { min-width: 44px; min-height: 44px; } }
+
+/* Custom color editing previews locally; only the Apply action changes a draft. */
+.line-custom-color { min-width: 0; margin: 0 0 18px; padding: 0 0 16px; border: 0; border-bottom: 1px solid var(--line-strong); }
+.line-custom-color legend { padding: 0; margin-bottom: 10px; font-size: 13px; font-weight: 600; }
+.line-custom-label { display: block; margin-bottom: 6px; font-size: 12px; }
+.line-custom-inputs { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.line-custom-inputs input[type="text"] { flex: 1; min-width: 0; width: 0; padding: 7px 9px; font-size: 16px; font-variant-numeric: tabular-nums; border: 1px solid var(--line-strong); border-radius: 7px; }
+.line-custom-inputs input[aria-invalid="true"] { border-color: var(--bad); }
+.line-custom-inputs input[type="color"] { flex: none; width: 44px; height: 36px; padding: 3px; border: 1px solid var(--line-strong); border-radius: 7px; background: var(--surface-solid); cursor: pointer; }
+.line-custom-color input:focus-visible, .line-custom-color button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.line-custom-error { color: var(--bad); font-size: 12px; margin: 6px 0; line-height: 1.5; }
+.line-color-slider { display: grid; grid-template-columns: 44px minmax(0, 1fr) 38px; gap: 8px; align-items: center; min-height: 34px; font-size: 12px; }
+.line-color-slider output { text-align: right; font-variant-numeric: tabular-nums; }
+.line-color-slider input[type="range"] { appearance: none; -webkit-appearance: none; width: 100%; min-width: 0; height: 12px; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; cursor: pointer; }
+.line-color-slider input[id$="-h"] { background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00); }
+.line-color-slider input::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border: 2px solid var(--text); border-radius: 50%; background: var(--surface-solid); }
+.line-color-slider input::-moz-range-thumb { width: 14px; height: 14px; border: 2px solid var(--text); border-radius: 50%; background: var(--surface-solid); }
+.line-custom-actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin-top: 8px; }
+.line-custom-preview { display: flex; align-items: center; gap: 7px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.line-custom-sample { width: 20px; height: 20px; border: 1px solid var(--line-strong); border-radius: 4px; }
+@media (pointer: coarse) { .line-custom-inputs input[type="color"], .line-custom-actions button { min-height: 44px; } .line-color-slider { min-height: 44px; } }
