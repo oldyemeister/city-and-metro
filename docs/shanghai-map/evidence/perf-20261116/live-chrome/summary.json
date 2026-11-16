@@ -1,0 +1,15 @@
+{
+  "firstAt": "2026-11-16T21:38:46.208482+08:00",
+  "secondAt": "2026-11-16T21:43:27.427118+08:00",
+  "secondsBetweenSnapshotStarts": 281.218636,
+  "systemCounterDeltas": {
+    "Swapins": 2519,
+    "Swapouts": 0,
+    "Pageouts": 424,
+    "Compressions": 1350491,
+    "Decompressions": 1147233
+  },
+  "swapInMiB": 39.359375,
+  "swapOutMiB": 0.0,
+  "note": "Counters cover entire machine and whole inspection interval; final top2-second interval separately reports no swapins/swapouts. Do not attribute delta solely to game."
+}

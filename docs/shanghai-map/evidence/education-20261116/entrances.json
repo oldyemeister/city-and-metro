@@ -1,0 +1,290 @@
+[
+  {
+    "campus": "sisu-gates",
+    "coordinateSystem": "WGS-84",
+    "entrance": {
+      "id": "8982494078",
+      "lat": 31.2773147,
+      "lon": 121.4783703,
+      "tags": {
+        "entrance": "main"
+      }
+    },
+    "campusWay": "24474567",
+    "source": "https://www.openstreetmap.org/node/8982494078",
+    "connectedWays": [
+      {
+        "id": "69152352",
+        "tags": {
+          "highway": "service"
+        },
+        "nodes": [
+          "829477007",
+          "9809241581",
+          "8982494078",
+          "829489335"
+        ]
+      },
+      {
+        "id": "970575572",
+        "tags": {
+          "highway": "service"
+        },
+        "nodes": [
+          "8982494078",
+          "8982494077"
+        ]
+      }
+    ],
+    "nearbyWalkableWays": [
+      {
+        "way": "69152352",
+        "distanceM": 0.0,
+        "tags": {
+          "highway": "service"
+        }
+      },
+      {
+        "way": "970575572",
+        "distanceM": 0.0,
+        "tags": {
+          "highway": "service"
+        }
+      },
+      {
+        "way": "1068582522",
+        "distanceM": 33.0,
+        "tags": {
+          "highway": "service"
+        }
+      },
+      {
+        "way": "69157447",
+        "distanceM": 38.6,
+        "tags": {
+          "cycleway": "lane",
+          "highway": "primary",
+          "name": "大连西路",
+          "name:en": "West Dalian Road",
+          "oneway": "yes"
+        }
+      },
+      {
+        "way": "1068582523",
+        "distanceM": 45.2,
+        "tags": {
+          "highway": "service"
+        }
+      }
+    ]
+  },
+  {
+    "campus": "ecupl",
+    "coordinateSystem": "WGS-84",
+    "entrance": {
+      "id": "4706176040",
+      "lat": 31.2257692,
+      "lon": 121.4140921,
+      "tags": {
+        "barrier": "gate"
+      }
+    },
+    "campusWay": "477227512",
+    "source": "https://www.openstreetmap.org/node/4706176040",
+    "connectedWays": [
+      {
+        "id": "444348817",
+        "tags": {
+          "highway": "service"
+        },
+        "nodes": [
+          "4706110055",
+          "4706176040",
+          "4706110053",
+          "4706110054",
+          "4706176053",
+          "4418371191",
+          "4706176058",
+          "4418370181",
+          "4706176032",
+          "4418371192",
+          "4418371190"
+        ]
+      },
+      {
+        "id": "477227512",
+        "tags": {
+          "addr:housenumber": "1575",
+          "addr:street": "万航渡路",
+          "amenity": "university",
+          "name": "华东政法大学",
+          "name:en": "East China University of Political Science",
+          "wikidata": "Q5328082",
+          "wikipedia": "en:East China University of Political Science and Law"
+        },
+        "nodes": [
+          "4706176057",
+          "4706176059",
+          "4706176015",
+          "4706176040",
+          "4706176052",
+          "4706176068",
+          "4706176066",
+          "4706176011",
+          "4706176009",
+          "8425669684",
+          "8425669683",
+          "8425669682",
+          "8425669681",
+          "8425669680",
+          "8425669679",
+          "8425669678",
+          "8425669677",
+          "8425669676",
+          "8425669675",
+          "8425669674",
+          "8425669673",
+          "8425669672",
+          "8425669671",
+          "8425669670",
+          "8425669669",
+          "8425669668",
+          "8425669667",
+          "8425669666",
+          "8425669665",
+          "8425669664",
+          "4706176045",
+          "4706176044",
+          "4706176028",
+          "4706176054",
+          "4706176057"
+        ]
+      }
+    ],
+    "nearbyWalkableWays": [
+      {
+        "way": "444348817",
+        "distanceM": 0.0,
+        "tags": {
+          "highway": "service"
+        }
+      },
+      {
+        "way": "1064853447",
+        "distanceM": 22.3,
+        "tags": {
+          "foot": "yes",
+          "highway": "tertiary",
+          "name": "万航渡路",
+          "name:en": "Wanhangdu Road",
+          "old_name:en": "Jessfield Road"
+        }
+      },
+      {
+        "way": "1064853448",
+        "distanceM": 25.2,
+        "tags": {
+          "highway": "service",
+          "oneway": "yes",
+          "trolley_wire": "yes"
+        }
+      },
+      {
+        "way": "115705885",
+        "distanceM": 25.3,
+        "tags": {
+          "highway": "footway",
+          "surface": "paved"
+        }
+      },
+      {
+        "way": "336887148",
+        "distanceM": 25.3,
+        "tags": {
+          "foot": "yes",
+          "highway": "tertiary",
+          "name": "万航渡路",
+          "name:en": "Wanhangdu Road",
+          "old_name:en": "Jessfield Road",
+          "trolley_wire": "yes"
+        }
+      }
+    ]
+  },
+  {
+    "campus": "shcm",
+    "coordinateSystem": "WGS-84",
+    "entrance": {
+      "id": "5176444834",
+      "lat": 31.2146606,
+      "lon": 121.4503251,
+      "tags": {
+        "entrance": "yes"
+      }
+    },
+    "campusWay": "533589793",
+    "source": "https://www.openstreetmap.org/node/5176444834",
+    "connectedWays": [
+      {
+        "id": "533589793",
+        "tags": {
+          "addr:housenumber": "20",
+          "addr:street": "汾阳路",
+          "amenity": "university",
+          "name": "上海音乐学院汾阳校区",
+          "name:en": "Shanghai Conservatory of Music",
+          "name:zh": "上海音乐学院"
+        },
+        "nodes": [
+          "5176444810",
+          "5176444834",
+          "5176444811",
+          "11143903271",
+          "5176444813",
+          "5176444818",
+          "5176444820",
+          "5176444810"
+        ]
+      }
+    ],
+    "nearbyWalkableWays": [
+      {
+        "way": "232920698",
+        "distanceM": 3.9,
+        "tags": {
+          "cycleway:both": "no",
+          "highway": "residential",
+          "lanes": "1",
+          "name": "汾阳路",
+          "name:en": "Fenyang Road",
+          "old_name": "Rue Pichon",
+          "surface": "asphalt"
+        }
+      },
+      {
+        "way": "1005394019",
+        "distanceM": 91.2,
+        "tags": {
+          "cycleway": "opposite_lane",
+          "foot": "yes",
+          "highway": "secondary",
+          "lanes": "2",
+          "name": "复兴中路",
+          "name:en": "Middle Fuxing Road",
+          "old_name": "Rue Lafayette",
+          "oneway": "yes",
+          "surface": "asphalt"
+        }
+      },
+      {
+        "way": "1334161337",
+        "distanceM": 93.6,
+        "tags": {
+          "highway": "service",
+          "motor_vehicle": "no",
+          "service": "alley"
+        }
+      }
+    ]
+  }
+]

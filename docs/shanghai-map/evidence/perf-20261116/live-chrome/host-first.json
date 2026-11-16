@@ -1,0 +1,430 @@
+{
+  "at": "2026-11-16T21:38:46.208482+08:00",
+  "thermal": {
+    "code": 0,
+    "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+    "stderr": ""
+  },
+  "swap": {
+    "code": 0,
+    "stdout": "hw.memsize: 17179869184\nvm.swapusage: total = 7168.00M  used = 6095.62M  free = 1072.38M  (encrypted)\n",
+    "stderr": ""
+  },
+  "pressure": {
+    "code": 0,
+    "stdout": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 43%\n",
+    "stderr": ""
+  },
+  "vm": {
+    "code": 0,
+    "stdout": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     2162.\nPages active:                                 216584.\nPages inactive:                               212068.\nPages speculative:                              3191.\nPages throttled:                                   0.\nPages wired down:                             235602.\nPages purgeable:                                   0.\n\"Translation faults\":                     1115968220.\nPages copy-on-write:                        20908342.\nPages zero filled:                         623704016.\nPages reactivated:                         245895943.\nPages purged:                               29689124.\nFile-backed pages:                            141123.\nAnonymous pages:                              290721.\nPages stored in compressor:                   684888.\nPages occupied by compressor:                 326546.\nDecompressions:                            221594596.\nCompressions:                              265886154.\nPageins:                                    43512304.\nPageouts:                                     503002.\nSwapins:                                      592120.\nSwapouts:                                    1180905.\n",
+    "stderr": ""
+  },
+  "processes": [
+    {
+      "pid": 3444,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 46432,
+      "elapsed": "02:43",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 26228,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 64752,
+      "elapsed": "03:01:12",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 26261,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 38304,
+      "elapsed": "06:31:55",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 31728,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 31648,
+      "elapsed": "02:49:00",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 31958,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 22080,
+      "elapsed": "02:48:35",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 36878,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 38720,
+      "elapsed": "02:38:46",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 46734,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 62176,
+      "elapsed": "02:16:43",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 47646,
+      "ppid": 1,
+      "cpuPercent": 4.0,
+      "rssKiB": 239120,
+      "elapsed": "09:54:46",
+      "browser": "normal",
+      "kind": "browser"
+    },
+    {
+      "pid": 47654,
+      "ppid": 1,
+      "cpuPercent": 0.0,
+      "rssKiB": 4816,
+      "elapsed": "09:54:46",
+      "browser": "normal",
+      "kind": "browser"
+    },
+    {
+      "pid": 47677,
+      "ppid": 47646,
+      "cpuPercent": 58.6,
+      "rssKiB": 155056,
+      "elapsed": "09:54:46",
+      "browser": "normal",
+      "kind": "gpu"
+    },
+    {
+      "pid": 47678,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 54016,
+      "elapsed": "09:54:46",
+      "browser": "normal",
+      "kind": "utility"
+    },
+    {
+      "pid": 47679,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 17040,
+      "elapsed": "09:54:46",
+      "browser": "normal",
+      "kind": "utility"
+    },
+    {
+      "pid": 47685,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 23136,
+      "elapsed": "09:54:45",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 47686,
+      "ppid": 47646,
+      "cpuPercent": 0.1,
+      "rssKiB": 50768,
+      "elapsed": "09:54:45",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 47688,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 12736,
+      "elapsed": "09:54:45",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 47692,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 31056,
+      "elapsed": "09:54:45",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 47700,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 13632,
+      "elapsed": "09:54:45",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 47737,
+      "ppid": 47646,
+      "cpuPercent": 0.3,
+      "rssKiB": 19296,
+      "elapsed": "09:54:40",
+      "browser": "normal",
+      "kind": "utility"
+    },
+    {
+      "pid": 47738,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 16240,
+      "elapsed": "09:54:40",
+      "browser": "normal",
+      "kind": "utility"
+    },
+    {
+      "pid": 47743,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 25824,
+      "elapsed": "09:54:40",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 48080,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 17296,
+      "elapsed": "09:53:49",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 48136,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 23040,
+      "elapsed": "09:53:44",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 48292,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 62112,
+      "elapsed": "02:12:57",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 48553,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 22848,
+      "elapsed": "09:52:43",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 49663,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 42944,
+      "elapsed": "09:49:42",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 49664,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 21600,
+      "elapsed": "09:49:42",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 51558,
+      "ppid": 1,
+      "cpuPercent": 0.0,
+      "rssKiB": 56048,
+      "elapsed": "01:48:28",
+      "browser": "testing",
+      "kind": "browser"
+    },
+    {
+      "pid": 51560,
+      "ppid": 1,
+      "cpuPercent": 0.0,
+      "rssKiB": 5488,
+      "elapsed": "01:48:28",
+      "browser": "testing",
+      "kind": "browser"
+    },
+    {
+      "pid": 51562,
+      "ppid": 1,
+      "cpuPercent": 0.0,
+      "rssKiB": 5216,
+      "elapsed": "01:48:28",
+      "browser": "testing",
+      "kind": "browser"
+    },
+    {
+      "pid": 51575,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 27200,
+      "elapsed": "01:48:27",
+      "browser": "testing",
+      "kind": "gpu"
+    },
+    {
+      "pid": 51576,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 20288,
+      "elapsed": "01:48:27",
+      "browser": "testing",
+      "kind": "utility"
+    },
+    {
+      "pid": 51581,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 13344,
+      "elapsed": "01:48:27",
+      "browser": "testing",
+      "kind": "utility"
+    },
+    {
+      "pid": 51622,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 18304,
+      "elapsed": "01:48:24",
+      "browser": "testing",
+      "kind": "utility"
+    },
+    {
+      "pid": 53041,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 63152,
+      "elapsed": "01:45:57",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 53043,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 35680,
+      "elapsed": "01:45:56",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 53075,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 70880,
+      "elapsed": "01:45:53",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 53104,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 65168,
+      "elapsed": "01:45:47",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 55441,
+      "ppid": 47646,
+      "cpuPercent": 48.0,
+      "rssKiB": 1289520,
+      "elapsed": "01:40:32",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 55516,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 65488,
+      "elapsed": "01:40:22",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 57723,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 23472,
+      "elapsed": "01:35:23",
+      "browser": "testing",
+      "kind": "renderer"
+    },
+    {
+      "pid": 74206,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 26048,
+      "elapsed": "01:07:43",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 74390,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 16176,
+      "elapsed": "04:57:21",
+      "browser": "normal",
+      "kind": "renderer"
+    },
+    {
+      "pid": 76590,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 23312,
+      "elapsed": "01:03:48",
+      "browser": "testing",
+      "kind": "renderer"
+    },
+    {
+      "pid": 76774,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 25360,
+      "elapsed": "01:03:21",
+      "browser": "testing",
+      "kind": "renderer"
+    },
+    {
+      "pid": 76955,
+      "ppid": 47646,
+      "cpuPercent": 0.0,
+      "rssKiB": 28864,
+      "elapsed": "01:02:55",
+      "browser": "normal",
+      "kind": "renderer"
+    }
+  ]
+}

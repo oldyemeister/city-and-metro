@@ -1,0 +1,76 @@
+{
+  "observedVia": "native Chrome DevTools console, read-only expression; no model instrumentation",
+  "at": "2026-11-16T13:41:07.534Z",
+  "map": "sh",
+  "clock": {
+    "y": 2004,
+    "m": 12,
+    "d": 30,
+    "minute": 832.2672000005841
+  },
+  "speed": 0,
+  "stations": 184,
+  "segments": 236,
+  "jump": null,
+  "pending": false,
+  "trafficReady": true,
+  "settled": true,
+  "solving": 0,
+  "refreshing": false,
+  "review": false,
+  "prediction": false,
+  "impact": "done",
+  "pools": [
+    {
+      "type": "road",
+      "workers": 4,
+      "off": false,
+      "queue": 0,
+      "requests": 0,
+      "stats": {
+        "wasm": 0,
+        "js": 209553
+      }
+    },
+    {
+      "type": "mode",
+      "workers": 2,
+      "off": false,
+      "queue": 0
+    },
+    {
+      "type": "metro",
+      "workers": 2,
+      "off": false,
+      "queue": 0
+    }
+  ],
+  "heap": {
+    "used": 390146759,
+    "total": 445587551
+  },
+  "renderLaterSnapshot": {
+    "cachePx": 19021706,
+    "capPx": 24000000,
+    "groundTiles": 24,
+    "isoTiles": 90,
+    "renderMs": 2.7999999970197678,
+    "pendingVisible": 0
+  },
+  "liveBufferSlots": 1,
+  "tabMemoryBadgeGiBSequence": [
+    1.9,
+    1.5,
+    1.2
+  ],
+  "limitations": [
+    "Tab badge/native process RSS/Chrome top footprint/JS heap are different memory measures, do not sum",
+    "Live compute state read after fast-forward already ended, cannot attribute in-flight solver stall",
+    "209553JSblocks is lifetime count, not current queue size or rate",
+    "Opening docked DevTools and incidental view toggle changed viewport/render caches; memory decrease is confounded",
+    "UI input focus error triggered shortcuts before confirmed console focus; grid disabled/view restored2D; date and speed confirmed unchanged",
+    "No refresh/reload/save import, no explicit simulation advance,pause or save writes; incidental UI preference changes only",
+    "CPU process-to-tab correspondence inferred, not independently mapped by Chrome Task Manager",
+    "Thermal command reports no recorded warning, not direct temperature or frequency measurement"
+  ]
+}

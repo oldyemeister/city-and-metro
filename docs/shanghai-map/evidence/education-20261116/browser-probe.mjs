@@ -1,0 +1,36 @@
+// Fixed-save performance probe; visible isolated Chrome for Testing. No player storage.
+import os from 'node:os';import {fileURLToPath} from 'node:url';import fs from 'node:fs/promises';import path from 'node:path';import http from 'node:http';import {spawn} from 'node:child_process';
+const acceptanceStarted=Date.now();
+const candidates=[process.env.CM_BROWSER,'/Users/jacky/Applications/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','C:/Program Files/Google/Chrome/Application/chrome.exe','/usr/bin/chromium','/usr/bin/google-chrome','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].filter(Boolean);let browser;for(const p of candidates){try{await fs.access(p);browser=p;break;}catch{}}if(!browser)throw Error('No Chromium browser found. Set CM_BROWSER to its executable path.');
+const root='/Users/jacky/Documents/DIY/city-and-metro',tempRoot=os.tmpdir(),task=await fs.mkdtemp(path.join(tempRoot,'city-metro-mobile-')),profile=path.join(task,'profile');await fs.mkdir(profile);const output=process.env.CM_MOBILE_OUTPUT&&path.resolve(process.env.CM_MOBILE_OUTPUT);if(output)await fs.mkdir(output,{recursive:true});
+const edge=spawn(browser,['--disable-extensions','--disable-sync','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--disable-background-timer-throttling','--disable-renderer-backgrounding','--user-data-dir='+profile],{windowsHide:true,stdio:'ignore',detached:true}),delay=ms=>new Promise(r=>setTimeout(r,ms));let ws,send;const deadline=acceptanceStarted+120000;
+try{let port;for(let i=0;i<100;i++){try{port=Number((await fs.readFile(path.join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0]);break;}catch{}await delay(100);}if(!port)throw Error('No debug port');const target=await(await fetch('http://127.0.0.1:'+port+'/json/new?'+encodeURIComponent('http://localhost:8001/'),{method:'PUT'})).json();ws=new WebSocket(target.webSocketDebuggerUrl);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;});let seq=0;const waiting=new Map(),errors=[];
+ws.onclose=()=>{for(const w of waiting.values()){clearTimeout(w.timer);w.bad(Error('Browser closed'));}waiting.clear();};
+ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const w=waiting.get(m.id);if(w){clearTimeout(w.timer);waiting.delete(m.id);m.error?w.bad(Error(JSON.stringify(m.error))):w.ok(m.result);}}else if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.exception?.description||m.params.exceptionDetails.text);else if(m.method==='Runtime.consoleAPICalled'&&m.params.type==='error')errors.push(m.params.args.map(a=>a.description||a.value).join(' '));};
+send=(method,params={})=>new Promise((ok,bad)=>{const id=++seq,timer=setTimeout(()=>{waiting.delete(id);bad(Error('CDP timeout '+method));},Math.max(1,deadline-Date.now()-1500));waiting.set(id,{ok,bad,timer});ws.send(JSON.stringify({id,method,params}));});
+const evaluate=async exp=>{const r=await send('Runtime.evaluate',{expression:exp,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result?.value;};
+const until=async(exp,ms=100000)=>{const start=Date.now();while(Date.now()-start<ms){if(await evaluate(exp))return;await delay(150);}throw Error('Wait '+exp+' '+errors.join('\n'));};
+const screenshot=async(name)=>{if(output)await fs.writeFile(path.join(output,name+'.png'),Buffer.from((await send('Page.captureScreenshot',{format:'png'})).data,'base64'));};
+await send('Runtime.enable');await send('Page.enable');await send('Page.bringToFront');await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});await until('!!window.CM?.ui&&!!document.querySelector(".start-menu")');await evaluate('CM.Settings.set("autosave",false);CM.Settings.set("sound",false);true');
+const label='education-final';
+const saveFile=path.join(root,'savedgames/test', (await fs.readdir(path.join(root,'savedgames/test'))).find(f=>f.endsWith('.cmsave.json')));
+const saveText=await fs.readFile(saveFile,'utf8');
+await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+const served=await (await fetch('http://localhost:8001/js/data_sh.js')).text();if(served!==await fs.readFile(path.join(root,'js/data_sh.js'),'utf8'))throw Error('Preview source mismatch');
+const report=await evaluate(`(async()=>{
+const payload=CM.Save.parseEnvelope(${JSON.stringify(saveText)}).payload;
+const previous=CM.game;CM.loadGame(payload);let start=performance.now();while(!CM.game||CM.game===previous||!CM.game.model.trafficReady()){if(performance.now()-start>75000)throw Error('load budget');await new Promise(r=>setTimeout(r,40));}
+const g=CM.game;g.setSpeed(0);CM.ui.closeScreen();CM.ui.closePanel(true);CM.ui.toasts.replaceChildren();CM.ui.clearCelebrations();
+return {map:g.mapId,clock:{...g.clock},stations:Object.keys(g.net.stations).length,paused:g.speed===0};})()`);
+report.campuses=[];
+for(const id of ['sh_sisu_hongkou','sh_ecupl_changning','sh_shcm_fenyang']){
+ const campus=await evaluate(`(async()=>{const g=CM.game,f=CM.Fac.list(g.city).find(f=>f.id===${JSON.stringify(id)});if(!f)throw Error('missing facility');CM.ui.select({kind:'facility',id:f.id});Object.assign(CM.R.cam,{cx:f.x,cy:f.y,zoom:60,tz:60,fly:null,anchor:null,view:0,t:1});CM.ui.layer='fac';CM.R.layer='fac';await new Promise(r=>setTimeout(r,700));return {id:f.id,name:f.name,label:f.label,x:f.x,y:f.y,active:CM.Fac.active(f,g.model.year,g.city),panelText:document.body.innerText,visible:document.visibilityState,focused:document.hasFocus()};})()`);
+ report.campuses.push(campus);const shot=await send('Page.captureScreenshot',{format:'png'});await fs.writeFile(path.join(root,'docs/shanghai-map/evidence/education-20261116',id+'.png'),Buffer.from(shot.data,'base64'));
+}
+report.errors=errors;report.profile=profile;report.elapsedSeconds=(120000-(deadline-Date.now()))/1000;
+report.dataSha256=(await import('node:crypto')).createHash('sha256').update(await fs.readFile(path.join(root,'js/data_sh.js'))).digest('hex');report.saveSha256=(await import('node:crypto')).createHash('sha256').update(saveText).digest('hex');report.label=label;report.save=path.basename(saveFile);report.browser=browser;report.gpuDisabled=false;report.budgetSeconds=120;
+const out=path.join(root,'docs/shanghai-map/evidence/education-20261116');await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,label+'.json'),JSON.stringify(report,null,2));
+const shot=await send('Page.captureScreenshot',{format:'png'});await fs.writeFile(path.join(out,label+'.png'),Buffer.from(shot.data,'base64'));
+console.log(JSON.stringify({...report,campuses:report.campuses.map(f=>({...f,panelText:f.panelText.slice(-1700)}))}));
+if(errors.length)throw Error('Browser errors:\n'+[...new Set(errors)].join('\n'));console.log('PASS browser fixture map/date, facility states and focused panel; future visual checks remain pending');
+}catch(error){if(output&&send){try{const shot=await send('Page.captureScreenshot',{format:'png'});await fs.writeFile(path.join(output,'failure.png'),Buffer.from(shot.data,'base64'));}catch{}}throw error;}finally{if(ws)ws.close();edge.unref();console.log('Test browser left open; profile: '+profile);}

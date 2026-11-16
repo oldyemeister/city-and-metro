@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-11-16T20:47:45.233908+08:00",
+  "thermal": {
+    "code": 0,
+    "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+    "stderr": ""
+  },
+  "swap": {
+    "code": 0,
+    "stdout": "hw.memsize: 17179869184\nvm.swapusage: total = 8192.00M  used = 6623.44M  free = 1568.56M  (encrypted)\n",
+    "stderr": ""
+  },
+  "memoryPressure": {
+    "code": 0,
+    "stdout": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 44%\n",
+    "stderr": ""
+  },
+  "vm": {
+    "code": 0,
+    "stdout": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4430.\nPages active:                                 220179.\nPages inactive:                               214775.\nPages speculative:                              4345.\nPages throttled:                                   0.\nPages wired down:                             205853.\nPages purgeable:                                3526.\n\"Translation faults\":                     1077166399.\nPages copy-on-write:                        19540130.\nPages zero filled:                         603503407.\nPages reactivated:                         236535698.\nPages purged:                               29203653.\nFile-backed pages:                            142362.\nAnonymous pages:                              296937.\nPages stored in compressor:                   717799.\nPages occupied by compressor:                 346605.\nDecompressions:                            213291614.\nCompressions:                              255524985.\nPageins:                                    42785173.\nPageouts:                                     501854.\nSwapins:                                      547737.\nSwapouts:                                    1156793.\n",
+    "stderr": ""
+  },
+  "testBrowserProcesses": [
+    {
+      "pid": 51558,
+      "ppid": 1,
+      "cpuPercent": 3.6,
+      "rssKiB": 115952,
+      "elapsed": "57:27"
+    },
+    {
+      "pid": 51560,
+      "ppid": 1,
+      "cpuPercent": 0.0,
+      "rssKiB": 5488,
+      "elapsed": "57:27"
+    },
+    {
+      "pid": 51562,
+      "ppid": 1,
+      "cpuPercent": 0.0,
+      "rssKiB": 5216,
+      "elapsed": "57:27"
+    },
+    {
+      "pid": 51575,
+      "ppid": 51558,
+      "cpuPercent": 50.0,
+      "rssKiB": 122912,
+      "elapsed": "57:26"
+    },
+    {
+      "pid": 51576,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 30448,
+      "elapsed": "57:26"
+    },
+    {
+      "pid": 51581,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 16640,
+      "elapsed": "57:26"
+    },
+    {
+      "pid": 51622,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 20224,
+      "elapsed": "57:23"
+    },
+    {
+      "pid": 57723,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 60096,
+      "elapsed": "44:22"
+    },
+    {
+      "pid": 75029,
+      "ppid": 51558,
+      "cpuPercent": 16.5,
+      "rssKiB": 807296,
+      "elapsed": "14:56"
+    },
+    {
+      "pid": 75056,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 57536,
+      "elapsed": "14:53"
+    },
+    {
+      "pid": 76590,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 39232,
+      "elapsed": "12:47"
+    },
+    {
+      "pid": 76774,
+      "ppid": 51558,
+      "cpuPercent": 0.0,
+      "rssKiB": 40640,
+      "elapsed": "12:20"
+    }
+  ],
+  "sumRssKiB": 1321680,
+  "rssNote": "Sum of per-process RSS includes shared pages and is not unique physical footprint; process-role classification omitted."
+}

@@ -19,7 +19,7 @@ const withoutNames = x => { const v = plain(x); for (const f of v.facilities) { 
 // Facility data may evolve under P1; this check owns rendering and legacy label behavior.
 // IDs, dates, weights and event invariants are covered by check-shanghai-p1.mjs.
 assert.deepEqual(data.landmarks.map(f=>f.id), baseline.landmarks.map(f=>f.id), 'Preserve landmark IDs');
-const ids = ['sh_fudan', 'sh_sjtu', 'sh_shu', 'sh_dhu'];
+const ids = ['sh_fudan', 'sh_sjtu', 'sh_shu', 'sh_dhu', 'sh_sisu_hongkou', 'sh_ecupl_changning', 'sh_shcm_fenyang'];
 for (const f of data.facilities) {
   if (ids.includes(f.id)) assert.equal(f.label.replace('\n', ''), f.n);
   else if (f.label?.includes('\n')) assert.equal(f.label.replace('\n', ''), f.n);
@@ -28,7 +28,7 @@ load('js/accessibility.js'); load('js/facility.js'); load('js/render.js');
 const C = c.CM, calls = [];
 const ctx = new Proxy({ measureText: text => ({ width: text.length * 12 }), fillText: (text, x, y) => calls.push({ text, x, y }) }, { get: (o, k) => o[k] || (() => {}) });
 const r = new C.Renderer({ getContext: () => ctx });
-Object.assign(r, { w: 1000, h: 500, z: 20, layer: 'fac', dt: .25, P: (x, y) => ({ x, y }) });
+Object.assign(r, { w: 1800, h: 500, z: 20, layer: 'fac', dt: .25, P: (x, y) => ({ x, y }) });
 const schools = ids.map((id, i) => ({ ...data.facilities.find(f => f.id === id), x: 120 + 240 * i, y: 80, p: { sc: 1 } }));
 const items = schools.map(s => ({ f: { ...s, name: s.n }, v: 5000, tv: 5000, share: .4, tshare: .4, cov: .5, alpha: 1, la: 0 }));
 r.facSmooth = () => ({ vmax: 5000, list: items });
@@ -39,7 +39,7 @@ for (const layer of ['fac', 'gap']) {
     const a = calls.find(q => q.text === name), b = calls.find(q => q.text === campus && q.x === a.x), val = calls.find(q => q.text.includes('人次') && q.x === a.x);
     assert.equal(b.y - a.y, 14); assert.equal(val.y - b.y, 14);
   }
-  assert.equal(r._layerRects.filter(b => b[3] - b[1] === 42).length, 4);
+  assert.equal(r._layerRects.filter(b => b[3] - b[1] === 42).length, ids.length);
 }
 // Existing single-line university and non-school labels keep the old short-name behavior.
 for (const t of ['uni', 'hosp']) {
@@ -49,10 +49,10 @@ for (const t of ['uni', 'hosp']) {
 // Exercise the normal map layout with both landmark-linked and standalone campuses.
 C.DATA.landmarks = [{ x: 120, y: 80, name: '旧地标名' }];
 C.Settings = { get: () => false };
-const facilities = [{ ...schools[0], lmK: 0, T: {} }, { ...schools[2], lmK: -1, T: {} }];
+const facilities = [{ ...schools[0], lmK: 0, T: {} }, { ...schools[2], lmK: -1, T: {} }, ...schools.slice(4).map(s => ({ ...s, lmK: -1, T: {} }))];
 C.Fac.list = () => facilities; C.Fac.active = () => true;
-Object.assign(r, { layer: 'none', game: { clock: { y: 2026, m: 1 }, city: { landmarkOn: [true], regions: [], lockState: () => ({ info: [] }) } }, view: { x0: 0, y0: 0, x1: 1000, y1: 500 }, extraModels: () => [], labelsBegin: () => {}, textW: (_, text) => text.length * 12, labelSprite: text => ({ text, width: text.length * 12, left: 0, top: 0 }), drawnC: null });
+Object.assign(r, { layer: 'none', game: { clock: { y: 2026, m: 1 }, city: { landmarkOn: [true], regions: [], lockState: () => ({ info: [] }) } }, view: { x0: 0, y0: 0, x1: 1800, y1: 500 }, extraModels: () => [], labelsBegin: () => {}, textW: (_, text) => text.length * 12, labelSprite: text => ({ text, width: text.length * 12, left: 0, top: 0 }), drawnC: null });
 const layout = r.layoutLabels({}, '', '', 0, false);
-assert.deepEqual(Array.from(layout.items, it => it.e.text), ['◆ 复旦大学', '（邯郸校区）', '◆ 上海大学', '（宝山校区）']);
+assert.deepEqual(Array.from(layout.items, it => it.e.text), facilities.flatMap(f => { const [name, campus] = f.label.split('\n'); return ['◆ ' + name, campus]; }));
 for (let i = 0; i < layout.items.length; i += 2) assert.equal(layout.items[i + 1].oy - layout.items[i].oy, 14);
 console.log('PASS: data invariants, facility/gap label spacing and collision heights, single-line compatibility, normal map labels');

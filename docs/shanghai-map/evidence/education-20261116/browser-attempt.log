@@ -1,0 +1,11 @@
+Test browser left open; profile: /var/folders/n5/_4pxtjbd4977vwnbzxx01r340000gn/T/city-metro-mobile-M3P8ZK/profile
+file:///private/tmp/check-sh-education-browser.mjs:11
+const evaluate=async exp=>{const r=await send('Runtime.evaluate',{expression:exp,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result?.value;};
+                                                                                                                                                    ^
+
+Error: Error: load budget
+    at <anonymous>:3:179
+    at evaluate (file:///private/tmp/check-sh-education-browser.mjs:11:149)
+    at async file:///private/tmp/check-sh-education-browser.mjs:20:14
+
+Node.js v23.11.0

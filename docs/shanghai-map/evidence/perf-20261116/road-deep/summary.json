@@ -1,0 +1,339 @@
+{
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 9,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 74.92835043033051,
+      "cy": 82.29418826306788,
+      "zoom": 15.446597031762176,
+      "view": 0
+    },
+    "renderMs": 1,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 10,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 74.92835043033051,
+      "cy": 82.29418826306788,
+      "zoom": 15.446597031762176,
+      "view": 0
+    },
+    "renderMs": 1.6000000089406967,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "completed": true,
+  "phaseTimes": {
+    "model.step": {
+      "calls": 1949,
+      "cpuMs": 5.5,
+      "maxSliceMs": 0.10000000894069672,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "game.jumpGen": {
+      "calls": 1,
+      "cpuMs": 422.2999998778105,
+      "maxSliceMs": 22.799999997019768,
+      "done": 1,
+      "wallMs": 3923.3999999910593,
+      "slices": 1883
+    },
+    "game.monthGen": {
+      "calls": 1,
+      "cpuMs": 420.29999992251396,
+      "maxSliceMs": 22.799999997019768,
+      "done": 1,
+      "wallMs": 3916.6000000089407,
+      "slices": 1880
+    },
+    "game.stepJump": {
+      "calls": 521,
+      "cpuMs": 427.6999998688698,
+      "maxSliceMs": 22.899999991059303,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.refreshCityGen": {
+      "calls": 1,
+      "cpuMs": 151.40000002086163,
+      "maxSliceMs": 19,
+      "done": 1,
+      "wallMs": 162.5,
+      "slices": 116
+    },
+    "model.buildZones": {
+      "calls": 1,
+      "cpuMs": 2.4000000059604645,
+      "maxSliceMs": 2.4000000059604645,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.buildDemandGen": {
+      "calls": 1,
+      "cpuMs": 123.6000000089407,
+      "maxSliceMs": 5.699999988079071,
+      "done": 1,
+      "wallMs": 134.8999999910593,
+      "slices": 111
+    },
+    "model.syncRoad": {
+      "calls": 1,
+      "cpuMs": 13.299999997019768,
+      "maxSliceMs": 13.299999997019768,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.computeAccessGen": {
+      "calls": 1,
+      "cpuMs": 10.5,
+      "maxSliceMs": 8.099999994039536,
+      "done": 1,
+      "wallMs": 10.599999994039536,
+      "slices": 5
+    },
+    "model.buildMetro": {
+      "calls": 1,
+      "cpuMs": 0.6000000089406967,
+      "maxSliceMs": 0.6000000089406967,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.initMetroPer": {
+      "calls": 8,
+      "cpuMs": 0.29999999701976776,
+      "maxSliceMs": 0.10000000894069672,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.setNetwork": {
+      "calls": 1,
+      "cpuMs": 1.1000000089406967,
+      "maxSliceMs": 1.1000000089406967,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.solveGen": {
+      "calls": 1,
+      "cpuMs": 193.29999989271164,
+      "maxSliceMs": 12.700000002980232,
+      "done": 1,
+      "wallMs": 3668.3999999910593,
+      "slices": 1756
+    },
+    "model.pipeline": {
+      "calls": 2,
+      "cpuMs": 189.6999999433756,
+      "maxSliceMs": 12.700000002980232,
+      "done": 2,
+      "wallMs": 3666.0999999940395,
+      "slices": 1757
+    },
+    "model.iterate": {
+      "calls": 16,
+      "cpuMs": 187.29999996721745,
+      "maxSliceMs": 12.600000008940697,
+      "done": 16,
+      "wallMs": 6903.899999991059,
+      "slices": 2136
+    },
+    "model.metroSkim": {
+      "calls": 16,
+      "cpuMs": 2.899999961256981,
+      "maxSliceMs": 1,
+      "done": 16,
+      "wallMs": 102.89999997615814,
+      "slices": 112
+    },
+    "model.computeDaily": {
+      "calls": 1,
+      "cpuMs": 2.0999999940395355,
+      "maxSliceMs": 2.0999999940395355,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.finishTraffic": {
+      "calls": 1,
+      "cpuMs": 2.0999999940395355,
+      "maxSliceMs": 2.0999999940395355,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    }
+  },
+  "graph": {
+    "Z": 1444,
+    "nN": 7425,
+    "nA": 20718,
+    "graphArrayBytes": 536688,
+    "timeBytes": 82872
+  },
+  "modulePresentAtSubmit": true,
+  "graphModuleMessages": [
+    {
+      "modulePresent": true,
+      "gid": 4
+    },
+    {
+      "modulePresent": true,
+      "gid": 4
+    },
+    {
+      "modulePresent": true,
+      "gid": 4
+    },
+    {
+      "modulePresent": true,
+      "gid": 4
+    }
+  ],
+  "roadRequests": 16,
+  "roadBlocks": 512,
+  "density": {
+    "min": 0.11058374434159854,
+    "mean": 0.19495095750448008,
+    "max": 0.43000593589236247,
+    "wasmThreshold": 0.75,
+    "eligibleBlocks": 0
+  },
+  "originRowsTotal": 21264,
+  "originRowsPerRequest": [
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329,
+    1329
+  ],
+  "observedWasmBlocks": 0,
+  "roadTransferEstimates": {
+    "inputBuffersTotalBytes": 48078208,
+    "arcTimeCloneTotalBytes": 42430464,
+    "outputBuffersTotalBytes": 90336512,
+    "workArraysPerRoadWorkerBytes": 486264
+  },
+  "memoryBefore": {
+    "usedSize": 83607644,
+    "totalSize": 149602304,
+    "embedderHeapUsedSize": 24318240,
+    "backingStorageSize": 106678499
+  },
+  "memoryAfter": {
+    "usedSize": 104710140,
+    "totalSize": 158023680,
+    "embedderHeapUsedSize": 30218976,
+    "backingStorageSize": 244638568
+  },
+  "memoryAfter16s": {
+    "usedSize": 109645480,
+    "totalSize": 158023680,
+    "embedderHeapUsedSize": 122892008,
+    "backingStorageSize": 244371256
+  },
+  "laterSnapshot": {
+    "heap": {
+      "usedSize": 87804876,
+      "totalSize": 155205632,
+      "embedderHeapUsedSize": 38718224,
+      "backingStorageSize": 106348520
+    },
+    "page": {
+      "clock": {
+        "y": 2000,
+        "m": 10,
+        "d": 14,
+        "minute": 941.6328000001755
+      },
+      "selectedSolverBufferBytes": 4037323,
+      "pipeSlots": 1,
+      "predSlots": 0,
+      "renderCachePx": 20343092,
+      "renderCacheCapPx": 24000000,
+      "groundTiles": 77,
+      "isoTiles": 0,
+      "hardwareConcurrency": 12,
+      "deviceMemory": 16,
+      "modulePresent": true,
+      "workerCounts": [
+        4,
+        2,
+        2
+      ],
+      "settled": true
+    }
+  },
+  "sourceHashes": {
+    "js/sim.js": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+    "js/road-kernel.js": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+    "js/main.js": "a4d24db496ff11e9b1163437386b194dd6f6bb6f6ceab645ce1b475139259e20",
+    "js/render.js": "ec666e4829ddb2bdde920621704b5b33b240a29cd55e7e8860cd7784db590ec1"
+  },
+  "limitations": [
+    "No actual ten-minute continuous workload or thermal throttling captured",
+    "Module present+density gating proves reason for this workload, not why all possible workloads choose JS",
+    "No independent Worker function CPU samples; carTree vs row marking/backtrace remains source-derived",
+    "Transfer totals are aggregate payload volume over time, not simultaneous resident memory or exact bus traffic",
+    "heap backingStorage is page isolate storage, not full Chrome/Worker/GPU/process physical memory",
+    "Initial page retention snapshots were inadvertently noninvoked expressions and returned {}; corrected later current-memory snapshot is valid",
+    "No forced GC; observed later decline is consistent with transient allocation, does not disprove long-session leak"
+  ]
+}

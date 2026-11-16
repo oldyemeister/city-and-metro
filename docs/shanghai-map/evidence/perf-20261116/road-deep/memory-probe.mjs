@@ -1,0 +1,21 @@
+import fs from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+const started=Date.now(),deadline=started+115000,folder='docs/shanghai-map/evidence/perf-20261116/road-deep';
+const profilePath='/var/folders/n5/_4pxtjbd4977vwnbzxx01r340000gn/T/city-metro-mobile-Ri9td8/profile';
+await fs.mkdir(folder,{recursive:true});
+const out={started:new Date(started).toISOString(),cases:[],profilePath};let c,b,profileOn=false;
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+async function connect(url){const ws=new WebSocket(url);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;setTimeout(()=>j(Error('WebSocket connect timeout')),3000).unref();});let seq=0;const waits=new Map();ws.onmessage=e=>{const m=JSON.parse(e.data),w=waits.get(m.id);if(w){waits.delete(m.id);clearTimeout(w.t);m.error?w.j(Error(JSON.stringify(m.error))):w.r(m.result);}};return {ws,send:(method,params={},sessionId)=>new Promise((r,j)=>{const id=++seq,t=setTimeout(()=>{waits.delete(id);j(Error('CDP timeout '+method));},Math.max(1,Math.min(7000,deadline-Date.now())));waits.set(id,{r,j,t});ws.send(JSON.stringify({id,method,params,sessionId}));})};}
+const ev=async expression=>{const r=await c.send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result.value;};
+const state=`(()=>{const g=CM.game,m=g.model;return {map:g.mapId,clock:{...g.clock},speed:g.speed,visibility:document.visibilityState,focus:document.hasFocus(),trafficReady:m.trafficReady(),review:m.hasReviewWork(),pending:!!g.pending,settled:m.settled,sharpReady:CM.R.sharpReady(),viewport:[innerWidth,innerHeight,devicePixelRatio],camera:{cx:CM.R.cam.cx,cy:CM.R.cam.cy,zoom:CM.R.cam.zoom,view:CM.R.cam.view},renderMs:CM.R.lastRenderMs,queueMs:CM.R.lastQueueMs,pendingVisible:CM.R.stats.pendingVisible,stations:Object.keys(g.net.stations).length}})()`;
+try{
+const port=Number((await fs.readFile(profilePath+'/DevToolsActivePort','utf8')).split('\n')[0]);
+const targets=await(await fetch(`http://127.0.0.1:${port}/json/list`,{signal:AbortSignal.timeout(3000)})).json();
+const t=targets.find(t=>t.type==='page'&&/^http:\/\/(localhost|127.0.0.1):8001\//.test(t.url));if(!t)throw Error('No existing isolated test tab; manual setup needed');out.url=t.url;
+c=await connect(t.webSocketDebuggerUrl);const ver=await(await fetch(`http://127.0.0.1:${port}/json/version`,{signal:AbortSignal.timeout(3000)})).json();b=await connect(ver.webSocketDebuggerUrl);out.browser=ver.Browser;
+const win=await b.send('Browser.getWindowForTarget',{targetId:t.id});await b.send('Browser.setWindowBounds',{windowId:win.windowId,bounds:{windowState:'normal'}});
+execFileSync('/usr/bin/osascript',['-e','tell application "/Users/jacky/Applications/Google Chrome for Testing.app" to activate'],{timeout:5000});
+await c.send('Page.bringToFront');await delay(700);
+out.gpu=(await b.send('SystemInfo.getInfo')).gpu;
+const memoryState=async()=>({heap:await c.send('Runtime.getHeapUsage'),page:await ev(`(()=>{const m=CM.game.model,R=CM.R;let bytes=0;const seen=new Set(),objs=new Set();function scan(o,depth){if(!o||depth<0||typeof o!=='object'||objs.has(o))return;objs.add(o);if(ArrayBuffer.isView(o)){if(!seen.has(o.buffer)){seen.add(o.buffer);bytes+=o.buffer.byteLength;}return;}if(o instanceof ArrayBuffer){if(!seen.has(o)){seen.add(o);bytes+=o.byteLength;}return;}for(const v of Object.values(o))scan(v,depth-1);}for(const x of [m.liveBuf,m.predBuf,m.pipeBufs,m.predBufs])scan(x,5);return {clock:{...CM.game.clock},selectedSolverBufferBytes:bytes,pipeSlots:m.pipeBufs?.length||0,predSlots:m.predBufs?.length||0,renderCachePx:R.cachePx,renderCacheCapPx:R.cacheLimit(),groundTiles:R.ground.size,isoTiles:R.iso.size,hardwareConcurrency:navigator.hardwareConcurrency,deviceMemory:navigator.deviceMemory,modulePresent:!!CM.RoadKernel?.module,workerCounts:[CM.CarPool,CM.OdPool,CM.SkimPool].map(p=>p.list?.length||0),settled:m.settled}})()`) });
+out.currentMemory=await memoryState();}catch(e){out.error=String(e);}finally{c?.ws.close();b?.ws.close();await fs.writeFile(folder+'/current-memory.json',JSON.stringify(out));console.log(JSON.stringify({memory:out.currentMemory,error:out.error}));}

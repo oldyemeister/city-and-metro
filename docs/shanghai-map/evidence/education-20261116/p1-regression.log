@@ -1,0 +1,15 @@
+SITE sh_renji_east 79.71 93.41 open 1999.75
+SITE sh_science 86.29 88.19 open 2001.9166666666667
+SITE sh_jinjiang 35.73 123.27 open 1985
+SITE sh_oriental_sports 62.75 117.45 open 2011.1666666666667
+SITE sh_global_harbor 37.23 81.77 open 2013.5
+SITE sh_cpc_first 61.16 87.55 open 1952.6666666666667
+SITE sh_shnu_xuhui 39.2 113.89 open 1955
+SITE sh_usst_jungong 91.34 57.59 open 1960
+SITE sh_shu_yanchang 54.31 63.69 open 1960
+SITE sh_fudan_jiangwan 73 38.26 open 2005.6666666666667
+SITE sh_fudan_zhangjiang 108.07 101.2 open 2005.6666666666667
+SITE sh_pediatric_minhang 30.48 123.12 open 2008.1666666666667
+SITE sh_pediatric_fenglin 54.05 98.85 open 1954
+PASS actual Shanghai walking graph: all P1 sites connect to nearby synthetic operating stations
+PASS Shanghai all: dates, stages, IDs/events, campus allocations, old save/network and land/road access

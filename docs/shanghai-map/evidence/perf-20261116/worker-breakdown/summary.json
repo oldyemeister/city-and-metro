@@ -1,0 +1,373 @@
+{
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 8,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": false,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 74.92835043033051,
+      "cy": 82.29418826306788,
+      "zoom": 15.446597031762176,
+      "view": 0
+    },
+    "renderMs": 1.2000000029802322,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 9,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": false,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": false,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 74.92835043033051,
+      "cy": 82.29418826306788,
+      "zoom": 15.446597031762176,
+      "view": 0
+    },
+    "renderMs": 1,
+    "queueMs": 0,
+    "pendingVisible": 22,
+    "stations": 121
+  },
+  "phases": {
+    "model.step": {
+      "calls": 8419,
+      "cpuMs": 24.2999999076128,
+      "maxSliceMs": 0.10000000894069672,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "game.jumpGen": {
+      "calls": 1,
+      "cpuMs": 408.5999999791384,
+      "maxSliceMs": 38.900000005960464,
+      "done": 1,
+      "wallMs": 2152.7000000029802,
+      "slices": 1019
+    },
+    "game.monthGen": {
+      "calls": 1,
+      "cpuMs": 407.30000001192093,
+      "maxSliceMs": 38.900000005960464,
+      "done": 1,
+      "wallMs": 2148.5,
+      "slices": 1016
+    },
+    "game.stepJump": {
+      "calls": 274,
+      "cpuMs": 413.600000038743,
+      "maxSliceMs": 38.900000005960464,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.refreshCityGen": {
+      "calls": 1,
+      "cpuMs": 172.6999999731779,
+      "maxSliceMs": 22.299999997019768,
+      "done": 1,
+      "wallMs": 182.09999999403954,
+      "slices": 116
+    },
+    "model.buildZones": {
+      "calls": 1,
+      "cpuMs": 9.299999997019768,
+      "maxSliceMs": 9.299999997019768,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.buildDemandGen": {
+      "calls": 1,
+      "cpuMs": 127.49999997019768,
+      "maxSliceMs": 10.200000002980232,
+      "done": 1,
+      "wallMs": 136.79999999701977,
+      "slices": 111
+    },
+    "model.syncRoad": {
+      "calls": 1,
+      "cpuMs": 16.900000005960464,
+      "maxSliceMs": 16.900000005960464,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.computeAccessGen": {
+      "calls": 1,
+      "cpuMs": 17.599999994039536,
+      "maxSliceMs": 9.599999994039536,
+      "done": 1,
+      "wallMs": 17.599999994039536,
+      "slices": 5
+    },
+    "model.buildMetro": {
+      "calls": 1,
+      "cpuMs": 0.29999999701976776,
+      "maxSliceMs": 0.29999999701976776,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.initMetroPer": {
+      "calls": 8,
+      "cpuMs": 0.5999999940395355,
+      "maxSliceMs": 0.20000000298023224,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.setNetwork": {
+      "calls": 1,
+      "cpuMs": 1.2000000029802322,
+      "maxSliceMs": 1.2000000029802322,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.solveGen": {
+      "calls": 1,
+      "cpuMs": 155.30000001192093,
+      "maxSliceMs": 14.399999991059303,
+      "done": 1,
+      "wallMs": 1875.5999999940395,
+      "slices": 892
+    },
+    "model.pipeline": {
+      "calls": 1,
+      "cpuMs": 150.40000005066395,
+      "maxSliceMs": 14.399999991059303,
+      "done": 1,
+      "wallMs": 1872.0999999940395,
+      "slices": 892
+    },
+    "model.iterate": {
+      "calls": 8,
+      "cpuMs": 148.80000001192093,
+      "maxSliceMs": 14.299999997019768,
+      "done": 8,
+      "wallMs": 3523.7999999821186,
+      "slices": 1085
+    },
+    "model.metroSkim": {
+      "calls": 8,
+      "cpuMs": 1.600000038743019,
+      "maxSliceMs": 0.6000000089406967,
+      "done": 8,
+      "wallMs": 103.7000000178814,
+      "slices": 65
+    },
+    "model.computeDaily": {
+      "calls": 1,
+      "cpuMs": 3.3999999910593033,
+      "maxSliceMs": 3.3999999910593033,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.finishTraffic": {
+      "calls": 1,
+      "cpuMs": 3.3999999910593033,
+      "maxSliceMs": 3.3999999910593033,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    }
+  },
+  "pools": {
+    "road": {
+      "workers": 4,
+      "off": false
+    },
+    "mode": {
+      "workers": 2,
+      "off": false
+    },
+    "metro": {
+      "workers": 2,
+      "off": false
+    }
+  },
+  "workerCpuProfilingErrors": [
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    },
+    {
+      "error": "Error: CDP timeout Runtime.evaluate"
+    }
+  ],
+  "limitations": [
+    "August-September2000,one traffic round/8period jobs,not comparable as speedup against prior July-August two-round case",
+    "Independent Worker CPU profiler failed; no exact worker function self-time attribution",
+    "Worker dispatch-to-result latency includes Worker queue,compute,transport and message delivery; receive handler time excludes hidden browser deserialization",
+    "Road depth2 allows two in-flight messages per Worker, so turnaround is not pure compute",
+    "Union request lifetimes show temporal overlap, not independent CPU time or provable optimization speedup",
+    "Foreground visible throughout polling, focus false at end and camera changed; not a frame-smoothness comparison",
+    "No new-line construction or impact-report test; no optimization edits"
+  ],
+  "poolResults": {
+    "road": {
+      "blocks": 256,
+      "requests": 8,
+      "requestWallMs": {
+        "n": 8,
+        "mean": 344.7000000011176,
+        "p95": 400.1000000089407,
+        "max": 400.1000000089407
+      },
+      "requestLifetimeUnionMs": 1731.5,
+      "enqueueToDispatchMs": {
+        "n": 256,
+        "mean": 193.71796874998836,
+        "p95": 316.69999998807907,
+        "max": 351.40000000596046
+      },
+      "dispatchToResultMs": {
+        "n": 256,
+        "mean": 53.63281250005821,
+        "p95": 61.70000000298023,
+        "max": 64
+      },
+      "resultHandlerMs": {
+        "n": 256,
+        "mean": 0.028515625628642738,
+        "p95": 0.10000000894069672,
+        "max": 0.20000000298023224
+      },
+      "wasmBlocks": 0,
+      "slots": {
+        "0": 64,
+        "1": 64,
+        "2": 64,
+        "3": 64
+      }
+    },
+    "mode": {
+      "blocks": 8,
+      "requests": 8,
+      "requestWallMs": {
+        "n": 8,
+        "mean": 64.26249999552965,
+        "p95": 97.19999998807907,
+        "max": 97.19999998807907
+      },
+      "requestLifetimeUnionMs": 442.89999997615814,
+      "enqueueToDispatchMs": {
+        "n": 8,
+        "mean": 0.8624999951571226,
+        "p95": 3.5999999940395355,
+        "max": 3.5999999940395355
+      },
+      "dispatchToResultMs": {
+        "n": 8,
+        "mean": 63.162500001490116,
+        "p95": 93.29999999701977,
+        "max": 93.29999999701977
+      },
+      "resultHandlerMs": {
+        "n": 8,
+        "mean": 0.22499999962747097,
+        "p95": 0.4000000059604645,
+        "max": 0.4000000059604645
+      },
+      "wasmBlocks": 0,
+      "slots": {
+        "0": 7,
+        "1": 1
+      }
+    },
+    "metro": {
+      "blocks": 256,
+      "requests": 16,
+      "requestWallMs": {
+        "n": 16,
+        "mean": 6.818749998696148,
+        "p95": 54.29999999701977,
+        "max": 54.29999999701977
+      },
+      "requestLifetimeUnionMs": 84.49999998509884,
+      "enqueueToDispatchMs": {
+        "n": 256,
+        "mean": 5.022656249580905,
+        "p95": 39.099999994039536,
+        "max": 54.099999994039536
+      },
+      "dispatchToResultMs": {
+        "n": 256,
+        "mean": 0.6371093750931323,
+        "p95": 2.7000000029802322,
+        "max": 14.699999988079071
+      },
+      "resultHandlerMs": {
+        "n": 256,
+        "mean": 0.010937499813735485,
+        "p95": 0.09999999403953552,
+        "max": 0.20000000298023224
+      },
+      "wasmBlocks": 0,
+      "slots": {
+        "0": 128,
+        "1": 128
+      }
+    }
+  }
+}
