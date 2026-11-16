@@ -1,0 +1,63 @@
+{
+  "loadMs": 17468.80000001192,
+  "firstTrafficMs": 12507.40000000596,
+  "cachedSolveMs": [
+    1.8999999910593033
+  ],
+  "stableTrafficRefreshMs": [
+    28074.79999999702
+  ],
+  "frameCpuMs": {
+    "n": 325,
+    "mean": 9.900307691922555,
+    "p50": 9.700000002980232,
+    "p95": 12.199999988079071
+  },
+  "frameIntervalMs": {
+    "n": 324,
+    "mean": 24.565740740731542,
+    "p50": 24.400000005960464,
+    "p95": 26.899999991059303
+  },
+  "jumpYearMs": 33615.79999999702,
+  "start": {
+    "y": 2000,
+    "m": 7,
+    "d": 14,
+    "minute": 941.6328000001755
+  },
+  "end": {
+    "y": 2001,
+    "m": 7,
+    "d": 14,
+    "minute": 941.6328000001755
+  },
+  "initial": {
+    "year": 2000,
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1133.6544000001675
+    },
+    "stations": 121,
+    "facilities": 102
+  },
+  "camera": {
+    "cx": 76,
+    "cy": 76,
+    "zoom": 10,
+    "view": 0
+  },
+  "speed": 1,
+  "viewport": [
+    1440,
+    900
+  ],
+  "coldTrafficCacheRemoved": true,
+  "dataSha256": "d1cc637bdc5a3cd8d9864fad355f511fa241e3ca26740839e0a205c61f7b3b2e",
+  "saveSha256": "e7f36e23da7e6b2201fbed4f4d77f1488be8db249f79450f973aab16095a7f38",
+  "label": "cft-baseline",
+  "save": "城市与地铁_经营挑战 · 上海 1990_2000年7月.cmsave.json",
+  "browser": "/Users/jacky/Applications/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+}

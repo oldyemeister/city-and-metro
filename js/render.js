@@ -3147,7 +3147,7 @@
   SegPx.prototype.arr = function (cs) {
     if (!cs.shift) return this.R.segScreen(cs, this.under);
     let a = this.sh.get(cs.seg.id);
-    if (!a) { a = shiftArr(this.R.segScreen(cs, this.under), cs.shift * (this.lw + 1.2)); this.sh.set(cs.seg.id, a); }
+    if (!a) { a = shiftArr(this.R.segScreen(cs, this.under), CM.Metro.trackDisplayOffset(cs, this.lw)); this.sh.set(cs.seg.id, a); }
     return a;
   };
   SegPx.prototype.get = function (id) { const cs = this.C && this.C.segs.get(id); return cs ? this.arr(cs) : undefined; };
@@ -4427,18 +4427,20 @@
       if (shown >= 24) { it.la = 0; continue; }
       const p = this.P(it.f.x, it.f.y, 0, tmp);
       const r = (4 + 16 * Math.sqrt(it.v / fm.vmax)) * zk;
-      const name = it.f.name.replace(/（.*）/, ''), val = valText(it);
-      ctx.font = TYPE.place; const w = Math.max(ctx.measureText(name).width, ctx.measureText(val).width * 0.92) + 8;
+      const names = it.f.t === 'uni' && it.f.label && it.f.label.includes('\n') ? it.f.label.split('\n') : [CM.Fac.shortName(it.f)], val = valText(it);
+      ctx.font = TYPE.place; const w = Math.max(...names.map(name => ctx.measureText(name).width), ctx.measureText(val).width * 0.92) + 8;
       const y0 = p.y + r + 2;
-      const b = [p.x - w / 2, y0, p.x + w / 2, y0 + 28];
+      const b = [p.x - w / 2, y0, p.x + w / 2, y0 + 28 + (names.length - 1) * 14];
       if (b[2] < 0 || b[0] > this.w || b[3] < 0 || b[1] > this.h) { it.la = 0; continue; }
       if (placed.some(function (o) { return b[0] < o[2] && b[2] > o[0] && b[1] < o[3] && b[3] > o[1]; })) { it.la = 0; continue; }
       placed.push(b); shown++; it.lab = true;
       it.la = was ? Math.min(1, it.la + step) : step;
       ctx.globalAlpha = Math.min(it.la, it.alpha);
       ctx.lineJoin = 'round'; ctx.lineWidth = 3.2; ctx.strokeStyle = TH.halo;
-      ctx.strokeText(name, p.x, y0 + 7); ctx.fillStyle = TH.ink; ctx.fillText(name, p.x, y0 + 7);
-      ctx.font = TYPE.meta; ctx.strokeText(val, p.x, y0 + 21); ctx.fillStyle = TH.roadInk; ctx.fillText(val, p.x, y0 + 21);
+      ctx.fillStyle = TH.ink;
+      names.forEach(function (name, i) { ctx.strokeText(name, p.x, y0 + 7 + i * 14); ctx.fillText(name, p.x, y0 + 7 + i * 14); });
+      const valY = y0 + 21 + (names.length - 1) * 14;
+      ctx.font = TYPE.meta; ctx.strokeText(val, p.x, valY); ctx.fillStyle = TH.roadInk; ctx.fillText(val, p.x, valY);
     }
     ctx.globalAlpha = 1;
     for (const b of placed) this._layerRects.push(b);
@@ -4786,14 +4788,14 @@
   const angGap = function (a, b) { let d = Math.abs(a - b) % Math.PI; return Math.min(d, Math.PI - d); };
   Renderer.platformsOf = function (net, s, lines) {
     const MT = CM.Metro, groups = [];
-    for (const lid of lines.length ? lines : [null]) {
+    for (const lid of lines.length ? MT.sortIds(lines.slice()) : [null]) {
       const t = lid ? MT.platType(s, lid) : s.type, a0 = lid ? MT.platformDir(net, s.id, lid) : null, a = a0 == null ? 0 : a0;
       let gr = groups.find(function (x) { return x.t === t && angGap(x.a, a) < 0.21; });
       if (!gr) groups.push(gr = { t: t, a: a, lines: [] });
       gr.lines.push(lid);
     }
     const out = [];
-    groups.forEach(function (gr, gi) { const n = gr.lines.length; gr.lines.forEach(function (lid, k) { out.push({ t: gr.t, a: gr.a, lid: lid, off: (k - (n - 1) / 2) * (PLAT_GAP[gr.t] || 0.15), lead: k === 0, first: gi === 0 && k === 0 }); }); });
+    groups.forEach(function (gr, gi) { const n = gr.lines.length, a = n > 1 ? MT.platformDisplayAngle(net, s.id, gr.lines[0], gr.a) : gr.a; gr.lines.forEach(function (lid, k) { out.push({ t: gr.t, a: a, lid: lid, off: (k - (n - 1) / 2) * (PLAT_GAP[gr.t] || 0.15), lead: k === 0, first: gi === 0 && k === 0 }); }); });
     return out;
   };
   // 车站装修主题（v2.3，纯视觉）：选定风格时固定外观年代的造型（era）与配色（pal），「随年代」按建成 / 翻新年份
@@ -5280,10 +5282,11 @@
     const mapLabels = [];
     if (z >= 10 && mapOn && this.layer === 'none') {
       const yr = g.year ? g.year() : g.clock.y + ((g.clock.m || 1) - 1) / 12;
-      const facilities = CM.Fac ? CM.Fac.list(city) : [], hubs = new Set(), models = new Map();
+      const facilities = CM.Fac ? CM.Fac.list(city) : [], hubs = new Set(), models = new Map(), campusLabels = new Map();
+      for (const f of facilities) if (f.t === 'uni' && f.lmK >= 0 && f.label && f.label.includes('\n')) campusLabels.set(f.lmK, f.label);
       for (const f of facilities) if (f.T.hub && CM.Fac.active(f, yr, city) && f.lmK >= 0) hubs.add(f.lmK);
       for (const it of this.extraModels()) if (it.lm && (it.fac || it.id.charAt(0) === 'h')) models.set(it.fac || it.id.slice(1), it.lm);
-      for (let k = 0; k < D.landmarks.length; k++) if (city.landmarkOn[k] && (z >= 13 || hubs.has(k))) { const lm = D.landmarks[k]; mapLabels.push({ x: lm.x, y: lm.y, h: lm.h || 54, name: lm.name, hub: hubs.has(k) }); }
+      for (let k = 0; k < D.landmarks.length; k++) if (city.landmarkOn[k] && (z >= 13 || hubs.has(k))) { const lm = D.landmarks[k]; mapLabels.push({ x: lm.x, y: lm.y, h: lm.h || 54, name: campusLabels.get(k) || lm.name, hub: hubs.has(k) }); }
       for (const f of facilities) {
         if (f.ext || f.lmK >= 0 || f.gen || !CM.Fac.active(f, yr, city) || (!f.T.hub && z < 18)) continue;
         const model = models.get(f.id);
@@ -5294,12 +5297,12 @@
       if (it.x < v.x0 || it.x > v.x1 || it.y < v.y0 || it.y > v.y1) return;
       const height = this.tEase > 0.5 && this.bFade > 0.5 ? it.h * EX : 0, p = this.P(it.x, it.y, height, tmp), font = TYPE.place;   // 地标与设施名不加粗（只有换乘站加粗）
       if (p.x < -20 || p.y < -20 || p.x > this.w + 20 || p.y > this.h + 20) return;
-      const px = p.x, py = p.y, text = '◆ ' + it.name, w = this.textW(font, text);
+      const px = p.x, py = p.y, lines = it.name.split('\n').map((name, i) => (i ? '' : '◆ ') + name), w = Math.max(...lines.map(text => this.textW(font, text))), halfH = 8 + (lines.length - 1) * 7;
       // 在四周寻找位置，边缘收进视口；留出完整译名的宽度，避免靠近车站时整条名称消失。
-      for (const d of [[0, -14], [0, 15], [w / 2 + 12, 0], [-w / 2 - 12, 0], [0, -32], [0, 33]]) {
-        const x = U.clamp(px + d[0], w / 2 + 6, this.w - w / 2 - 6), y = U.clamp(py + d[1], 10, this.h - 10);
-        if (!fits(x - w / 2 - 3, y - 8, x + w / 2 + 3, y + 8)) continue;
-        put(text, x, y, font, TH.landmarkInk, true, 1, 1, -1, it.x, it.y, height, Math.hypot(x - px, y - py) > 22);
+      for (const d of [[0, -halfH - 6], [0, halfH + 7], [w / 2 + 12, 0], [-w / 2 - 12, 0], [0, -32], [0, 33]]) {
+        const x = U.clamp(px + d[0], w / 2 + 6, this.w - w / 2 - 6), y = U.clamp(py + d[1], halfH + 2, this.h - halfH - 2);
+        if (!fits(x - w / 2 - 3, y - halfH, x + w / 2 + 3, y + halfH)) continue;
+        lines.forEach((text, i) => put(text, x, y + (i - (lines.length - 1) / 2) * 14, font, TH.landmarkInk, true, 1, 1, -1, it.x, it.y, height, i === 0 && Math.hypot(x - px, y - py) > 22));
         break;
       }
     };

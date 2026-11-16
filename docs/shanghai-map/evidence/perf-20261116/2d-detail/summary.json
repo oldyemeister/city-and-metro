@@ -1,0 +1,1188 @@
+{
+  "initial": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1280.0184000001882
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 84.72562905106165,
+      "cy": 62.54040278030561,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 3.2000000029802322,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 171,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  },
+  "afterWarmup": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1280.0184000001882
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 84.72562905106165,
+      "cy": 62.54040278030561,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 2.3999999910593033,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 78,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  },
+  "final": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 15,
+      "minute": 20.073600000821124
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 84.97627982447655,
+      "cy": 62.585994103734265,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 0.4000000059604645,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 77,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  },
+  "cases": [
+    {
+      "kind": "paused-idle",
+      "before": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1280.0184000001882
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.72562905106165,
+          "cy": 62.54040278030561,
+          "zoom": 24.80359797387836,
+          "view": 0
+        },
+        "renderMs": 1.0999999940395355,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "segments": 150,
+        "detailTier": 0,
+        "labelItems": 78,
+        "metroLayerAt": 342112.200000003,
+        "stations": 121
+      },
+      "after": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1280.0184000001882
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.72562905106165,
+          "cy": 62.54040278030561,
+          "zoom": 24.80359797387836,
+          "view": 0
+        },
+        "renderMs": 1.1000000089406967,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "segments": 150,
+        "detailTier": 0,
+        "labelItems": 78,
+        "metroLayerAt": 342112.200000003,
+        "stations": 121
+      },
+      "intervals": {
+        "n": 720,
+        "mean": 8.333333333333334,
+        "p95": 9.29999999993015,
+        "max": 9.400000000023283,
+        "sum": 6000.0
+      },
+      "methods": {
+        "game.update": {
+          "n": 721,
+          "mean": 0.015950069472131716,
+          "p95": 0.10000000894069672,
+          "max": 0.20000000298023224,
+          "sum": 11.500000089406967
+        },
+        "model.step": {
+          "n": 721,
+          "mean": 0.003051317618557881,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 2.2000000029802322
+        },
+        "agents.update": {
+          "n": 721,
+          "mean": 0.14549237163156148,
+          "p95": 0.4000000059604645,
+          "max": 1.2999999970197678,
+          "sum": 104.89999994635582
+        },
+        "ui.tick": {
+          "n": 721,
+          "mean": 0.11178918180783148,
+          "p95": 0.29999999701976776,
+          "max": 1.8999999910593033,
+          "sum": 80.6000000834465
+        },
+        "renderer.render": {
+          "n": 120,
+          "mean": 1.3433333323647578,
+          "p95": 2.4000000059604645,
+          "max": 2.6000000089406967,
+          "sum": 161.19999988377094
+        },
+        "renderer.drawMetro": {
+          "n": 120,
+          "mean": 0.25500000156462194,
+          "p95": 0.5,
+          "max": 0.5999999940395355,
+          "sum": 30.60000018775463
+        },
+        "renderer.lineWidthPx": {
+          "n": 240,
+          "mean": 0.00041666664183139803,
+          "p95": 0,
+          "max": 0.09999999403953552,
+          "sum": 0.09999999403953552
+        },
+        "renderer.stationInfo": {
+          "n": 120,
+          "mean": 0.004166666666666667,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 0.5
+        },
+        "renderer.updateStationPx": {
+          "n": 120,
+          "mean": 0.012500000124176344,
+          "p95": 0.10000000894069672,
+          "max": 0.20000000298023224,
+          "sum": 1.5000000149011612
+        },
+        "renderer.blitMetroLayer": {
+          "n": 120,
+          "mean": 0.012499999875823656,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 1.4999999850988388
+        },
+        "renderer.segScreen": {
+          "n": 120,
+          "mean": 0.006666666641831398,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 0.7999999970197678
+        },
+        "renderer.strokeArr": {
+          "n": 120,
+          "mean": 0.19666666773458322,
+          "p95": 0.3999999910593033,
+          "max": 0.5,
+          "sum": 23.600000128149986
+        },
+        "renderer.drawWalkTransferHints": {
+          "n": 120,
+          "mean": 0.0033333331346511843,
+          "p95": 0,
+          "max": 0.09999999403953552,
+          "sum": 0.3999999761581421
+        },
+        "renderer.drawLabels": {
+          "n": 120,
+          "mean": 0.05333333338300387,
+          "p95": 0.10000000894069672,
+          "max": 0.20000000298023224,
+          "sum": 6.4000000059604645
+        }
+      },
+      "cache": {
+        "textWidthMiss": 0,
+        "labelSpriteMiss": 0,
+        "metroLayerRebuild": 0
+      },
+      "selfCpuByCaller": {
+        "all": [
+          {
+            "name": "(idle)",
+            "file": "",
+            "line": 0,
+            "selfMs": 5558.606
+          },
+          {
+            "name": "(program)",
+            "file": "",
+            "line": 0,
+            "selfMs": 208.035
+          },
+          {
+            "name": "stroke",
+            "file": "",
+            "line": 0,
+            "selfMs": 32.054
+          },
+          {
+            "name": "Agents.update",
+            "file": "agents.js",
+            "line": 67,
+            "selfMs": 29.3
+          },
+          {
+            "name": "U.posAt",
+            "file": "util.js",
+            "line": 116,
+            "selfMs": 28.821
+          },
+          {
+            "name": "Q.tick",
+            "file": "quick.js",
+            "line": 126,
+            "selfMs": 26.565
+          },
+          {
+            "name": "Agents.updateCars",
+            "file": "agents.js",
+            "line": 507,
+            "selfMs": 21.805
+          },
+          {
+            "name": "UI.fitHud",
+            "file": "ui.js",
+            "line": 391,
+            "selfMs": 16.719
+          },
+          {
+            "name": "Agents.drawAll",
+            "file": "agents.js",
+            "line": 1040,
+            "selfMs": 11.793
+          },
+          {
+            "name": "CM.curMap",
+            "file": "maps.js",
+            "line": 225,
+            "selfMs": 10.712
+          },
+          {
+            "name": "Agents.drawList",
+            "file": "agents.js",
+            "line": 1050,
+            "selfMs": 9.953
+          },
+          {
+            "name": "matchMedia",
+            "file": "",
+            "line": 0,
+            "selfMs": 9.761
+          },
+          {
+            "name": "fill",
+            "file": "",
+            "line": 0,
+            "selfMs": 9.748
+          },
+          {
+            "name": "o.<computed>",
+            "file": "",
+            "line": 1,
+            "selfMs": 9.689
+          },
+          {
+            "name": "fillRect",
+            "file": "",
+            "line": 0,
+            "selfMs": 8.465
+          },
+          {
+            "name": "Agents.updateWalkers",
+            "file": "agents.js",
+            "line": 939,
+            "selfMs": 7.518
+          }
+        ],
+        "layoutLabels": [],
+        "drawMetro": [
+          {
+            "name": "stroke",
+            "file": "",
+            "line": 0,
+            "selfMs": 28.271
+          },
+          {
+            "name": "o.<computed>",
+            "file": "",
+            "line": 1,
+            "selfMs": 2.601
+          },
+          {
+            "name": "drawImage",
+            "file": "",
+            "line": 0,
+            "selfMs": 1.274
+          },
+          {
+            "name": "Renderer.blitMetroLayer",
+            "file": "render.js",
+            "line": 3390,
+            "selfMs": 1.262
+          },
+          {
+            "name": "Renderer.drawMetro",
+            "file": "render.js",
+            "line": 3417,
+            "selfMs": 1.262
+          },
+          {
+            "name": "Renderer.segScreen",
+            "file": "render.js",
+            "line": 3121,
+            "selfMs": 1.259
+          }
+        ]
+      },
+      "allVisible": true
+    },
+    {
+      "kind": "paused-drag",
+      "before": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1280.0184000001882
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.72562905106165,
+          "cy": 62.54040278030561,
+          "zoom": 24.80359797387836,
+          "view": 0
+        },
+        "renderMs": 1,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "segments": 150,
+        "detailTier": 0,
+        "labelItems": 78,
+        "metroLayerAt": 342112.200000003,
+        "stations": 121
+      },
+      "after": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1280.0184000001882
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.97627982447655,
+          "cy": 62.585994103734265,
+          "zoom": 24.80359797387836,
+          "view": 0
+        },
+        "renderMs": 0.7000000029802322,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "segments": 150,
+        "detailTier": 0,
+        "labelItems": 77,
+        "metroLayerAt": 342112.200000003,
+        "stations": 121
+      },
+      "intervals": {
+        "n": 722,
+        "mean": 8.332132963988984,
+        "p95": 9.29999999993015,
+        "max": 9.400000000023283,
+        "sum": 6015.800000000047
+      },
+      "methods": {
+        "game.update": {
+          "n": 723,
+          "mean": 0.013554633178981344,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 9.799999788403511
+        },
+        "model.step": {
+          "n": 723,
+          "mean": 0.0034578146817443446,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 2.500000014901161
+        },
+        "agents.update": {
+          "n": 723,
+          "mean": 0.13637621043298914,
+          "p95": 0.29999999701976776,
+          "max": 0.7000000029802322,
+          "sum": 98.60000014305115
+        },
+        "renderer.render": {
+          "n": 723,
+          "mean": 1.0222683265125108,
+          "p95": 1.5999999940395355,
+          "max": 2.3999999910593033,
+          "sum": 739.1000000685453
+        },
+        "renderer.drawMetro": {
+          "n": 723,
+          "mean": 0.1514522822401171,
+          "p95": 0.29999999701976776,
+          "max": 0.4000000059604645,
+          "sum": 109.50000005960464
+        },
+        "renderer.lineWidthPx": {
+          "n": 1446,
+          "mean": 6.915628910064697e-05,
+          "p95": 0,
+          "max": 0.09999999403953552,
+          "sum": 0.09999999403953552
+        },
+        "renderer.stationInfo": {
+          "n": 723,
+          "mean": 0.0013831258232333023,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 0.9999999701976776
+        },
+        "renderer.updateStationPx": {
+          "n": 723,
+          "mean": 0.005117565661380235,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 3.69999997317791
+        },
+        "renderer.blitMetroLayer": {
+          "n": 723,
+          "mean": 0.007192254540501459,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 5.200000032782555
+        },
+        "renderer.segScreen": {
+          "n": 8308,
+          "mean": 0.0017332691173744018,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 14.39999982714653
+        },
+        "renderer.strokeArr": {
+          "n": 723,
+          "mean": 0.12475795306028337,
+          "p95": 0.20000000298023224,
+          "max": 0.4000000059604645,
+          "sum": 90.20000006258488
+        },
+        "renderer.drawWalkTransferHints": {
+          "n": 723,
+          "mean": 0.0004149377552140633,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 0.29999999701976776
+        },
+        "renderer.drawLabels": {
+          "n": 723,
+          "mean": 0.15878284929698927,
+          "p95": 0.699999988079071,
+          "max": 1,
+          "sum": 114.80000004172325
+        },
+        "ui.tick": {
+          "n": 113,
+          "mean": 0.19026548698940107,
+          "p95": 0.7999999970197678,
+          "max": 1.1000000089406967,
+          "sum": 21.500000029802322
+        },
+        "renderer.layoutLabels": {
+          "n": 144,
+          "mean": 0.5569444439477391,
+          "p95": 0.7000000029802322,
+          "max": 0.9000000059604645,
+          "sum": 80.19999992847443
+        },
+        "renderer.extraModels": {
+          "n": 144,
+          "mean": 0.00277777761220932,
+          "p95": 0,
+          "max": 0.09999999403953552,
+          "sum": 0.3999999761581421
+        },
+        "renderer.textW": {
+          "n": 11358,
+          "mean": 0.0003257615793169038,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 3.7000000178813934
+        },
+        "renderer.labelSprite": {
+          "n": 11114,
+          "mean": 0.00032391577733813676,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 3.599999949336052
+        }
+      },
+      "cache": {
+        "textWidthMiss": 0,
+        "labelSpriteMiss": 0,
+        "metroLayerRebuild": 0
+      },
+      "selfCpuByCaller": {
+        "all": [
+          {
+            "name": "(idle)",
+            "file": "",
+            "line": 0,
+            "selfMs": 4896.831
+          },
+          {
+            "name": "(program)",
+            "file": "",
+            "line": 0,
+            "selfMs": 406.511
+          },
+          {
+            "name": "stroke",
+            "file": "",
+            "line": 0,
+            "selfMs": 101.095
+          },
+          {
+            "name": "U.posAt",
+            "file": "util.js",
+            "line": 116,
+            "selfMs": 88.582
+          },
+          {
+            "name": "Renderer.layoutLabels",
+            "file": "render.js",
+            "line": 5245,
+            "selfMs": 64.955
+          },
+          {
+            "name": "Agents.drawList",
+            "file": "agents.js",
+            "line": 1050,
+            "selfMs": 51.311
+          },
+          {
+            "name": "drawImage",
+            "file": "",
+            "line": 0,
+            "selfMs": 47.188
+          },
+          {
+            "name": "fill",
+            "file": "",
+            "line": 0,
+            "selfMs": 34.748
+          },
+          {
+            "name": "Agents.update",
+            "file": "agents.js",
+            "line": 67,
+            "selfMs": 30.308
+          },
+          {
+            "name": "o.<computed>",
+            "file": "",
+            "line": 1,
+            "selfMs": 28.736
+          },
+          {
+            "name": "Agents.drawTrains",
+            "file": "agents.js",
+            "line": 308,
+            "selfMs": 27.374
+          },
+          {
+            "name": "(garbage collector)",
+            "file": "",
+            "line": 0,
+            "selfMs": 22.057
+          },
+          {
+            "name": "Renderer.P",
+            "file": "render.js",
+            "line": 665,
+            "selfMs": 18.627
+          },
+          {
+            "name": "Agents.drawAll",
+            "file": "agents.js",
+            "line": 1040,
+            "selfMs": 17.753
+          },
+          {
+            "name": "Renderer.drawLabels",
+            "file": "render.js",
+            "line": 5207,
+            "selfMs": 17.458
+          },
+          {
+            "name": "arc",
+            "file": "",
+            "line": 0,
+            "selfMs": 16.125
+          }
+        ],
+        "layoutLabels": [
+          {
+            "name": "Renderer.layoutLabels",
+            "file": "render.js",
+            "line": 5245,
+            "selfMs": 64.955
+          },
+          {
+            "name": "Geo.query",
+            "file": "geo.js",
+            "line": 191,
+            "selfMs": 11.142
+          },
+          {
+            "name": "o.<computed>",
+            "file": "",
+            "line": 1,
+            "selfMs": 9.55
+          },
+          {
+            "name": "drawMapLabel",
+            "file": "render.js",
+            "line": 5296,
+            "selfMs": 5.407
+          },
+          {
+            "name": "Renderer.labelSprite",
+            "file": "render.js",
+            "line": 318,
+            "selfMs": 2.523
+          },
+          {
+            "name": "",
+            "file": "facility.js",
+            "line": 218,
+            "selfMs": 1.288
+          },
+          {
+            "name": "now",
+            "file": "",
+            "line": 0,
+            "selfMs": 1.262
+          },
+          {
+            "name": "R.extraModels",
+            "file": "scenery.js",
+            "line": 253,
+            "selfMs": 1.262
+          }
+        ],
+        "drawMetro": [
+          {
+            "name": "stroke",
+            "file": "",
+            "line": 0,
+            "selfMs": 90.112
+          },
+          {
+            "name": "drawImage",
+            "file": "",
+            "line": 0,
+            "selfMs": 6.251
+          },
+          {
+            "name": "Renderer.updateStationPx",
+            "file": "render.js",
+            "line": 3253,
+            "selfMs": 5.019
+          },
+          {
+            "name": "o.<computed>",
+            "file": "",
+            "line": 1,
+            "selfMs": 4.966
+          },
+          {
+            "name": "Renderer.drawMetro",
+            "file": "render.js",
+            "line": 3417,
+            "selfMs": 4.878
+          },
+          {
+            "name": "Renderer.segScreen",
+            "file": "render.js",
+            "line": 3121,
+            "selfMs": 2.529
+          },
+          {
+            "name": "Renderer.blitMetroLayer",
+            "file": "render.js",
+            "line": 3390,
+            "selfMs": 1.259
+          },
+          {
+            "name": "now",
+            "file": "",
+            "line": 0,
+            "selfMs": 1.258
+          },
+          {
+            "name": "Renderer.lineWidthPx",
+            "file": "render.js",
+            "line": 3117,
+            "selfMs": 1.255
+          }
+        ]
+      },
+      "allVisible": true
+    },
+    {
+      "kind": "running-1x",
+      "before": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1300.4160000001923
+        },
+        "speed": 1,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.97627982447655,
+          "cy": 62.585994103734265,
+          "zoom": 24.80359797387836,
+          "view": 0
+        },
+        "renderMs": 0.7999999970197678,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "segments": 150,
+        "detailTier": 0,
+        "labelItems": 77,
+        "metroLayerAt": 342112.200000003,
+        "stations": 121
+      },
+      "after": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 15,
+          "minute": 20.073600000821124
+        },
+        "speed": 1,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.97627982447655,
+          "cy": 62.585994103734265,
+          "zoom": 24.80359797387836,
+          "view": 0
+        },
+        "renderMs": 0.4000000059604645,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "segments": 150,
+        "detailTier": 0,
+        "labelItems": 77,
+        "metroLayerAt": 342112.200000003,
+        "stations": 121
+      },
+      "intervals": {
+        "n": 713,
+        "mean": 8.333380084151408,
+        "p95": 9.199999999953434,
+        "max": 9.400000000023283,
+        "sum": 5941.699999999953
+      },
+      "methods": {
+        "game.update": {
+          "n": 714,
+          "mean": 0.01652661066095368,
+          "p95": 0.10000000894069672,
+          "max": 1.7000000029802322,
+          "sum": 11.800000011920929
+        },
+        "model.step": {
+          "n": 714,
+          "mean": 0.00280112055252914,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 2.000000074505806
+        },
+        "agents.update": {
+          "n": 714,
+          "mean": 0.30812324900754023,
+          "p95": 0.5,
+          "max": 0.9000000059604645,
+          "sum": 219.99999979138374
+        },
+        "renderer.render": {
+          "n": 714,
+          "mean": 0.7808123252221516,
+          "p95": 1.1000000089406967,
+          "max": 2,
+          "sum": 557.5000002086163
+        },
+        "renderer.drawMetro": {
+          "n": 714,
+          "mean": 0.1471988791052033,
+          "p95": 0.29999999701976776,
+          "max": 0.4000000059604645,
+          "sum": 105.09999968111515
+        },
+        "renderer.lineWidthPx": {
+          "n": 1428,
+          "mean": 7.002800703048706e-05,
+          "p95": 0,
+          "max": 0.09999999403953552,
+          "sum": 0.09999999403953552
+        },
+        "renderer.stationInfo": {
+          "n": 714,
+          "mean": 0.0009803921192967926,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 0.6999999731779099
+        },
+        "renderer.updateStationPx": {
+          "n": 714,
+          "mean": 0.007282913169440101,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 5.200000002980232
+        },
+        "renderer.blitMetroLayer": {
+          "n": 714,
+          "mean": 0.005882353007960387,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 4.200000047683716
+        },
+        "renderer.segScreen": {
+          "n": 714,
+          "mean": 0.002801120489919219,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 2.0000000298023224
+        },
+        "renderer.strokeArr": {
+          "n": 714,
+          "mean": 0.12142857084838617,
+          "p95": 0.20000000298023224,
+          "max": 0.30000001192092896,
+          "sum": 86.69999958574772
+        },
+        "renderer.drawWalkTransferHints": {
+          "n": 714,
+          "mean": 0.0005602241188538174,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 0.40000002086162567
+        },
+        "renderer.drawLabels": {
+          "n": 714,
+          "mean": 0.05000000002504397,
+          "p95": 0.10000000894069672,
+          "max": 0.20000000298023224,
+          "sum": 35.70000001788139
+        },
+        "ui.tick": {
+          "n": 714,
+          "mean": 0.0780112046529265,
+          "p95": 0.20000000298023224,
+          "max": 1.5999999940395355,
+          "sum": 55.70000012218952
+        }
+      },
+      "cache": {
+        "textWidthMiss": 0,
+        "labelSpriteMiss": 0,
+        "metroLayerRebuild": 0
+      },
+      "selfCpuByCaller": {
+        "all": [
+          {
+            "name": "(idle)",
+            "file": "",
+            "line": 0,
+            "selfMs": 5046.558
+          },
+          {
+            "name": "(program)",
+            "file": "",
+            "line": 0,
+            "selfMs": 279.004
+          },
+          {
+            "name": "stroke",
+            "file": "",
+            "line": 0,
+            "selfMs": 87.02
+          },
+          {
+            "name": "U.posAt",
+            "file": "util.js",
+            "line": 116,
+            "selfMs": 77.863
+          },
+          {
+            "name": "Agents.updateCars",
+            "file": "agents.js",
+            "line": 507,
+            "selfMs": 64.89
+          },
+          {
+            "name": "Agents.drawTrains",
+            "file": "agents.js",
+            "line": 308,
+            "selfMs": 41.976
+          },
+          {
+            "name": "Q.tick",
+            "file": "quick.js",
+            "line": 126,
+            "selfMs": 37.52
+          },
+          {
+            "name": "drawImage",
+            "file": "",
+            "line": 0,
+            "selfMs": 37.075
+          },
+          {
+            "name": "Agents.drawList",
+            "file": "agents.js",
+            "line": 1050,
+            "selfMs": 33.268
+          },
+          {
+            "name": "Agents.update",
+            "file": "agents.js",
+            "line": 67,
+            "selfMs": 30.934
+          },
+          {
+            "name": "Renderer.render",
+            "file": "render.js",
+            "line": 2830,
+            "selfMs": 24.678
+          },
+          {
+            "name": "Renderer.P",
+            "file": "render.js",
+            "line": 665,
+            "selfMs": 23.047
+          },
+          {
+            "name": "Agents.drawAll",
+            "file": "agents.js",
+            "line": 1040,
+            "selfMs": 21.896
+          },
+          {
+            "name": "fill",
+            "file": "",
+            "line": 0,
+            "selfMs": 20.094
+          },
+          {
+            "name": "Agents.updateWalkers",
+            "file": "agents.js",
+            "line": 939,
+            "selfMs": 16.011
+          },
+          {
+            "name": "Renderer.drawLabels",
+            "file": "render.js",
+            "line": 5207,
+            "selfMs": 15.193
+          }
+        ],
+        "layoutLabels": [],
+        "drawMetro": [
+          {
+            "name": "stroke",
+            "file": "",
+            "line": 0,
+            "selfMs": 74.863
+          },
+          {
+            "name": "Renderer.updateStationPx",
+            "file": "render.js",
+            "line": 3253,
+            "selfMs": 4.806
+          },
+          {
+            "name": "Renderer.drawMetro",
+            "file": "render.js",
+            "line": 3417,
+            "selfMs": 2.532
+          },
+          {
+            "name": "o.<computed>",
+            "file": "",
+            "line": 1,
+            "selfMs": 2.51
+          }
+        ]
+      },
+      "allVisible": true
+    }
+  ],
+  "sourceHashes": {
+    "js/render.js": "ec666e4829ddb2bdde920621704b5b33b240a29cd55e7e8860cd7784db590ec1",
+    "js/sim.js": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+    "js/agents.js": "54608715717cb74c13e70712e109dd3cfe1abe2ac1089f8b658474f49f032060"
+  },
+  "limitations": [
+    "Short warm scene/zoom24.8 only;150segments triggers2D metro layer cache",
+    "Inclusive nested method times; tiny function timings limited by resolution and instrumentation overhead",
+    "Profiler started before rAF collector; previous measurement-start long frame artifact absent",
+    "CPU line position ticks are approximate self attribution, not exact per-statement timing",
+    "No cold cache, large pan exceeding margin, zoom invalidation, edits or network rebuild tested"
+  ]
+}

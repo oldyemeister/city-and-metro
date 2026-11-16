@@ -1,0 +1,100 @@
+{
+  "funnel": {
+    "totalWays": 29947,
+    "candidates": 3415,
+    "basicEligible": 1825,
+    "geometryCached": 1824,
+    "longEnough": 151,
+    "onScreen": 102,
+    "uniqueOnScreenNames": 34
+  },
+  "layouts": 144,
+  "nonmoving": 143,
+  "meanCandidates": 3736.840277777778,
+  "candidateVisits": 538105,
+  "meanRoadLabels": 36.361111111111114,
+  "minRoadLabels": 31,
+  "maxRoadLabels": 39,
+  "queryTotalMs": 20.500000059604645,
+  "layoutTotalMs": 78.6999998986721,
+  "layoutMeanMs": 0.5465277770741118,
+  "layoutPerRenderMs": 0.10930555541482237,
+  "cache": {
+    "textWidthMiss": 0,
+    "labelSpriteMiss": 0,
+    "metroLayerRebuild": 0
+  },
+  "allVisible": true,
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 15,
+      "minute": 442.2024000002076
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 85.6073459293788,
+      "cy": 62.70080721767487,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 2.5999999940395355,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 73,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 15,
+      "minute": 442.2024000002076
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 86.02470185983042,
+      "cy": 62.77677512143357,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 0.9000000059604645,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 73,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  }
+}

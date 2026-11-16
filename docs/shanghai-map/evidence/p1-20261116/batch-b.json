@@ -1,0 +1,61 @@
+{
+  "loadMs": 30354.89999999106,
+  "firstTrafficMs": 31140.70000000298,
+  "cachedSolveMs": [
+    2.4000000059604645
+  ],
+  "stableTrafficRefreshMs": [
+    27757.19999998808
+  ],
+  "frameCpuMs": {
+    "n": 4,
+    "mean": 1853.5,
+    "p50": 1393.5999999940395,
+    "p95": 4876.20000000298
+  },
+  "frameIntervalMs": {
+    "n": 3,
+    "mean": 2768.8999999960265,
+    "p50": 1409.8999999910593,
+    "p95": 5516.29999999702
+  },
+  "jumpYearMs": null,
+  "jumpStatus": "not run: insufficient remaining 120s budget",
+  "start": null,
+  "end": {
+    "y": 2000,
+    "m": 7,
+    "d": 14,
+    "minute": 951.2328000001754
+  },
+  "initial": {
+    "year": 2000,
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 951.2328000001754
+    },
+    "stations": 121,
+    "facilities": 109
+  },
+  "camera": {
+    "cx": 76,
+    "cy": 76,
+    "zoom": 10,
+    "view": 0
+  },
+  "speed": 1,
+  "viewport": [
+    1440,
+    900
+  ],
+  "coldTrafficCacheRemoved": true,
+  "dataSha256": "8bbc5bcf774a7e681ff704c9a5c47bbfd7fb42623c5863681542025f86675c83",
+  "saveSha256": "e7f36e23da7e6b2201fbed4f4d77f1488be8db249f79450f973aab16095a7f38",
+  "label": "batch-b",
+  "save": "城市与地铁_经营挑战 · 上海 1990_2000年7月.cmsave.json",
+  "browser": "/Users/jacky/Applications/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "gpuDisabled": true,
+  "budgetSeconds": 120
+}

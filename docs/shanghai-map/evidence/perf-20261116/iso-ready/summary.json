@@ -1,0 +1,943 @@
+{
+  "initial": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1160.222400000174
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 84.65846139601913,
+      "cy": 62.57174722199094,
+      "zoom": 24.80359797387836,
+      "view": 1
+    },
+    "renderMs": 3.800000011920929,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "afterWarmup": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1160.222400000174
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 84.65846139601913,
+      "cy": 62.57174722199094,
+      "zoom": 24.80359797387836,
+      "view": 1
+    },
+    "renderMs": 4,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "final": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1280.0184000001882
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 84.72562905106165,
+      "cy": 62.54040278030561,
+      "zoom": 24.80359797387836,
+      "view": 1
+    },
+    "renderMs": 3.2000000029802322,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "warmupConfirmed": true,
+  "cases": [
+    {
+      "kind": "paused-idle",
+      "intervals": {
+        "n": 481,
+        "mean": 8.472972972972974,
+        "p95": 9.29999999993015,
+        "max": 74.90000000002328,
+        "sum": 4075.5,
+        "over33ms": 1,
+        "over50ms": 1
+      },
+      "methods": {
+        "game.update": {
+          "n": 482,
+          "mean": 0.01514522793134713,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 7.299999862909317
+        },
+        "model.step": {
+          "n": 482,
+          "mean": 0.0037344397660112973,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 1.7999999672174454
+        },
+        "agents.update": {
+          "n": 482,
+          "mean": 0.18298755193523353,
+          "p95": 0.30000001192092896,
+          "max": 1,
+          "sum": 88.20000003278255
+        },
+        "ui.tick": {
+          "n": 482,
+          "mean": 0.08651452341515,
+          "p95": 0.20000000298023224,
+          "max": 0.9000000059604645,
+          "sum": 41.700000286102295
+        },
+        "renderer.render": {
+          "n": 80,
+          "mean": 4.161249999888241,
+          "p95": 4.699999988079071,
+          "max": 5.399999991059303,
+          "sum": 332.8999999910593
+        },
+        "renderer.drawFacilitySprite": {
+          "n": 3360,
+          "mean": 0.0010119047725484485,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 3.400000035762787
+        },
+        "renderer.drawMetro": {
+          "n": 80,
+          "mean": 1.209999999590218,
+          "p95": 1.3999999910593033,
+          "max": 1.5,
+          "sum": 96.79999996721745
+        },
+        "renderer.drawLabels": {
+          "n": 80,
+          "mean": 0.20249999910593033,
+          "p95": 0.30000001192092896,
+          "max": 0.30000001192092896,
+          "sum": 16.199999928474426
+        }
+      },
+      "topSelfCpu": [
+        {
+          "name": "(idle)",
+          "file": "",
+          "line": 0,
+          "ms": 3505.963,
+          "percent": 85.75091420097574
+        },
+        {
+          "name": "(program)",
+          "file": "",
+          "line": 0,
+          "ms": 150.876,
+          "percent": 3.690214337968318
+        },
+        {
+          "name": "drawImage",
+          "file": "",
+          "line": 0,
+          "ms": 54.912,
+          "percent": 1.343070135253561
+        },
+        {
+          "name": "Agents.updateCars",
+          "file": "agents.js",
+          "line": 507,
+          "ms": 31.104,
+          "percent": 0.760760006682087
+        },
+        {
+          "name": "Agents.update",
+          "file": "agents.js",
+          "line": 67,
+          "ms": 21.686,
+          "percent": 0.5304089990003774
+        },
+        {
+          "name": "fill",
+          "file": "",
+          "line": 0,
+          "ms": 20.03,
+          "percent": 0.48990557271869223
+        },
+        {
+          "name": "Renderer.render",
+          "file": "render.js",
+          "line": 2830,
+          "ms": 18.924,
+          "percent": 0.4628543713494025
+        },
+        {
+          "name": "Agents.drawList",
+          "file": "agents.js",
+          "line": 1050,
+          "ms": 16.275,
+          "percent": 0.39806356445315605
+        },
+        {
+          "name": "U.posAt",
+          "file": "util.js",
+          "line": 116,
+          "ms": 16.206,
+          "percent": 0.3963759216914191
+        },
+        {
+          "name": "lineTo",
+          "file": "",
+          "line": 0,
+          "ms": 15.113,
+          "percent": 0.36964268200187694
+        },
+        {
+          "name": "fillXY",
+          "file": "render.js",
+          "line": 4772,
+          "ms": 14.909,
+          "percent": 0.36465312948891576
+        },
+        {
+          "name": "Agents.updateWalkers",
+          "file": "agents.js",
+          "line": 939,
+          "ms": 11.351,
+          "percent": 0.27762946360109214
+        },
+        {
+          "name": "stroke",
+          "file": "",
+          "line": 0,
+          "ms": 11.293,
+          "percent": 0.27621086533760314
+        },
+        {
+          "name": "Agents.drawTrains",
+          "file": "agents.js",
+          "line": 308,
+          "ms": 11.277,
+          "percent": 0.2758195278856062
+        },
+        {
+          "name": "Q.tick",
+          "file": "quick.js",
+          "line": 126,
+          "ms": 10.11,
+          "percent": 0.24727635248057805
+        },
+        {
+          "name": "(garbage collector)",
+          "file": "",
+          "line": 0,
+          "ms": 10.094,
+          "percent": 0.2468850150285811
+        },
+        {
+          "name": "Renderer.prefetch",
+          "file": "render.js",
+          "line": 428,
+          "ms": 8.825,
+          "percent": 0.21584706336707232
+        },
+        {
+          "name": "strokeOffset",
+          "file": "render.js",
+          "line": 3541,
+          "ms": 8.78,
+          "percent": 0.2147464267833309
+        }
+      ],
+      "allVisible": true,
+      "before": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1160.222400000174
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.65846139601913,
+          "cy": 62.57174722199094,
+          "zoom": 24.80359797387836,
+          "view": 1
+        },
+        "renderMs": 4.0999999940395355,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "stations": 121
+      },
+      "after": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1160.222400000174
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.65846139601913,
+          "cy": 62.57174722199094,
+          "zoom": 24.80359797387836,
+          "view": 1
+        },
+        "renderMs": 4.0999999940395355,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "stations": 121
+      },
+      "intervalsExcludingFirst": {
+        "n": 480,
+        "mean": 8.334583333333285,
+        "p95": 9.29999999993015,
+        "max": 9.400000000023283
+      },
+      "longFrameIndices": [
+        0
+      ]
+    },
+    {
+      "kind": "paused-drag",
+      "intervals": {
+        "n": 451,
+        "mean": 9.107538802660754,
+        "p95": 16.5,
+        "max": 75.09999999997672,
+        "sum": 4107.5,
+        "over33ms": 1,
+        "over50ms": 1
+      },
+      "methods": {
+        "game.update": {
+          "n": 452,
+          "mean": 0.01261061931078413,
+          "p95": 0.09999999403953552,
+          "max": 0.10000000894069672,
+          "sum": 5.699999928474426
+        },
+        "model.step": {
+          "n": 452,
+          "mean": 0.004646017652961005,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 2.0999999791383743
+        },
+        "agents.update": {
+          "n": 452,
+          "mean": 0.2221238938184966,
+          "p95": 0.4000000059604645,
+          "max": 1.5,
+          "sum": 100.40000000596046
+        },
+        "ui.tick": {
+          "n": 76,
+          "mean": 0.20394736881318845,
+          "p95": 0.7999999970197678,
+          "max": 0.9000000059604645,
+          "sum": 15.500000029802322
+        },
+        "renderer.render": {
+          "n": 451,
+          "mean": 4.295565409829505,
+          "p95": 5.9000000059604645,
+          "max": 11.600000008940697,
+          "sum": 1937.299999833107
+        },
+        "renderer.drawFacilitySprite": {
+          "n": 20061,
+          "mean": 0.002636957264250781,
+          "p95": 0,
+          "max": 0.4000000059604645,
+          "sum": 52.89999967813492
+        },
+        "renderer.drawMetro": {
+          "n": 451,
+          "mean": 1.235920177495929,
+          "p95": 1.5999999940395355,
+          "max": 2.0999999940395355,
+          "sum": 557.400000050664
+        },
+        "renderer.drawLabels": {
+          "n": 451,
+          "mean": 0.5070953436542773,
+          "p95": 1.7999999970197678,
+          "max": 3,
+          "sum": 228.69999998807907
+        },
+        "renderer.layoutLabels": {
+          "n": 97,
+          "mean": 1.3783505153410214,
+          "p95": 1.7000000029802322,
+          "max": 2.2000000029802322,
+          "sum": 133.69999998807907
+        },
+        "renderer.isoLandmark": {
+          "n": 2,
+          "mean": 0.20000000298023224,
+          "p95": 0.30000001192092896,
+          "max": 0.30000001192092896,
+          "sum": 0.4000000059604645
+        }
+      },
+      "topSelfCpu": [
+        {
+          "name": "(idle)",
+          "file": "",
+          "line": 0,
+          "ms": 1717.257,
+          "percent": 41.656072277144865
+        },
+        {
+          "name": "(program)",
+          "file": "",
+          "line": 0,
+          "ms": 330.102,
+          "percent": 8.007393634633647
+        },
+        {
+          "name": "drawImage",
+          "file": "",
+          "line": 0,
+          "ms": 264.39,
+          "percent": 6.413395868733876
+        },
+        {
+          "name": "fill",
+          "file": "",
+          "line": 0,
+          "ms": 138.008,
+          "percent": 3.347705802232402
+        },
+        {
+          "name": "stroke",
+          "file": "",
+          "line": 0,
+          "ms": 121.308,
+          "percent": 2.942608366596199
+        },
+        {
+          "name": "U.posAt",
+          "file": "util.js",
+          "line": 116,
+          "ms": 109.265,
+          "percent": 2.6504773236401036
+        },
+        {
+          "name": "Renderer.render",
+          "file": "render.js",
+          "line": 2830,
+          "ms": 106.696,
+          "percent": 2.5881602390802594
+        },
+        {
+          "name": "Agents.drawList",
+          "file": "agents.js",
+          "line": 1050,
+          "ms": 106.251,
+          "percent": 2.5773657265737855
+        },
+        {
+          "name": "Renderer.layoutLabels",
+          "file": "render.js",
+          "line": 5245,
+          "ms": 95.666,
+          "percent": 2.320601872908563
+        },
+        {
+          "name": "fillXY",
+          "file": "render.js",
+          "line": 4772,
+          "ms": 72.338,
+          "percent": 1.7547268442545905
+        },
+        {
+          "name": "lineTo",
+          "file": "",
+          "line": 0,
+          "ms": 69.047,
+          "percent": 1.6748959663696357
+        },
+        {
+          "name": "strokeArrs",
+          "file": "render.js",
+          "line": 3530,
+          "ms": 63.988,
+          "percent": 1.5521781264364887
+        },
+        {
+          "name": "Renderer.box3",
+          "file": "render.js",
+          "line": 4773,
+          "ms": 61.318,
+          "percent": 1.4874110513976468
+        },
+        {
+          "name": "Renderer.prefetch",
+          "file": "render.js",
+          "line": 428,
+          "ms": 43.951,
+          "percent": 1.0661339756674708
+        },
+        {
+          "name": "strokeOffset",
+          "file": "render.js",
+          "line": 3541,
+          "ms": 40.688,
+          "percent": 0.9869823030638223
+        },
+        {
+          "name": "(garbage collector)",
+          "file": "",
+          "line": 0,
+          "ms": 39.256,
+          "percent": 0.9522458043913048
+        },
+        {
+          "name": "Renderer.paintMetro",
+          "file": "render.js",
+          "line": 3267,
+          "ms": 37.921,
+          "percent": 0.9198622668718838
+        },
+        {
+          "name": "Agents.updateCars",
+          "file": "agents.js",
+          "line": 507,
+          "ms": 36.541,
+          "percent": 0.8863871494360777
+        }
+      ],
+      "allVisible": true,
+      "before": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1160.222400000174
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.65846139601913,
+          "cy": 62.57174722199094,
+          "zoom": 24.80359797387836,
+          "view": 1
+        },
+        "renderMs": 4.0999999940395355,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "stations": 121
+      },
+      "after": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1160.222400000174
+        },
+        "speed": 0,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.72562905106165,
+          "cy": 62.54040278030561,
+          "zoom": 24.80359797387836,
+          "view": 1
+        },
+        "renderMs": 3.5,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "stations": 121
+      },
+      "intervalsExcludingFirst": {
+        "n": 450,
+        "mean": 8.96088888888894,
+        "p95": 16.5,
+        "max": 25.099999999976717
+      },
+      "longFrameIndices": [
+        0
+      ]
+    },
+    {
+      "kind": "running-1x",
+      "intervals": {
+        "n": 480,
+        "mean": 8.506875000000097,
+        "p95": 9.199999999953434,
+        "max": 91.59999999997672,
+        "sum": 4083.3000000000466,
+        "over33ms": 1,
+        "over50ms": 1
+      },
+      "methods": {
+        "game.update": {
+          "n": 481,
+          "mean": 0.013513513482533969,
+          "p95": 0.10000000894069672,
+          "max": 0.10000000894069672,
+          "sum": 6.499999985098839
+        },
+        "model.step": {
+          "n": 481,
+          "mean": 0.0033264033759705987,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 1.600000023841858
+        },
+        "agents.update": {
+          "n": 481,
+          "mean": 0.281912681497556,
+          "p95": 0.5999999940395355,
+          "max": 1.4000000059604645,
+          "sum": 135.59999980032444
+        },
+        "renderer.render": {
+          "n": 481,
+          "mean": 3.3199584198468934,
+          "p95": 3.7999999970197678,
+          "max": 5.5999999940395355,
+          "sum": 1596.8999999463558
+        },
+        "renderer.drawFacilitySprite": {
+          "n": 20202,
+          "mean": 0.0010840510806580863,
+          "p95": 0,
+          "max": 0.10000000894069672,
+          "sum": 21.89999993145466
+        },
+        "renderer.drawMetro": {
+          "n": 481,
+          "mean": 1.1790020789896871,
+          "p95": 1.300000011920929,
+          "max": 2.2999999970197678,
+          "sum": 567.0999999940395
+        },
+        "renderer.drawLabels": {
+          "n": 481,
+          "mean": 0.19812889781290677,
+          "p95": 0.29999999701976776,
+          "max": 0.3999999910593033,
+          "sum": 95.29999984800816
+        },
+        "ui.tick": {
+          "n": 481,
+          "mean": 0.09792099831134018,
+          "p95": 0.20000000298023224,
+          "max": 1,
+          "sum": 47.10000018775463
+        }
+      },
+      "topSelfCpu": [
+        {
+          "name": "(idle)",
+          "file": "",
+          "line": 0,
+          "ms": 2038.652,
+          "percent": 49.73952437091573
+        },
+        {
+          "name": "(program)",
+          "file": "",
+          "line": 0,
+          "ms": 276.391,
+          "percent": 6.743454439699257
+        },
+        {
+          "name": "drawImage",
+          "file": "",
+          "line": 0,
+          "ms": 253.345,
+          "percent": 6.181172559980638
+        },
+        {
+          "name": "Renderer.render",
+          "file": "render.js",
+          "line": 2830,
+          "ms": 97.112,
+          "percent": 2.3693620542929192
+        },
+        {
+          "name": "fillXY",
+          "file": "render.js",
+          "line": 4772,
+          "ms": 86.563,
+          "percent": 2.111985001912822
+        },
+        {
+          "name": "stroke",
+          "file": "",
+          "line": 0,
+          "ms": 83.782,
+          "percent": 2.0441334915640637
+        },
+        {
+          "name": "fill",
+          "file": "",
+          "line": 0,
+          "ms": 78.576,
+          "percent": 1.917116244934925
+        },
+        {
+          "name": "Renderer.box3",
+          "file": "render.js",
+          "line": 4773,
+          "ms": 67.463,
+          "percent": 1.6459785841993084
+        },
+        {
+          "name": "lineTo",
+          "file": "",
+          "line": 0,
+          "ms": 61.581,
+          "percent": 1.5024681261369581
+        },
+        {
+          "name": "U.posAt",
+          "file": "util.js",
+          "line": 116,
+          "ms": 56.434,
+          "percent": 1.3768903757719604
+        },
+        {
+          "name": "Renderer.drawStationModels",
+          "file": "render.js",
+          "line": 4875,
+          "ms": 53.572,
+          "percent": 1.3070626078402285
+        },
+        {
+          "name": "Agents.updateCars",
+          "file": "agents.js",
+          "line": 507,
+          "ms": 52.511,
+          "percent": 1.2811760733274518
+        },
+        {
+          "name": "Renderer.paintMetro",
+          "file": "render.js",
+          "line": 3267,
+          "ms": 48.583,
+          "percent": 1.1853397796741176
+        },
+        {
+          "name": "Agents.drawTrains",
+          "file": "agents.js",
+          "line": 308,
+          "ms": 47.224,
+          "percent": 1.1521825691153393
+        },
+        {
+          "name": "Agents.drawList",
+          "file": "agents.js",
+          "line": 1050,
+          "ms": 44.427,
+          "percent": 1.0839406868983392
+        },
+        {
+          "name": "(garbage collector)",
+          "file": "",
+          "line": 0,
+          "ms": 42.097,
+          "percent": 1.0270927835856436
+        },
+        {
+          "name": "Renderer.drawRaisedBase",
+          "file": "render.js",
+          "line": 3674,
+          "ms": 40.349,
+          "percent": 0.9844446569802394
+        },
+        {
+          "name": "strokeArrs",
+          "file": "render.js",
+          "line": 3530,
+          "ms": 40.227,
+          "percent": 0.9814680714848966
+        }
+      ],
+      "allVisible": true,
+      "before": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1181.0184000001775
+        },
+        "speed": 1,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.72562905106165,
+          "cy": 62.54040278030561,
+          "zoom": 24.80359797387836,
+          "view": 1
+        },
+        "renderMs": 3.4000000059604645,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "stations": 121
+      },
+      "after": {
+        "map": "sh",
+        "clock": {
+          "y": 2000,
+          "m": 7,
+          "d": 14,
+          "minute": 1279.8048000001877
+        },
+        "speed": 1,
+        "visibility": "visible",
+        "focus": true,
+        "trafficReady": true,
+        "review": false,
+        "pending": false,
+        "settled": true,
+        "sharpReady": true,
+        "viewport": [
+          1200,
+          762,
+          2
+        ],
+        "camera": {
+          "cx": 84.72562905106165,
+          "cy": 62.54040278030561,
+          "zoom": 24.80359797387836,
+          "view": 1
+        },
+        "renderMs": 2.8999999910593033,
+        "queueMs": 0,
+        "pendingVisible": 0,
+        "stations": 121
+      },
+      "intervalsExcludingFirst": {
+        "n": 479,
+        "mean": 8.333402922755887,
+        "p95": 9.199999999953434,
+        "max": 9.400000000023283
+      },
+      "longFrameIndices": [
+        0
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "js/render.js": "ec666e4829ddb2bdde920621704b5b33b240a29cd55e7e8860cd7784db590ec1",
+    "js/sim.js": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+    "js/agents.js": "54608715717cb74c13e70712e109dd3cfe1abe2ac1089f8b658474f49f032060"
+  },
+  "limitations": [
+    "Short warm settled samples at one camera/date/121-station network, not cold loading/monthly refresh",
+    "Inclusive method wall times must not be summed with nested methods; tiny per-call values approach timer resolution",
+    "Main-thread profiler does not measure Worker CPU or GPU/compositor timings",
+    "All >33ms intervals occurred at first recorded interval immediately following Profiler.start; likely measurement startup interference, not proven natural game stalls",
+    "No source optimization changes; window left visible, focused, paused, sharpReady true"
+  ]
+}

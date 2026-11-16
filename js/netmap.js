@@ -628,7 +628,7 @@
   // 以简洁图的直线走廊分配行道，包含不同区间之间的局部重合，而非只比较整段真实几何。
   function parallelRoutes(tracks, net, base) {
     const channels = new Map(), bundles = [], ends = new Map(), stationLines = new Map(), stationAnchors = new Map();
-    const EPS = 1e-6, GAP = 12.5;
+    const EPS = 1e-6, GAP = 12.5, INDEPENDENT_GAP = 19.5;
     const addEnd = function (sid, track, start) {
       let lines = ends.get(sid); if (!lines) { lines = new Map(); ends.set(sid, lines); }
       let list = lines.get(track.seg.line); if (!list) { list = []; lines.set(track.seg.line, list); }
@@ -644,7 +644,7 @@
         const nx = -uy, ny = ux, at = nx * a[0] + ny * a[1];
         const key = Math.round(ux * 1e6) + ':' + Math.round(uy * 1e6) + ':' + Math.round(at * 1e5);
         const t0 = ux * a[0] + uy * a[1], t1 = ux * b[0] + uy * b[1];
-        const leg = { a: a, b: b, dx: dx, dy: dy, nx: nx, ny: ny, lo: Math.min(t0, t1), hi: Math.max(t0, t1), line: track.seg.line, offset: 0 };
+        const leg = { a: a, b: b, dx: dx, dy: dy, nx: nx, ny: ny, lo: Math.min(t0, t1), hi: Math.max(t0, t1), line: track.seg.line, trackKey: M.trackKey(track.seg), offset: 0 };
         if (!channels.has(key)) channels.set(key, []); channels.get(key).push(leg); legs.push(leg);
       }
       track.legs = legs;
@@ -684,8 +684,16 @@
       for (let i = 0; i < queue.length; i++) for (const link of queue[i].links) if (!link.bundle.sign) { link.bundle.sign = queue[i].sign * link.relation; queue.push(link.bundle); }
     }
     for (const bundle of bundles) {
-      const offsets = new Map(bundle.lines.map(function (lid, i) { return [lid, (i - (bundle.lines.length - 1) / 2) * GAP * bundle.sign]; }));
-      for (const leg of bundle.legs) leg.offset = offsets.get(leg.line);
+      for (const leg of bundle.legs) {
+        const active = bundle.legs.filter(function (p) { return Math.min(p.hi, leg.hi) - Math.max(p.lo, leg.lo) > EPS; });
+        const positions = [0];
+        for (let i = 1; i < bundle.lines.length; i++) {
+          const prev = active.filter(function (p) { return p.line === bundle.lines[i - 1]; });
+          const shared = active.some(function (p) { return p.line === bundle.lines[i] && prev.some(function (q) { return q.trackKey === p.trackKey; }); });
+          positions.push(positions[i - 1] + (shared ? GAP : INDEPENDENT_GAP));
+        }
+        leg.offset = (positions[bundle.lines.indexOf(leg.line)] - positions[positions.length - 1] / 2) * bundle.sign;
+      }
     }
     const intersection = function (p, u, q, v) {
       const det = cross(u[0], u[1], v[0], v[1]); if (Math.abs(det) < EPS) return null;
@@ -716,7 +724,7 @@
         if (list.length === 2) {
           const dirs = list.map(function (e) { const p = e.track.route.raw, a = e.start ? p[0] : p[p.length - 1], b = e.start ? p[1] : p[p.length - 2]; return [b[0] - a[0], b[1] - a[1]]; });
           const join = intersection(points[0], dirs[0], points[1], dirs[1]);
-          if (join && U.dist(join[0], join[1], center[0], center[1]) <= GAP * (lines.size + 1)) anchor = join;
+          if (join && U.dist(join[0], join[1], center[0], center[1]) <= INDEPENDENT_GAP * (lines.size + 1)) anchor = join;
         }
         byLine.set(lid, anchor); anchors.push(anchor);
       }
@@ -742,6 +750,38 @@
     return stationAnchors;
   }
   // 算出站位与每个区段的路线，供窗口与图片导出共用。
+  // 相同控制点的区段共享示意中心线；分岔站的各线站台切线不同，采样点不一定相同。
+  // 建设层仍由 trackKey 区分，不能把不同层误判为共用物理轨道。
+  const displayRouteKey = function (seg) { return M.trackGeometryKey(Object.assign({}, seg, { type: '__display' })); };
+  function geographicLanes(tracks, net) {
+    const groups = new Map(), anchors = new Map();
+    for (const track of tracks) {
+      const key = displayRouteKey(track.seg);
+      if (!groups.has(key)) groups.set(key, []); groups.get(key).push(track);
+    }
+    for (const group of groups.values()) {
+      const lines = M.sortIds(Array.from(new Set(group.map(function (t) { return t.seg.line; }))));
+      const lead = group.find(function (t) { return t.seg.line === lines[0]; });
+      const direction = M.trackDisplayDirection(net, lead.seg);
+      const center = lead.screen.map(function (p) { return p.slice(); });
+      const widths = group.map(function (t) { return t.seg.type === 'elevated' ? 9.5 : 8; });
+      const positions = [0];
+      for (let i = 1; i < lines.length; i++) {
+        const prev = group.filter(function (t) { return t.seg.line === lines[i - 1]; });
+        const shared = group.some(function (t) { return t.seg.line === lines[i] && prev.some(function (p) { return M.trackKey(p.seg) === M.trackKey(t.seg); }); });
+        positions.push(positions[i - 1] + Math.max.apply(null, widths) + (shared ? 1.5 : 7));
+      }
+      for (const track of group) {
+        const offset = (positions[lines.indexOf(track.seg.line)] - positions[positions.length - 1] / 2) * direction * (track.seg.a === lead.seg.a ? 1 : -1);
+        const path = track.seg.a === lead.seg.a ? center : center.slice().reverse();
+        track.screen = M.offsetTrackPath(path, offset);
+        for (const [sid, p] of [[track.seg.a, track.screen[0]], [track.seg.b, track.screen[track.screen.length - 1]]]) {
+          if (!anchors.has(sid)) anchors.set(sid, []); anchors.get(sid).push(p.slice());
+        }
+      }
+    }
+    return anchors;
+  }
   function computeRoutes(g, net, xfers, spacing) {
     const lay = layout(net, xfers), N = lay.st.length;
     if (!N) return { lay: lay, N: 0 };
@@ -758,17 +798,17 @@
       const geom = M.segGeom(net, s, g.city), screen = base.path(geom.pts);
       const track = { seg: s, geom: geom, screen: screen };
       if (!geographic) {
-        const points = geom.pts.map(function (p) { return p[0].toFixed(6) + ',' + p[1].toFixed(6); }), forward = points.join(';'), reverse = points.slice().reverse().join(';'), key = forward < reverse ? forward : reverse, previous = sharedRoutes.get(key);
+        const key = displayRouteKey(s), previous = sharedRoutes.get(key);
         if (previous) {
-          const same = previous.forward === forward, route = previous.route;
+          const same = previous.a === s.a, route = previous.route;
           track.route = Object.assign({}, route, { raw: route.raw.map(function (p) { return p.slice(); }), samples: route.samples.map(function (p) { return p.slice(); }) });
           if (!same) { track.route.raw.reverse(); track.route.samples.reverse(); }
-        } else { track.route = diagramRoute(track, net, base); sharedRoutes.set(key, { forward: forward, route: track.route }); }
+        } else { track.route = diagramRoute(track, net, base); sharedRoutes.set(key, { a: s.a, route: track.route }); }
         track.screen = track.route.samples;
       }
       tracks.push(track);
     }
-    const stationAnchors = !geographic ? parallelRoutes(tracks, net, base) : new Map();
+    const stationAnchors = !geographic ? parallelRoutes(tracks, net, base) : geographicLanes(tracks, net);
     for (const track of tracks) track.screen.forEach(bound);
     for (const anchors of stationAnchors.values()) anchors.forEach(bound);
     const pad = 64, W = x1 - x0 + 2 * pad, H = y1 - y0 + 2 * pad;
@@ -831,7 +871,7 @@
     svg += '<g class="nm-walk">';
     for (const e of lay.xEdges) svg += '<path data-lines="' + Array.from(new Set(linesOf[e.a].concat(linesOf[e.b]))).join(' ') + '" d="M' + px(e.a).toFixed(1) + ' ' + py(e.a).toFixed(1) + 'L' + px(e.b).toFixed(1) + ' ' + py(e.b).toFixed(1) + '"/>';
     svg += '</g>';
-    // 简洁图共用走廊并排，地理图沿用真实中心线及同心色带，不平移实际位置。
+    // 两种线路图均逐线并排，共用轨道紧排，独立轨道留出更宽的间距。
     let casing = '', routes = '';
     if (!geographic) {
       for (const track of tracks) {
@@ -840,17 +880,10 @@
         routes += geoSeg(track, base, net, width);
       }
     } else {
-      const groups = new Map();
       for (const track of tracks) {
-        const pts = track.geom.pts.map(function (p) { return p[0].toFixed(6) + ',' + p[1].toFixed(6); });
-        const forward = pts.join(';'), reverse = pts.slice().reverse().join(';'), key = forward < reverse ? forward : reverse;
-        if (!groups.has(key)) groups.set(key, []); groups.get(key).push(track);
-      }
-      for (const group of groups.values()) {
-        const widths = group.map(function (track, i) { return (track.seg.type === 'elevated' ? 9.5 : 8) + (group.length - 1 - i) * 4; });
-        const entry = group[0], d = routeD(entry);
-        casing += '<path data-lines="' + group.map(function (track) { return track.seg.line; }).join(' ') + '" d="' + d + '" stroke-width="' + (Math.max.apply(null, widths) + 3) + '"/>';
-        group.forEach(function (track, i) { routes += geoSeg(track, base, net, widths[i]); });
+        const width = track.seg.type === 'elevated' ? 9.5 : 8, d = routeD(track);
+        casing += '<path data-lines="' + track.seg.line + '" d="' + d + '" stroke-width="' + (width + 3) + '"/>';
+        routes += geoSeg(track, base, net, width);
       }
     }
     svg += '<g class="nm-casing" fill="none" stroke-linecap="round" stroke-linejoin="round">' + casing + '</g><g class="nm-lines" stroke-linecap="round" stroke-linejoin="round" fill="none">' + routes + '</g>';
@@ -1221,7 +1254,7 @@
       });
       c.fillStyle = P.foot; c.font = (12 * sc) + 'px ' + font; c.textAlign = 'right';
       c.fillText('线型：实线为地下，带白色中线为高架，带白色枕木纹为地面；⇄ 圆环为换乘站，虚线相连为站外步行换乘', cw - M0, ch - 38 * sc);
-      c.fillText(isGeo ? '按游戏地图中的实际站点、轨道与地形等比例绘制；共线区间以同心色带区分，站外虚线只表示换乘联系。' : '线路只走水平、竖直和 45° 方向，站距统一，不代表实际距离；同向线路并排绘制，江河湖海只示意大致位置。', cw - M0, ch - 20 * sc);
+      c.fillText(isGeo ? '按实际站点、轨道与地形等比例绘制；重合线路并排，共轨紧排、独立轨道宽排；站外虚线表示换乘。' : '线路只走水平、竖直和 45° 方向，站距统一；重合线路并排，共轨紧排、独立轨道宽排；江河湖海为示意。', cw - M0, ch - 20 * sc);
       c.textAlign = 'left';
       cv.toBlob(function (blob) {
         if (!blob) { fail('无法生成图片'); return; }

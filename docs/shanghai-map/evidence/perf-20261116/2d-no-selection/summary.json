@@ -1,0 +1,175 @@
+{
+  "originalSelection": {
+    "kind": "seg",
+    "id": "g142"
+  },
+  "restored": true,
+  "cases": [],
+  "case": {
+    "cache": {
+      "textWidthMiss": 0,
+      "labelSpriteMiss": 0,
+      "metroLayerRebuild": 0
+    },
+    "frames": 721,
+    "methods": {
+      "game.update": {
+        "n": 722,
+        "mean": 0.013434902906748066,
+        "perRender": 0.01345353661396963
+      },
+      "model.step": {
+        "n": 722,
+        "mean": 0.004570637032430918,
+        "perRender": 0.004576976334833735
+      },
+      "agents.update": {
+        "n": 722,
+        "mean": 0.0969529084221478,
+        "perRender": 0.09708737847543789
+      },
+      "ui.tick": {
+        "n": 112,
+        "mean": 0.13035714240478619,
+        "perRender": 0.020249653189092998
+      },
+      "renderer.segScreen": {
+        "n": 7540,
+        "mean": 0.0018169761435264619,
+        "perRender": 0.019001387132024303
+      },
+      "renderer.render": {
+        "n": 721,
+        "mean": 0.8549237171092411,
+        "perRender": 0.8549237171092411
+      },
+      "renderer.drawMetro": {
+        "n": 721,
+        "mean": 0.021359223453909282,
+        "perRender": 0.021359223453909282
+      },
+      "renderer.lineWidthPx": {
+        "n": 1442,
+        "mean": 0.0,
+        "perRender": 0.0
+      },
+      "renderer.stationInfo": {
+        "n": 721,
+        "mean": 0.0008321775229397164,
+        "perRender": 0.0008321775229397164
+      },
+      "renderer.updateStationPx": {
+        "n": 721,
+        "mean": 0.007489597809794211,
+        "perRender": 0.007489597809794211
+      },
+      "renderer.blitMetroLayer": {
+        "n": 721,
+        "mean": 0.006796116575123368,
+        "perRender": 0.006796116575123368
+      },
+      "renderer.drawWalkTransferHints": {
+        "n": 721,
+        "mean": 0.0011095700581427587,
+        "perRender": 0.0011095700581427587
+      },
+      "renderer.drawLabels": {
+        "n": 721,
+        "mean": 0.16213592237969873,
+        "perRender": 0.16213592237969873
+      },
+      "renderer.layoutLabels": {
+        "n": 144,
+        "mean": 0.5479166672254602,
+        "perRender": 0.10943134546527915
+      },
+      "renderer.extraModels": {
+        "n": 144,
+        "mean": 0.0013888890130652322,
+        "perRender": 0.0002773925352030422
+      },
+      "renderer.textW": {
+        "n": 11313,
+        "mean": 0.0003535755233529454,
+        "perRender": 0.0055478500633729146
+      },
+      "renderer.labelSprite": {
+        "n": 11064,
+        "mean": 0.00027114967462039046,
+        "perRender": 0.004160887656033287
+      }
+    },
+    "before": {
+      "map": "sh",
+      "clock": {
+        "y": 2000,
+        "m": 7,
+        "d": 15,
+        "minute": 20.073600000821124
+      },
+      "speed": 0,
+      "visibility": "visible",
+      "focus": true,
+      "trafficReady": true,
+      "review": false,
+      "pending": false,
+      "settled": true,
+      "sharpReady": true,
+      "viewport": [
+        1200,
+        762,
+        2
+      ],
+      "camera": {
+        "cx": 84.97627982447655,
+        "cy": 62.585994103734265,
+        "zoom": 24.80359797387836,
+        "view": 0
+      },
+      "renderMs": 1.5,
+      "queueMs": 0,
+      "pendingVisible": 0,
+      "segments": 150,
+      "detailTier": 0,
+      "labelItems": 77,
+      "metroLayerAt": 342112.200000003,
+      "stations": 121
+    },
+    "after": {
+      "map": "sh",
+      "clock": {
+        "y": 2000,
+        "m": 7,
+        "d": 15,
+        "minute": 20.073600000821124
+      },
+      "speed": 0,
+      "visibility": "visible",
+      "focus": true,
+      "trafficReady": true,
+      "review": false,
+      "pending": false,
+      "settled": true,
+      "sharpReady": true,
+      "viewport": [
+        1200,
+        762,
+        2
+      ],
+      "camera": {
+        "cx": 85.27328351973335,
+        "cy": 62.64002575852768,
+        "zoom": 24.80359797387836,
+        "view": 0
+      },
+      "renderMs": 0.9000000059604645,
+      "queueMs": 0,
+      "pendingVisible": 0,
+      "segments": 150,
+      "detailTier": 0,
+      "labelItems": 75,
+      "metroLayerAt": 342112.200000003,
+      "stations": 121
+    }
+  }
+}

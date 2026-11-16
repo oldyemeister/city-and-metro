@@ -1150,7 +1150,7 @@
     const colorLine = T.chain && net.lines[T.lineChoice];
     const lineColor = colorLine ? colorLine.color : T.nextLineColor(true);
     const nMulti = this.multi ? this.multi.stations.size + this.multi.segs.size : 0;
-    const key = [T.tool, T.chain, T.lineChoice, T.buildType, T.stationSize, T.curveMode, T.newLineSpeed, g.draft ? g.draft.ver : 0, g.clock.y, gridOn, snapOn, lineColor, nMulti, T.meas.pts.length].join('|');
+    const key = [T.tool, T.chain, T.lineChoice, T.buildType, T.stationSize, T.curveMode, T.trackMode, T.newLineSpeed, g.draft ? g.draft.ver : 0, g.clock.y, gridOn, snapOn, lineColor, nMulti, T.meas.pts.length].join('|');
     if (key === this._toKey && !el.classList.contains('hidden')) return;
     this._toKey = key;
     const self = this, mc = CFG.metro, y = g.clock.y;
@@ -1200,7 +1200,8 @@
       const speedCtl = grp('速度', colorLine
         ? h('span', { class: 'tag', 'data-tip': '本线最小转弯半径 ' + M.minRadius(colorLine) + ' m；可在线路详情「列车运营」中调整' }, M.lineKmh(colorLine) + ' km/h')
         : segc(T.newLineSpeed || 80, mc.speedGrades.filter(function (x) { return !CM.Fleet || CM.Fleet.speedOpen(g.mapId, y, x.kmh).ok; }).map(function (x) { return [x.kmh, String(x.kmh), x.kmh + ' km/h：最小转弯半径 ' + x.minR + ' m，运营成本 ×' + x.ops.toFixed(2)]; }), function (v) { T.newLineSpeed = v; }));
-      el.append(colorGroup, h('span', { class: 'to-sep' }), typeCtl, sizeCtl('新站'), curveCtl, speedCtl);
+      const trackCtl = grp('轨道', segc(T.trackMode, [['shared', '自动共轨', '连接相同两站时沿用既有轨道，免收轨道建设费'], ['independent', '独立轨道', '共用车站，另建轨道并单独计费，重叠区段并排显示']], function (v) { T.trackMode = v; }));
+      el.append(trackCtl, colorGroup, h('span', { class: 'to-sep' }), typeCtl, sizeCtl('新站'), curveCtl, speedCtl);
       el.append.apply(el, snapCtl());
       if (T.chain) el.appendChild(h('button', { class: 'btn sm ghost', 'data-tip': '结束本次绘线', 'data-key-pre': self.compact() ? null : '右键', 'data-act': 'build.finish', onclick: function () { T.endChain(); } }, ic('check'), '完成'));
     } else if (T.tool === 'station') {

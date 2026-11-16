@@ -1,0 +1,142 @@
+{
+  "map": "sh",
+  "clock": {
+    "y": 2000,
+    "m": 7,
+    "d": 14,
+    "minute": 941.6328000001755
+  },
+  "stations": 121,
+  "states": [
+    {
+      "id": "sh_renji_east",
+      "name": "仁济医院（东院）",
+      "label": "仁济医院（东院）",
+      "active": true,
+      "x": 79.71,
+      "y": 93.41,
+      "open": 1999.75
+    },
+    {
+      "id": "sh_jinjiang",
+      "name": "锦江乐园",
+      "label": "锦江乐园",
+      "active": true,
+      "x": 35.73,
+      "y": 123.27,
+      "open": 1985
+    },
+    {
+      "id": "sh_shnu_xuhui",
+      "name": "上海师范大学（徐汇校区）",
+      "label": "上海师范大学\n（徐汇校区）",
+      "active": true,
+      "x": 39.2,
+      "y": 113.89,
+      "open": 1955
+    },
+    {
+      "id": "sh_usst_jungong",
+      "name": "上海理工大学（军工路校区群）",
+      "label": "上海理工大学\n（军工路校区群）",
+      "active": true,
+      "x": 91.34,
+      "y": 57.59,
+      "open": 1960
+    },
+    {
+      "id": "sh_shu_yanchang",
+      "name": "上海大学（延长校区）",
+      "label": "上海大学\n（延长校区）",
+      "active": true,
+      "x": 54.31,
+      "y": 63.69,
+      "open": 1960
+    },
+    {
+      "id": "sh_cpc_first",
+      "name": "中共一大会址纪念馆",
+      "label": "中共一大会址纪念馆",
+      "active": true,
+      "x": 61.16,
+      "y": 87.55,
+      "open": 1952.6666666666667
+    },
+    {
+      "id": "sh_pediatric_fenglin",
+      "name": "复旦儿科医院（旧址）·枫林门诊",
+      "label": "复旦儿科医院（旧址）·枫林门诊",
+      "active": true,
+      "x": 54.05,
+      "y": 98.85,
+      "open": 1954
+    },
+    {
+      "id": "sh_science",
+      "name": "上海科技馆",
+      "label": "上海科技馆",
+      "active": false,
+      "x": 86.29,
+      "y": 88.19,
+      "open": 2001.9166666666667
+    },
+    {
+      "id": "sh_oriental_sports",
+      "name": "东方体育中心",
+      "label": "东方体育中心",
+      "active": false,
+      "x": 62.75,
+      "y": 117.45,
+      "open": 2011.1666666666667
+    },
+    {
+      "id": "sh_global_harbor",
+      "name": "上海环球港",
+      "label": "上海环球港",
+      "active": false,
+      "x": 37.23,
+      "y": 81.77,
+      "open": 2013.5
+    },
+    {
+      "id": "sh_fudan_jiangwan",
+      "name": "复旦大学（江湾校区）",
+      "label": "复旦大学\n（江湾校区）",
+      "active": false,
+      "x": 73,
+      "y": 38.26,
+      "open": 2005.6666666666667
+    },
+    {
+      "id": "sh_fudan_zhangjiang",
+      "name": "复旦大学（张江校区）",
+      "label": "复旦大学\n（张江校区）",
+      "active": false,
+      "x": 108.07,
+      "y": 101.2,
+      "open": 2005.6666666666667
+    },
+    {
+      "id": "sh_pediatric_minhang",
+      "name": "复旦大学附属儿科医院（闵行院区）",
+      "label": "复旦大学附属儿科医院（闵行院区）",
+      "active": false,
+      "x": 30.48,
+      "y": 123.12,
+      "open": 2008.1666666666667
+    }
+  ],
+  "panelText": true,
+  "paused": true,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dataSha256": "1e2a32fdc145cc6c4316af9d1d382f24c1b9e733c99dbbc08c5aff26dc72186d",
+  "saveSha256": "e7f36e23da7e6b2201fbed4f4d77f1488be8db249f79450f973aab16095a7f38",
+  "label": "visual-final",
+  "save": "城市与地铁_经营挑战 · 上海 1990_2000年7月.cmsave.json",
+  "browser": "/Users/jacky/Applications/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "gpuDisabled": false,
+  "budgetSeconds": 120
+}

@@ -1,0 +1,464 @@
+[
+  {
+    "q": "Shanghai Science and Technology Museum",
+    "url": "https://nominatim.openstreetmap.org/search?q=Shanghai+Science+and+Technology+Museum&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224527528,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 43927496,
+        "lat": "31.2206022",
+        "lon": "121.5367332",
+        "category": "tourism",
+        "type": "museum",
+        "place_rank": 30,
+        "importance": 0.45039779319602985,
+        "addresstype": "tourism",
+        "name": "上海科技馆",
+        "display_name": "上海科技馆, 2000, 世纪大道, 花木街道, 浦东新区, 上海市, 200127, 中国",
+        "boundingbox": [
+          "31.2193879",
+          "31.2217906",
+          "121.5361589",
+          "121.5393823"
+        ]
+      },
+      {
+        "place_id": 224188446,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 3800386170,
+        "lat": "31.2219139",
+        "lon": "121.5386791",
+        "category": "railway",
+        "type": "stop",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "railway",
+        "name": "上海科技馆",
+        "display_name": "上海科技馆, 世纪大道, 花木街道, 浦东新区, 上海市, 200122, 中国",
+        "boundingbox": [
+          "31.2218639",
+          "31.2219639",
+          "121.5386291",
+          "121.5387291"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "Shanghai Normal University",
+    "url": "https://nominatim.openstreetmap.org/search?q=Shanghai+Normal+University&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224996663,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 14243939,
+        "lat": "31.1631658",
+        "lon": "121.4121201",
+        "category": "amenity",
+        "type": "university",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "amenity",
+        "name": "上海师范大学（徐汇校区）",
+        "display_name": "上海师范大学（徐汇校区）, 钦州南路, 康健新村街道, 徐汇区, 上海市, 200233, 中国",
+        "boundingbox": [
+          "31.1600952",
+          "31.1661579",
+          "121.4084675",
+          "121.4193162"
+        ]
+      },
+      {
+        "place_id": 224650481,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 320623984,
+        "lat": "30.8397368",
+        "lon": "121.5128521",
+        "category": "amenity",
+        "type": "university",
+        "place_rank": 30,
+        "importance": 5.614938582432315e-05,
+        "addresstype": "amenity",
+        "name": "上海师范大学 (奉贤校区)",
+        "display_name": "上海师范大学 (奉贤校区), 100, 海思路, 海湾旅游区, 海湾镇, 奉贤区, 上海市, 201418, 中国",
+        "boundingbox": [
+          "30.8333106",
+          "30.8451335",
+          "121.5049942",
+          "121.5196144"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "University of Shanghai for Science and Technology",
+    "url": "https://nominatim.openstreetmap.org/search?q=University+of+Shanghai+for+Science+and+Technology&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224080821,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 2411142,
+        "lat": "31.2950161",
+        "lon": "121.5506739",
+        "category": "amenity",
+        "type": "university",
+        "place_rank": 30,
+        "importance": 0.41252155072916463,
+        "addresstype": "amenity",
+        "name": "上海理工大学",
+        "display_name": "上海理工大学, 春江路, 长白新村街道, 杨浦区, 上海市, 200090, 中国",
+        "boundingbox": [
+          "31.2908796",
+          "31.2989721",
+          "121.5460410",
+          "121.5543486"
+        ]
+      },
+      {
+        "place_id": 224358503,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 2410532,
+        "lat": "31.2906712",
+        "lon": "121.5535545",
+        "category": "amenity",
+        "type": "university",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "amenity",
+        "name": "上海理工大学 (南校区)",
+        "display_name": "上海理工大学 (南校区), 周家嘴路, 白洋淀, 定海路街道, 杨浦区, 上海市, 200090, 中国",
+        "boundingbox": [
+          "31.2881362",
+          "31.2927521",
+          "121.5504272",
+          "121.5548370"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "上海大学延长校区",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E4%B8%8A%E6%B5%B7%E5%A4%A7%E5%AD%A6%E5%BB%B6%E9%95%BF%E6%A0%A1%E5%8C%BA&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224248271,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 14193962,
+        "lat": "31.2775147",
+        "lon": "121.4531131",
+        "category": "amenity",
+        "type": "university",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "amenity",
+        "name": "上海大学（延长校区）",
+        "display_name": "上海大学（延长校区）, 广中路, 大宁路街道, 静安区, 上海市, 200072, 中国",
+        "boundingbox": [
+          "31.2739644",
+          "31.2830128",
+          "121.4504348",
+          "121.4559736"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "Jinjiang Action Park",
+    "url": "https://nominatim.openstreetmap.org/search?q=Jinjiang+Action+Park&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 223043678,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 164037161,
+        "lat": "31.1413026",
+        "lon": "121.4038678",
+        "category": "tourism",
+        "type": "theme_park",
+        "place_rank": 30,
+        "importance": 0.38037835405938786,
+        "addresstype": "tourism",
+        "name": "锦江乐园",
+        "display_name": "锦江乐园, 沪闵路, 梅陇, 梅陇镇, 闵行区, 上海市, 200231, 中国",
+        "boundingbox": [
+          "31.1391998",
+          "31.1430581",
+          "121.4020347",
+          "121.4064464"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "Oriental Sports Center",
+    "url": "https://nominatim.openstreetmap.org/search?q=Oriental+Sports+Center&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224489719,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1350826264,
+        "lat": "31.1544503",
+        "lon": "121.4748820",
+        "category": "railway",
+        "type": "station",
+        "place_rank": 30,
+        "importance": 0.40110878673898587,
+        "addresstype": "railway",
+        "name": "东方体育中心",
+        "display_name": "东方体育中心, 钱家滩路, 晶耀前滩, 前滩, 杨思, 三林镇, 浦东新区, 上海市, 200241, 中国",
+        "boundingbox": [
+          "31.1531613",
+          "31.1560162",
+          "121.4735892",
+          "121.4778260"
+        ]
+      },
+      {
+        "place_id": 225108479,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 5313309165,
+        "lat": "31.1554470",
+        "lon": "121.4760334",
+        "category": "railway",
+        "type": "station",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "railway",
+        "name": "东方体育中心",
+        "display_name": "东方体育中心, 杨思西路, 前滩, 杨思, 三林镇, 浦东新区, 上海市, 200241, 中国",
+        "boundingbox": [
+          "31.1504470",
+          "31.1604470",
+          "121.4710334",
+          "121.4810334"
+        ]
+      },
+      {
+        "place_id": 225380342,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 5306355588,
+        "lat": "31.1553741",
+        "lon": "121.4759062",
+        "category": "railway",
+        "type": "stop",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "railway",
+        "name": "东方体育中心",
+        "display_name": "东方体育中心, 杨思西路, 前滩, 杨思, 三林镇, 浦东新区, 上海市, 200241, 中国",
+        "boundingbox": [
+          "31.1553241",
+          "31.1554241",
+          "121.4758562",
+          "121.4759562"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "复旦大学江湾校区",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E6%B1%9F%E6%B9%BE%E6%A0%A1%E5%8C%BA&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 221822534,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 68998719,
+        "lat": "31.3379391",
+        "lon": "121.5017324",
+        "category": "amenity",
+        "type": "university",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "amenity",
+        "name": "复旦大学（江湾校区）",
+        "display_name": "复旦大学（江湾校区）, 2005, 淞沪路, 新江湾城街道, 杨浦区, 上海市, 200438, 中国",
+        "boundingbox": [
+          "31.3328066",
+          "31.3446020",
+          "121.4954959",
+          "121.5086734"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "复旦大学张江校区",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E5%BC%A0%E6%B1%9F%E6%A0%A1%E5%8C%BA&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224989342,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 333555885,
+        "lat": "31.1912051",
+        "lon": "121.5939533",
+        "category": "amenity",
+        "type": "school",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "amenity",
+        "name": "复旦大学（张江校区）",
+        "display_name": "复旦大学（张江校区）, 825, 张衡路, 张江镇, 浦东新区, 上海市, 201203, 中国",
+        "boundingbox": [
+          "31.1880738",
+          "31.1943697",
+          "121.5906842",
+          "121.5969423"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "复旦大学附属儿科医院",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E5%84%BF%E7%A7%91%E5%8C%BB%E9%99%A2&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224151124,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 242365340,
+        "lat": "31.1416369",
+        "lon": "121.3900960",
+        "category": "amenity",
+        "type": "hospital",
+        "place_rank": 30,
+        "importance": 0.359473463574925,
+        "addresstype": "amenity",
+        "name": "复旦大学附属儿科医院",
+        "display_name": "复旦大学附属儿科医院, 万源路, 古美街道, 梅陇镇, 闵行区, 上海市, 201102, 中国",
+        "boundingbox": [
+          "31.1392537",
+          "31.1430987",
+          "121.3884760",
+          "121.3920422"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "Global Harbor",
+    "url": "https://nominatim.openstreetmap.org/search?q=Global+Harbor&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224254302,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 375224849,
+        "lat": "31.2351161",
+        "lon": "121.4078266",
+        "category": "shop",
+        "type": "mall",
+        "place_rank": 30,
+        "importance": 0.3726646801410257,
+        "addresstype": "shop",
+        "name": "Global Harbor",
+        "display_name": "Global Harbor, 内环高架路, 盘湾里, 长风新村街道, 普陀区, 上海市, 200063, 中国",
+        "boundingbox": [
+          "31.2333955",
+          "31.2367873",
+          "121.4067888",
+          "121.4091040"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "中共一大会址",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E4%B8%AD%E5%85%B1%E4%B8%80%E5%A4%A7%E4%BC%9A%E5%9D%80&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224096490,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 372180467,
+        "lat": "31.2220629",
+        "lon": "121.4706929",
+        "category": "tourism",
+        "type": "museum",
+        "place_rank": 30,
+        "importance": 0.47946854915750603,
+        "addresstype": "tourism",
+        "name": "中共一大会址",
+        "display_name": "中共一大会址, 374, 黄陂南路, 新天地, 淮海中路街道, 上海市, 黄浦区, 上海市, 200020, 中国",
+        "boundingbox": [
+          "31.2218820",
+          "31.2222438",
+          "121.4703871",
+          "121.4709987"
+        ]
+      },
+      {
+        "place_id": 224136412,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 12023157333,
+        "lat": "31.2238451",
+        "lon": "121.4706494",
+        "category": "highway",
+        "type": "bus_stop",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "highway",
+        "name": "中共一大会址",
+        "display_name": "中共一大会址, 黄陂南路, 新天地, 淮海中路街道, 上海市, 黄浦区, 上海市, 200021, 中国",
+        "boundingbox": [
+          "31.2237951",
+          "31.2238951",
+          "121.4705994",
+          "121.4706994"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "q": "仁济医院东院",
+    "url": "https://nominatim.openstreetmap.org/search?q=%E4%BB%81%E6%B5%8E%E5%8C%BB%E9%99%A2%E4%B8%9C%E9%99%A2&format=jsonv2&limit=3",
+    "results": [
+      {
+        "place_id": 224619879,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 164024938,
+        "lat": "31.2088010",
+        "lon": "121.5194427",
+        "category": "amenity",
+        "type": "hospital",
+        "place_rank": 30,
+        "importance": 7.91126878766616e-05,
+        "addresstype": "amenity",
+        "name": "仁济医院东院",
+        "display_name": "仁济医院东院, 急诊路线, 塘桥, 塘桥街道, 浦东新区, 上海市, 200007, 中国",
+        "boundingbox": [
+          "31.2070575",
+          "31.2104436",
+          "121.5152262",
+          "121.5209688"
+        ]
+      }
+    ],
+    "error": ""
+  }
+]

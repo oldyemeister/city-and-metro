@@ -8,6 +8,7 @@
   function Tools(R, ui) {
     this.R = R; this.ui = ui;
     this.tool = 'select';
+    this.trackMode = 'shared';
     this.buildType = 'underground'; this.stationSize = 'M';
     this.lineChoice = 'new';
     this.newLineColor = null; this.newLineSpeed = null;
@@ -542,7 +543,7 @@
     const envS = newSt && !mod && !seg && endC >= 0 && g.city.regions[g.city.region[endC]].scenic ? M.envStationFee(this.buildType, this.stationSize, g.clock.y) : 0;
     const herS = newSt && !mod && !seg ? M.heritageStationFee(g.city, end[0], end[1], this.buildType, this.stationSize, g.clock.y) : 0;
     cost += envT + envS + herS;
-    const lines = pv.host ? ['沿用 ' + (net.lines[pv.host.line] ? net.lines[pv.host.line].name : '') + ' 的既有轨道（共线运营），不另收建设费', '需要单独建轨道时，先 Shift+点击加一个转弯点']
+    const lines = pv.host ? ['沿用 ' + (net.lines[pv.host.line] ? net.lines[pv.host.line].name : '') + ' 的既有轨道（共线运营），不另收建设费', '需要单独建轨道时，选择「独立轨道」']
       : ['长度 ' + U.fmtKm(geo.lenM) + (geo.waterM > 1 ? '，' + (this.buildType === 'underground' ? '越江隧道 ' : '跨江桥梁 ') + U.fmtKm(geo.waterM) : '') + ' · 约 ' + U.fmtMoney(cost)];
     let bad = false;
     if (mod) lines.unshift('松开 Shift 点击 = 连接；当前为添加转弯点');
@@ -563,7 +564,7 @@
   // 预览：与正式建设相同的线形规则（站台直线段、与既有线路切线连续）
   // stId：目标为既有车站时，两站之间已有其他线路的轨道且未加转弯点，则沿用该轨道（共线运营）
   Tools.prototype.coHostFor = function (stId) {
-    if (!stId || this.bends.length || !this.chain) return null;
+    if (this.trackMode === 'independent' || !stId || this.bends.length || !this.chain) return null;
     const net = this.net(), lid = this.lineChoice !== 'new' && net.lines[this.lineChoice] ? this.lineChoice : '__new';
     return M.coHost(net, this.chain, stId, lid);
   };
@@ -584,8 +585,9 @@
     const host = this.coHostFor(stId);
     // 已建车站接新区段时站台方向保持不变，预览与确认后的线形一致（见 lineClick）。在副本上设定，不改草案
     if (!host) for (const sid of [this.chain, stId]) if (sid && net.stations[sid]) { stations[sid] = Object.assign({}, net.stations[sid]); M.lockPlatform(proxy, g.net, sid, lid); }
+    if (this.trackMode === 'independent' && stId) M.alignIndependentPlatforms(proxy, this.chain, stId, lid);
     const hp = host ? (host.pts || []).map(function (p) { return [p[0], p[1]]; }) : null;
-    const seg = { id: '__tmp', line: lid, a: this.chain, b: '__end', pts: host ? (host.a === this.chain ? hp : hp.reverse()) : this.bends, type: host ? host.type : this.buildType, curve: host ? host.curve : (this.curveMode === 'smooth' ? 'arc' : undefined) };
+    const seg = { id: '__tmp', line: lid, a: this.chain, b: stId || '__end', pts: host ? (host.a === this.chain ? hp : hp.reverse()) : this.bends, type: host ? host.type : this.buildType, curve: host ? host.curve : (this.curveMode === 'smooth' ? 'arc' : undefined) };
     const ctrl = M.segControl(proxy, seg);
     const geo = M.geomFromControl(ctrl, seg.type, g.city);
     // 车站处转角
@@ -601,7 +603,22 @@
       best = Math.min(best, 180 - Math.acos(U.clamp(dx * ox + dy * oy, -1, 1)) * 180 / Math.PI); any = true;
     }
     if (any) turn = best;
-    return { geo: geo, turn: turn, host: host };
+    return { geo: geo, turn: turn, host: host, seg: seg };
+  };
+  // 光标预览在既有重叠轨道外侧预留一条显示通道，避免虚线和白色描边盖住既有线路。
+  Tools.prototype.previewTrackOffset = function (pv, R) {
+    if (this.trackMode !== 'independent' || pv.seg.b === '__end') return 0;
+    const g = this.game(), C = g.draft ? g.draftCompiled() : g.compiled;
+    if (!C) return 0;
+    const key = M.trackGeometryKey(pv.seg), width = R.lineWidthPx();
+    let edge = -Infinity, direction = 1;
+    C.segs.forEach(function (cs) {
+      if (M.trackGeometryKey(cs.seg) !== key) return;
+      const dir = cs.displayDirection || M.trackDisplayDirection(C.net, cs.seg);
+      direction = dir * (cs.seg.a === pv.seg.a ? 1 : -1);
+      edge = Math.max(edge, M.trackDisplayOffset(cs, width) * dir);
+    });
+    return isFinite(edge) ? (edge + width + 4) * direction : 0;
   };
 
   // ---------------- 点击 ----------------
@@ -753,16 +770,19 @@
       if (!to) to = M.addStation(net, w.x, w.y, opts, g.city);
       if (to === from) return { error: '不能连接到同一车站' };
       // 共线运营：两站之间已有其他线路的轨道且没有加转弯点时，沿用该轨道的线形与建设方式
-      const host = st && !bends.length ? M.coHost(net, from, to, lid) : null;
+      const host = self.trackMode !== 'independent' && st && !bends.length ? M.coHost(net, from, to, lid) : null;
       const hp = host ? (host.pts || []).map(function (p) { return [p[0], p[1]]; }) : null;
       const segType = host ? host.type : self.buildType;
       const served = [from, to].map(function (sid) { return M.stationLines(net, sid).indexOf(lid) >= 0; });
       const res = M.addSegment(net, lid, from, to, host ? (host.a === from ? hp : hp.reverse()) : bends, segType);
       if (res.error) return res;
+      if (host && host.trackGroup) net.segments[res.id].trackGroup = host.trackGroup;
+      else if (self.trackMode === 'independent') net.segments[res.id].trackGroup = res.id;
       // 平滑模式的新区段用圆弧线形（v2.6.1）；共线运营沿用既有轨道的线形。已建车站的站台方向保持不变，既有线路不会被带歪
       const newCurve = host ? host.curve : (self.curveMode === 'smooth' ? 'arc' : undefined);
       if (newCurve) net.segments[res.id].curve = newCurve;
       if (!host) for (const sid of [from, to]) M.lockPlatform(net, g.net, sid, lid);
+      if (self.trackMode === 'independent') M.alignIndependentPlatforms(net, from, to, lid);
       // 天地换乘：本线首次接入一座建设方式不同的既有车站时，为本线单独设站台层（如地下站增设高架站台）
       [from, to].forEach(function (sid, i) { const s0 = net.stations[sid]; if (!served[i] && s0 && s0.type !== segType) { s0.lv = Object.assign({}, s0.lv || {}); s0.lv[lid] = segType; } });
       M.normalizeLevels(net);
@@ -770,7 +790,7 @@
       return { lid: lid, to: to, created: created, host: host && net.lines[host.line] ? net.lines[host.line].name : null, levels: levels };
     });
     if (r.error) { ui.toast(r.error, 'bad'); return; }
-    if (r.host) ui.toast('与 ' + r.host + ' 共线运营：沿用既有轨道，免建设费', 'info');
+    if (r.host) ui.toast('与 ' + r.host + ' 共线运营：沿用这两站之间的既有轨道，不另收建设费（需要单独建轨道时，选择「独立轨道」）', 'info');
     if (r.levels) for (const t of r.levels) ui.toast(t, 'info');   // 各线路站台层可在车站详情中调整
     if (r.created) this.newLineColor = null;
     sfx('lay');
@@ -1120,15 +1140,20 @@
       const st = this.hover && this.hover.kind === 'station' ? net.stations[this.hover.id] : null;
       const end = st ? [st.x, st.y] : [cur.x, cur.y];
       const pv0 = this.previewGeom(end, st && !cur.mod ? st.id : null), geo = pv0.geo, hb = R.trackH(pv0.host ? pv0.host.type : this.buildType);
+      const offset = this.previewTrackOffset(pv0, R);
+      const previewPath = function (pts) {
+        const screen = M.offsetTrackPath(pts.map(function (p) { const q = R.P(p[0], p[1], hb); return [q.x, q.y]; }), offset);
+        ctx.beginPath(); screen.forEach(function (p, i) { if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); });
+      };
       const lid = this.lineChoice;
       const col = net.lines[lid] ? AX.line(net.lines[lid]) : this.nextLineColor();
       ctx.lineJoin = 'round'; ctx.lineCap = 'round';
       ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = R.lineWidthPx() + 3;
-      ctx.beginPath(); geo.pts.forEach(function (p, i) { const q = R.P(p[0], p[1], hb); if (i) ctx.lineTo(q.x, q.y); else ctx.moveTo(q.x, q.y); }); ctx.stroke();
+      previewPath(geo.pts); ctx.stroke();
       ctx.strokeStyle = this.hint && this.hint.bad ? AX.color('#d63031') : col; ctx.lineWidth = R.lineWidthPx(); ctx.setLineDash([8, 6]); ctx.lineDashOffset = -R.time * 20;
       ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0;
       // 预览线形中弯道过急的部分直接标红（v2.3），与确认建设时的检查一致
-      for (const run of M.tightStretch(geo, this.drawMinRadius()).stretch) { polyPath(ctx, R, run, hb); ctx.strokeStyle = 'rgba(214,48,49,0.95)'; ctx.lineWidth = R.lineWidthPx() + 2; ctx.stroke(); }
+      for (const run of M.tightStretch(geo, this.drawMinRadius()).stretch) { previewPath(run); ctx.strokeStyle = 'rgba(214,48,49,0.95)'; ctx.lineWidth = R.lineWidthPx() + 2; ctx.stroke(); }
       for (const b of this.bends) { const q = R.P(b[0], b[1], hb); ctx.fillStyle = '#fff'; ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(q.x, q.y, 4, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); }
       if (!st) { const q = R.P(end[0], end[1], hb); ctx.strokeStyle = this.hint && this.hint.bad ? AX.color('#d63031') : col; ctx.lineWidth = 2.5; ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.beginPath(); ctx.arc(q.x, q.y, 6, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); if (!cur.mod) this.drawNameTag(ctx, R, end[0], end[1], hb, this.hint && this.hint.bad); }
     }

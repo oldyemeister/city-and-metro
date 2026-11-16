@@ -1,0 +1,361 @@
+{
+  "completed": true,
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 63,
+      "cy": 80,
+      "zoom": 16,
+      "view": 0
+    },
+    "renderMs": 0.7999999970197678,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "stations": 121
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 8,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": false,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 63,
+      "cy": 80,
+      "zoom": 16,
+      "view": 0
+    },
+    "renderMs": 1,
+    "queueMs": 0,
+    "pendingVisible": 24,
+    "stations": 121
+  },
+  "jumpGeneratorWallMs": 3939.3999999910593,
+  "polledJumpDoneFromMeasurementStartMs": 4256.4000000059605,
+  "phases": {
+    "model.step": {
+      "calls": 5,
+      "cpuMs": 0,
+      "maxSliceMs": 0,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "game.jumpGen": {
+      "calls": 1,
+      "cpuMs": 604.2000000178814,
+      "maxSliceMs": 31.799999997019768,
+      "done": 1,
+      "wallMs": 3939.3999999910593,
+      "slices": 1883
+    },
+    "game.monthGen": {
+      "calls": 1,
+      "cpuMs": 600.7000000029802,
+      "maxSliceMs": 31.799999997019768,
+      "done": 1,
+      "wallMs": 3927.5999999940395,
+      "slices": 1880
+    },
+    "game.stepJump": {
+      "calls": 510,
+      "cpuMs": 613.1999999582767,
+      "maxSliceMs": 38.20000000298023,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "metro.compile": {
+      "calls": 1,
+      "cpuMs": 7.5,
+      "maxSliceMs": 7.5,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.refreshCityGen": {
+      "calls": 1,
+      "cpuMs": 166.19999995827675,
+      "maxSliceMs": 20.200000002980232,
+      "done": 1,
+      "wallMs": 180.59999999403954,
+      "slices": 116
+    },
+    "model.buildZones": {
+      "calls": 1,
+      "cpuMs": 3.3999999910593033,
+      "maxSliceMs": 3.3999999910593033,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.buildDemandGen": {
+      "calls": 1,
+      "cpuMs": 130.99999995529652,
+      "maxSliceMs": 7,
+      "done": 1,
+      "wallMs": 145.29999999701977,
+      "slices": 111
+    },
+    "model.syncRoad": {
+      "calls": 1,
+      "cpuMs": 14.600000008940697,
+      "maxSliceMs": 14.600000008940697,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.computeAccessGen": {
+      "calls": 1,
+      "cpuMs": 15.599999994039536,
+      "maxSliceMs": 8.299999997019768,
+      "done": 1,
+      "wallMs": 15.699999988079071,
+      "slices": 5
+    },
+    "model.buildMetro": {
+      "calls": 1,
+      "cpuMs": 0.4000000059604645,
+      "maxSliceMs": 0.4000000059604645,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.initMetroPer": {
+      "calls": 8,
+      "cpuMs": 0.7000000029802322,
+      "maxSliceMs": 0.29999999701976776,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.setNetwork": {
+      "calls": 1,
+      "cpuMs": 1.4000000059604645,
+      "maxSliceMs": 1.4000000059604645,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.solveGen": {
+      "calls": 1,
+      "cpuMs": 295.7000000178814,
+      "maxSliceMs": 13.800000011920929,
+      "done": 1,
+      "wallMs": 3590.2000000029802,
+      "slices": 1756
+    },
+    "model.pipeline": {
+      "calls": 2,
+      "cpuMs": 292.00000005960464,
+      "maxSliceMs": 13.800000011920929,
+      "done": 2,
+      "wallMs": 3587.300000011921,
+      "slices": 1757
+    },
+    "model.iterate": {
+      "calls": 16,
+      "cpuMs": 289.3000000715256,
+      "maxSliceMs": 13.800000011920929,
+      "done": 16,
+      "wallMs": 6764.70000000298,
+      "slices": 2119
+    },
+    "model.metroSkim": {
+      "calls": 16,
+      "cpuMs": 2.4000000208616257,
+      "maxSliceMs": 0.5999999940395355,
+      "done": 16,
+      "wallMs": 112.70000000298023,
+      "slices": 115
+    },
+    "model.computeDaily": {
+      "calls": 1,
+      "cpuMs": 2.7999999970197678,
+      "maxSliceMs": 2.7999999970197678,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    },
+    "model.finishTraffic": {
+      "calls": 1,
+      "cpuMs": 2.7999999970197678,
+      "maxSliceMs": 2.7999999970197678,
+      "done": 0,
+      "wallMs": 0,
+      "slices": 0
+    }
+  },
+  "waitingSamples": 15,
+  "progressSamples": 20,
+  "mainThreadIdlePercent": 68.49986139627978,
+  "topMainThreadSelf": [
+    {
+      "name": "(idle)",
+      "file": "",
+      "line": 0,
+      "ms": 2915.861
+    },
+    {
+      "name": "(program)",
+      "file": "",
+      "line": 0,
+      "ms": 570.546
+    },
+    {
+      "name": "Model.iterate",
+      "file": "sim.js",
+      "line": 1813,
+      "ms": 96.25
+    },
+    {
+      "name": "",
+      "file": "",
+      "line": 1,
+      "ms": 87.093
+    },
+    {
+      "name": "demandOrigin",
+      "file": "sim.js",
+      "line": 730,
+      "ms": 80.549
+    },
+    {
+      "name": "Model.alignSkims",
+      "file": "sim.js",
+      "line": 1760,
+      "ms": 54.189
+    },
+    {
+      "name": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "ms": 49.492
+    },
+    {
+      "name": "merge",
+      "file": "sim.js",
+      "line": 2022,
+      "ms": 21.523
+    },
+    {
+      "name": "find",
+      "file": "sim.js",
+      "line": 838,
+      "ms": 21.104
+    },
+    {
+      "name": "Game.monthGen",
+      "file": "game.js",
+      "line": 353,
+      "ms": 20.458
+    },
+    {
+      "name": "City.buildGraphsGen",
+      "file": "city.js",
+      "line": 1234,
+      "ms": 17.597
+    },
+    {
+      "name": "skimLayoutGen",
+      "file": "sim.js",
+      "line": 816,
+      "ms": 12.984
+    },
+    {
+      "name": "w.onmessage",
+      "file": "sim.js",
+      "line": 180,
+      "ms": 12.594
+    },
+    {
+      "name": "postMessage",
+      "file": "",
+      "line": 0,
+      "ms": 11.379
+    },
+    {
+      "name": "remap",
+      "file": "sim.js",
+      "line": 1219,
+      "ms": 11.237
+    },
+    {
+      "name": "Game.zoneCong",
+      "file": "game.js",
+      "line": 802,
+      "ms": 11.226
+    },
+    {
+      "name": "City.growMonth",
+      "file": "city.js",
+      "line": 1517,
+      "ms": 9.072
+    },
+    {
+      "name": "Game.stepJump",
+      "file": "game.js",
+      "line": 553,
+      "ms": 8.854
+    },
+    {
+      "name": "Agents.updateCars",
+      "file": "agents.js",
+      "line": 507,
+      "ms": 7.756
+    },
+    {
+      "name": "projPoly",
+      "file": "city.js",
+      "line": 1430,
+      "ms": 7.457
+    }
+  ],
+  "sourceHashes": {
+    "js/game.js": "9a78291feec3c25c8dcda05fdb8fa524c637639c663d4dd6ad83ed9395ed784b",
+    "js/sim.js": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+    "js/metro.js": "fea3886ebdd4fd5d7fcead9c3b5b569ffb7e9ba500c12204a5b03cf95b7c0086"
+  },
+  "limitations": [
+    "One-month July-August2000 fixed Shanghai121station warm-cache case only",
+    "Generator wall times overlap for concurrent jobs; nested CPU phase times inclusive, not additive",
+    "CPU measurements are synchronous next()/call elapsed time, not exclusive OS CPU accounting",
+    "Main-thread CPU profile does not measure Worker CPU; waiting/idle indicates asynchronous scheduling but does not identify a specific Worker algorithm",
+    "No whole-line construction commit or impact report reproduced",
+    "Final game paused with pendingVisible24/sharpReady false; scene left open to finish tiles"
+  ]
+}

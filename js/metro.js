@@ -424,10 +424,13 @@
   // ---------------- 共线运营（v2.1 玩家反馈） ----------------
   // 同两站之间、转弯点相同（含反向）且建设方式相同的不同线路区段是同一条物理轨道：只建一次、只收一次费用，
   // 两条线路的列车共用这段轨道（如上海 3、4 号线共线段）。键按车站编号从小到大的方向记录转弯点
-  M.trackKey = function (s) {
+  M.trackGeometryKey = function (s) {
     const fwd = M.idNum(s.a) <= M.idNum(s.b), pts = (s.pts || []).slice();
     if (!fwd) pts.reverse();
     return (fwd ? s.a + '|' + s.b : s.b + '|' + s.a) + '|' + s.type + (s.curve === 'smooth' ? '|s' : s.curve === 'arc' ? '|a' : '') + '|' + pts.map(function (p) { return p[0].toFixed(3) + ',' + p[1].toFixed(3); }).join(';');
+  };
+  M.trackKey = function (s) {
+    return M.trackGeometryKey(s) + '|track:' + (s.trackGroup || 'legacy');
   };
   // 与 seg 共用轨道的其他线路区段；rev 表示其方向与 seg 相反
   M.coTrackSegs = function (net, seg) {
@@ -441,6 +444,42 @@
     let best = null;
     for (const id in net.segments) { const o = net.segments[id]; if (o.line !== lineId && ((o.a === a && o.b === b) || (o.a === b && o.b === a)) && (!best || M.idNum(o.id) < M.idNum(best.id))) best = o; }
     return best;
+  };
+  // 独立轨道连接同一对车站时，沿用最早区段所属线路的两端站台方向（含反向、有转弯点或不同建设方式）。
+  M.alignIndependentPlatforms = function (net, a, b, lid) {
+    const host = M.coHost(net, a, b, lid); if (!host) return;
+    for (const sid of [a, b]) {
+      const angle = M.platformDir(net, sid, host.line);
+      if (angle != null) M.setPlatformDir(net, sid, lid, angle);
+    }
+  };
+  // 显示通道沿整条线路的走向排列，不能逐段按车站编号定向：转弯处编号可先增后减。
+  M.trackDisplayDirection = function (net, seg) {
+    for (const route of M.lineTopo(net, seg.line).routes) {
+      const ref = route.segs.find(function (r) { return r.id === seg.id; });
+      if (ref) return ref.rev ? -1 : 1;
+    }
+    return M.idNum(seg.a) <= M.idNum(seg.b) ? 1 : -1;
+  };
+  // 站台使用左法向偏移，轨道使用右法向；反转有向切线使两者的线路顺序一致。
+  M.platformDisplayAngle = function (net, sid, lid, fallback) {
+    for (const route of M.lineTopo(net, lid).routes) for (const ref of route.segs) {
+      const seg = net.segments[ref.id];
+      if (seg.a !== sid && seg.b !== sid) continue;
+      const t = M.stationTangent(net, seg, sid), sign = (ref.rev ? -1 : 1) * (seg.a === sid ? 1 : -1);
+      return Math.atan2(-t[1] * sign, -t[0] * sign);
+    }
+    return fallback;
+  };
+  // 纯显示偏移：沿折线法向错开，不改变轨道几何、长度、费用或站台坐标。
+  M.trackDisplayOffset = function (cs, width) { return (cs.shift || 0) * (width + (cs.independentTrack ? 4 : 1.2)); };
+  M.offsetTrackPath = function (pts, offset) {
+    if (!offset) return pts;
+    return pts.map(function (p, i) {
+      const a = pts[Math.max(0, i - 1)], b = pts[Math.min(pts.length - 1, i + 1)];
+      const dx = b[0] - a[0], dy = b[1] - a[1], len = Math.hypot(dx, dy) || 1;
+      return [p[0] + dy / len * offset, p[1] - dx / len * offset];
+    });
   };
   // 并线运行（v2.3 玩家反馈）：线路 lid 从车站 from 起，沿线路 other 的既有轨道一直延伸到 to，逐段共用轨道（共线运营，免建设费）。
   // 沿途车站本线也停靠；建设方式不同的车站按本线增设站台层。路径须完全在 other 的轨道上
@@ -463,6 +502,7 @@
       const r = M.addSegment(net, lid, a, b, host.a === a ? hp : hp.reverse(), host.type);
       if (r.error) return r;
       if (host.curve) net.segments[r.id].curve = host.curve;
+      if (host.trackGroup) net.segments[r.id].trackGroup = host.trackGroup;
       for (const sid of [a, b]) { const s0 = net.stations[sid]; if (!served.has(sid) && s0 && s0.type !== host.type) { s0.lv = Object.assign({}, s0.lv || {}); s0.lv[lid] = host.type; } served.add(sid); }
       added++;
     }
@@ -732,6 +772,7 @@
     const g1 = M.newId(net, 'g'), g2 = M.newId(net, 'g');
     net.segments[g1] = { id: g1, line: seg.line, a: seg.a, b: sid, pts: before, type: seg.type, base: base };
     net.segments[g2] = { id: g2, line: seg.line, a: sid, b: seg.b, pts: after, type: seg.type, base: base };
+    if (seg.trackGroup) net.segments[g1].trackGroup = net.segments[g2].trackGroup = seg.trackGroup;
     if (curve) net.segments[g1].curve = net.segments[g2].curve = curve;
     const cp = function (list, rev) { const out = list.map(function (p) { return [p[0], p[1]]; }); return rev ? out.reverse() : out; };
     for (const c of co) {
@@ -741,6 +782,7 @@
       const x1 = M.newId(net, 'g'), x2 = M.newId(net, 'g');
       net.segments[x1] = { id: x1, line: m.line, a: m.a, b: sid, pts: cp(c.rev ? after : before, c.rev), type: m.type, base: mb };
       net.segments[x2] = { id: x2, line: m.line, a: sid, b: m.b, pts: cp(c.rev ? before : after, c.rev), type: m.type, base: mb };
+      if (m.trackGroup) net.segments[x1].trackGroup = net.segments[x2].trackGroup = m.trackGroup;
       if (curve) net.segments[x1].curve = net.segments[x2].curve = curve;
     }
     // 插入的车站按所在轨道设站台（地下轨道上为地下站台）；绘线接入的新线路另设自己的站台层（天地换乘）
@@ -784,6 +826,7 @@
             notes.push((ln ? ln.name + ' ' : '') + A.name + '—' + B.name + ' 两侧建设方式不同，合并后统一为' + CFG.metro.typeName[type] + '，原' + CFG.metro.typeName[other] + '部分按改建计费');
           }
           net.segments[id] = { id: id, line: lid, a: o1, b: o2, pts: p1.concat([[st.x, st.y]], p2), type: type, base: Array.from(new Set(base)) };
+          if (s1.trackGroup || s2.trackGroup) net.segments[id].trackGroup = s1.trackGroup || s2.trackGroup;
           if (s1.curve && s1.curve === s2.curve) net.segments[id].curve = s1.curve;
         }
       } else {
@@ -961,13 +1004,27 @@
       const g = M.segGeom(net, s, city);
       C.segs.set(id, { seg: s, g: g, h: M.heightProfile(g, M.platType(A, s.line), s.type, M.platType(B, s.line)) });
     }
-    // 共线区段并排显示：同一条轨道上的各线路按线路编号左右错开 shift 个线宽（与区段方向无关）
+    // 相同几何路径并排显示；物理轨道分组仍使用 trackKey，独立轨道不算共线运营
     const coGroups = new Map();
-    C.segs.forEach(function (cs) { const k = M.trackKey(cs.seg); if (!coGroups.has(k)) coGroups.set(k, []); coGroups.get(k).push(cs); });
+    C.segs.forEach(function (cs) { const k = M.trackGeometryKey(cs.seg); if (!coGroups.has(k)) coGroups.set(k, []); coGroups.get(k).push(cs); });
     coGroups.forEach(function (list) {
       const ls = M.sortIds(Array.from(new Set(list.map(function (cs) { return cs.seg.line; }))));
       if (ls.length < 2) return;
-      for (const cs of list) { const fwd = M.idNum(cs.seg.a) <= M.idNum(cs.seg.b); cs.shift = (ls.indexOf(cs.seg.line) - (ls.length - 1) / 2) * (fwd ? 1 : -1); cs.coLines = ls; }
+      const lead = list.find(function (cs) { return cs.seg.line === ls[0]; }).seg;
+      const direction = M.trackDisplayDirection(net, lead);
+      const tracks = new Map();
+      for (const cs of list) {
+        const key = M.trackKey(cs.seg);
+        if (!tracks.has(key)) tracks.set(key, new Set());
+        tracks.get(key).add(cs.seg.line);
+      }
+      for (const cs of list) {
+        cs.displayDirection = direction * (cs.seg.a === lead.a ? 1 : -1);
+        cs.shift = (ls.indexOf(cs.seg.line) - (ls.length - 1) / 2) * cs.displayDirection;
+        const shared = tracks.get(M.trackKey(cs.seg));
+        if (shared.size > 1) cs.coLines = M.sortIds(Array.from(shared));
+        cs.independentTrack = tracks.size > 1;
+      }
     });
     const mc = CFG.metro;
     for (const lid of M.sortIds(Object.keys(net.lines))) {

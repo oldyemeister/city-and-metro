@@ -521,10 +521,18 @@
       mapCache.key = key; mapCache.url = c.toDataURL();
       return mapCache.url;
     };
-    const linePath = function (net, lid) { let d = ''; for (const sg of M.lineSegs(net, lid)) { const p = M.segGeom(net, sg, g.city).pts; for (let i = 0; i < p.length; i++) d += (i ? 'L' : 'M') + p[i][0].toFixed(1) + ' ' + p[i][1].toFixed(1); } return d; };
+    const linePath = function (net, C, lid, px) {
+      let d = '';
+      for (const sg of M.lineSegs(net, lid)) {
+        const cs = C.segs.get(sg.id); if (!cs) continue;
+        const p = M.offsetTrackPath(cs.g.pts, M.trackDisplayOffset(cs, 3) * px);
+        for (let i = 0; i < p.length; i++) d += (i ? 'L' : 'M') + p[i][0].toFixed(3) + ' ' + p[i][1].toFixed(3);
+      }
+      return d;
+    };
     const boundsOf = function (list) { let a = 1e9, b = 1e9, c = -1e9, d = -1e9; for (const s of list) { a = Math.min(a, s.x); b = Math.min(b, s.y); c = Math.max(c, s.x); d = Math.max(d, s.y); } return [a, b, c, d]; };
     const mapEl = function (o) {
-      const net = nets(), asp = 1.6, minW = o.minW || 16, f = o.fit;
+      const net = nets(), C = g.draft ? g.draftCompiled() : g.compiled, asp = 1.6, minW = o.minW || 16, f = o.fit;
       let w = Math.max(minW, (f[2] - f[0]) * 1.2), ht = Math.max(minW / asp, (f[3] - f[1]) * 1.25); if (w / ht < asp) w = ht * asp; else ht = w / asp;
       const vx = (f[0] + f[2]) / 2 - w / 2, vy = (f[1] + f[3]) / 2 - ht / 2, px = w / 400;   // px：1 个屏幕像素约等于多少地图单位
       const dotAt = function (s, r, cls, extra) { return '<circle class="' + cls + '" cx="' + s.x.toFixed(1) + '" cy="' + s.y.toFixed(1) + '" r="' + (r * px).toFixed(2) + '"' + (extra || '') + '/>'; };
@@ -533,7 +541,7 @@
       const through = o.station ? M.stationLines(net, o.station) : [];
       let top = '';
       for (const lid of M.sortIds(Object.keys(net.lines))) {
-        const L = net.lines[lid], d = linePath(net, lid); if (!d) continue;
+        const L = net.lines[lid], d = linePath(net, C, lid, px); if (!d) continue;
         const col = AX.line(L), hot = o.all || lid === o.focus || through.indexOf(lid) >= 0;
         if (hot) top += '<path class="mc-halo" d="' + d + '"/><path class="mc-l" stroke="' + col + '" d="' + d + '"/>';
         else o2 += '<path class="mc-other" d="' + d + '"/>';
@@ -734,6 +742,7 @@
           nameInput(L.name, 14, '线路名称', function (el) { const v = el.value.trim(); if (v && v !== L.name) self.setLineLook(lid, { name: v }); else el.value = L.name; }),
           h('div', { class: 'mc-meta' }, official ? tag(lineState(row)) : tag(['', '草案']), h('span', null, M.TOPO_NAME[tp.topo]), h('span', null, ends(row, net)))),
         official ? h('button', { class: 'btn sm', 'data-tip': '在地图上定位这条线路', onclick: then(function () { A.locate(g, self, { kind: 'line', id: lid }); }) }, ic('locate', 14), '定位') : null,
+        self.lineUpgradeButton(lid, draw),
         h('button', { class: 'btn sm', 'data-tip': '贯通、拆开、支线与区段调整', onclick: then(function () { self.openObj('line', lid, 'build'); }) }, ic('pencil', 14), '线路编辑'));
       const lrows = A.rows(g, 'l', lid), prevRow = lrows.length > 1 ? lrows[lrows.length - 2] : null;
       const kpis = h('div', { class: 'mc-kpis' },

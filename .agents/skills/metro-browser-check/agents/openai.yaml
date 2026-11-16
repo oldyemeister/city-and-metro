@@ -1,0 +1,6 @@
+interface:
+  display_name: "地铁项目浏览器验收"
+  short_description: "使用独立 Chrome for Testing 测试页载入存档，限时验收后保留场景"
+  default_prompt: "使用 $metro-browser-check 验证本次修改，可指定测试存档；两分钟内未完成则保留现场并交接手动检查。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,65 @@
+{
+  "loadMs": 13900.09999999404,
+  "firstTrafficMs": 12822.89999999106,
+  "cachedSolveMs": [
+    2.2000000029802322,
+    2.6000000089406967,
+    2.2000000029802322
+  ],
+  "stableTrafficRefreshMs": [
+    26357.40000000596,
+    26210.29999999702,
+    26260.79999999702
+  ],
+  "frameCpuMs": {
+    "n": 481,
+    "mean": 10.389397089205016,
+    "p50": 11,
+    "p95": 12.299999997019768
+  },
+  "frameIntervalMs": {
+    "n": 480,
+    "mean": 16.655208333333334,
+    "p50": 16.69999998807907,
+    "p95": 17.900000005960464
+  },
+  "jumpYearMs": 28473.5,
+  "start": {
+    "y": 2000,
+    "m": 7,
+    "d": 14,
+    "minute": 941.6328000001755
+  },
+  "end": {
+    "y": 2001,
+    "m": 7,
+    "d": 14,
+    "minute": 941.6328000001755
+  },
+  "initial": {
+    "year": 2000,
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 1134.026400000162
+    },
+    "stations": 121,
+    "facilities": 102
+  },
+  "camera": {
+    "cx": 76,
+    "cy": 76,
+    "zoom": 10,
+    "view": 0
+  },
+  "speed": 1,
+  "viewport": [
+    1440,
+    900
+  ],
+  "coldTrafficCacheRemoved": true,
+  "label": "baseline",
+  "save": "城市与地铁_经营挑战 · 上海 1990_2000年7月.cmsave.json",
+  "browser": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+}

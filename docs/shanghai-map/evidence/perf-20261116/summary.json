@@ -1,0 +1,195 @@
+{
+  "initial": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 14,
+      "minute": 941.6328000001755
+    },
+    "speed": 0,
+    "stations": 121,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": false,
+    "visibility": "hidden",
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 63,
+      "cy": 80,
+      "zoom": 16,
+      "tz": 16,
+      "anchor": null,
+      "view": 1,
+      "t": 1,
+      "under": 0,
+      "tu": 0,
+      "fly": null
+    }
+  },
+  "gpuFeatures": {
+    "2d_canvas": "enabled",
+    "direct_rendering_display_compositor": "enabled_on",
+    "gpu_compositing": "enabled",
+    "multiple_raster_threads": "enabled_on",
+    "opengl": "enabled_on",
+    "rasterization": "enabled",
+    "raw_draw": "disabled_off_ok",
+    "skia_graphite": "enabled_on",
+    "trees_in_viz": "enabled_on",
+    "video_decode": "enabled",
+    "video_encode": "enabled",
+    "webgl": "enabled",
+    "webgpu": "enabled",
+    "webnn": "disabled_off"
+  },
+  "error": "Error: timeout Runtime.evaluate",
+  "limitations": [
+    "Single paused frame only; hidden document; no representative steady-state FPS",
+    "Running case timed out; no comparative conclusion",
+    "Method durations are inclusive and must not be summed",
+    "Main thread profiler excludes worker CPU; idle samples are not JavaScript work"
+  ],
+  "cases": [
+    {
+      "speed": 0,
+      "elapsed": 12548.999999997017,
+      "frameIntervals": [
+        12548.999999997017
+      ],
+      "stats": {
+        "model.step": {
+          "n": 1,
+          "total": 1.7999999970197678,
+          "max": 1.7999999970197678
+        },
+        "game.update": {
+          "n": 1,
+          "total": 2,
+          "max": 2
+        },
+        "agents.update": {
+          "n": 1,
+          "total": 57.20000000298023,
+          "max": 57.20000000298023
+        },
+        "renderer.renderOverviewBase": {
+          "n": 1,
+          "total": 3.699999988079071,
+          "max": 3.699999988079071
+        },
+        "renderer.drawComplexSite": {
+          "n": 10,
+          "total": 101.50000001490116,
+          "max": 36.099999994039536
+        },
+        "renderer.drawFacilitySprite": {
+          "n": 58,
+          "total": 373.59999999403954,
+          "max": 277.59999999403954
+        },
+        "renderer.drawCranes": {
+          "n": 1,
+          "total": 0.800000011920929,
+          "max": 0.800000011920929
+        },
+        "renderer.drawDemolitions": {
+          "n": 1,
+          "total": 0.09999999403953552,
+          "max": 0.09999999403953552
+        },
+        "renderer.drawScenicZones": {
+          "n": 1,
+          "total": 1.5,
+          "max": 1.5
+        },
+        "renderer.drawHeritage": {
+          "n": 1,
+          "total": 0.09999999403953552,
+          "max": 0.09999999403953552
+        },
+        "renderer.drawTrack": {
+          "n": 63,
+          "total": 15.600000008940697,
+          "max": 9.299999997019768
+        },
+        "renderer.drawRaisedBase": {
+          "n": 42,
+          "total": 11.599999994039536,
+          "max": 9.199999988079071
+        },
+        "renderer.drawTodMark": {
+          "n": 9,
+          "total": 1.7000000029802322,
+          "max": 1.5999999940395355
+        },
+        "renderer.drawWalkTransferHints": {
+          "n": 1,
+          "total": 0,
+          "max": 0
+        },
+        "renderer.drawMetro": {
+          "n": 1,
+          "total": 92.20000000298023,
+          "max": 92.20000000298023
+        },
+        "renderer.drawStationModels": {
+          "n": 1,
+          "total": 0.10000000894069672,
+          "max": 0.10000000894069672
+        },
+        "renderer.drawPortals": {
+          "n": 1,
+          "total": 2.7999999970197678,
+          "max": 2.7999999970197678
+        },
+        "renderer.drawAtmosphere": {
+          "n": 1,
+          "total": 0,
+          "max": 0
+        },
+        "renderer.labelsBegin": {
+          "n": 1,
+          "total": 0.20000000298023224,
+          "max": 0.20000000298023224
+        },
+        "renderer.labelSprite": {
+          "n": 131,
+          "total": 52.70000001788139,
+          "max": 30.600000008940697
+        },
+        "renderer.layoutLabels": {
+          "n": 1,
+          "total": 377.5,
+          "max": 377.5
+        },
+        "renderer.drawLabels": {
+          "n": 1,
+          "total": 446.19999998807907,
+          "max": 446.19999998807907
+        },
+        "renderer.render": {
+          "n": 1,
+          "total": 1286.7999999970198,
+          "max": 1286.7999999970198
+        },
+        "ui.tick": {
+          "n": 1,
+          "total": 71.79999999701977,
+          "max": 71.79999999701977
+        }
+      },
+      "trafficReady": true,
+      "review": false,
+      "pending": false,
+      "settled": false,
+      "renderMs": 1286.5,
+      "queueMs": 7
+    }
+  ]
+}

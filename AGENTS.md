@@ -20,3 +20,4 @@ Read `docs/shanghai-map/STATUS.md` before working, then `docs/shanghai-map/DEVEL
 - Run `node scripts/verify-game.mjs` for the baseline, `node scripts/build.mjs` after data edits, and relevant focused checks. Record actual results, not assumed passes.
 - Preview from repository root on port 8001: `python3 -m http.server 8001 --bind 127.0.0.1`.
 - Preserve other user work. Do not push, submit a PR, or contact maintainers unless requested.
+- For browser reproduction and acceptance of gameplay/display changes, use `.agents/skills/metro-browser-check/SKILL.md`: Chrome for Testing, an isolated test tab/profile, a configurable export from `savedgames/test/`, and a 120-second browser budget followed by manual handoff with the scene left open.

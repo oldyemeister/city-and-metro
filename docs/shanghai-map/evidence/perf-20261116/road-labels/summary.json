@@ -1,0 +1,130 @@
+{
+  "funnel": {
+    "totalWays": 29947,
+    "candidates": 3415,
+    "basicEligible": 1825,
+    "geometryCached": 1824,
+    "longEnough": 151,
+    "onScreen": 102,
+    "uniqueOnScreenNames": 34
+  },
+  "initial": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 15,
+      "minute": 20.073600000821124
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 85.27328351973335,
+      "cy": 62.64002575852768,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 0.7999999970197678,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 75,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  },
+  "final": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 7,
+      "d": 15,
+      "minute": 442.2024000002076
+    },
+    "speed": 0,
+    "visibility": "visible",
+    "focus": true,
+    "trafficReady": true,
+    "review": false,
+    "pending": false,
+    "settled": true,
+    "sharpReady": true,
+    "viewport": [
+      1200,
+      762,
+      2
+    ],
+    "camera": {
+      "cx": 85.6073459293788,
+      "cy": 62.70080721767487,
+      "zoom": 24.80359797387836,
+      "view": 0
+    },
+    "renderMs": 0.7000000029802322,
+    "queueMs": 0,
+    "pendingVisible": 0,
+    "segments": 150,
+    "detailTier": 0,
+    "labelItems": 73,
+    "metroLayerAt": 342112.200000003,
+    "stations": 121
+  },
+  "cases": [
+    {
+      "kind": "paused-drag",
+      "layouts": 144,
+      "moving": 1,
+      "nonmoving": 143,
+      "layoutTotalMs": 78.70000004768372,
+      "layoutMeanMs": 0.5465277781089147,
+      "queryTotalMs": 20.80000002682209,
+      "queryMeanCandidates": 3786.034722222222,
+      "queryCandidateVisits": 545189,
+      "acceptedRoadLabelsMean": 52.416666666666664,
+      "layoutIntervalsMean": 41.7195804195179,
+      "layoutIntervalsMin": 40.599999994039536,
+      "layoutIntervalsMax": 50.099999994039536,
+      "renderFrames": 721,
+      "layoutsPerFrame": 0.19972260748959778,
+      "cache": {
+        "textWidthMiss": 0,
+        "labelSpriteMiss": 0,
+        "metroLayerRebuild": 0
+      }
+    },
+    {
+      "kind": "running-1x",
+      "layouts": 0,
+      "moving": 0,
+      "nonmoving": 0,
+      "layoutTotalMs": 0,
+      "layoutMeanMs": 0,
+      "queryTotalMs": 0,
+      "queryMeanCandidates": 0,
+      "queryCandidateVisits": 0,
+      "acceptedRoadLabelsMean": 0,
+      "layoutIntervalsMean": null,
+      "layoutIntervalsMin": null,
+      "layoutIntervalsMax": null,
+      "renderFrames": 721,
+      "layoutsPerFrame": 0.0,
+      "cache": {
+        "textWidthMiss": 0,
+        "labelSpriteMiss": 0,
+        "metroLayerRebuild": 0
+      }
+    }
+  ],
+  "note": "acceptedRoadLabelsMean in this first probe also counts same-name station labels; use road-labels-verified/summary.json for road-only count. Query/layout timings and moving flags remain valid."
+}

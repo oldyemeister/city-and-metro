@@ -1,0 +1,10 @@
+{
+  "browser": "Chrome for Testing",
+  "testUrl": "http://localhost:8001/",
+  "savePath": "savedgames/test/城市与地铁_经营挑战 · 上海 1990_2000年7月.cmsave.json",
+  "browserBudgetSeconds": 120,
+  "leaveSceneOpen": true,
+  "browserExecutable": "/Users/jacky/Applications/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "fallbackBrowser": "Google Chrome (dedicated isolated test profile)",
+  "headless": false
+}

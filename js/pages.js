@@ -602,6 +602,24 @@
   };
 
   // ======================== 页面：线路 ========================
+  UI.prototype.lineUpgradeButton = function (lid, refresh) {
+    const self = this, g = this.g(), sizes = M.sizeList(g.clock.y);
+    const candidates = function (net) { return (M.lineTopo(net, lid).stations || []).filter(function (id) { const s = net.stations[id], k = s ? sizes.indexOf(s.size) : -1; return k >= 0 && k < sizes.length - 1; }); };
+    const count = candidates(g.draft ? g.draft.net : g.net).length;
+    return h('button', { class: 'btn sm', disabled: count ? null : true,
+      'data-tip': '本线每座车站升一级，已达当前规模上限的跳过；加入草案，确认建设后生效，可整批撤销。换乘站升级同时惠及其他线路。',
+      onclick: function () {
+        const net = g.draft ? g.draft.net : g.net, ids = candidates(net);
+        if (!ids.length) return;
+        const was = g.draft ? g.draftEval().total : 0;
+        const r = g.edit(function (n) { for (const id of ids) { const s = n.stations[id]; s.size = sizes[sizes.indexOf(s.size) + 1]; } });
+        if (r && r.error) { self.toast(r.error, 'bad'); return; }
+        const cost = Math.max(0, g.draftEval().total - was);
+        self.toast('已将本线 ' + ids.length + ' 座车站各升级一级，加入草案（约 ' + U.fmtMoney(cost) + '），确认建设后生效，可整批撤销', 'good');
+        if (refresh) refresh();
+      }
+    }, count ? '一键升级所有车站（' + count + ' 座）' : '所有车站已达当前上限');
+  };
   UI.prototype.page_line = function (key) {
     const g = this.g(), self = this;
     const parts = String(key).split('|'), lid = parts[0], segId = parts[1];
@@ -618,6 +636,7 @@
     if (tab === 'ops' && !(g.fleet && CM.Fleet)) tab = 'info';
     // 列车运营（v2.5）：车队、各交路分时段投入的列车、智能调度 / 手动
     if (g.net.lines[lid]) el.appendChild(this.pageTabs([['info', '概况', 'chart']].concat(g.fleet && CM.Fleet ? [['ops', '列车运营', 'train']] : [], [['build', '编辑', 'pencil']]), tab, function (t) { self._tab = self._tab || {}; self._tab.line = t; self.renderPage(false); }));
+    el.appendChild(h('div', { class: 'field' }, this.lineUpgradeButton(lid), h('div', { class: 'tiny muted' }, '每站升一级，已达当前上限的跳过；费用加入建设草案。')));
     if (tp.topo === 'invalid') el.appendChild(h('div', { class: 'callout bad' }, tp.reason));
     if (tab === 'ops') { this.lineOpsTab(el, lid); return { title: line.name, el: el, highlightLine: lid, titleEdit: { value: line.name, max: 14, apply: function (v) { self.setLineLook(lid, { name: v }); } }, badgeClick: function (e) { if (CM.Quick) CM.Quick.popColor(lid, e.currentTarget); }, badgeTip: '改颜色' }; }
     if (tab === 'info') {
