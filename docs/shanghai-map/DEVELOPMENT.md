@@ -39,3 +39,13 @@ Record: date / goal / changed files / facilities and stable IDs / factual source
 - A contribution PR should contain Shanghai map work and necessary supporting files only.
 - Use the contributor's intended Git author identity; check it before committing contribution code. Do not rewrite old history automatically.
 - A merged contribution is evidence of upstream contribution, not repository membership or write access. Keep PR links, change summaries and verification evidence for a resume.
+
+
+## 2026-11-16 — Diagnose Shanghai save import compatibility
+
+- Read the user-provided October 1997 Shanghai save without modifying it.
+- Envelope gameVersion: 2.7.2; payload rulesRevision: 12; map: sh, mapVersion: 2; 82 stations, no nonzero hubLevel fields.
+- Ran the current upstream JavaScript modules in a Node VM with memory-only localStorage and called CM.Save.parseEnvelope on the original file: PASS (checksum and compatibility validation included).
+- Fetched localhost:8001/js/config.js directly: gameVersion 2.7.2, RULES_REVISION 12.
+- Conclusion: the supplied file passes the current local import parser. The reported rules error cannot be reproduced with these inputs. A stale browser runtime or a different site/version is a likely explanation, not yet browser-verified.
+- No game code, browser storage, or original save was changed. Next diagnostic if refresh fails: inspect location.href, CM.CFG.GAME_VERSION and CM.CFG.RULES_REVISION in the affected browser tab.
