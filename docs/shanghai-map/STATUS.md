@@ -2,6 +2,8 @@
 
 Updated: 2026-11-16 (Asia/Shanghai).
 
+- **GitHub sync failed (local changes committed):** implementation/evidence commit `1b6c487746964c9629977e5770c535798ec0c87e` exists locally. Normal HTTPS push, one-shot HTTP/1.1 buffered retry and no-proxy retry all returned HTTP408; remote remained de555aaa when checked after the first two attempts. SSH443 alternative stopped at strict host-key verification (unknown `[ssh.github.com]:443`); no trust/config changes or force push. Retry `git push origin HEAD:refs/heads/codex/shanghai-map` after transport recovery. Publication is not complete; no player exports or PR.
+
 - **GitHub sync authorized:** user requested publication of current changes to `origin/codex/shanghai-map` (oldyemeister/city-and-metro). Remote and local pre-sync HEAD both de555aaa; normal non-force push planned. Includes education implementation/checks/planning and the diagnostic evidence already referenced by the handoff documents; excludes player exports. Source verification, school labels and whitespace checks PASS. Browser acceptance remains incomplete as recorded below; no PR.
 
 - **Three P2 education campuses implemented:** SISU Hongkou `sh_sisu_hongkou`, ECUPL Changning `sh_ecupl_changning`, SHCM Fenyang `sh_shcm_fenyang`. WGS-84 OSM gates, two-line school/campus labels, `uni` teaching-only weights;2001/2007,2005-08,2019-09 teaching outflows modeled conservatively. Existing P1/facilities/IDs/event prefix unchanged; three descriptive events appended only. No geo/engine/performance/economy/drawing/UI edits. Cancer Center Xuhui deferred, Fudan Fenglin candidate, Songjiang/Lingling excluded.
