@@ -466,3 +466,9 @@ These are fixed-seed diagnostic cities, not the player's save. Nonlinear low-sha
 - Local implementation/evidence commit: `1b6c487746964c9629977e5770c535798ec0c87e` (`feat: add three Shanghai education campuses`),33files, including explicitly added verification logs; staged whitespace PASS and no player-save exports.
 - Normal HTTPS push failed HTTP408/RPC disconnect; remote still de555aaa when read afterward. A one-command HTTP/1.1 and50MiB post-buffer retry also failed408; no persistent Git configuration changed. Another one-command no-proxy/HTTP1.1 retry failed408. SSH via port443 with BatchMode,15second connection timeout and StrictHostKeyChecking stopped because no host key is trusted for `[ssh.github.com]:443`; did not modify known_hosts or remote URLs. No force push.
 - User-requested remote synchronization therefore remains incomplete. All implementation is committed locally and preserved; retry normal `git push origin HEAD:refs/heads/codex/shanghai-map` when the GitHub upload transport works. Local checks/browser limitations remain as recorded above.
+
+## 2026-11-17 — 整理 fork 上海地图分支说明
+
+对照上游 bd76a32 与远端 codex/shanghai-map 的 f63b3fc，核实 de555aa 和 1b6c487 已发布。更新 STATUS.md，汇总 16 个新增设施、5 个既有设施调整及 4 条新增纪事，并标明早期提交含线路绘制等其他改动。本次仅整理交接文档。
+
+在独立工作目录运行 node scripts/verify-game.mjs（2.7.2、12 张地图、103 个源文件）、node scripts/check-shanghai-p1.mjs 和 node scripts/check-shanghai-education.mjs 均通过。使用 2000 年 7 月上海 121 站测试存档核查旧档恢复、设施步行可达性、校区客流权重和事件顺序。git diff --check 通过；三份根 README 与上游逐字节一致。

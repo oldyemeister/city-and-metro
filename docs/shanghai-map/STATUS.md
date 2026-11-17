@@ -1,10 +1,24 @@
 # Shanghai map development status
 
-Updated: 2026-11-16 (Asia/Shanghai).
+Updated: 2026-11-17 (Asia/Shanghai).
 
-- **GitHub sync failed (local changes committed):** implementation/evidence commit `1b6c487746964c9629977e5770c535798ec0c87e` exists locally. Normal HTTPS push, one-shot HTTP/1.1 buffered retry and no-proxy retry all returned HTTP408; remote remained de555aaa when checked after the first two attempts. SSH443 alternative stopped at strict host-key verification (unknown `[ssh.github.com]:443`); no trust/config changes or force push. Retry `git push origin HEAD:refs/heads/codex/shanghai-map` after transport recovery. Publication is not complete; no player exports or PR.
+## 上海地图修改摘要
 
-- **GitHub sync authorized:** user requested publication of current changes to `origin/codex/shanghai-map` (oldyemeister/city-and-metro). Remote and local pre-sync HEAD both de555aaa; normal non-force push planned. Includes education implementation/checks/planning and the diagnostic evidence already referenced by the handoff documents; excludes player exports. Source verification, school labels and whitespace checks PASS. Browser acceptance remains incomplete as recorded below; no PR.
+对照上游 `main` 的 `bd76a32`，地图数据集中在 [js/data_sh.js](../../js/data_sh.js)。本分支新增 16 个设施，调整 5 个既有设施，并在原有历史事件之后追加 4 条记录。地图边界和底图沿用上游。
+
+| 类型 | 新增设施 |
+| --- | --- |
+| 高校（8） | 上师大徐汇、上海理工军工路、上大延长、复旦江湾、复旦张江、上外虹口、华政长宁、上音汾阳路 |
+| 医疗（3） | 仁济东院、复旦儿科闵行院区、枫林旧址门诊 |
+| 文旅、体育和商业（5） | 上海科技馆、锦江乐园、东方体育中心、上海环球港、中共一大会址纪念馆 |
+
+既有设施涉及复旦邯郸、交大徐汇、上大宝山、东华延安路和仁济西院。校名标签明确到校区，部分校区和院区的客流随迁址、分流调整。例如 2005 年 8 月华政主体迁往松江后，长宁校区仍作为目的地，但教学客流权重下调。地点和启用时间有来源记录，客流权重是游戏估算。
+
+新增纪事为上外松江开学、华政主体迁往松江、上音部分系部迁往零陵路和中共一大纪念馆新馆开放。保留原设施 ID 和原事件顺序以兼容旧档。选址、史料及权重取舍见[开发记录](DEVELOPMENT.md)。
+
+**分支范围。** 第一批地图数据位于 `de555aa`，其中也有既有的线路绘制和界面改动；后三所高校位于 `1b6c487`。单独审阅地图数据可运行 `git diff bd76a32..1b6c487 -- js/data_sh.js`。2026-11-17 已核实这两批提交都在 fork 的 `codex/shanghai-map` 分支上。根目录的三份 README 与上游一致。
+
+## 历次验证和待办
 
 - **Three P2 education campuses implemented:** SISU Hongkou `sh_sisu_hongkou`, ECUPL Changning `sh_ecupl_changning`, SHCM Fenyang `sh_shcm_fenyang`. WGS-84 OSM gates, two-line school/campus labels, `uni` teaching-only weights;2001/2007,2005-08,2019-09 teaching outflows modeled conservatively. Existing P1/facilities/IDs/event prefix unchanged; three descriptive events appended only. No geo/engine/performance/economy/drawing/UI edits. Cancer Center Xuhui deferred, Fudan Fenglin candidate, Songjiang/Lingling excluded.
 - **Education verification:** baseline/final source verify, build, new education actual-city/old-save/walking/demand check, P1 regression, expanded school labels and whitespace PASS. Monthly1990–2025 activation/weight bounds, sampled land/region access, all six city trip-purpose totals unchanged and automatic district facilities unchanged. Counts remain estimates; campus annual enrollment/daily physical attendance/metro share not measured. Low-share SHCM response is affected by existing OD pruning, especially2020-01; see log.
