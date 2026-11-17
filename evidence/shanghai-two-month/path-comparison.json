@@ -1,0 +1,181 @@
+{
+  "saveSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "start": {
+    "y": 2010,
+    "m": 1,
+    "d": 16,
+    "minute": 547.3584000004513
+  },
+  "end": {
+    "y": 2010,
+    "m": 3,
+    "d": 16,
+    "minute": 547.3584000004513
+  },
+  "stations": 278,
+  "sample": "origin % 47 === 13; reachable common destinations; exact ordered street-grid vertices including both endpoints; Float32 minutes",
+  "captured": [
+    {
+      "month": "2010-2",
+      "period": "wd-0",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "wd-1",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "wd-2",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "wd-3",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "we-0",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "we-1",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "we-2",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-2",
+      "period": "we-3",
+      "origins": 29,
+      "paths": 9348
+    },
+    {
+      "month": "2010-3",
+      "period": "wd-0",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "wd-1",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "wd-2",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "wd-3",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "we-0",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "we-1",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "we-2",
+      "origins": 29,
+      "paths": 9352
+    },
+    {
+      "month": "2010-3",
+      "period": "we-3",
+      "origins": 29,
+      "paths": 9352
+    }
+  ],
+  "comparisons": [
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "wd-0",
+      "identical": 167,
+      "timeOnly": 877,
+      "routeChanged": 8300
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "wd-1",
+      "identical": 556,
+      "timeOnly": 8726,
+      "routeChanged": 62
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "wd-2",
+      "identical": 121,
+      "timeOnly": 796,
+      "routeChanged": 8427
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "wd-3",
+      "identical": 504,
+      "timeOnly": 448,
+      "routeChanged": 8392
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "we-0",
+      "identical": 887,
+      "timeOnly": 3455,
+      "routeChanged": 5002
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "we-1",
+      "identical": 280,
+      "timeOnly": 571,
+      "routeChanged": 8493
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "we-2",
+      "identical": 254,
+      "timeOnly": 3150,
+      "routeChanged": 5940
+    },
+    {
+      "from": "2010-2",
+      "to": "2010-3",
+      "period": "we-3",
+      "identical": 455,
+      "timeOnly": 425,
+      "routeChanged": 8464
+    }
+  ]
+}

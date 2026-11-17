@@ -1,0 +1,21 @@
+Layout
+  (no stack): count=2663, total_ms=371.366, max_ms=7.910
+  UI.fitHud > UI.updateTop > UI.tick: count=89, total_ms=17.305, max_ms=2.476
+  UI.setTooltip > Tools.updateHover > Tools.onMove: count=15, total_ms=2.120, max_ms=0.196
+  show > : count=2, total_ms=2.116, max_ms=2.015
+  UI.moneyFloat > UI.updateTop > UI.tick: count=4, total_ms=1.321, max_ms=0.570
+  UI.viewport > UI.measureLayout > : count=1, total_ms=0.230, max_ms=0.230
+  UI.measureLayout > : count=1, total_ms=0.154, max_ms=0.154
+UpdateLayoutTree
+  (no stack): count=2674, total_ms=728.426, max_ms=1.451
+  Q.tick > UI.tick > UI.tick: count=502, total_ms=42.127, max_ms=0.583
+  UI.fitHud > UI.updateTop > UI.tick: count=89, total_ms=28.427, max_ms=1.140
+  UI.setTooltip > Tools.updateHover > Tools.onMove: count=15, total_ms=4.206, max_ms=0.387
+  UI.moneyFloat > UI.updateTop > UI.tick: count=4, total_ms=2.208, max_ms=1.027
+  show > : count=2, total_ms=0.715, max_ms=0.396
+  UI.viewport > UI.measureLayout > : count=1, total_ms=0.466, max_ms=0.466
+  UI.measureLayout > : count=1, total_ms=0.350, max_ms=0.350
+Recorded interactions (not whole-session field INP):
+25336 ['click', 'pointerdown', 'pointerup'] 52.917
+25343 ['click', 'pointerdown', 'pointerup'] 63.546
+Network events: {'ResourceSendRequest': 0, 'ResourceReceiveResponse': 0}
