@@ -1,0 +1,209 @@
+{
+  "captureSHA256": "94791e09520ebbbdd57b3ef7c35423d2354ce2a3876432fce9d5045994f0df7d",
+  "simSHA256": "4115bd77bcb571c41e0e1c3713ac69f2f225eeaf68e8de138d4757ce3dab23b8",
+  "calibrationSourceSHA256": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+  "kernelSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "comparison": "Byte equality of both shipped Worker handlers versus the synchronous JS carOriginRow on every requested OD time and distance (including NaNs), every per-block arc flow and ordered merged arc flow.",
+  "origins": 120,
+  "pairs": 12186,
+  "zones": 120,
+  "nodes": 461,
+  "arcs": 1216,
+  "blocks": [
+    {
+      "block": 0,
+      "origins": 3,
+      "pairs": 218,
+      "flowSHA256": "59ac3c88fce5d4152e770505a443e9577704556f5838cac6b6d406a3cca8f324"
+    },
+    {
+      "block": 1,
+      "origins": 4,
+      "pairs": 435,
+      "flowSHA256": "7b61e6931578e5b8a451b1c982c878d3570d27f017e3b57ec5af14e42ebbaf73"
+    },
+    {
+      "block": 2,
+      "origins": 4,
+      "pairs": 313,
+      "flowSHA256": "1e5e33f10b7610071c1c2055f432d229ebb8e3d54281299a4592b0f6b04dec0e"
+    },
+    {
+      "block": 3,
+      "origins": 4,
+      "pairs": 357,
+      "flowSHA256": "127486c95d919c3349583409a4a6cfbfc2c4f179a784580dee60e1a122e69d0a"
+    },
+    {
+      "block": 4,
+      "origins": 3,
+      "pairs": 354,
+      "flowSHA256": "dd43fcb8bb332ed60464e9ff8e3d243d533d711812bf92572b7262ed145a30af"
+    },
+    {
+      "block": 5,
+      "origins": 4,
+      "pairs": 434,
+      "flowSHA256": "e500f73d25253d3368c64ead2577a77867a9053b6691bc83ff87346894533568"
+    },
+    {
+      "block": 6,
+      "origins": 4,
+      "pairs": 303,
+      "flowSHA256": "e44a8e01d583fe3c01e08c85b2436a1d82b7b83865c0c6fff801c66c4bc4b7e5"
+    },
+    {
+      "block": 7,
+      "origins": 4,
+      "pairs": 472,
+      "flowSHA256": "9f40018bffa360d12d9dcd7e5dca7ae537c479ff103cbd0c25d082f01c7e7c7c"
+    },
+    {
+      "block": 8,
+      "origins": 3,
+      "pairs": 354,
+      "flowSHA256": "1112efa286f61eddc0ecb695e85fbe918fe5e1f0c7e1e51ad63950698888b26d"
+    },
+    {
+      "block": 9,
+      "origins": 4,
+      "pairs": 453,
+      "flowSHA256": "b6c8d4f3d6183b2155e3559816ddea8741210a453e72bd160fbd092ab208af5b"
+    },
+    {
+      "block": 10,
+      "origins": 4,
+      "pairs": 472,
+      "flowSHA256": "d595c229639bcd886babf5e16ccd65bf8195c2a96ed88c6d4d1d5159add96cb4"
+    },
+    {
+      "block": 11,
+      "origins": 4,
+      "pairs": 472,
+      "flowSHA256": "fca3424bfde6fd98ef45e6746b91ef6dcfeec599ca2fdd8154dbf83bd60574d2"
+    },
+    {
+      "block": 12,
+      "origins": 3,
+      "pairs": 357,
+      "flowSHA256": "6420af9faa7fd1a380333948ce4281f0085f4c7939690deca8613559aa6465c2"
+    },
+    {
+      "block": 13,
+      "origins": 4,
+      "pairs": 472,
+      "flowSHA256": "e20dec04c8a54f566bcc623a85aba3a75f2c5d927b6ac4756371e654bf2d0e6e"
+    },
+    {
+      "block": 14,
+      "origins": 4,
+      "pairs": 472,
+      "flowSHA256": "a22be10c25006474fb1a72f28c9c82920c03feccd8cf592d101e99e8b6965962"
+    },
+    {
+      "block": 15,
+      "origins": 4,
+      "pairs": 474,
+      "flowSHA256": "ca5d68387116af7809d83ce7eedae5123699a5a37645fa770ea72825f5df6b3b"
+    },
+    {
+      "block": 16,
+      "origins": 3,
+      "pairs": 330,
+      "flowSHA256": "2cfba7724d3b662f2929ad8ff8eb548a1eefc77eb617900a8391d3d99836875f"
+    },
+    {
+      "block": 17,
+      "origins": 4,
+      "pairs": 472,
+      "flowSHA256": "fff24746281ad449a0642ef18229a946ca1d7cb76164b21794fc4e139e78e0e2"
+    },
+    {
+      "block": 18,
+      "origins": 4,
+      "pairs": 449,
+      "flowSHA256": "77ecb6ea0aea1890d0d263b60696339037b1db930608b2ffe26aa1b299032e66"
+    },
+    {
+      "block": 19,
+      "origins": 4,
+      "pairs": 389,
+      "flowSHA256": "c067b1019bc17a3cd4f702dd8127f5cf4efbf28866849d332334b06f597e260b"
+    },
+    {
+      "block": 20,
+      "origins": 3,
+      "pairs": 354,
+      "flowSHA256": "ca39f280170f9e2da9b7d94e0bcd8ad2eab011d903aaddb38cbb1952e3982467"
+    },
+    {
+      "block": 21,
+      "origins": 4,
+      "pairs": 420,
+      "flowSHA256": "3e2319aab1ac441ba5c26932c80bec937ea8a015150b85d2682c49877738f9f3"
+    },
+    {
+      "block": 22,
+      "origins": 4,
+      "pairs": 340,
+      "flowSHA256": "8212d99671f2a0d99653aec0b18cc9db8565bd7a2ee4c14abbb7074b990635e5"
+    },
+    {
+      "block": 23,
+      "origins": 4,
+      "pairs": 443,
+      "flowSHA256": "4cbfe55e24c9829bc6589dbf1ac781060d6fa9a8806c32fee83865f2ce969b84"
+    },
+    {
+      "block": 24,
+      "origins": 3,
+      "pairs": 317,
+      "flowSHA256": "fab6d1d515a37ff5c639affb9bbf396be9872694cd7555c69a68a62e60582a10"
+    },
+    {
+      "block": 25,
+      "origins": 4,
+      "pairs": 316,
+      "flowSHA256": "930bfdbe729d24ffe150eaf64418e80f6d775120d0074e9309b7a172a7267dbd"
+    },
+    {
+      "block": 26,
+      "origins": 4,
+      "pairs": 358,
+      "flowSHA256": "3392bec59d4e60184dcc8a2671745685d5aad34291ae801d780d39499abf8d7e"
+    },
+    {
+      "block": 27,
+      "origins": 4,
+      "pairs": 350,
+      "flowSHA256": "96a7d7d6166d0e4218ad6da9ce1eff41bf3771c463915f17dc19cae90d6fca90"
+    },
+    {
+      "block": 28,
+      "origins": 3,
+      "pairs": 273,
+      "flowSHA256": "a3e363e7c8895e80db897a023b8d832f4b4b0b6a3c7df9ecff1a7a4f247e324f"
+    },
+    {
+      "block": 29,
+      "origins": 4,
+      "pairs": 328,
+      "flowSHA256": "3574139e86a07a75852d295e17fe43f92c3e119d9d21b821838326b450f3aac8"
+    },
+    {
+      "block": 30,
+      "origins": 4,
+      "pairs": 325,
+      "flowSHA256": "9593734c131ff28831d61c43b93c7a46b5ef3f22022040b3a838d955578403bb"
+    },
+    {
+      "block": 31,
+      "origins": 4,
+      "pairs": 310,
+      "flowSHA256": "246c029dcaec8a994971899397958b98e2a37effb21c6a6bb7a515fcb9390446"
+    }
+  ],
+  "timeSHA256": "08152d28227fdc2c1313cf2b18308514f4236626acce1a86819f0ce460273bf0",
+  "kmSHA256": "e3c6ab04fb503a7721f9ccac0a030c4785459f35f9f429682626ff7915ef033f",
+  "mergedFlowSHA256": "d7f4b6ac699248d97da72c91077195845f0f5c283095f328854b9df4cede95a0"
+}

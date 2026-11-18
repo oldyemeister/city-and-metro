@@ -1,0 +1,52 @@
+{
+  "window": "First weekday road assignment in the following monthly jump",
+  "metric": "Each origin has equal weight when summarizing its row. Radius is the root mean square distance from the destination centroid of that row; the car-demand version weights both centroid and squared distance by car demand.",
+  "shanghai2010": {
+    "captureSHA256": "6968674c27e7b5325a7513358999d3f3a6532e4ef551844ec12c4dad219b3d89",
+    "zones": 1444,
+    "origins": 1341,
+    "roadNodes": 8747,
+    "roadArcs": 25386,
+    "destinationsPerOrigin": {
+      "mean": 303.72930648769574,
+      "median": 178,
+      "p90": 708
+    },
+    "requestedDestinationRadiusKm": {
+      "mean": 9.235182366172175,
+      "median": 8.5302077609191,
+      "p90": 12.140179096813473
+    },
+    "carDemandWeightedDestinationRadiusKm": {
+      "mean": 6.645908905296313,
+      "median": 6.286874273959141,
+      "p90": 8.686683016385196
+    },
+    "allOriginsDistinctPositiveDemandDestinationZones": 1342,
+    "destinationZonesReceivingHalfOfAllCarDemand": 50
+  },
+  "london1860": {
+    "captureSHA256": "f41efe32daff4470dc8dc6b4a7318d3dc5ee5b7cc55009b88cfead63c77c500c",
+    "zones": 1715,
+    "origins": 1059,
+    "roadNodes": 2091,
+    "roadArcs": 5012,
+    "destinationsPerOrigin": {
+      "mean": 128.4636449480642,
+      "median": 101,
+      "p90": 170
+    },
+    "requestedDestinationRadiusKm": {
+      "mean": 5.969650708652763,
+      "median": 5.873625771926301,
+      "p90": 6.736632462700355
+    },
+    "carDemandWeightedDestinationRadiusKm": {
+      "mean": 2.885334663451207,
+      "median": 2.693306931972972,
+      "p90": 4.227532583346653
+    },
+    "allOriginsDistinctPositiveDemandDestinationZones": 1706,
+    "destinationZonesReceivingHalfOfAllCarDemand": 14
+  }
+}

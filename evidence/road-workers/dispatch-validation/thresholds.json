@@ -1,0 +1,383 @@
+{
+  "scope": "Counterfactual sums of recorded, paired per-block median Node handler times. Omit scheduling, transport, merge and graph preparation. The nearest-only subsets repeat selected blocks after clipping destination lists; only realAllocation uses unchanged game traffic. No end-to-end time or universal crossover implied.",
+  "datasets": {
+    "sh2010": {
+      "timingInputSHA256": "b2d53d1e7ab9fbc69f370727f83c575d6e4ae1ee993b24326b5ec689736da1f8",
+      "captureSHA256": "6968674c27e7b5325a7513358999d3f3a6532e4ef551844ec12c4dad219b3d89",
+      "policies": [
+        {
+          "inclusiveMinimumDensity": 0,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 793.1465820000021
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 36,
+            "eligibleWasmSlower": 15,
+            "sumOfSelectedBlockMediansMs": 859.0788739999916
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.05,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 793.1465820000021
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 16,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 649.93174799999
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.08,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 793.1465820000021
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 12,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 668.939040999996
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.1,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 793.1465820000021
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 8,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 694.6773730000004
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.11,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 793.1465820000021
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 4,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 726.904414000006
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.12,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 30,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 809.8409990000009
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 758.9462050000056
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.75,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 1055.787960000001
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 758.9462050000056
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 1,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 1055.787960000001
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 758.9462050000056
+          }
+        }
+      ]
+    },
+    "london": {
+      "timingInputSHA256": "8e1f281dc84f94d8a26a56411ce09f3fc10458220a849886cf734a7054d1ecfa",
+      "captureSHA256": "f41efe32daff4470dc8dc6b4a7318d3dc5ee5b7cc55009b88cfead63c77c500c",
+      "policies": [
+        {
+          "inclusiveMinimumDensity": 0,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 9,
+            "sumOfSelectedBlockMediansMs": 42.80620700000017
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 36,
+            "eligibleWasmSlower": 22,
+            "sumOfSelectedBlockMediansMs": 37.49337699999967
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.05,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 30,
+            "eligibleWasmSlower": 7,
+            "sumOfSelectedBlockMediansMs": 42.432707000000136
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 13,
+            "eligibleWasmSlower": 4,
+            "sumOfSelectedBlockMediansMs": 29.63712399999963
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.08,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 7,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 45.70895800000008
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 30.60779299999956
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.1,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 6,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 46.07879099999994
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 30.60779299999956
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.11,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 5,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 46.40404099999998
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 30.60779299999956
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.12,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 3,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 47.07379099999994
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 30.60779299999956
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.75,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 48.40803999999994
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 30.60779299999956
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 1,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 48.40803999999994
+          },
+          "nearestSubsets": {
+            "rows": 36,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 30.60779299999956
+          }
+        }
+      ]
+    },
+    "qingwan": {
+      "timingInputSHA256": "bffeda073e67ae036c4ba547451c982019232ed10aa6bc1406e7b42f9f0e53aa",
+      "captureSHA256": "94791e09520ebbbdd57b3ef7c35423d2354ce2a3876432fce9d5045994f0df7d",
+      "policies": [
+        {
+          "inclusiveMinimumDensity": 0,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.0873446666666626
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 12,
+            "eligibleWasmSlower": 10,
+            "sumOfSelectedBlockMediansMs": 0.8802081999999928
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.05,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.0873446666666626
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 4,
+            "eligibleWasmSlower": 3,
+            "sumOfSelectedBlockMediansMs": 0.5680971333333446
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.08,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.0873446666666626
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 4,
+            "eligibleWasmSlower": 3,
+            "sumOfSelectedBlockMediansMs": 0.5680971333333446
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.1,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.0873446666666626
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 4,
+            "eligibleWasmSlower": 3,
+            "sumOfSelectedBlockMediansMs": 0.5680971333333446
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.11,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.0873446666666626
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 0.5034388666666852
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.12,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 32,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.0873446666666626
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 0.5034388666666852
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 0.75,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 21,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.4562975333333457
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 0.5034388666666852
+          }
+        },
+        {
+          "inclusiveMinimumDensity": 1,
+          "realAllocation": {
+            "rows": 32,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 2.992877933333335
+          },
+          "nearestSubsets": {
+            "rows": 12,
+            "dispatchedToWasm": 0,
+            "eligibleWasmSlower": 0,
+            "sumOfSelectedBlockMediansMs": 0.5034388666666852
+          }
+        }
+      ]
+    }
+  }
+}

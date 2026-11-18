@@ -1,0 +1,3819 @@
+{
+  "saveSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "profile": "/var/folders/n5/_4pxtjbd4977vwnbzxx01r340000gn/T/metro-workers-uczLOc",
+  "cases": [
+    {
+      "scenario": "normal",
+      "n": 4,
+      "check": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "stations": 278,
+        "speed": 0,
+        "map": "sh",
+        "road": 4,
+        "mode": 2,
+        "metro": 2
+      },
+      "before": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "samples": [
+        {
+          "intervalMs": 153.53254200000083,
+          "cpuPct": 227.49769882661056
+        },
+        {
+          "intervalMs": 254.73287499999788,
+          "cpuPct": 200.4629359284706
+        },
+        {
+          "intervalMs": 252.21783300000243,
+          "cpuPct": 202.58599240284371
+        },
+        {
+          "intervalMs": 253.11149999999907,
+          "cpuPct": 212.0879533328205
+        },
+        {
+          "intervalMs": 254.7435000000005,
+          "cpuPct": 197.30002924510288
+        },
+        {
+          "intervalMs": 254.29491699999926,
+          "cpuPct": 263.2148561585304
+        },
+        {
+          "intervalMs": 255.50312499999927,
+          "cpuPct": 207.42251195557634
+        },
+        {
+          "intervalMs": 253.452833000003,
+          "cpuPct": 196.74666646949586
+        },
+        {
+          "intervalMs": 252.6872089999997,
+          "cpuPct": 183.63177219627124
+        },
+        {
+          "intervalMs": 253.45545799999672,
+          "cpuPct": 203.20572461296464
+        },
+        {
+          "intervalMs": 256.53158299999996,
+          "cpuPct": 203.4427862241037
+        },
+        {
+          "intervalMs": 253.6304170000003,
+          "cpuPct": 188.81607563654387
+        },
+        {
+          "intervalMs": 253.35154200000034,
+          "cpuPct": 211.7622793075404
+        },
+        {
+          "intervalMs": 254.23775000000023,
+          "cpuPct": 204.04129599164546
+        },
+        {
+          "intervalMs": 253.19916600000215,
+          "cpuPct": 190.8173741772886
+        },
+        {
+          "intervalMs": 253.4204589999972,
+          "cpuPct": 195.52604472238193
+        },
+        {
+          "intervalMs": 254.91379100000267,
+          "cpuPct": 190.95475301294874
+        },
+        {
+          "intervalMs": 281.3045839999977,
+          "cpuPct": 214.50663598144868
+        },
+        {
+          "intervalMs": 255.85329099999944,
+          "cpuPct": 228.60171065769129
+        },
+        {
+          "intervalMs": 255.95779200000106,
+          "cpuPct": 197.6798580915993
+        },
+        {
+          "intervalMs": 253.4005419999994,
+          "cpuPct": 185.6353566915431
+        },
+        {
+          "intervalMs": 255.2492080000011,
+          "cpuPct": 191.4070581562792
+        },
+        {
+          "intervalMs": 253.03858300000138,
+          "cpuPct": 190.2638697593386
+        },
+        {
+          "intervalMs": 256.1210839999985,
+          "cpuPct": 198.90513972680267
+        },
+        {
+          "intervalMs": 257.106749999999,
+          "cpuPct": 188.96820095155198
+        },
+        {
+          "intervalMs": 253.32116600000154,
+          "cpuPct": 183.9072539244481
+        },
+        {
+          "intervalMs": 256.36612500000047,
+          "cpuPct": 191.1052015940094
+        },
+        {
+          "intervalMs": 257.0296249999992,
+          "cpuPct": 201.5985511397771
+        },
+        {
+          "intervalMs": 252.80854199999885,
+          "cpuPct": 187.59176262327455
+        },
+        {
+          "intervalMs": 255.6755000000012,
+          "cpuPct": 192.74431848182525
+        },
+        {
+          "intervalMs": 253.32325000000128,
+          "cpuPct": 195.0432895519836
+        },
+        {
+          "intervalMs": 255.76116699999693,
+          "cpuPct": 195.65988295635458
+        },
+        {
+          "intervalMs": 253.91970800000126,
+          "cpuPct": 190.1037945428
+        },
+        {
+          "intervalMs": 253.86125000000175,
+          "cpuPct": 185.7428024166736
+        },
+        {
+          "intervalMs": 253.17770799999926,
+          "cpuPct": 188.94949471617872
+        },
+        {
+          "intervalMs": 254.9107499999991,
+          "cpuPct": 185.25228928163972
+        },
+        {
+          "intervalMs": 252.55583399999887,
+          "cpuPct": 181.920564939318
+        },
+        {
+          "intervalMs": 255.61475000000064,
+          "cpuPct": 201.9226198801135
+        },
+        {
+          "intervalMs": 252.52366600000096,
+          "cpuPct": 262.17780316874934
+        },
+        {
+          "intervalMs": 256.61608400000114,
+          "cpuPct": 161.53586070622154
+        }
+      ],
+      "timing": {
+        "ms": 9994.90000000596,
+        "steps": [],
+        "hidden": false,
+        "actualWorkers": 4
+      },
+      "after": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 787.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "peak": 263.2148561585304
+    },
+    {
+      "scenario": "normal",
+      "n": 2,
+      "check": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "stations": 278,
+        "speed": 0,
+        "map": "sh",
+        "road": 2,
+        "mode": 2,
+        "metro": 2
+      },
+      "before": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "samples": [
+        {
+          "intervalMs": 151.98795899999823,
+          "cpuPct": 252.40617909738333
+        },
+        {
+          "intervalMs": 256.4552909999984,
+          "cpuPct": 214.92128232207432
+        },
+        {
+          "intervalMs": 256.9601249999978,
+          "cpuPct": 209.4052530523949
+        },
+        {
+          "intervalMs": 253.07300000000396,
+          "cpuPct": 220.08155749526748
+        },
+        {
+          "intervalMs": 257.4493749999965,
+          "cpuPct": 206.60955187791816
+        },
+        {
+          "intervalMs": 256.56220900000335,
+          "cpuPct": 221.0793250536747
+        },
+        {
+          "intervalMs": 253.23258299999725,
+          "cpuPct": 193.34715706785772
+        },
+        {
+          "intervalMs": 255.1739579999994,
+          "cpuPct": 202.01865583791502
+        },
+        {
+          "intervalMs": 253.87270900000294,
+          "cpuPct": 219.8117325009477
+        },
+        {
+          "intervalMs": 256.65295799999876,
+          "cpuPct": 223.95455890284447
+        },
+        {
+          "intervalMs": 257.2462080000041,
+          "cpuPct": 197.98775809359768
+        },
+        {
+          "intervalMs": 253.17999999999302,
+          "cpuPct": 222.08547278616788
+        },
+        {
+          "intervalMs": 254.99804200000654,
+          "cpuPct": 212.11143260463936
+        },
+        {
+          "intervalMs": 253.32633299999725,
+          "cpuPct": 223.63091641168037
+        },
+        {
+          "intervalMs": 253.73554200000217,
+          "cpuPct": 199.11873441837153
+        },
+        {
+          "intervalMs": 253.34608299999672,
+          "cpuPct": 210.9387260587759
+        },
+        {
+          "intervalMs": 255.34375000000728,
+          "cpuPct": 197.93983600537808
+        },
+        {
+          "intervalMs": 253.52033400000073,
+          "cpuPct": 201.16374570569965
+        },
+        {
+          "intervalMs": 256.0025409999944,
+          "cpuPct": 209.2572979578407
+        },
+        {
+          "intervalMs": 259.03225000000384,
+          "cpuPct": 211.28913484710537
+        },
+        {
+          "intervalMs": 256.0899589999899,
+          "cpuPct": 208.82271295924937
+        },
+        {
+          "intervalMs": 256.79016600000614,
+          "cpuPct": 236.29798969793376
+        },
+        {
+          "intervalMs": 252.99404200000572,
+          "cpuPct": 206.36335775843438
+        },
+        {
+          "intervalMs": 260.7433749999909,
+          "cpuPct": 232.28317881519004
+        },
+        {
+          "intervalMs": 255.74150000000373,
+          "cpuPct": 233.0110678165259
+        },
+        {
+          "intervalMs": 253.78808299999218,
+          "cpuPct": 206.4943293653423
+        },
+        {
+          "intervalMs": 253.9833750000107,
+          "cpuPct": 195.72383428639114
+        },
+        {
+          "intervalMs": 255.25695899999118,
+          "cpuPct": 249.2876207931403
+        },
+        {
+          "intervalMs": 252.8547910000052,
+          "cpuPct": 274.7035155050679
+        },
+        {
+          "intervalMs": 252.38624999999593,
+          "cpuPct": 206.45538336577658
+        },
+        {
+          "intervalMs": 256.4609999999957,
+          "cpuPct": 203.68321109252653
+        },
+        {
+          "intervalMs": 253.5308750000113,
+          "cpuPct": 207.90958892086732
+        },
+        {
+          "intervalMs": 252.8096249999944,
+          "cpuPct": 193.64452599461288
+        },
+        {
+          "intervalMs": 254.41425000000163,
+          "cpuPct": 195.7229203945898
+        },
+        {
+          "intervalMs": 254.76583400000527,
+          "cpuPct": 211.90321776035225
+        },
+        {
+          "intervalMs": 254.5391249999957,
+          "cpuPct": 210.4898411982877
+        },
+        {
+          "intervalMs": 255.3937500000029,
+          "cpuPct": 201.4783055575917
+        },
+        {
+          "intervalMs": 257.28337499999907,
+          "cpuPct": 201.7475866833598
+        },
+        {
+          "intervalMs": 253.25920800000313,
+          "cpuPct": 198.99572614946922
+        },
+        {
+          "intervalMs": 255.30833299999358,
+          "cpuPct": 169.14293197002965
+        }
+      ],
+      "timing": {
+        "ms": 10000.89999999106,
+        "steps": [],
+        "hidden": false,
+        "actualWorkers": 2
+      },
+      "after": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 787.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "peak": 274.7035155050679
+    },
+    {
+      "scenario": "two",
+      "n": 2,
+      "check": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "stations": 278,
+        "speed": 0,
+        "map": "sh",
+        "road": 2,
+        "mode": 2,
+        "metro": 2
+      },
+      "before": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "samples": [
+        {
+          "intervalMs": 159.20699999999488,
+          "cpuPct": 268.8499877518024
+        },
+        {
+          "intervalMs": 272.8114590000041,
+          "cpuPct": 317.07905641895326
+        },
+        {
+          "intervalMs": 254.90558299999975,
+          "cpuPct": 323.5476407749029
+        },
+        {
+          "intervalMs": 254.01275000000896,
+          "cpuPct": 283.5944258703432
+        },
+        {
+          "intervalMs": 253.2607919999864,
+          "cpuPct": 315.1514269923158
+        },
+        {
+          "intervalMs": 252.77008300001035,
+          "cpuPct": 301.55704779349867
+        },
+        {
+          "intervalMs": 252.68829199999163,
+          "cpuPct": 283.93875882465227
+        },
+        {
+          "intervalMs": 253.27216600000975,
+          "cpuPct": 331.53820779500063
+        },
+        {
+          "intervalMs": 253.2141249999986,
+          "cpuPct": 272.36237314960016
+        },
+        {
+          "intervalMs": 253.91237499999988,
+          "cpuPct": 318.51578718839784
+        },
+        {
+          "intervalMs": 254.7230419999978,
+          "cpuPct": 275.346507521686
+        },
+        {
+          "intervalMs": 253.28033300000243,
+          "cpuPct": 269.1101168127391
+        },
+        {
+          "intervalMs": 252.99008399999002,
+          "cpuPct": 324.8309131357256
+        },
+        {
+          "intervalMs": 253.70429100000183,
+          "cpuPct": 266.02663965190465
+        },
+        {
+          "intervalMs": 253.4601249999978,
+          "cpuPct": 312.7245360586789
+        },
+        {
+          "intervalMs": 253.74087500000314,
+          "cpuPct": 273.9144806685139
+        },
+        {
+          "intervalMs": 253.13366700000188,
+          "cpuPct": 267.93472714950764
+        },
+        {
+          "intervalMs": 253.30770800000755,
+          "cpuPct": 316.97693147180996
+        },
+        {
+          "intervalMs": 253.56179199999315,
+          "cpuPct": 273.25607479538036
+        },
+        {
+          "intervalMs": 253.5304579999938,
+          "cpuPct": 268.5657594639058
+        },
+        {
+          "intervalMs": 253.26425000000745,
+          "cpuPct": 270.0112629397898
+        },
+        {
+          "intervalMs": 253.30749999999534,
+          "cpuPct": 270.1984741865096
+        },
+        {
+          "intervalMs": 252.6572920000035,
+          "cpuPct": 227.42862295856705
+        },
+        {
+          "intervalMs": 255.05554200000188,
+          "cpuPct": 302.49489736631233
+        },
+        {
+          "intervalMs": 253.64691599999787,
+          "cpuPct": 287.0596699862922
+        },
+        {
+          "intervalMs": 253.72937499999534,
+          "cpuPct": 295.51131003259576
+        },
+        {
+          "intervalMs": 253.17275000001246,
+          "cpuPct": 355.69902369032513
+        },
+        {
+          "intervalMs": 253.44166699999187,
+          "cpuPct": 280.71508857303496
+        },
+        {
+          "intervalMs": 253.0755000000063,
+          "cpuPct": 319.41772316956065
+        },
+        {
+          "intervalMs": 254.96016699999745,
+          "cpuPct": 287.27114851631006
+        },
+        {
+          "intervalMs": 253.7477910000016,
+          "cpuPct": 278.72991414534226
+        },
+        {
+          "intervalMs": 253.80566699999326,
+          "cpuPct": 325.0967599553314
+        },
+        {
+          "intervalMs": 252.40645799999766,
+          "cpuPct": 275.6225040803075
+        },
+        {
+          "intervalMs": 253.2958340000041,
+          "cpuPct": 308.14837641585046
+        },
+        {
+          "intervalMs": 253.52141600000323,
+          "cpuPct": 280.0457693877769
+        },
+        {
+          "intervalMs": 253.44724999999744,
+          "cpuPct": 267.69357331753025
+        },
+        {
+          "intervalMs": 253.69650000000547,
+          "cpuPct": 319.05524908699346
+        },
+        {
+          "intervalMs": 253.46712499999558,
+          "cpuPct": 267.1667972720328
+        },
+        {
+          "intervalMs": 252.92625000000407,
+          "cpuPct": 317.02324294136497
+        },
+        {
+          "intervalMs": 253.1839170000021,
+          "cpuPct": 269.11898989223675
+        },
+        {
+          "intervalMs": 253.34983300000022,
+          "cpuPct": 266.42054269678533
+        },
+        {
+          "intervalMs": 253.78633399998944,
+          "cpuPct": 270.9342103503611
+        },
+        {
+          "intervalMs": 251.97695799999929,
+          "cpuPct": 260.51905904824895
+        }
+      ],
+      "timing": {
+        "ms": 10834.09999999404,
+        "steps": [
+          10834.09999999404
+        ],
+        "hidden": false,
+        "actualWorkers": 2
+      },
+      "after": {
+        "clock": {
+          "y": 2010,
+          "m": 3,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15893487.868736267,
+          "jobs": 9323051.186208248,
+          "funds": 1685382.1911537766,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39618781946171033,
+          "cong": 1.124431204730749,
+          "commute": 26.936515029849176,
+          "riders": 10514605.207384374,
+          "sat": 80.4906561999177,
+          "regions": 22,
+          "events": 303,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6524518090226394,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10956912.626079137,
+          "ridersWe": 9408836.66064747
+        },
+        "ledger": "a05245b3a8c56816912933db44a82066db75a87aa9d8ccbb8694dc65b75517db",
+        "arrays": {
+          "wd0arcTime": "7fa9d9f66c6f4262f6e63e23353385be44d7afe7f184f07ed7330fccd0f46a66",
+          "wd0arcVol": "57b2908edc2ad1ba06c2b2e554277ce27098801a8092450fec917b44384869c9",
+          "wd0load": "7919410539d512366c94405ec947c352c57e2d5c8e0cdb910470378578c63a89",
+          "wd0stIn": "ff4fa7a05433be58e22a027f14abab363077e8d372e23fa0f3cfe32f9d1b95bc",
+          "wd0stOut": "2e210653ee753a9ada960c5b38256edb657454bb7dd1c433a36fd31d7c197563",
+          "wd1arcTime": "1229778076e4af26dad3d4f4c227695c9ddb7c1c0ded824881945d9d0e25c3e8",
+          "wd1arcVol": "0e9338a9c8ebed0f02b496e5600c1b76c9bae22a3773f590d367b148623be10f",
+          "wd1load": "1f3746ec7e1e406d8be5244fd06ac8da42fb5abe904fdfb8e4a4a1ff585e28cd",
+          "wd1stIn": "3d69feda8a07508f3bea18c35e6075cef7575d20813bfb86f862ed97c1e23354",
+          "wd1stOut": "32a2309d8b6e52b598ce8cd4e10646c8dc71b226fa81d7cea883d9698e06a2b9",
+          "wd2arcTime": "1a873c6371541b7472838976a5c5a467ce4a25c70e27503eb4f5b06ee04232c1",
+          "wd2arcVol": "aaf26511f67b36a719402335fb125041aad94b37f293e5fa270f13f4f65bb1ef",
+          "wd2load": "7471fa7454b8963913cd8f7a56ea5353654268e6da7b7357f05bc4cd02a6a654",
+          "wd2stIn": "d058571fb65c8a26b67fa92bc4eea19607ddb39902787c695d1ec7488853a2ff",
+          "wd2stOut": "5243c68c0b9187e9dda0ce1b6a71a26d172087a6646771943d595239c0b94d96",
+          "wd3arcTime": "ef50c5406637753a3825be133227a75d53f045d5d7f37e03bd9f3ae0f27b957c",
+          "wd3arcVol": "a41a5b2f96b64d01bbc3f0757316ae7a3839b5a1088085442254e80fbd0283e2",
+          "wd3load": "dadf426fb7ad03839d751fef77d0ac47601500f3cf0ec17adbe5d7eaeea9f2bf",
+          "wd3stIn": "aa60849f564d13781cc390d60bc4a75de4f6e26674f93e695da792881c9f7dc6",
+          "wd3stOut": "ee2006277615ed637f84dff793e30f2d9588daf1cbf4e4b4d462f20995077859",
+          "we0arcTime": "26b892ad172d2799a255d0a80daa8ffb8c0abaff95c523b20277045ccefc185a",
+          "we0arcVol": "1e03f898c28d270bae52a542638f04e28a8ec75ca32df280e63344957e53fe39",
+          "we0load": "15c5ea03d79e64d1c54598430875eca04cabcd9a26a90b21e3079b42cef8f7f4",
+          "we0stIn": "d142d03c8193e3ea93158e6bfb5a5c66439a54b3ec8ae1d4197157ef5af6f85d",
+          "we0stOut": "5800edda01a1da7201dd8955f2903ce82dc0004e3472a19198aa8a777af326f5",
+          "we1arcTime": "23633986eb67a5d3f34aaff7bb3d9bc795bb73b45409b34401fc10813cb479e8",
+          "we1arcVol": "773e58a60ab46307bf05549470834fd7322ba189e702cacf92941f136c11d933",
+          "we1load": "842bfc3e44d7b416224f0241a1797ae4835ae775da0aba81e56e9923ee53aa0a",
+          "we1stIn": "cc9ff530a64cec4810acae04931cccadfd84fc367759be53040b1b6a7b89b5e5",
+          "we1stOut": "87f090afdb21a700d9bfc91ca2b50945e8436639e4b9b74743129173b9131b8a",
+          "we2arcTime": "7a005a0c76086e753684ad2251858bbe662c9673f113c9e016589c6f0e7f2bac",
+          "we2arcVol": "b7f1d5296f6754ffd17f226dfbfac0461aaab9d2298c295f7c17f2ab81f52856",
+          "we2load": "e7b268e428ad3aa7303c2945ec4105ca442b97f3c63633cdb2678db06d0ffb6e",
+          "we2stIn": "961b7f31a68686cc640a5eb206114dbf96ca09730cbf4d41ee8de790dabf15db",
+          "we2stOut": "85bc8ea4d740cbb4ce5c2bd887489a6426eaacd003b71bccc651699835d3cba8",
+          "we3arcTime": "d983a3b2a7ed72c6a647fe8c534c2fe2989dc93900d2563fd06254358958032d",
+          "we3arcVol": "d8364535d6c15a47cf79bb1fad8c93812cb284ebb42c8e6971f9e088bdb3cf8f",
+          "we3load": "fc94024468471a0c006f65a1c2ee36f6c64671d973fadb35920fd6db4e56d851",
+          "we3stIn": "48cd681a63023504b533a87783dbcbc349f440a67d34d5fc228c69f0f7c61b09",
+          "we3stOut": "e27c90c5320e6e07c208f38120005b7e1a8432b74cae7db2c482d71c3105e1d2"
+        }
+      },
+      "peak": 355.69902369032513
+    },
+    {
+      "scenario": "two",
+      "n": 4,
+      "check": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "stations": 278,
+        "speed": 0,
+        "map": "sh",
+        "road": 4,
+        "mode": 2,
+        "metro": 2
+      },
+      "before": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "samples": [
+        {
+          "intervalMs": 155.99675000002026,
+          "cpuPct": 277.2878281117706
+        },
+        {
+          "intervalMs": 277.8677079999761,
+          "cpuPct": 252.923236405741
+        },
+        {
+          "intervalMs": 253.49716700002318,
+          "cpuPct": 543.4723457875479
+        },
+        {
+          "intervalMs": 252.67199999999139,
+          "cpuPct": 531.0544896150119
+        },
+        {
+          "intervalMs": 252.1289579999866,
+          "cpuPct": 504.2879683816727
+        },
+        {
+          "intervalMs": 252.72291700000642,
+          "cpuPct": 494.11743692399733
+        },
+        {
+          "intervalMs": 253.28583300000173,
+          "cpuPct": 522.3786045704312
+        },
+        {
+          "intervalMs": 253.268167000002,
+          "cpuPct": 540.6672367159285
+        },
+        {
+          "intervalMs": 252.8560829999915,
+          "cpuPct": 518.9572599683282
+        },
+        {
+          "intervalMs": 252.02925000002142,
+          "cpuPct": 490.59146904570844
+        },
+        {
+          "intervalMs": 252.31220799998846,
+          "cpuPct": 509.6681647683401
+        },
+        {
+          "intervalMs": 252.82949999999255,
+          "cpuPct": 466.2391058005601
+        },
+        {
+          "intervalMs": 252.58062500000233,
+          "cpuPct": 364.3620725065496
+        },
+        {
+          "intervalMs": 270.01029199999175,
+          "cpuPct": 296.9249779560337
+        },
+        {
+          "intervalMs": 252.60558300002594,
+          "cpuPct": 493.8366702686314
+        },
+        {
+          "intervalMs": 253.3790839999856,
+          "cpuPct": 554.5473516669961
+        },
+        {
+          "intervalMs": 253.10933300000033,
+          "cpuPct": 463.5036512067238
+        },
+        {
+          "intervalMs": 253.49433300000965,
+          "cpuPct": 491.42637046641835
+        },
+        {
+          "intervalMs": 261.24720899999375,
+          "cpuPct": 511.6774281022173
+        },
+        {
+          "intervalMs": 253.91891599999508,
+          "cpuPct": 528.7896707939783
+        },
+        {
+          "intervalMs": 253.28599999999278,
+          "cpuPct": 519.7132885355063
+        },
+        {
+          "intervalMs": 253.36187500000233,
+          "cpuPct": 497.4978970296847
+        },
+        {
+          "intervalMs": 253.14604200000758,
+          "cpuPct": 491.16588597500964
+        },
+        {
+          "intervalMs": 253.63162500000908,
+          "cpuPct": 463.5577286546829
+        },
+        {
+          "intervalMs": 252.69791699998314,
+          "cpuPct": 420.8424084477372
+        }
+      ],
+      "timing": {
+        "ms": 6109.100000008941,
+        "steps": [
+          6109.100000008941
+        ],
+        "hidden": false,
+        "actualWorkers": 4
+      },
+      "after": {
+        "clock": {
+          "y": 2010,
+          "m": 3,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15893487.868736267,
+          "jobs": 9323051.186208248,
+          "funds": 1685382.1911537766,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39618781946171033,
+          "cong": 1.124431204730749,
+          "commute": 26.936515029849176,
+          "riders": 10514605.207384374,
+          "sat": 80.4906561999177,
+          "regions": 22,
+          "events": 303,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6524518090226394,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10956912.626079137,
+          "ridersWe": 9408836.66064747
+        },
+        "ledger": "a05245b3a8c56816912933db44a82066db75a87aa9d8ccbb8694dc65b75517db",
+        "arrays": {
+          "wd0arcTime": "7fa9d9f66c6f4262f6e63e23353385be44d7afe7f184f07ed7330fccd0f46a66",
+          "wd0arcVol": "57b2908edc2ad1ba06c2b2e554277ce27098801a8092450fec917b44384869c9",
+          "wd0load": "7919410539d512366c94405ec947c352c57e2d5c8e0cdb910470378578c63a89",
+          "wd0stIn": "ff4fa7a05433be58e22a027f14abab363077e8d372e23fa0f3cfe32f9d1b95bc",
+          "wd0stOut": "2e210653ee753a9ada960c5b38256edb657454bb7dd1c433a36fd31d7c197563",
+          "wd1arcTime": "1229778076e4af26dad3d4f4c227695c9ddb7c1c0ded824881945d9d0e25c3e8",
+          "wd1arcVol": "0e9338a9c8ebed0f02b496e5600c1b76c9bae22a3773f590d367b148623be10f",
+          "wd1load": "1f3746ec7e1e406d8be5244fd06ac8da42fb5abe904fdfb8e4a4a1ff585e28cd",
+          "wd1stIn": "3d69feda8a07508f3bea18c35e6075cef7575d20813bfb86f862ed97c1e23354",
+          "wd1stOut": "32a2309d8b6e52b598ce8cd4e10646c8dc71b226fa81d7cea883d9698e06a2b9",
+          "wd2arcTime": "1a873c6371541b7472838976a5c5a467ce4a25c70e27503eb4f5b06ee04232c1",
+          "wd2arcVol": "aaf26511f67b36a719402335fb125041aad94b37f293e5fa270f13f4f65bb1ef",
+          "wd2load": "7471fa7454b8963913cd8f7a56ea5353654268e6da7b7357f05bc4cd02a6a654",
+          "wd2stIn": "d058571fb65c8a26b67fa92bc4eea19607ddb39902787c695d1ec7488853a2ff",
+          "wd2stOut": "5243c68c0b9187e9dda0ce1b6a71a26d172087a6646771943d595239c0b94d96",
+          "wd3arcTime": "ef50c5406637753a3825be133227a75d53f045d5d7f37e03bd9f3ae0f27b957c",
+          "wd3arcVol": "a41a5b2f96b64d01bbc3f0757316ae7a3839b5a1088085442254e80fbd0283e2",
+          "wd3load": "dadf426fb7ad03839d751fef77d0ac47601500f3cf0ec17adbe5d7eaeea9f2bf",
+          "wd3stIn": "aa60849f564d13781cc390d60bc4a75de4f6e26674f93e695da792881c9f7dc6",
+          "wd3stOut": "ee2006277615ed637f84dff793e30f2d9588daf1cbf4e4b4d462f20995077859",
+          "we0arcTime": "26b892ad172d2799a255d0a80daa8ffb8c0abaff95c523b20277045ccefc185a",
+          "we0arcVol": "1e03f898c28d270bae52a542638f04e28a8ec75ca32df280e63344957e53fe39",
+          "we0load": "15c5ea03d79e64d1c54598430875eca04cabcd9a26a90b21e3079b42cef8f7f4",
+          "we0stIn": "d142d03c8193e3ea93158e6bfb5a5c66439a54b3ec8ae1d4197157ef5af6f85d",
+          "we0stOut": "5800edda01a1da7201dd8955f2903ce82dc0004e3472a19198aa8a777af326f5",
+          "we1arcTime": "23633986eb67a5d3f34aaff7bb3d9bc795bb73b45409b34401fc10813cb479e8",
+          "we1arcVol": "773e58a60ab46307bf05549470834fd7322ba189e702cacf92941f136c11d933",
+          "we1load": "842bfc3e44d7b416224f0241a1797ae4835ae775da0aba81e56e9923ee53aa0a",
+          "we1stIn": "cc9ff530a64cec4810acae04931cccadfd84fc367759be53040b1b6a7b89b5e5",
+          "we1stOut": "87f090afdb21a700d9bfc91ca2b50945e8436639e4b9b74743129173b9131b8a",
+          "we2arcTime": "7a005a0c76086e753684ad2251858bbe662c9673f113c9e016589c6f0e7f2bac",
+          "we2arcVol": "b7f1d5296f6754ffd17f226dfbfac0461aaab9d2298c295f7c17f2ab81f52856",
+          "we2load": "e7b268e428ad3aa7303c2945ec4105ca442b97f3c63633cdb2678db06d0ffb6e",
+          "we2stIn": "961b7f31a68686cc640a5eb206114dbf96ca09730cbf4d41ee8de790dabf15db",
+          "we2stOut": "85bc8ea4d740cbb4ce5c2bd887489a6426eaacd003b71bccc651699835d3cba8",
+          "we3arcTime": "d983a3b2a7ed72c6a647fe8c534c2fe2989dc93900d2563fd06254358958032d",
+          "we3arcVol": "d8364535d6c15a47cf79bb1fad8c93812cb284ebb42c8e6971f9e088bdb3cf8f",
+          "we3load": "fc94024468471a0c006f65a1c2ee36f6c64671d973fadb35920fd6db4e56d851",
+          "we3stIn": "48cd681a63023504b533a87783dbcbc349f440a67d34d5fc228c69f0f7c61b09",
+          "we3stOut": "e27c90c5320e6e07c208f38120005b7e1a8432b74cae7db2c482d71c3105e1d2"
+        }
+      },
+      "peak": 554.5473516669961
+    },
+    {
+      "scenario": "year",
+      "n": 4,
+      "check": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "stations": 278,
+        "speed": 0,
+        "map": "sh",
+        "road": 4,
+        "mode": 2,
+        "metro": 2
+      },
+      "before": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "samples": [
+        {
+          "intervalMs": 153.66149999998743,
+          "cpuPct": 274.014636066965
+        },
+        {
+          "intervalMs": 270.81674999999814,
+          "cpuPct": 252.02207765952704
+        },
+        {
+          "intervalMs": 253.93879200000083,
+          "cpuPct": 487.1709399956437
+        },
+        {
+          "intervalMs": 253.45383300000685,
+          "cpuPct": 607.6917369010422
+        },
+        {
+          "intervalMs": 255.35108399999444,
+          "cpuPct": 396.6585863406826
+        },
+        {
+          "intervalMs": 253.39408300002106,
+          "cpuPct": 502.3163859749233
+        },
+        {
+          "intervalMs": 253.4417919999978,
+          "cpuPct": 497.8851317465503
+        },
+        {
+          "intervalMs": 253.35383300000103,
+          "cpuPct": 498.2742850391371
+        },
+        {
+          "intervalMs": 253.5580829999817,
+          "cpuPct": 524.5224227381786
+        },
+        {
+          "intervalMs": 253.25266700002248,
+          "cpuPct": 521.1029031334473
+        },
+        {
+          "intervalMs": 253.07199999998556,
+          "cpuPct": 501.34546690272714
+        },
+        {
+          "intervalMs": 253.8273329999938,
+          "cpuPct": 491.37221955526536
+        },
+        {
+          "intervalMs": 261.2754169999971,
+          "cpuPct": 461.66991669178583
+        },
+        {
+          "intervalMs": 251.4682080000057,
+          "cpuPct": 276.6616128270134
+        },
+        {
+          "intervalMs": 270.3371669999906,
+          "cpuPct": 334.2644335693722
+        },
+        {
+          "intervalMs": 252.9910830000008,
+          "cpuPct": 482.9229495017338
+        },
+        {
+          "intervalMs": 253.08333400002448,
+          "cpuPct": 549.9417832072157
+        },
+        {
+          "intervalMs": 253.67399999999907,
+          "cpuPct": 525.8548373108825
+        },
+        {
+          "intervalMs": 253.11258299998008,
+          "cpuPct": 515.1178122187997
+        },
+        {
+          "intervalMs": 254.22054199999548,
+          "cpuPct": 494.57096979992633
+        },
+        {
+          "intervalMs": 253.67533300002106,
+          "cpuPct": 494.97047472088843
+        },
+        {
+          "intervalMs": 254.4819579999894,
+          "cpuPct": 517.4940535470305
+        },
+        {
+          "intervalMs": 253.37183399999049,
+          "cpuPct": 509.48796463305865
+        },
+        {
+          "intervalMs": 252.4599580000213,
+          "cpuPct": 473.0203591335069
+        },
+        {
+          "intervalMs": 253.30724999998347,
+          "cpuPct": 444.38522782117974
+        },
+        {
+          "intervalMs": 276.47675000000163,
+          "cpuPct": 251.8461317271685
+        },
+        {
+          "intervalMs": 253.08304200001294,
+          "cpuPct": 537.210628280637
+        },
+        {
+          "intervalMs": 253.27470799998264,
+          "cpuPct": 548.3374202528308
+        },
+        {
+          "intervalMs": 253.2011670000211,
+          "cpuPct": 510.7409319325482
+        },
+        {
+          "intervalMs": 253.79725000000326,
+          "cpuPct": 500.2177919579474
+        },
+        {
+          "intervalMs": 252.69591599999694,
+          "cpuPct": 505.11857104964497
+        },
+        {
+          "intervalMs": 252.46712499999558,
+          "cpuPct": 499.9070671082464
+        },
+        {
+          "intervalMs": 252.55912499999977,
+          "cpuPct": 542.2722303143869
+        },
+        {
+          "intervalMs": 253.23241699999198,
+          "cpuPct": 499.90637652052953
+        },
+        {
+          "intervalMs": 253.132042000012,
+          "cpuPct": 488.7587482899328
+        },
+        {
+          "intervalMs": 253.39670799998567,
+          "cpuPct": 468.813114967562
+        },
+        {
+          "intervalMs": 253.19291700000758,
+          "cpuPct": 327.41634711684225
+        },
+        {
+          "intervalMs": 252.57366600001114,
+          "cpuPct": 442.27849153519725
+        },
+        {
+          "intervalMs": 275.5417089999828,
+          "cpuPct": 356.35149522864447
+        },
+        {
+          "intervalMs": 254.58154099999228,
+          "cpuPct": 368.0345386863774
+        },
+        {
+          "intervalMs": 253.2415420000034,
+          "cpuPct": 461.72716796993245
+        },
+        {
+          "intervalMs": 252.95900000000256,
+          "cpuPct": 259.22975660087326
+        },
+        {
+          "intervalMs": 261.05762500001583,
+          "cpuPct": 413.1651010001852
+        },
+        {
+          "intervalMs": 263.79008299999987,
+          "cpuPct": 516.4348805333933
+        },
+        {
+          "intervalMs": 259.93679199999315,
+          "cpuPct": 502.69220834272704
+        },
+        {
+          "intervalMs": 256.48841699998593,
+          "cpuPct": 520.510444727051
+        },
+        {
+          "intervalMs": 253.54475000000093,
+          "cpuPct": 518.6725420266043
+        },
+        {
+          "intervalMs": 252.25929099999485,
+          "cpuPct": 543.5446974280246
+        },
+        {
+          "intervalMs": 253.12537500000326,
+          "cpuPct": 504.38404288783016
+        },
+        {
+          "intervalMs": 253.3974589999998,
+          "cpuPct": 498.9260764449853
+        },
+        {
+          "intervalMs": 253.63650000002235,
+          "cpuPct": 570.3362883496177
+        },
+        {
+          "intervalMs": 252.7253329999803,
+          "cpuPct": 467.04419615903316
+        },
+        {
+          "intervalMs": 253.2391250000219,
+          "cpuPct": 386.30286690491346
+        },
+        {
+          "intervalMs": 253.70691699997406,
+          "cpuPct": 464.9175568201481
+        },
+        {
+          "intervalMs": 253.32233300001826,
+          "cpuPct": 498.03386265194257
+        },
+        {
+          "intervalMs": 253.8924999999872,
+          "cpuPct": 513.9884006026448
+        },
+        {
+          "intervalMs": 253.53287500000442,
+          "cpuPct": 491.30827708239775
+        },
+        {
+          "intervalMs": 253.33691700000782,
+          "cpuPct": 486.0432559854578
+        },
+        {
+          "intervalMs": 253.7612079999817,
+          "cpuPct": 509.2121881765674
+        },
+        {
+          "intervalMs": 252.85100000002421,
+          "cpuPct": 526.4297946220759
+        },
+        {
+          "intervalMs": 254.19324999998207,
+          "cpuPct": 535.0401712083623
+        },
+        {
+          "intervalMs": 253.40225000001374,
+          "cpuPct": 458.81321101132545
+        },
+        {
+          "intervalMs": 254.09129199999734,
+          "cpuPct": 438.3428456887043
+        },
+        {
+          "intervalMs": 257.27383299998473,
+          "cpuPct": 402.7175977900831
+        },
+        {
+          "intervalMs": 254.44945800001733,
+          "cpuPct": 515.8981317224494
+        },
+        {
+          "intervalMs": 253.26687500000116,
+          "cpuPct": 495.8287577086398
+        },
+        {
+          "intervalMs": 254.18204200000037,
+          "cpuPct": 500.2717697893085
+        },
+        {
+          "intervalMs": 253.48737499999697,
+          "cpuPct": 536.8046436237712
+        },
+        {
+          "intervalMs": 253.62129199999617,
+          "cpuPct": 520.2796616933966
+        },
+        {
+          "intervalMs": 253.3712499999965,
+          "cpuPct": 502.9106498862916
+        },
+        {
+          "intervalMs": 252.45000000001164,
+          "cpuPct": 488.88294711822226
+        },
+        {
+          "intervalMs": 253.68799999999464,
+          "cpuPct": 486.18381634134573
+        },
+        {
+          "intervalMs": 253.07312499999534,
+          "cpuPct": 461.19041680147825
+        },
+        {
+          "intervalMs": 253.7639579999959,
+          "cpuPct": 363.6292589667102
+        },
+        {
+          "intervalMs": 253.15895800001454,
+          "cpuPct": 460.2333684751282
+        },
+        {
+          "intervalMs": 253.52041699999245,
+          "cpuPct": 569.4282997333729
+        },
+        {
+          "intervalMs": 252.7903750000114,
+          "cpuPct": 520.5945835556128
+        },
+        {
+          "intervalMs": 252.1292919999978,
+          "cpuPct": 514.0485620369747
+        },
+        {
+          "intervalMs": 254.47983299999032,
+          "cpuPct": 485.83692681064514
+        },
+        {
+          "intervalMs": 253.80895800000872,
+          "cpuPct": 486.8787964528699
+        },
+        {
+          "intervalMs": 253.6697920000006,
+          "cpuPct": 497.9572025667012
+        },
+        {
+          "intervalMs": 253.59987499998533,
+          "cpuPct": 496.4880207453197
+        },
+        {
+          "intervalMs": 253.12208299999475,
+          "cpuPct": 462.1264119417092
+        },
+        {
+          "intervalMs": 252.45329200002016,
+          "cpuPct": 428.57472423053196
+        },
+        {
+          "intervalMs": 271.46570799997426,
+          "cpuPct": 437.2438083413971
+        },
+        {
+          "intervalMs": 254.05100000000675,
+          "cpuPct": 481.42892568813073
+        },
+        {
+          "intervalMs": 253.0515000000014,
+          "cpuPct": 519.9747877408339
+        },
+        {
+          "intervalMs": 253.92229200000293,
+          "cpuPct": 501.39355232347407
+        },
+        {
+          "intervalMs": 255.48512500000652,
+          "cpuPct": 577.9404965357317
+        },
+        {
+          "intervalMs": 252.9939580000064,
+          "cpuPct": 531.9929419025817
+        },
+        {
+          "intervalMs": 253.43570899998304,
+          "cpuPct": 523.7876719259369
+        },
+        {
+          "intervalMs": 253.27612500000396,
+          "cpuPct": 516.106680011783
+        },
+        {
+          "intervalMs": 254.43016600000556,
+          "cpuPct": 505.96751959040364
+        },
+        {
+          "intervalMs": 253.4887919999892,
+          "cpuPct": 507.52618679884176
+        },
+        {
+          "intervalMs": 252.98312499999884,
+          "cpuPct": 465.1484165198832
+        },
+        {
+          "intervalMs": 255.9065830000036,
+          "cpuPct": 407.2798705611958
+        },
+        {
+          "intervalMs": 257.90266700001666,
+          "cpuPct": 421.4473671960678
+        },
+        {
+          "intervalMs": 253.40291699999943,
+          "cpuPct": 529.0282431910551
+        },
+        {
+          "intervalMs": 251.1595410000009,
+          "cpuPct": 496.21646664818735
+        },
+        {
+          "intervalMs": 252.83541699999478,
+          "cpuPct": 477.1961991385202
+        },
+        {
+          "intervalMs": 254.23066699999617,
+          "cpuPct": 513.9517649143518
+        },
+        {
+          "intervalMs": 252.9470830000064,
+          "cpuPct": 508.8404201917457
+        },
+        {
+          "intervalMs": 253.7295419999864,
+          "cpuPct": 494.2723618679169
+        },
+        {
+          "intervalMs": 252.56312500001513,
+          "cpuPct": 492.03897045537957
+        },
+        {
+          "intervalMs": 253.14316599999438,
+          "cpuPct": 495.01119062405775
+        },
+        {
+          "intervalMs": 253.93954200000735,
+          "cpuPct": 468.10315189115823
+        },
+        {
+          "intervalMs": 253.60108299998683,
+          "cpuPct": 325.5360703645064
+        },
+        {
+          "intervalMs": 265.4645840000012,
+          "cpuPct": 286.63032504554513
+        },
+        {
+          "intervalMs": 252.94766599999275,
+          "cpuPct": 496.23150110427974
+        },
+        {
+          "intervalMs": 253.90575000000536,
+          "cpuPct": 610.2788140874928
+        },
+        {
+          "intervalMs": 253.00808400000096,
+          "cpuPct": 531.2276899421101
+        },
+        {
+          "intervalMs": 254.63858299999265,
+          "cpuPct": 489.32686685585
+        },
+        {
+          "intervalMs": 253.333083000005,
+          "cpuPct": 496.53246433667863
+        },
+        {
+          "intervalMs": 253.5302500000107,
+          "cpuPct": 517.5370591871969
+        },
+        {
+          "intervalMs": 253.3460839999898,
+          "cpuPct": 512.5620966772296
+        },
+        {
+          "intervalMs": 253.11308300000383,
+          "cpuPct": 495.49908093844994
+        },
+        {
+          "intervalMs": 253.76504200001364,
+          "cpuPct": 469.0425405402864
+        },
+        {
+          "intervalMs": 253.33091599997715,
+          "cpuPct": 458.67279775679947
+        },
+        {
+          "intervalMs": 251.79441699999734,
+          "cpuPct": 362.23241597926557
+        },
+        {
+          "intervalMs": 254.08345800000825,
+          "cpuPct": 468.4988189982649
+        },
+        {
+          "intervalMs": 253.38508400000865,
+          "cpuPct": 504.35644428066064
+        },
+        {
+          "intervalMs": 254.03504099999554,
+          "cpuPct": 514.5569661785481
+        },
+        {
+          "intervalMs": 252.17845899998792,
+          "cpuPct": 503.9744493006208
+        },
+        {
+          "intervalMs": 253.52808300001197,
+          "cpuPct": 484.35817660482144
+        },
+        {
+          "intervalMs": 254.13899999999558,
+          "cpuPct": 493.78607769764534
+        },
+        {
+          "intervalMs": 253.05704200000037,
+          "cpuPct": 509.3709267335805
+        },
+        {
+          "intervalMs": 254.14937500000815,
+          "cpuPct": 517.9170714073034
+        },
+        {
+          "intervalMs": 253.27812499998254,
+          "cpuPct": 461.9972609162627
+        },
+        {
+          "intervalMs": 260.19458300000406,
+          "cpuPct": 447.06388064966046
+        },
+        {
+          "intervalMs": 254.99808300001314,
+          "cpuPct": 431.8569720384614
+        },
+        {
+          "intervalMs": 252.53595900000073,
+          "cpuPct": 500.92153410913096
+        },
+        {
+          "intervalMs": 253.70170800000778,
+          "cpuPct": 510.3536788171578
+        },
+        {
+          "intervalMs": 252.2774999999965,
+          "cpuPct": 508.57448642863704
+        },
+        {
+          "intervalMs": 252.9350829999894,
+          "cpuPct": 513.9322645882442
+        },
+        {
+          "intervalMs": 254.02254199999152,
+          "cpuPct": 500.56108799984014
+        },
+        {
+          "intervalMs": 252.32479199999943,
+          "cpuPct": 483.9405554726424
+        },
+        {
+          "intervalMs": 253.67949999999837,
+          "cpuPct": 495.66874737612716
+        },
+        {
+          "intervalMs": 252.97283300000709,
+          "cpuPct": 509.2752390530314
+        },
+        {
+          "intervalMs": 253.1311670000141,
+          "cpuPct": 456.9382007391963
+        },
+        {
+          "intervalMs": 255.50037500000326,
+          "cpuPct": 395.5469732676481
+        },
+        {
+          "intervalMs": 255.3514579999901,
+          "cpuPct": 364.4999747759501
+        },
+        {
+          "intervalMs": 252.2879580000008,
+          "cpuPct": 460.7314630530196
+        },
+        {
+          "intervalMs": 261.84041699999943,
+          "cpuPct": 411.3631548333566
+        },
+        {
+          "intervalMs": 255.71945800000685,
+          "cpuPct": 420.07127983196654
+        },
+        {
+          "intervalMs": 255.6199590000033,
+          "cpuPct": 455.0599274605093
+        },
+        {
+          "intervalMs": 254.59270799998194,
+          "cpuPct": 459.27277697210263
+        },
+        {
+          "intervalMs": 255.86495799999102,
+          "cpuPct": 454.0101970509209
+        },
+        {
+          "intervalMs": 256.0191250000207,
+          "cpuPct": 498.2463712427281
+        },
+        {
+          "intervalMs": 252.8394589999807,
+          "cpuPct": 448.634087608972
+        },
+        {
+          "intervalMs": 266.21662500000093,
+          "cpuPct": 371.1905670804699
+        },
+        {
+          "intervalMs": 254.10304100002395,
+          "cpuPct": 468.08766841947846
+        },
+        {
+          "intervalMs": 253.87724999999045,
+          "cpuPct": 497.68618495751446
+        },
+        {
+          "intervalMs": 253.3408749999944,
+          "cpuPct": 461.59112697468146
+        },
+        {
+          "intervalMs": 252.85137499999837,
+          "cpuPct": 255.190227856188
+        },
+        {
+          "intervalMs": 268.6671670000069,
+          "cpuPct": 273.20941676508556
+        },
+        {
+          "intervalMs": 264.96583299999475,
+          "cpuPct": 496.702908861471
+        },
+        {
+          "intervalMs": 258.4048340000154,
+          "cpuPct": 449.4846253533844
+        },
+        {
+          "intervalMs": 253.91791599997669,
+          "cpuPct": 500.5215937579218
+        },
+        {
+          "intervalMs": 253.67129200001364,
+          "cpuPct": 520.6982585952007
+        },
+        {
+          "intervalMs": 252.89124999998603,
+          "cpuPct": 511.283802820407
+        },
+        {
+          "intervalMs": 253.38141699999687,
+          "cpuPct": 502.82850853265916
+        },
+        {
+          "intervalMs": 252.68825000000652,
+          "cpuPct": 486.1852500066708
+        },
+        {
+          "intervalMs": 253.54899999999907,
+          "cpuPct": 510.94502443314786
+        },
+        {
+          "intervalMs": 253.97333300000173,
+          "cpuPct": 506.36182342812447
+        },
+        {
+          "intervalMs": 253.1112500000163,
+          "cpuPct": 454.6226214757086
+        },
+        {
+          "intervalMs": 252.58183300000383,
+          "cpuPct": 454.5897012315921
+        },
+        {
+          "intervalMs": 253.878624999983,
+          "cpuPct": 366.3719228036828
+        },
+        {
+          "intervalMs": 253.11833399999887,
+          "cpuPct": 489.5500773958189
+        },
+        {
+          "intervalMs": 252.4471659999981,
+          "cpuPct": 484.3678855162939
+        },
+        {
+          "intervalMs": 253.51791700001922,
+          "cpuPct": 502.82757727134947
+        },
+        {
+          "intervalMs": 252.18899999998393,
+          "cpuPct": 507.4075395834386
+        },
+        {
+          "intervalMs": 252.78375000000233,
+          "cpuPct": 531.5167608677364
+        },
+        {
+          "intervalMs": 253.46337499999208,
+          "cpuPct": 506.92452114631266
+        },
+        {
+          "intervalMs": 252.34916700000758,
+          "cpuPct": 482.52427954318716
+        },
+        {
+          "intervalMs": 252.3511250000156,
+          "cpuPct": 485.7418408576233
+        },
+        {
+          "intervalMs": 253.73020799999358,
+          "cpuPct": 468.78769752162674
+        },
+        {
+          "intervalMs": 253.42129199998453,
+          "cpuPct": 294.93614924827364
+        },
+        {
+          "intervalMs": 278.032583000022,
+          "cpuPct": 360.7098812587523
+        },
+        {
+          "intervalMs": 253.32158299998264,
+          "cpuPct": 485.32461602376907
+        },
+        {
+          "intervalMs": 253.0447920000006,
+          "cpuPct": 541.1871902900098
+        },
+        {
+          "intervalMs": 253.37704200000735,
+          "cpuPct": 525.7196901051361
+        },
+        {
+          "intervalMs": 253.31687499998952,
+          "cpuPct": 522.3659102853139
+        },
+        {
+          "intervalMs": 253.2827910000051,
+          "cpuPct": 503.73773716034214
+        },
+        {
+          "intervalMs": 253.3225000000093,
+          "cpuPct": 496.5539973748782
+        },
+        {
+          "intervalMs": 259.66499999997905,
+          "cpuPct": 541.3552076714603
+        },
+        {
+          "intervalMs": 253.86870900000213,
+          "cpuPct": 517.4095717326064
+        },
+        {
+          "intervalMs": 253.1389579999959,
+          "cpuPct": 464.96636049201254
+        },
+        {
+          "intervalMs": 253.29570800001966,
+          "cpuPct": 378.1572169394709
+        },
+        {
+          "intervalMs": 253.36537499999395,
+          "cpuPct": 465.0011865275756
+        },
+        {
+          "intervalMs": 252.39941700000782,
+          "cpuPct": 494.1485264999378
+        },
+        {
+          "intervalMs": 253.20029199999408,
+          "cpuPct": 503.99230977191786
+        },
+        {
+          "intervalMs": 253.9797499999986,
+          "cpuPct": 496.26869858719573
+        },
+        {
+          "intervalMs": 253.13483299998916,
+          "cpuPct": 484.0392708814013
+        },
+        {
+          "intervalMs": 253.86033300001873,
+          "cpuPct": 500.75093850913737
+        },
+        {
+          "intervalMs": 253.26995899999747,
+          "cpuPct": 508.20081666297983
+        },
+        {
+          "intervalMs": 252.24462499999208,
+          "cpuPct": 509.9280113501167
+        },
+        {
+          "intervalMs": 254.2414160000044,
+          "cpuPct": 463.72657081172457
+        },
+        {
+          "intervalMs": 252.80045899999095,
+          "cpuPct": 443.10599926561775
+        }
+      ],
+      "timing": {
+        "ms": 50296.89999999106,
+        "steps": [
+          6289.0999999940395,
+          21284.29999999702,
+          27012.29999999702,
+          27034.79999999702,
+          44810.39999999106,
+          50296.89999999106
+        ],
+        "hidden": false,
+        "actualWorkers": 4
+      },
+      "after": {
+        "clock": {
+          "y": 2011,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 16033973.73959732,
+          "jobs": 9523644.530916214,
+          "funds": 5026145.723840332,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.38826535724623146,
+          "cong": 1.1016303589103633,
+          "commute": 26.77931623585174,
+          "riders": 10616932.12144076,
+          "sat": 77.09236847344118,
+          "regions": 22,
+          "events": 324,
+          "tasksDone": 31,
+          "tasksFailed": 5,
+          "coverage": 0.6514369857402595,
+          "stations": 278,
+          "fiscF": 1.2270571218699673,
+          "macroRecs": 21,
+          "ridersWk": 11010657.311187228,
+          "ridersWe": 9632619.147074595
+        },
+        "ledger": "99ba59b4e3e661e4beaf4bcad5ff9b1ac149e71d5f0f9829fd21768374464ca3",
+        "arrays": {
+          "wd0arcTime": "e126f3243b0834967b32fac896a4408a9603d75e934d32b58563524f0ab704ec",
+          "wd0arcVol": "bce6bbdc128299c4dd0bfb40f6efe77caf93a93bf05e35376374e9d39bdd0fad",
+          "wd0load": "cdd7acc837d7d93b493c1ddc9f1bd56062dc71deb676f144696b257868f4e636",
+          "wd0stIn": "3ce695e267ebef88d6703b7b946cb2a6637f9338612ccc916008539852da3530",
+          "wd0stOut": "4f5baace5124fd2d048b29a698bbd89588f1f513e026695501984eccd7f9404e",
+          "wd1arcTime": "cde48dee1511ef2c33c93bba9693816af3b35c2b685e697f5b0ac0a2105132f1",
+          "wd1arcVol": "ebb504eca528882a4834bfa3a3c3e872409afe8b889de21301be54809876c6b3",
+          "wd1load": "c092610cbd28b5a8783a694e12911c016c367d8805fd96b55e9d8a1ccd378069",
+          "wd1stIn": "9279d9656357aeab481f18381e45971147a6231d3c68f813024f119b6b9ad8ce",
+          "wd1stOut": "6cceade1a4d209cf06a7dd947ddd57ebbb8be2e7ff7796d2280b7bd72eec4cd8",
+          "wd2arcTime": "5b0f16b61d00b146a4ded03cc910675919450c2a06b35fbd879f89415d3f466e",
+          "wd2arcVol": "84f2f8f9c5e154da6019068dff40727f9d487c11fefabdecec17004f92be524f",
+          "wd2load": "c131e2cda4013402a51e24e5a4879cebbca3d4bd6c8dea2d0fe42614ee11df1c",
+          "wd2stIn": "2901bf3f8627309e81d399f102079c0c3cad7bacbe1ea496c39c5b34b41482cb",
+          "wd2stOut": "07c92cb5bf11cf915d10ee915149ba246f84c28171e48e1fd6f30a6f0ea5a83e",
+          "wd3arcTime": "c23010099263c30080063989bdce7871bbbdf166bfde634b48bf1fa9ea45b7f7",
+          "wd3arcVol": "70200bd6809bd319a23d3ed2a793a25ab950374cb02b7998f5eb510407da197f",
+          "wd3load": "00cc21ce50acf00588abc8bcba521412bf22a58d1c9f575ab09668a2479049e0",
+          "wd3stIn": "82803c3ec2fb0464bb4884f628778a71b928f88e47f5ae06dd133e9eaf47a243",
+          "wd3stOut": "76b6952f89ad38ecb680477608d3339d3a5f0e6aeb131a58e9fe771c6c5757a7",
+          "we0arcTime": "c6e108e0f1e22bb6a91e7f887a7c522e545977ccab56ff213467f32858a17e44",
+          "we0arcVol": "9b2018b30200bdb7c6c03812b0656c1f36f6b36da2f279fd92f0cd30274f06b5",
+          "we0load": "f61fea879d789e119bf0e58e3b06ce8a5eb54687663534bf3a07f5f07338da9e",
+          "we0stIn": "39c181c2e2edc6b57c37cf468f5bbf12c7ef5483d63e1541aba12be0e5536245",
+          "we0stOut": "64b8dcbeeda47020a06b381bbf28f7a1d0ee54aa5a1272b576047857ab8c6632",
+          "we1arcTime": "c8312ff7827ab71da523067747dc6071ea95ade22fc3b992eb7731d4ab620c7b",
+          "we1arcVol": "c521596308f81fa06dc50f921a7a17f18a8d701ae6b3dd9b07398878c16fd6c1",
+          "we1load": "ece8dae05ac250170b92c384a6efb860839a9d9a96d1f028d4caf9bf679c15b3",
+          "we1stIn": "817072b5604bd0d35b7c5ae087e1477520022f7bee88c362423460f50108b35b",
+          "we1stOut": "4eae0b19e1f4f3b462a0b7c432b44e8b62ad063a2c93003208dad98f375ad1a0",
+          "we2arcTime": "daa67e62fc799bb86ab94b94bb3992bb0089048a54628c2ed1b491c616abf6d1",
+          "we2arcVol": "da96a522d875d7b0e76be04b1f5dd12542daaabc00ea3b499b998a2b8ae0ba4b",
+          "we2load": "e2b98ae77281878c4197175599dd25cd5b438834d7f196406b42a033a202e52e",
+          "we2stIn": "1afc3daa1b539a8b414a68aa7d4224bd99d092a3a5e5731d14945284a302557d",
+          "we2stOut": "45d9c3e7ad1f5005a7241e19f3da9968ec22136b10f7ba296e66e24b345fede2",
+          "we3arcTime": "11772100742bcd6b4961c61f4d8377965e4f0f75c32e755fa876dba938ca0d2f",
+          "we3arcVol": "b23486e3cf8c4bdcae398d12f09d822c8520170064acde752becdf072f1fb4f9",
+          "we3load": "34c0516b7cff374ae5aae027675714a94b7731a87d76a96e23d80ebf744ac97f",
+          "we3stIn": "467a12bafb28085907d417c9b703b5d7c712e8b8c04bcbb945c085eae388e439",
+          "we3stOut": "42ee4275a07030329899bd6fcadeb882917a299e0801b517eea3358b39441553"
+        }
+      },
+      "peak": 610.2788140874928
+    },
+    {
+      "scenario": "year",
+      "n": 2,
+      "check": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "stations": 278,
+        "speed": 0,
+        "map": "sh",
+        "road": 2,
+        "mode": 2,
+        "metro": 2
+      },
+      "before": {
+        "clock": {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 15866882.402832031,
+          "jobs": 9267571.9556036,
+          "funds": 1071639.94612432,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.39658594073170633,
+          "cong": 1.1521994773837925,
+          "commute": 26.777698100046948,
+          "riders": 10461280.00961318,
+          "sat": 79.03543146772846,
+          "regions": 22,
+          "events": 300,
+          "tasksDone": 30,
+          "tasksFailed": 3,
+          "coverage": 0.6526458544601237,
+          "stations": 278,
+          "fiscF": 1.1921003546564402,
+          "macroRecs": 20,
+          "ridersWk": 10915207.705960076,
+          "ridersWe": 9326460.768745942
+        },
+        "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+        "arrays": {
+          "wd0arcTime": "0702e8dba2b55b53c27f31ae9773ff429c7556923de0025df395c98457e7bc7f",
+          "wd0arcVol": "7a7cdeb9a54d032cb227db7e4f4bfabed7be6d24c7d713c935a39b19608413aa",
+          "wd0load": "e2a27b930300efbfc7f142ea1fac31fa624d49c0bdde9f047e8850845f7a3a74",
+          "wd0stIn": "6320b0dbd24303578d501d8a6f56655aaea6b017a8ab9a4448d3c9e3be5dfa5e",
+          "wd0stOut": "c2c95a49b6049a88d249e726d200c931a0d32172d4b5a2773ce83f53475ed552",
+          "wd1arcTime": "6cf7e0612f66701d4c074ada71991383b624acd1ff05013ba6b20a185352c0f5",
+          "wd1arcVol": "52f248c659ba7343f4262fae1c43de79c48bc6be2cdb1315b21ac0a0c52aec74",
+          "wd1load": "1fde17b0d89ba85edfadcc9d375336e220e6607b637d26a7f65a082337b92c41",
+          "wd1stIn": "2c28b381f473559373671632e66e44ac7d39900381aee24692874a2abd3a588d",
+          "wd1stOut": "8cdeb7a877d0af72ffecebbca0b2ba0b70df460347e038c0d2e2666425f3cd60",
+          "wd2arcTime": "8eb6bf4bd34c49fd1b7161b11bf062099ac331eee59283669dee4afc557d4764",
+          "wd2arcVol": "b8b93444fb338df331d44d8c671b26a8ff038a6643259e809151591d8421a357",
+          "wd2load": "eb8404e6e89dfd4cdec2adeb7a22b80ba989403c5b281ea329c814817d1d3aa3",
+          "wd2stIn": "c9661a220ee5be3dd2d60909596999167dc935adca875e71b1c92f38f952ac05",
+          "wd2stOut": "ac0c884df3c632590ae8c05bac456963b39208f5c632145103edaa4df7e4b5a7",
+          "wd3arcTime": "2143519b644642fb624a4ab02d35c21a9bf9618405896d0c8b5c7360ac0fe2a2",
+          "wd3arcVol": "fc878f49a6954b55eb52034ddd2defff5a52eacc971fde1af04c316b6a4071d4",
+          "wd3load": "513e30b1c9fa217fb1fc0b4d7e9cb2eaecd8c70c8d78054989f66d37f26dd9f4",
+          "wd3stIn": "5aa8ced0f3ccf771dc1532698cba43668b26572ba1d959b535e85ea6c7e99ebd",
+          "wd3stOut": "baaa68fc19d2290053446a13e03c3674cccd50e0caedc475060a82fe38610481",
+          "we0arcTime": "8af341d84ef9a9ddc2196ce9c45c0480ee4c04a1837e25667359167a4f110e5b",
+          "we0arcVol": "e9fecde3cff996b9455ca94ce36aaff2774c5e8eb5644296005ae845cab44027",
+          "we0load": "fc40e8c1511e13bd496d05fdcc71ec5339f394f6305491b205e31811aaa482ce",
+          "we0stIn": "3d152e2a714858669a585b39d30d3b4f82688986d8eccf7767feac38c8b29872",
+          "we0stOut": "3fe261215bd4bec1cbb224d83579cb2ceba8028ad73f83e2e21a4908c6ebeda4",
+          "we1arcTime": "4f546c38922c9738625cbf7920da43f4014da5e4de8b49aa3b260627a1850418",
+          "we1arcVol": "1f41009cd059af02b7e0827bf9f8d55f0c2d5bbb67e5586eaedc1b5948cbab2c",
+          "we1load": "490653b87712e045c54d62bf16eed463413be85d250edd7f88e88f4fe6d4d01e",
+          "we1stIn": "5bf8c3472117842002940f76fe8d0706c99e4289e76f97d663a8f86f411ca634",
+          "we1stOut": "42f8f97f22c30f526268b44378d5350f916402b45cc507c2282b8f6304886e1f",
+          "we2arcTime": "21e867dd517783649cfb6e6c387c6dc7fed3bf1bed3853fdaaf2e276a066a58b",
+          "we2arcVol": "3dbdffaa61cfa7961a3ad9e1eafb7dd9d5a383b4356fb654022370e4f1a6fc6a",
+          "we2load": "00db0412908a5d26a000453a339b52a1e25ecd8912cfa3a282a79f2d7a967fc4",
+          "we2stIn": "20ebd973772e9490845164fe190a9377ca3bb0c6e091790d9ae01d2cdc06285b",
+          "we2stOut": "5a77eee83fb15714b7ce75b79eb987c652a71e8b524380f5c0685d381ca4f180",
+          "we3arcTime": "18a4e554fd2bb6fdd133c5a456dca77b5db08208e7145f1180665a60a6ce01cc",
+          "we3arcVol": "7fc1fe5a16243073dd767150811526ccd6fa0b53fd57b2eb65e269af26dbaa83",
+          "we3load": "8bcdee0138a27ca8d483466409ea0efb796c8b22840ba276af3f284aaecdc532",
+          "we3stIn": "e5c0e236dff6430a100d91fcacf54543c3702361957bc9d916a142394a7d2a64",
+          "we3stOut": "831801ad0831e785993730de2e967e4bd2d6fcc6db232441024aceee395cdc5a"
+        }
+      },
+      "samples": [
+        {
+          "intervalMs": 157.1404169999878,
+          "cpuPct": 276.23192574320865
+        },
+        {
+          "intervalMs": 274.48991599999135,
+          "cpuPct": 310.678808324608
+        },
+        {
+          "intervalMs": 252.29508400001214,
+          "cpuPct": 313.3659948760426
+        },
+        {
+          "intervalMs": 253.06366600000183,
+          "cpuPct": 280.42864122579823
+        },
+        {
+          "intervalMs": 253.5099169999885,
+          "cpuPct": 332.3451839558824
+        },
+        {
+          "intervalMs": 253.28200000000652,
+          "cpuPct": 279.5741505515627
+        },
+        {
+          "intervalMs": 252.97541700000875,
+          "cpuPct": 299.0804438519636
+        },
+        {
+          "intervalMs": 253.38454099997762,
+          "cpuPct": 316.85042695643375
+        },
+        {
+          "intervalMs": 253.0193750000035,
+          "cpuPct": 271.9364870773047
+        },
+        {
+          "intervalMs": 252.2228340000147,
+          "cpuPct": 319.02860943984155
+        },
+        {
+          "intervalMs": 252.16545800000313,
+          "cpuPct": 269.3291164406684
+        },
+        {
+          "intervalMs": 252.2990829999908,
+          "cpuPct": 322.367005987116
+        },
+        {
+          "intervalMs": 253.48545899998862,
+          "cpuPct": 263.3038607551955
+        },
+        {
+          "intervalMs": 251.72225000002072,
+          "cpuPct": 299.6675899726561
+        },
+        {
+          "intervalMs": 252.93825000000652,
+          "cpuPct": 281.3746042759309
+        },
+        {
+          "intervalMs": 253.92437499997322,
+          "cpuPct": 263.5119216105431
+        },
+        {
+          "intervalMs": 253.20262500000536,
+          "cpuPct": 312.8482573985913
+        },
+        {
+          "intervalMs": 253.4502499999944,
+          "cpuPct": 266.2009605435482
+        },
+        {
+          "intervalMs": 253.84295800002292,
+          "cpuPct": 269.6462432493193
+        },
+        {
+          "intervalMs": 252.67179199997918,
+          "cpuPct": 262.3328052385224
+        },
+        {
+          "intervalMs": 252.13025000001653,
+          "cpuPct": 265.0693441187398
+        },
+        {
+          "intervalMs": 263.79595800000243,
+          "cpuPct": 263.590467902469
+        },
+        {
+          "intervalMs": 253.40683299998636,
+          "cpuPct": 286.72510184444735
+        },
+        {
+          "intervalMs": 253.56137500001932,
+          "cpuPct": 293.2603595480379
+        },
+        {
+          "intervalMs": 253.17366699999548,
+          "cpuPct": 348.29807161582033
+        },
+        {
+          "intervalMs": 252.65462499999558,
+          "cpuPct": 274.9270867295622
+        },
+        {
+          "intervalMs": 253.10812499999884,
+          "cpuPct": 318.0616979403618
+        },
+        {
+          "intervalMs": 253.0844999999972,
+          "cpuPct": 271.98307284721636
+        },
+        {
+          "intervalMs": 252.90387499998906,
+          "cpuPct": 293.19914532745787
+        },
+        {
+          "intervalMs": 253.2335000000021,
+          "cpuPct": 292.1236724209002
+        },
+        {
+          "intervalMs": 252.24733300000662,
+          "cpuPct": 264.37900931145384
+        },
+        {
+          "intervalMs": 252.90183399998932,
+          "cpuPct": 314.2242930512174
+        },
+        {
+          "intervalMs": 251.4539999999979,
+          "cpuPct": 267.1355397010969
+        },
+        {
+          "intervalMs": 253.08612500000163,
+          "cpuPct": 315.78025069528934
+        },
+        {
+          "intervalMs": 253.28491600000416,
+          "cpuPct": 255.92601811312684
+        },
+        {
+          "intervalMs": 253.53187500001513,
+          "cpuPct": 279.51396643912125
+        },
+        {
+          "intervalMs": 253.49816699998337,
+          "cpuPct": 298.98598832866963
+        },
+        {
+          "intervalMs": 253.79729200000293,
+          "cpuPct": 265.18959075418036
+        },
+        {
+          "intervalMs": 252.6626249999972,
+          "cpuPct": 264.6275839174943
+        },
+        {
+          "intervalMs": 252.90858300001128,
+          "cpuPct": 263.8403932696775
+        },
+        {
+          "intervalMs": 253.32995799998753,
+          "cpuPct": 233.83416816422744
+        },
+        {
+          "intervalMs": 286.4097500000207,
+          "cpuPct": 367.0803804688577
+        },
+        {
+          "intervalMs": 253.2605840000033,
+          "cpuPct": 287.0213708422899
+        },
+        {
+          "intervalMs": 253.0146249999816,
+          "cpuPct": 288.27701165496495
+        },
+        {
+          "intervalMs": 254.47245800000383,
+          "cpuPct": 324.01699047524187
+        },
+        {
+          "intervalMs": 253.06037500000093,
+          "cpuPct": 271.7244847202971
+        },
+        {
+          "intervalMs": 253.0653750000056,
+          "cpuPct": 355.85468774619113
+        },
+        {
+          "intervalMs": 253.22550000000047,
+          "cpuPct": 285.4799378419709
+        },
+        {
+          "intervalMs": 252.55470799998147,
+          "cpuPct": 320.94551173447496
+        },
+        {
+          "intervalMs": 253.4256250000035,
+          "cpuPct": 267.82808565628903
+        },
+        {
+          "intervalMs": 253.22508400000515,
+          "cpuPct": 286.967226358979
+        },
+        {
+          "intervalMs": 253.09337499999674,
+          "cpuPct": 289.6156408677213
+        },
+        {
+          "intervalMs": 253.23287500001607,
+          "cpuPct": 267.6891774023952
+        },
+        {
+          "intervalMs": 252.96474999998463,
+          "cpuPct": 336.89516029409435
+        },
+        {
+          "intervalMs": 252.2482500000042,
+          "cpuPct": 264.3867697793705
+        },
+        {
+          "intervalMs": 252.6803329999966,
+          "cpuPct": 310.60628687710323
+        },
+        {
+          "intervalMs": 253.2481250000128,
+          "cpuPct": 262.9689755847045
+        },
+        {
+          "intervalMs": 253.04987499999697,
+          "cpuPct": 266.69722717704803
+        },
+        {
+          "intervalMs": 252.88470799999777,
+          "cpuPct": 267.07704287125944
+        },
+        {
+          "intervalMs": 252.46120900000096,
+          "cpuPct": 255.33071102420965
+        },
+        {
+          "intervalMs": 252.9588330000115,
+          "cpuPct": 247.90832269532703
+        },
+        {
+          "intervalMs": 252.05241699999897,
+          "cpuPct": 268.9031940526896
+        },
+        {
+          "intervalMs": 252.80462499998976,
+          "cpuPct": 230.91626587133612
+        },
+        {
+          "intervalMs": 252.9826250000042,
+          "cpuPct": 257.0295094376348
+        },
+        {
+          "intervalMs": 253.27766599997994,
+          "cpuPct": 280.94265524385906
+        },
+        {
+          "intervalMs": 253.16079200000968,
+          "cpuPct": 230.01152563939235
+        },
+        {
+          "intervalMs": 253.09412500000326,
+          "cpuPct": 271.896868408148
+        },
+        {
+          "intervalMs": 252.5860420000099,
+          "cpuPct": 269.0631654143258
+        },
+        {
+          "intervalMs": 253.60104099998716,
+          "cpuPct": 224.65759515555158
+        },
+        {
+          "intervalMs": 253.65366700000595,
+          "cpuPct": 388.421745150626
+        },
+        {
+          "intervalMs": 253.24733300000662,
+          "cpuPct": 282.24581539817166
+        },
+        {
+          "intervalMs": 252.98849999997765,
+          "cpuPct": 316.6475946535472
+        },
+        {
+          "intervalMs": 253.37979200002155,
+          "cpuPct": 296.9041035442665
+        },
+        {
+          "intervalMs": 253.14120799998636,
+          "cpuPct": 289.9559521735643
+        },
+        {
+          "intervalMs": 253.59758400000283,
+          "cpuPct": 316.0282473353457
+        },
+        {
+          "intervalMs": 252.97408300000825,
+          "cpuPct": 272.04288749214567
+        },
+        {
+          "intervalMs": 253.15170799999032,
+          "cpuPct": 320.8712303059181
+        },
+        {
+          "intervalMs": 252.35908399999607,
+          "cpuPct": 267.40864220287796
+        },
+        {
+          "intervalMs": 253.19633299999987,
+          "cpuPct": 321.0366399737646
+        },
+        {
+          "intervalMs": 253.0824169999978,
+          "cpuPct": 266.20893224676036
+        },
+        {
+          "intervalMs": 252.02275000000373,
+          "cpuPct": 370.65026867613983
+        },
+        {
+          "intervalMs": 254.3964580000029,
+          "cpuPct": 289.1164467392013
+        },
+        {
+          "intervalMs": 253.55037499999162,
+          "cpuPct": 310.50555535562825
+        },
+        {
+          "intervalMs": 252.8912920000148,
+          "cpuPct": 312.173659186322
+        },
+        {
+          "intervalMs": 253.09041599999182,
+          "cpuPct": 263.35015388335887
+        },
+        {
+          "intervalMs": 251.80025000000023,
+          "cpuPct": 270.9345999457803
+        },
+        {
+          "intervalMs": 253.9235420000041,
+          "cpuPct": 286.11604669565554
+        },
+        {
+          "intervalMs": 253.04604200000176,
+          "cpuPct": 281.82736800127344
+        },
+        {
+          "intervalMs": 253.30383300001267,
+          "cpuPct": 272.560423513201
+        },
+        {
+          "intervalMs": 253.06537499997648,
+          "cpuPct": 264.96631552225017
+        },
+        {
+          "intervalMs": 253.37745800000266,
+          "cpuPct": 306.27507518841287
+        },
+        {
+          "intervalMs": 252.76858400000492,
+          "cpuPct": 266.40731587116375
+        },
+        {
+          "intervalMs": 252.95491600001696,
+          "cpuPct": 310.63321971570423
+        },
+        {
+          "intervalMs": 253.7637499999837,
+          "cpuPct": 274.7606779928347
+        },
+        {
+          "intervalMs": 253.42074999999022,
+          "cpuPct": 304.18266854629314
+        },
+        {
+          "intervalMs": 252.1991670000134,
+          "cpuPct": 296.17068481435524
+        },
+        {
+          "intervalMs": 252.62358300000778,
+          "cpuPct": 268.7714234501958
+        },
+        {
+          "intervalMs": 253.32854199997382,
+          "cpuPct": 311.8945831220581
+        },
+        {
+          "intervalMs": 252.71316700003808,
+          "cpuPct": 267.68094754630823
+        },
+        {
+          "intervalMs": 253.4327499999781,
+          "cpuPct": 314.5891760240329
+        },
+        {
+          "intervalMs": 253.04516600002535,
+          "cpuPct": 265.7584851867583
+        },
+        {
+          "intervalMs": 252.21608399995603,
+          "cpuPct": 324.5161795471108
+        },
+        {
+          "intervalMs": 252.35625000001164,
+          "cpuPct": 281.9327835153653
+        },
+        {
+          "intervalMs": 252.7420830000192,
+          "cpuPct": 263.2224883578111
+        },
+        {
+          "intervalMs": 253.1046249999781,
+          "cpuPct": 265.11487097482336
+        },
+        {
+          "intervalMs": 252.608292000019,
+          "cpuPct": 266.80596850713704
+        },
+        {
+          "intervalMs": 253.2213749999646,
+          "cpuPct": 277.3020247600057
+        },
+        {
+          "intervalMs": 253.32454100000905,
+          "cpuPct": 270.86597977885623
+        },
+        {
+          "intervalMs": 254.0800000000163,
+          "cpuPct": 272.89633186396946
+        },
+        {
+          "intervalMs": 253.02045900002122,
+          "cpuPct": 363.28485199685355
+        },
+        {
+          "intervalMs": 253.6388750000042,
+          "cpuPct": 263.9579599144656
+        },
+        {
+          "intervalMs": 253.10179099999368,
+          "cpuPct": 320.2087179225106
+        },
+        {
+          "intervalMs": 253.91091699997196,
+          "cpuPct": 269.8871746424737
+        },
+        {
+          "intervalMs": 253.70129200001247,
+          "cpuPct": 308.24241919900817
+        },
+        {
+          "intervalMs": 252.64824999996927,
+          "cpuPct": 277.09750611772694
+        },
+        {
+          "intervalMs": 253.04670800000895,
+          "cpuPct": 271.86640973806385
+        },
+        {
+          "intervalMs": 260.6416250000475,
+          "cpuPct": 312.2536548027748
+        },
+        {
+          "intervalMs": 253.21383299998706,
+          "cpuPct": 330.66439936559885
+        },
+        {
+          "intervalMs": 254.02054200001294,
+          "cpuPct": 315.69887761280484
+        },
+        {
+          "intervalMs": 253.4332079999731,
+          "cpuPct": 269.843090176284
+        },
+        {
+          "intervalMs": 253.20624999998836,
+          "cpuPct": 322.1069780070785
+        },
+        {
+          "intervalMs": 253.12154200003715,
+          "cpuPct": 265.34169896922066
+        },
+        {
+          "intervalMs": 252.874124999973,
+          "cpuPct": 262.3736216586159
+        },
+        {
+          "intervalMs": 252.657583000022,
+          "cpuPct": 263.0607766084603
+        },
+        {
+          "intervalMs": 253.31354199995985,
+          "cpuPct": 253.3626883635421
+        },
+        {
+          "intervalMs": 256.67766700003995,
+          "cpuPct": 297.43686270915504
+        },
+        {
+          "intervalMs": 253.0679999999702,
+          "cpuPct": 264.1894668626958
+        },
+        {
+          "intervalMs": 253.4155829999945,
+          "cpuPct": 303.60366591980204
+        },
+        {
+          "intervalMs": 253.23916699999245,
+          "cpuPct": 277.7208629816743
+        },
+        {
+          "intervalMs": 252.17687500000466,
+          "cpuPct": 262.67436298432
+        },
+        {
+          "intervalMs": 253.73562500003027,
+          "cpuPct": 311.67243464526706
+        },
+        {
+          "intervalMs": 253.22091599996202,
+          "cpuPct": 265.4914967609078
+        },
+        {
+          "intervalMs": 254.12779200001387,
+          "cpuPct": 307.3477299956116
+        },
+        {
+          "intervalMs": 252.30333299998892,
+          "cpuPct": 263.436472319622
+        },
+        {
+          "intervalMs": 253.78787500003818,
+          "cpuPct": 307.2097120478551
+        },
+        {
+          "intervalMs": 253.91829199995846,
+          "cpuPct": 263.39181582086434
+        },
+        {
+          "intervalMs": 254.8583750000107,
+          "cpuPct": 291.99236634854736
+        },
+        {
+          "intervalMs": 253.99158299999544,
+          "cpuPct": 337.7513498154082
+        },
+        {
+          "intervalMs": 253.62924999999814,
+          "cpuPct": 267.6682598714477
+        },
+        {
+          "intervalMs": 252.61458400002448,
+          "cpuPct": 308.80006516168726
+        },
+        {
+          "intervalMs": 256.28116600000067,
+          "cpuPct": 263.30143979444136
+        },
+        {
+          "intervalMs": 253.55287499999395,
+          "cpuPct": 271.0866520444786
+        },
+        {
+          "intervalMs": 253.09149999998044,
+          "cpuPct": 264.40279503661645
+        },
+        {
+          "intervalMs": 253.2520000000368,
+          "cpuPct": 328.36502771938206
+        },
+        {
+          "intervalMs": 272.6795839999686,
+          "cpuPct": 375.5719386751402
+        },
+        {
+          "intervalMs": 261.6608750000014,
+          "cpuPct": 323.4400251852725
+        },
+        {
+          "intervalMs": 252.98975000000792,
+          "cpuPct": 285.74477819750877
+        },
+        {
+          "intervalMs": 254.11466600000858,
+          "cpuPct": 335.77361489241554
+        },
+        {
+          "intervalMs": 253.31716699997196,
+          "cpuPct": 281.1159655832067
+        },
+        {
+          "intervalMs": 252.3188749999972,
+          "cpuPct": 312.7340354541367
+        },
+        {
+          "intervalMs": 253.56441700004507,
+          "cpuPct": 360.49813724450735
+        },
+        {
+          "intervalMs": 252.5992499999702,
+          "cpuPct": 266.1658734141442
+        },
+        {
+          "intervalMs": 252.72737500001676,
+          "cpuPct": 318.7759141643962
+        },
+        {
+          "intervalMs": 252.71695799997542,
+          "cpuPct": 267.06438908625734
+        },
+        {
+          "intervalMs": 254.01137500000186,
+          "cpuPct": 310.32665367840116
+        },
+        {
+          "intervalMs": 253.64212500001304,
+          "cpuPct": 263.04699978362845
+        },
+        {
+          "intervalMs": 252.66962499998044,
+          "cpuPct": 338.37704077016775
+        },
+        {
+          "intervalMs": 252.99037500005215,
+          "cpuPct": 284.7847472457583
+        },
+        {
+          "intervalMs": 253.4106669999892,
+          "cpuPct": 289.2920841410449
+        },
+        {
+          "intervalMs": 254.05629099998623,
+          "cpuPct": 291.5979750330262
+        },
+        {
+          "intervalMs": 254.28187499998603,
+          "cpuPct": 268.41747961787195
+        },
+        {
+          "intervalMs": 256.83245899999747,
+          "cpuPct": 270.33966138991315
+        },
+        {
+          "intervalMs": 254.12370799999917,
+          "cpuPct": 267.1387905295305
+        },
+        {
+          "intervalMs": 253.06570800003828,
+          "cpuPct": 265.3512422947186
+        },
+        {
+          "intervalMs": 252.94045900000492,
+          "cpuPct": 265.8938007224762
+        },
+        {
+          "intervalMs": 253.0222079999512,
+          "cpuPct": 265.778646592208
+        },
+        {
+          "intervalMs": 253.5745000000461,
+          "cpuPct": 309.2574371633921
+        },
+        {
+          "intervalMs": 253.31945799995447,
+          "cpuPct": 262.66675495575475
+        },
+        {
+          "intervalMs": 253.26054200000362,
+          "cpuPct": 306.52899732008456
+        },
+        {
+          "intervalMs": 252.3720420000027,
+          "cpuPct": 302.91944937385824
+        },
+        {
+          "intervalMs": 252.86358300002757,
+          "cpuPct": 312.94146456824546
+        },
+        {
+          "intervalMs": 253.09454199997708,
+          "cpuPct": 275.8700343684362
+        },
+        {
+          "intervalMs": 253.0505000000121,
+          "cpuPct": 265.8773643995916
+        },
+        {
+          "intervalMs": 258.3172500000219,
+          "cpuPct": 315.13226468613095
+        },
+        {
+          "intervalMs": 252.56983299995773,
+          "cpuPct": 273.42339019565196
+        },
+        {
+          "intervalMs": 256.6554580000229,
+          "cpuPct": 314.3638581806067
+        },
+        {
+          "intervalMs": 256.51008400000865,
+          "cpuPct": 268.0190927698494
+        },
+        {
+          "intervalMs": 260.1156249999767,
+          "cpuPct": 297.3027860206708
+        },
+        {
+          "intervalMs": 253.995166000037,
+          "cpuPct": 205.64210265323135
+        },
+        {
+          "intervalMs": 258.6143339999835,
+          "cpuPct": 209.3429979793801
+        },
+        {
+          "intervalMs": 255.63333300000522,
+          "cpuPct": 250.7787198471582
+        },
+        {
+          "intervalMs": 253.15641699999105,
+          "cpuPct": 276.3828814973359
+        },
+        {
+          "intervalMs": 252.94395799998892,
+          "cpuPct": 275.90815195513846
+        },
+        {
+          "intervalMs": 253.28495800000383,
+          "cpuPct": 251.7595221742318
+        },
+        {
+          "intervalMs": 254.08416700002272,
+          "cpuPct": 352.3832321279249
+        },
+        {
+          "intervalMs": 277.3782919999794,
+          "cpuPct": 374.0126858954301
+        },
+        {
+          "intervalMs": 254.30870799999684,
+          "cpuPct": 446.496704312634
+        },
+        {
+          "intervalMs": 253.50412499997765,
+          "cpuPct": 291.3822408215501
+        },
+        {
+          "intervalMs": 260.1757080000243,
+          "cpuPct": 276.1841239997416
+        },
+        {
+          "intervalMs": 261.6167499999865,
+          "cpuPct": 326.7271686541722
+        },
+        {
+          "intervalMs": 254.43362500000512,
+          "cpuPct": 279.335720661915
+        },
+        {
+          "intervalMs": 254.44954200001666,
+          "cpuPct": 237.92457838260003
+        },
+        {
+          "intervalMs": 254.60591699997894,
+          "cpuPct": 340.35147737752146
+        },
+        {
+          "intervalMs": 253.1374160000123,
+          "cpuPct": 278.2374139427728
+        },
+        {
+          "intervalMs": 252.65291699999943,
+          "cpuPct": 318.87896231967665
+        },
+        {
+          "intervalMs": 252.58562500000698,
+          "cpuPct": 275.5825870929928
+        },
+        {
+          "intervalMs": 290.5210419999785,
+          "cpuPct": 236.75531220214978
+        },
+        {
+          "intervalMs": 256.48862499999814,
+          "cpuPct": 297.3632846290923
+        },
+        {
+          "intervalMs": 253.6176250000135,
+          "cpuPct": 270.4646414065079
+        },
+        {
+          "intervalMs": 253.82004100002814,
+          "cpuPct": 286.4982596074587
+        },
+        {
+          "intervalMs": 252.92024999996647,
+          "cpuPct": 299.58415745678735
+        },
+        {
+          "intervalMs": 253.24545899999794,
+          "cpuPct": 270.1256728161111
+        },
+        {
+          "intervalMs": 253.23125000001164,
+          "cpuPct": 317.4939901769565
+        },
+        {
+          "intervalMs": 252.0367499999702,
+          "cpuPct": 265.7239470037882
+        },
+        {
+          "intervalMs": 253.17633300001035,
+          "cpuPct": 268.99670752398856
+        },
+        {
+          "intervalMs": 253.35154200001853,
+          "cpuPct": 273.40863786805545
+        },
+        {
+          "intervalMs": 253.3100829999894,
+          "cpuPct": 266.41931975524443
+        },
+        {
+          "intervalMs": 252.38187500002095,
+          "cpuPct": 272.9209456899222
+        },
+        {
+          "intervalMs": 253.42062499996973,
+          "cpuPct": 264.78073755839296
+        },
+        {
+          "intervalMs": 253.1028750000405,
+          "cpuPct": 276.85224831992036
+        },
+        {
+          "intervalMs": 253.47079200000735,
+          "cpuPct": 320.05068260486246
+        },
+        {
+          "intervalMs": 252.78770799998892,
+          "cpuPct": 277.56650256114284
+        },
+        {
+          "intervalMs": 251.85183299996424,
+          "cpuPct": 308.32294954950345
+        },
+        {
+          "intervalMs": 253.64541699999245,
+          "cpuPct": 262.5866486678967
+        },
+        {
+          "intervalMs": 252.5664580000448,
+          "cpuPct": 304.5238097292641
+        },
+        {
+          "intervalMs": 253.78766699996777,
+          "cpuPct": 264.5869312475617
+        },
+        {
+          "intervalMs": 253.22033300000476,
+          "cpuPct": 298.88989996708045
+        },
+        {
+          "intervalMs": 253.1105840000091,
+          "cpuPct": 267.39656212873285
+        },
+        {
+          "intervalMs": 253.3204159999732,
+          "cpuPct": 281.61843852335926
+        },
+        {
+          "intervalMs": 253.21591700002318,
+          "cpuPct": 297.8880668074028
+        },
+        {
+          "intervalMs": 253.14737500000047,
+          "cpuPct": 263.12103769592795
+        },
+        {
+          "intervalMs": 254.0707500000135,
+          "cpuPct": 314.5840282677046
+        },
+        {
+          "intervalMs": 253.1840830000001,
+          "cpuPct": 267.7439244867524
+        },
+        {
+          "intervalMs": 253.79612499999348,
+          "cpuPct": 270.47812491228575
+        },
+        {
+          "intervalMs": 253.31991700001527,
+          "cpuPct": 269.169912920797
+        },
+        {
+          "intervalMs": 252.3275830000057,
+          "cpuPct": 264.8826545451319
+        },
+        {
+          "intervalMs": 252.61812499997905,
+          "cpuPct": 260.65311030238956
+        },
+        {
+          "intervalMs": 252.74849999998696,
+          "cpuPct": 262.949137185786
+        },
+        {
+          "intervalMs": 253.1648339999956,
+          "cpuPct": 272.56708172984315
+        },
+        {
+          "intervalMs": 253.07150000002002,
+          "cpuPct": 297.95018403888645
+        },
+        {
+          "intervalMs": 253.41424999997253,
+          "cpuPct": 354.3964082525417
+        },
+        {
+          "intervalMs": 253.5127499999944,
+          "cpuPct": 308.7264841709076
+        },
+        {
+          "intervalMs": 253.38166600000113,
+          "cpuPct": 263.0146886791723
+        },
+        {
+          "intervalMs": 253.06908400001703,
+          "cpuPct": 311.2430754283413
+        },
+        {
+          "intervalMs": 253.3493749999907,
+          "cpuPct": 262.87730135510145
+        },
+        {
+          "intervalMs": 253.33854100003373,
+          "cpuPct": 292.9720038136278
+        },
+        {
+          "intervalMs": 253.56708399998024,
+          "cpuPct": 278.370910318965
+        },
+        {
+          "intervalMs": 253.37766599998577,
+          "cpuPct": 268.5007762286602
+        },
+        {
+          "intervalMs": 253.075708999997,
+          "cpuPct": 311.50875882757765
+        },
+        {
+          "intervalMs": 253.29025000002002,
+          "cpuPct": 271.06728348207275
+        },
+        {
+          "intervalMs": 253.40483299997868,
+          "cpuPct": 307.6614564806223
+        },
+        {
+          "intervalMs": 252.772667000012,
+          "cpuPct": 262.4188002098919
+        },
+        {
+          "intervalMs": 252.27995799999917,
+          "cpuPct": 260.5387305479006
+        },
+        {
+          "intervalMs": 253.01304200000595,
+          "cpuPct": 261.43276835507294
+        },
+        {
+          "intervalMs": 253.10587500000838,
+          "cpuPct": 248.31071187107187
+        },
+        {
+          "intervalMs": 253.34574999997858,
+          "cpuPct": 279.0569804309265
+        },
+        {
+          "intervalMs": 253.00741600000765,
+          "cpuPct": 262.06188359316167
+        },
+        {
+          "intervalMs": 254.3023750000284,
+          "cpuPct": 264.46272867090573
+        },
+        {
+          "intervalMs": 253.34116700000595,
+          "cpuPct": 294.25182208936405
+        },
+        {
+          "intervalMs": 253.65554199996404,
+          "cpuPct": 270.23655568310227
+        },
+        {
+          "intervalMs": 253.14416600001277,
+          "cpuPct": 310.67395801647035
+        },
+        {
+          "intervalMs": 252.59487500000978,
+          "cpuPct": 238.77127356601625
+        },
+        {
+          "intervalMs": 253.25845899997512,
+          "cpuPct": 286.5282379373851
+        },
+        {
+          "intervalMs": 253.38054099999135,
+          "cpuPct": 292.128983969603
+        },
+        {
+          "intervalMs": 252.6824590000324,
+          "cpuPct": 266.1067185514085
+        },
+        {
+          "intervalMs": 253.09091600001557,
+          "cpuPct": 310.7215432417825
+        },
+        {
+          "intervalMs": 252.9873339999467,
+          "cpuPct": 264.67412000955954
+        },
+        {
+          "intervalMs": 261.10929100000067,
+          "cpuPct": 374.9226985568954
+        },
+        {
+          "intervalMs": 255.8387090000324,
+          "cpuPct": 270.5704710227891
+        },
+        {
+          "intervalMs": 253.2362500000163,
+          "cpuPct": 290.45683625465693
+        },
+        {
+          "intervalMs": 253.35316599998623,
+          "cpuPct": 281.47704299857895
+        },
+        {
+          "intervalMs": 253.0812089999672,
+          "cpuPct": 260.00903133036866
+        },
+        {
+          "intervalMs": 252.41025000001537,
+          "cpuPct": 263.8284301053299
+        },
+        {
+          "intervalMs": 252.9957080000313,
+          "cpuPct": 266.90255156420625
+        },
+        {
+          "intervalMs": 253.2590419999906,
+          "cpuPct": 195.23409553133288
+        },
+        {
+          "intervalMs": 266.3837910000002,
+          "cpuPct": 324.0486205108468
+        },
+        {
+          "intervalMs": 252.92916699999478,
+          "cpuPct": 283.2180283897486
+        },
+        {
+          "intervalMs": 252.1687919999822,
+          "cpuPct": 281.7041690075797
+        },
+        {
+          "intervalMs": 264.9536659999867,
+          "cpuPct": 288.9501442112505
+        },
+        {
+          "intervalMs": 254.19350000005215,
+          "cpuPct": 228.14745459655245
+        },
+        {
+          "intervalMs": 252.9354169999715,
+          "cpuPct": 339.8832042568811
+        },
+        {
+          "intervalMs": 253.2156669999822,
+          "cpuPct": 323.26791217070996
+        },
+        {
+          "intervalMs": 253.07050000003073,
+          "cpuPct": 270.0832376748568
+        },
+        {
+          "intervalMs": 266.36999999999534,
+          "cpuPct": 305.72174043624443
+        },
+        {
+          "intervalMs": 255.84883299999638,
+          "cpuPct": 262.6390717209363
+        },
+        {
+          "intervalMs": 253.2557079999824,
+          "cpuPct": 269.9540339679255
+        },
+        {
+          "intervalMs": 259.9335420000134,
+          "cpuPct": 302.5080926261963
+        },
+        {
+          "intervalMs": 253.58629200002179,
+          "cpuPct": 267.759347181102
+        },
+        {
+          "intervalMs": 252.0297909999499,
+          "cpuPct": 312.4023540535119
+        },
+        {
+          "intervalMs": 253.2074170000269,
+          "cpuPct": 266.29354226221386
+        },
+        {
+          "intervalMs": 253.21441700001014,
+          "cpuPct": 315.26127519033827
+        },
+        {
+          "intervalMs": 253.05537499999627,
+          "cpuPct": 264.89893763369855
+        },
+        {
+          "intervalMs": 253.33387500001118,
+          "cpuPct": 294.22752878982004
+        },
+        {
+          "intervalMs": 253.1676659999648,
+          "cpuPct": 267.3706365014633
+        },
+        {
+          "intervalMs": 251.07654199999524,
+          "cpuPct": 264.82163355586465
+        },
+        {
+          "intervalMs": 254.0227920000325,
+          "cpuPct": 272.3295002599248
+        },
+        {
+          "intervalMs": 252.9775410000002,
+          "cpuPct": 265.1488339037855
+        },
+        {
+          "intervalMs": 253.7482500000042,
+          "cpuPct": 276.22929419218366
+        },
+        {
+          "intervalMs": 252.71824999997625,
+          "cpuPct": 298.1608965716102
+        },
+        {
+          "intervalMs": 253.15991699998267,
+          "cpuPct": 267.140631113443
+        },
+        {
+          "intervalMs": 252.77229200000875,
+          "cpuPct": 334.77284765054986
+        },
+        {
+          "intervalMs": 252.47600000002421,
+          "cpuPct": 265.663270964346
+        },
+        {
+          "intervalMs": 252.68550000002142,
+          "cpuPct": 311.2905172635165
+        },
+        {
+          "intervalMs": 253.4008329999633,
+          "cpuPct": 265.01215171620044
+        },
+        {
+          "intervalMs": 253.20195800001966,
+          "cpuPct": 284.4887163155191
+        },
+        {
+          "intervalMs": 253.06387499999255,
+          "cpuPct": 283.68371424013964
+        },
+        {
+          "intervalMs": 253.5252089999849,
+          "cpuPct": 262.94229383715356
+        },
+        {
+          "intervalMs": 252.26295800000662,
+          "cpuPct": 307.97189018927753
+        },
+        {
+          "intervalMs": 252.9996670000255,
+          "cpuPct": 263.6928371925213
+        },
+        {
+          "intervalMs": 253.41254099999787,
+          "cpuPct": 310.82952599413375
+        },
+        {
+          "intervalMs": 252.21495900000446,
+          "cpuPct": 261.6030399687942
+        },
+        {
+          "intervalMs": 251.46737500000745,
+          "cpuPct": 268.2455328449624
+        },
+        {
+          "intervalMs": 252.5178329999908,
+          "cpuPct": 264.12986048396306
+        },
+        {
+          "intervalMs": 253.34987499995623,
+          "cpuPct": 246.1110351840901
+        },
+        {
+          "intervalMs": 279.0063749999972,
+          "cpuPct": 254.28845487849142
+        },
+        {
+          "intervalMs": 265.1923330000136,
+          "cpuPct": 335.78384032692014
+        },
+        {
+          "intervalMs": 253.5137500000419,
+          "cpuPct": 280.44001558095806
+        },
+        {
+          "intervalMs": 253.333416999958,
+          "cpuPct": 309.5635819731359
+        },
+        {
+          "intervalMs": 252.57804200000828,
+          "cpuPct": 311.51757839660445
+        },
+        {
+          "intervalMs": 253.5592910000123,
+          "cpuPct": 275.82542814412756
+        },
+        {
+          "intervalMs": 253.09162500000093,
+          "cpuPct": 318.20728955372874
+        },
+        {
+          "intervalMs": 252.76912499999162,
+          "cpuPct": 272.24171464772354
+        },
+        {
+          "intervalMs": 253.20208399998955,
+          "cpuPct": 321.81409691714924
+        },
+        {
+          "intervalMs": 253.21575000003213,
+          "cpuPct": 268.8955959492717
+        },
+        {
+          "intervalMs": 252.98975000000792,
+          "cpuPct": 309.2848623313671
+        },
+        {
+          "intervalMs": 252.44479099998716,
+          "cpuPct": 270.8370401669536
+        },
+        {
+          "intervalMs": 253.04395899997326,
+          "cpuPct": 289.2833335729167
+        },
+        {
+          "intervalMs": 253.06012500001816,
+          "cpuPct": 315.81229954736983
+        },
+        {
+          "intervalMs": 253.17487499996787,
+          "cpuPct": 262.4130850267453
+        },
+        {
+          "intervalMs": 252.7814580000122,
+          "cpuPct": 311.60038644920604
+        },
+        {
+          "intervalMs": 255.36254200001713,
+          "cpuPct": 264.5438891346766
+        },
+        {
+          "intervalMs": 253.25016599998344,
+          "cpuPct": 264.82707221603937
+        },
+        {
+          "intervalMs": 253.84041699999943,
+          "cpuPct": 265.5589712492364
+        },
+        {
+          "intervalMs": 252.8751250000205,
+          "cpuPct": 258.1649737197087
+        },
+        {
+          "intervalMs": 253.26366699999198,
+          "cpuPct": 274.31293569638274
+        },
+        {
+          "intervalMs": 252.67291600001045,
+          "cpuPct": 266.76108016260554
+        },
+        {
+          "intervalMs": 253.15454199997475,
+          "cpuPct": 308.5305101893455
+        },
+        {
+          "intervalMs": 253.58283299999312,
+          "cpuPct": 264.55379177817963
+        },
+        {
+          "intervalMs": 253.17766700003995,
+          "cpuPct": 298.89050205990577
+        },
+        {
+          "intervalMs": 252.69562499999302,
+          "cpuPct": 292.23774649839135
+        },
+        {
+          "intervalMs": 253.2713329999824,
+          "cpuPct": 288.39860845999135
+        },
+        {
+          "intervalMs": 253.6572499999893,
+          "cpuPct": 299.8053475704152
+        },
+        {
+          "intervalMs": 252.985250000027,
+          "cpuPct": 267.2985875658588
+        },
+        {
+          "intervalMs": 253.32920899998862,
+          "cpuPct": 303.9061318823321
+        },
+        {
+          "intervalMs": 253.2246659999946,
+          "cpuPct": 264.0572147106816
+        },
+        {
+          "intervalMs": 252.71850000001723,
+          "cpuPct": 305.7176265290886
+        },
+        {
+          "intervalMs": 253.26083400001517,
+          "cpuPct": 261.4573242698785
+        },
+        {
+          "intervalMs": 253.33179099997506,
+          "cpuPct": 295.79982719187205
+        },
+        {
+          "intervalMs": 253.10479200002737,
+          "cpuPct": 272.7218218768103
+        },
+        {
+          "intervalMs": 253.17083299998194,
+          "cpuPct": 263.6267346009909
+        },
+        {
+          "intervalMs": 253.3727090000175,
+          "cpuPct": 264.58058669607755
+        },
+        {
+          "intervalMs": 252.49566599994432,
+          "cpuPct": 265.3158411044515
+        },
+        {
+          "intervalMs": 253.50887499999953,
+          "cpuPct": 355.18953724991894
+        }
+      ],
+      "timing": {
+        "ms": 86865.79999999702,
+        "steps": [
+          10177.40000000596,
+          36349.29999999702,
+          46798.79999999702,
+          46847.20000000298,
+          77130.5,
+          86865.79999999702
+        ],
+        "hidden": false,
+        "actualWorkers": 2
+      },
+      "after": {
+        "clock": {
+          "y": 2011,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        "metrics": {
+          "pop": 16033973.73959732,
+          "jobs": 9523644.530916214,
+          "funds": 5026145.723840332,
+          "capex": 0,
+          "debt": 0,
+          "share": 0.38826535724623146,
+          "cong": 1.1016303589103633,
+          "commute": 26.77931623585174,
+          "riders": 10616932.12144076,
+          "sat": 77.09236847344118,
+          "regions": 22,
+          "events": 324,
+          "tasksDone": 31,
+          "tasksFailed": 5,
+          "coverage": 0.6514369857402595,
+          "stations": 278,
+          "fiscF": 1.2270571218699673,
+          "macroRecs": 21,
+          "ridersWk": 11010657.311187228,
+          "ridersWe": 9632619.147074595
+        },
+        "ledger": "99ba59b4e3e661e4beaf4bcad5ff9b1ac149e71d5f0f9829fd21768374464ca3",
+        "arrays": {
+          "wd0arcTime": "e126f3243b0834967b32fac896a4408a9603d75e934d32b58563524f0ab704ec",
+          "wd0arcVol": "bce6bbdc128299c4dd0bfb40f6efe77caf93a93bf05e35376374e9d39bdd0fad",
+          "wd0load": "cdd7acc837d7d93b493c1ddc9f1bd56062dc71deb676f144696b257868f4e636",
+          "wd0stIn": "3ce695e267ebef88d6703b7b946cb2a6637f9338612ccc916008539852da3530",
+          "wd0stOut": "4f5baace5124fd2d048b29a698bbd89588f1f513e026695501984eccd7f9404e",
+          "wd1arcTime": "cde48dee1511ef2c33c93bba9693816af3b35c2b685e697f5b0ac0a2105132f1",
+          "wd1arcVol": "ebb504eca528882a4834bfa3a3c3e872409afe8b889de21301be54809876c6b3",
+          "wd1load": "c092610cbd28b5a8783a694e12911c016c367d8805fd96b55e9d8a1ccd378069",
+          "wd1stIn": "9279d9656357aeab481f18381e45971147a6231d3c68f813024f119b6b9ad8ce",
+          "wd1stOut": "6cceade1a4d209cf06a7dd947ddd57ebbb8be2e7ff7796d2280b7bd72eec4cd8",
+          "wd2arcTime": "5b0f16b61d00b146a4ded03cc910675919450c2a06b35fbd879f89415d3f466e",
+          "wd2arcVol": "84f2f8f9c5e154da6019068dff40727f9d487c11fefabdecec17004f92be524f",
+          "wd2load": "c131e2cda4013402a51e24e5a4879cebbca3d4bd6c8dea2d0fe42614ee11df1c",
+          "wd2stIn": "2901bf3f8627309e81d399f102079c0c3cad7bacbe1ea496c39c5b34b41482cb",
+          "wd2stOut": "07c92cb5bf11cf915d10ee915149ba246f84c28171e48e1fd6f30a6f0ea5a83e",
+          "wd3arcTime": "c23010099263c30080063989bdce7871bbbdf166bfde634b48bf1fa9ea45b7f7",
+          "wd3arcVol": "70200bd6809bd319a23d3ed2a793a25ab950374cb02b7998f5eb510407da197f",
+          "wd3load": "00cc21ce50acf00588abc8bcba521412bf22a58d1c9f575ab09668a2479049e0",
+          "wd3stIn": "82803c3ec2fb0464bb4884f628778a71b928f88e47f5ae06dd133e9eaf47a243",
+          "wd3stOut": "76b6952f89ad38ecb680477608d3339d3a5f0e6aeb131a58e9fe771c6c5757a7",
+          "we0arcTime": "c6e108e0f1e22bb6a91e7f887a7c522e545977ccab56ff213467f32858a17e44",
+          "we0arcVol": "9b2018b30200bdb7c6c03812b0656c1f36f6b36da2f279fd92f0cd30274f06b5",
+          "we0load": "f61fea879d789e119bf0e58e3b06ce8a5eb54687663534bf3a07f5f07338da9e",
+          "we0stIn": "39c181c2e2edc6b57c37cf468f5bbf12c7ef5483d63e1541aba12be0e5536245",
+          "we0stOut": "64b8dcbeeda47020a06b381bbf28f7a1d0ee54aa5a1272b576047857ab8c6632",
+          "we1arcTime": "c8312ff7827ab71da523067747dc6071ea95ade22fc3b992eb7731d4ab620c7b",
+          "we1arcVol": "c521596308f81fa06dc50f921a7a17f18a8d701ae6b3dd9b07398878c16fd6c1",
+          "we1load": "ece8dae05ac250170b92c384a6efb860839a9d9a96d1f028d4caf9bf679c15b3",
+          "we1stIn": "817072b5604bd0d35b7c5ae087e1477520022f7bee88c362423460f50108b35b",
+          "we1stOut": "4eae0b19e1f4f3b462a0b7c432b44e8b62ad063a2c93003208dad98f375ad1a0",
+          "we2arcTime": "daa67e62fc799bb86ab94b94bb3992bb0089048a54628c2ed1b491c616abf6d1",
+          "we2arcVol": "da96a522d875d7b0e76be04b1f5dd12542daaabc00ea3b499b998a2b8ae0ba4b",
+          "we2load": "e2b98ae77281878c4197175599dd25cd5b438834d7f196406b42a033a202e52e",
+          "we2stIn": "1afc3daa1b539a8b414a68aa7d4224bd99d092a3a5e5731d14945284a302557d",
+          "we2stOut": "45d9c3e7ad1f5005a7241e19f3da9968ec22136b10f7ba296e66e24b345fede2",
+          "we3arcTime": "11772100742bcd6b4961c61f4d8377965e4f0f75c32e755fa876dba938ca0d2f",
+          "we3arcVol": "b23486e3cf8c4bdcae398d12f09d822c8520170064acde752becdf072f1fb4f9",
+          "we3load": "34c0516b7cff374ae5aae027675714a94b7731a87d76a96e23d80ebf744ac97f",
+          "we3stIn": "467a12bafb28085907d417c9b703b5d7c712e8b8c04bcbb945c085eae388e439",
+          "we3stOut": "42ee4275a07030329899bd6fcadeb882917a299e0801b517eea3358b39441553"
+        }
+      },
+      "peak": 446.496704312634
+    }
+  ],
+  "browser": "Chrome/156.0.8078.80"
+}

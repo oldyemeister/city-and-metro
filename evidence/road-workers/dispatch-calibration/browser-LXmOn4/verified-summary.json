@@ -1,0 +1,969 @@
+{
+  "scope": "Foreground player time starts at jump button dispatch or the natural endDay call and ends at jumpDone or settled month review. Handler times are individual road Worker blocks and overlap across slots. Work fingerprints compare block shapes and request grouping; they do not contain input array bytes.",
+  "sourceSHA256": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+  "kernelSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "browser": "Chrome/156.0.8078.80",
+  "verifiedPerSnapshot": {
+    "periods": 8,
+    "typedArraySHA256s": 232,
+    "metrics": 20,
+    "periodStatsPerPeriod": 29,
+    "dailySHA256s": 43,
+    "additionalSHA256s": 6
+  },
+  "forced": [
+    {
+      "map": "small",
+      "scenario": "quarter",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "WASM",
+        "JS"
+      ],
+      "playerJsMs": 1219.2,
+      "playerComparedMs": 1279.9,
+      "playerPctLess": -4.979,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1860,
+          "m": 4,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "e609c2676f4f9cdd560df726ae72954a1419018b5aa72c532e301a9eafd138eb",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 1024
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.9,
+          "comparedHandlerMedianMs": 1.6
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 2.5,
+          "comparedHandlerMedianMs": 2
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": 2.5,
+          "comparedHandlerMedianMs": 2.1
+        }
+      ]
+    },
+    {
+      "map": "large",
+      "scenario": "quarter",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "JS",
+        "WASM"
+      ],
+      "playerJsMs": 9495.8,
+      "playerComparedMs": 6967.4,
+      "playerPctLess": 26.627,
+      "mapClock": [
+        {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        {
+          "y": 2010,
+          "m": 4,
+          "d": 16,
+          "minute": 547.3584000004513
+        }
+      ],
+      "economyKeys": [
+        28,
+        28
+      ],
+      "matchedBlocks": 864,
+      "matchedShapeSHA256": "e2d044c45c61d68c9d8d5fef29d1392db7896e03388e825791566fea552b1877",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 864
+      },
+      "atLeast11PctShare": 1,
+      "density": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 513,
+          "share": 0.594,
+          "jsHandlerMedianMs": 35.4,
+          "comparedHandlerMedianMs": 26
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "blocks": 351,
+          "share": 0.406,
+          "jsHandlerMedianMs": 37.4,
+          "comparedHandlerMedianMs": 27.1
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "year",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "JS",
+        "WASM"
+      ],
+      "playerJsMs": 730.6,
+      "playerComparedMs": 728,
+      "playerPctLess": 0.356,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1861,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 512,
+      "matchedShapeSHA256": "345ef6325126684b1eeeffa7aa6a49744741923ae4355214ad8d2ba4405a0b87",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 512
+      },
+      "atLeast11PctShare": 0.172,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 32,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 368,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.9,
+          "comparedHandlerMedianMs": 1.55
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 24,
+          "share": 0.047,
+          "jsHandlerMedianMs": 2.5,
+          "comparedHandlerMedianMs": 2
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 88,
+          "share": 0.172,
+          "jsHandlerMedianMs": 2.6,
+          "comparedHandlerMedianMs": 2.05
+        }
+      ]
+    },
+    {
+      "map": "large",
+      "scenario": "year",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "WASM",
+        "JS"
+      ],
+      "playerJsMs": 39416.2,
+      "playerComparedMs": 29497.8,
+      "playerPctLess": 25.163,
+      "mapClock": [
+        {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        {
+          "y": 2011,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        }
+      ],
+      "economyKeys": [
+        28,
+        28
+      ],
+      "matchedBlocks": 3936,
+      "matchedShapeSHA256": "e2da82fe59dfd3bcf234735e14ff86ea13a98c2043d17759a49c8520c5f12d53",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 3936
+      },
+      "atLeast11PctShare": 1,
+      "density": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 2337,
+          "share": 0.594,
+          "jsHandlerMedianMs": 35.1,
+          "comparedHandlerMedianMs": 26.1
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "blocks": 1599,
+          "share": 0.406,
+          "jsHandlerMedianMs": 36.8,
+          "comparedHandlerMedianMs": 27.2
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "boundary",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "JS",
+        "WASM"
+      ],
+      "playerJsMs": 1307.2,
+      "playerComparedMs": 1071.1,
+      "playerPctLess": 18.062,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 31,
+          "minute": 1439
+        },
+        {
+          "y": 1860,
+          "m": 2,
+          "d": 1,
+          "minute": 0
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "7011e4873e5b4052974b0e299b26efdc6e3a16a2cf280be145b4a835d356c747",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 1024
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.9,
+          "comparedHandlerMedianMs": 1.6
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 2.4,
+          "comparedHandlerMedianMs": 1.9
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": 2.65,
+          "comparedHandlerMedianMs": 2.05
+        }
+      ]
+    },
+    {
+      "map": "large",
+      "scenario": "boundary",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "WASM",
+        "JS"
+      ],
+      "playerJsMs": 2943.4,
+      "playerComparedMs": 2411.9,
+      "playerPctLess": 18.057,
+      "mapClock": [
+        {
+          "y": 2010,
+          "m": 1,
+          "d": 31,
+          "minute": 1439
+        },
+        {
+          "y": 2010,
+          "m": 2,
+          "d": 1,
+          "minute": 0
+        }
+      ],
+      "economyKeys": [
+        28,
+        28
+      ],
+      "matchedBlocks": 256,
+      "matchedShapeSHA256": "71fe6446b2c423fd9213278332fb908ad3a7e054ecae110e1f85d0769dcd5e3a",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 256
+      },
+      "atLeast11PctShare": 1,
+      "density": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 152,
+          "share": 0.594,
+          "jsHandlerMedianMs": 35.6,
+          "comparedHandlerMedianMs": 26.8
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "blocks": 104,
+          "share": 0.406,
+          "jsHandlerMedianMs": 37.55,
+          "comparedHandlerMedianMs": 28.3
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "year",
+      "profile": "desktop",
+      "round": 2,
+      "order": [
+        "WASM",
+        "JS"
+      ],
+      "playerJsMs": 714.7,
+      "playerComparedMs": 748.9,
+      "playerPctLess": -4.785,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1861,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 512,
+      "matchedShapeSHA256": "345ef6325126684b1eeeffa7aa6a49744741923ae4355214ad8d2ba4405a0b87",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 512
+      },
+      "atLeast11PctShare": 0.172,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 32,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 368,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.9,
+          "comparedHandlerMedianMs": 1.6
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 24,
+          "share": 0.047,
+          "jsHandlerMedianMs": 2.5,
+          "comparedHandlerMedianMs": 2.05
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 88,
+          "share": 0.172,
+          "jsHandlerMedianMs": 2.6,
+          "comparedHandlerMedianMs": 2.1
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "quarter",
+      "profile": "desktop",
+      "round": 2,
+      "order": [
+        "JS",
+        "WASM"
+      ],
+      "playerJsMs": 1187,
+      "playerComparedMs": 1185.9,
+      "playerPctLess": 0.093,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1860,
+          "m": 4,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "e609c2676f4f9cdd560df726ae72954a1419018b5aa72c532e301a9eafd138eb",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 1024
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.8,
+          "comparedHandlerMedianMs": 1.5
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 2.45,
+          "comparedHandlerMedianMs": 1.95
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": 2.6,
+          "comparedHandlerMedianMs": 2
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "boundary",
+      "profile": "desktop",
+      "round": 2,
+      "order": [
+        "WASM",
+        "JS"
+      ],
+      "playerJsMs": 1053,
+      "playerComparedMs": 1053.8,
+      "playerPctLess": -0.076,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 31,
+          "minute": 1439
+        },
+        {
+          "y": 1860,
+          "m": 2,
+          "d": 1,
+          "minute": 0
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "7011e4873e5b4052974b0e299b26efdc6e3a16a2cf280be145b4a835d356c747",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 1024
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.9,
+          "comparedHandlerMedianMs": 1.5
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 2.4,
+          "comparedHandlerMedianMs": 1.9
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": 2.6,
+          "comparedHandlerMedianMs": 2
+        }
+      ]
+    }
+  ],
+  "policy": [
+    {
+      "map": "large",
+      "scenario": "quarter",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "POLICY"
+      ],
+      "playerJsMs": 9495.8,
+      "playerComparedMs": 7306.9,
+      "playerPctLess": 23.051,
+      "mapClock": [
+        {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        {
+          "y": 2010,
+          "m": 4,
+          "d": 16,
+          "minute": 547.3584000004513
+        }
+      ],
+      "economyKeys": [
+        28,
+        28
+      ],
+      "matchedBlocks": 864,
+      "matchedShapeSHA256": "e2d044c45c61d68c9d8d5fef29d1392db7896e03388e825791566fea552b1877",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 864
+      },
+      "atLeast11PctShare": 1,
+      "density": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 513,
+          "share": 0.594,
+          "jsHandlerMedianMs": 35.4,
+          "comparedHandlerMedianMs": 26.2
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "blocks": 351,
+          "share": 0.406,
+          "jsHandlerMedianMs": 37.4,
+          "comparedHandlerMedianMs": 27.4
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "quarter",
+      "profile": "desktop",
+      "round": 1,
+      "order": [
+        "POLICY"
+      ],
+      "playerJsMs": 1219.2,
+      "playerComparedMs": 1257.2,
+      "playerPctLess": -3.117,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1860,
+          "m": 4,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "e609c2676f4f9cdd560df726ae72954a1419018b5aa72c532e301a9eafd138eb",
+      "comparedBackend": {
+        "JS": 864,
+        "WASM": 160
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 0.1,
+          "comparedHandlerMedianMs": 0.1
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": 1.9,
+          "comparedHandlerMedianMs": 1.9
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": 2.5,
+          "comparedHandlerMedianMs": 2.5
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": 2.5,
+          "comparedHandlerMedianMs": 2.1
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "quarter",
+      "profile": "mobile",
+      "round": 1,
+      "order": [
+        "POLICY"
+      ],
+      "playerJsMs": null,
+      "playerComparedMs": 1504.7,
+      "playerPctLess": null,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1860,
+          "m": 4,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "e609c2676f4f9cdd560df726ae72954a1419018b5aa72c532e301a9eafd138eb",
+      "comparedBackend": {
+        "JS": 864,
+        "WASM": 160
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 0.1
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 1.9
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 2.45
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 2.1
+        }
+      ]
+    },
+    {
+      "map": "small",
+      "scenario": "quarter",
+      "profile": "mobile-no-module",
+      "round": 1,
+      "order": [
+        "POLICY"
+      ],
+      "playerJsMs": null,
+      "playerComparedMs": 1594.6,
+      "playerPctLess": null,
+      "mapClock": [
+        {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        {
+          "y": 1860,
+          "m": 4,
+          "d": 1,
+          "minute": 360
+        }
+      ],
+      "economyKeys": [
+        24,
+        24
+      ],
+      "matchedBlocks": 1024,
+      "matchedShapeSHA256": "e609c2676f4f9cdd560df726ae72954a1419018b5aa72c532e301a9eafd138eb",
+      "comparedBackend": {
+        "JS": 1024,
+        "WASM": 0
+      },
+      "atLeast11PctShare": 0.156,
+      "density": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 0.1
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "blocks": 736,
+          "share": 0.719,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 1.9
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "blocks": 64,
+          "share": 0.063,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 2.5
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 160,
+          "share": 0.156,
+          "jsHandlerMedianMs": null,
+          "comparedHandlerMedianMs": 2.6
+        }
+      ]
+    }
+  ],
+  "primaryHandlerBandsByMap": {
+    "small": {
+      "total": 2560,
+      "atLeast11Pct": 408,
+      "atLeast11PctShare": 0.159,
+      "bands": [
+        {
+          "minPct": 0,
+          "maxPct": 5,
+          "count": 160,
+          "share": 0.063,
+          "jsMedianMs": 0.1,
+          "wasmMedianMs": 0.3
+        },
+        {
+          "minPct": 5,
+          "maxPct": 8,
+          "count": 1840,
+          "share": 0.719,
+          "jsMedianMs": 1.9,
+          "wasmMedianMs": 1.6
+        },
+        {
+          "minPct": 8,
+          "maxPct": 11,
+          "count": 152,
+          "share": 0.059,
+          "jsMedianMs": 2.5,
+          "wasmMedianMs": 2
+        },
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "count": 408,
+          "share": 0.159,
+          "jsMedianMs": 2.6,
+          "wasmMedianMs": 2.1
+        }
+      ]
+    },
+    "large": {
+      "total": 5056,
+      "atLeast11Pct": 5056,
+      "atLeast11PctShare": 1,
+      "bands": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "count": 3002,
+          "share": 0.594,
+          "jsMedianMs": 35.1,
+          "wasmMedianMs": 26.1
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "count": 2054,
+          "share": 0.406,
+          "jsMedianMs": 36.9,
+          "wasmMedianMs": 27.2
+        }
+      ]
+    }
+  },
+  "missingForced": [],
+  "runnerErrors": [],
+  "runnerError": null,
+  "elapsedMs": 329572,
+  "final": {
+    "map": "ld",
+    "clock": {
+      "y": 1860,
+      "m": 4,
+      "d": 1,
+      "minute": 360
+    },
+    "speed": 0,
+    "jumping": false,
+    "ready": true,
+    "settled": true,
+    "road": 2,
+    "variant": "POLICY"
+  }
+}

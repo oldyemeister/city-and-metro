@@ -1,0 +1,73 @@
+{
+  "source": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+  "candidate": "dab5ef3bff3dfbc1e91a5814bbb744d8e32ba2071bef6875a70620c75ced7947",
+  "save": "e7f36e23da7e6b2201fbed4f4d77f1488be8db249f79450f973aab16095a7f38",
+  "completedCases": 6,
+  "exactPairs": 3,
+  "errors": 0,
+  "pairs": [
+    {
+      "scenario": "quarter",
+      "round": 1,
+      "oldMs": 10044.40000000596,
+      "newMs": 10056.5,
+      "changePct": 0.12046513474206488,
+      "allArrays": 232,
+      "metrics": 20,
+      "economyKeys": 25,
+      "exact": true
+    },
+    {
+      "scenario": "quarter",
+      "round": 2,
+      "oldMs": 9825.199999988079,
+      "newMs": 10025.5,
+      "changePct": 2.0386353459691753,
+      "allArrays": 232,
+      "metrics": 20,
+      "economyKeys": 25,
+      "exact": true
+    },
+    {
+      "scenario": "boundary",
+      "round": 1,
+      "oldMs": 8286.59999999404,
+      "newMs": 8078.299999982119,
+      "changePct": -2.5136968118657954,
+      "allArrays": 232,
+      "metrics": 20,
+      "economyKeys": 25,
+      "exact": true
+    }
+  ],
+  "quarter": {
+    "oldMs": [
+      10044.40000000596,
+      9825.199999988079
+    ],
+    "newMs": [
+      10056.5,
+      10025.5
+    ],
+    "oldMeanMs": 9934.79999999702,
+    "newMeanMs": 10041,
+    "meanChangePct": 1.0689696823591
+  },
+  "final": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 8,
+      "d": 1,
+      "minute": 0
+    },
+    "speed": 0,
+    "jumping": false,
+    "ready": true,
+    "settled": true,
+    "road": 4,
+    "variant": "new"
+  },
+  "elapsedMs": 116721,
+  "scope": "All232typed period arrays/type/length/hash,period stats/errors/iterations,20metrics,full serialized economy,ledger hash,network hash and clocks;not every model cache"
+}

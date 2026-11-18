@@ -1,0 +1,348 @@
+{
+  "scope": "Offline Shanghai 278-station paused Line 1 express creation through live model settlement. Both variants retain the 10% guard and include identical request hashing and per-block outer WASM timing. Stage counters only in profiled module. Stages and outer times summed across concurrent Workers.",
+  "pairedOrder": [
+    "plain",
+    "profile",
+    "profile",
+    "plain"
+  ],
+  "fixtureSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "action": {
+    "line": "l7",
+    "lineName": "1 号线",
+    "service": {
+      "id": "v2",
+      "name": "大站快车",
+      "skip": [
+        "s91",
+        "s27",
+        "s15",
+        "s260",
+        "s264",
+        "s277"
+      ]
+    }
+  },
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "speed": 0,
+    "stations": 278,
+    "routes": 19,
+    "netVersion": 0,
+    "ready": true,
+    "settled": true,
+    "hasReview": false,
+    "bannerCondition": false,
+    "funds": 1071639.94612432,
+    "ledgerSHA256": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c"
+  },
+  "afterAction": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "speed": 0,
+    "stations": 278,
+    "routes": 20,
+    "netVersion": 1,
+    "ready": false,
+    "settled": false,
+    "hasReview": false,
+    "bannerCondition": true,
+    "funds": 1071639.94612432,
+    "ledgerSHA256": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c"
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "speed": 0,
+    "stations": 278,
+    "routes": 20,
+    "netVersion": 1,
+    "ready": true,
+    "settled": true,
+    "hasReview": false,
+    "bannerCondition": false,
+    "funds": 1071639.94612432,
+    "ledgerSHA256": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c"
+  },
+  "pools": [
+    4,
+    2,
+    2
+  ],
+  "requests": 32,
+  "blocks": 1024,
+  "commonRequestInputsSHA256": "6cfc33983870b9fee12871fcf3678bf63f165eac4eb7f833f07e7c0f428b8d8b",
+  "uniqueRequestInputs": 32,
+  "identicalBeforeAndAfter": {
+    "trafficArraysPerSnapshot": 232,
+    "weekdayAndWeekendPeriods": 8,
+    "metricsEconomyLedgerTasks": {
+      "metrics": "6cd5741468087d59835ecfc7a5de35724595060e221fc6a9e0e215385c56b00b",
+      "economy": "37aa7ec35a6f03d06f7649cdc9981c4145e89b2b5a369afb47213e14cdf39099",
+      "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+      "net": "61ce2a4d7876885c6dc25cc8197c9233b7fbe4e65857aa2ac9f7d36520e48919",
+      "clock": "53fc5b1e155975cf494c76648fdfef9110aee945df2981b713a51ac15f3c9e57",
+      "history": "d5c4967ed7b06ddba8f2ba1778ee0c1e8cb7510fd2b9af4039131d3d17092f7c",
+      "corp": "1ed40727e6300a6d529cdc84a0b2eab159c938d70e246e9fac393144b702117b",
+      "tasks": "40b502b57e0f8bfacce46b3933bb87bd223aa284c2ad31ca62b408e172004123",
+      "fleet": "38beed62b67289bc3d8974dab18806aa7f38a4b21baa45ee3f5f75042bbd4576",
+      "events": "332bd5d41189116e81b25c175bd654c42a6bfb2cf8426eea0ab7a9f19f891683"
+    },
+    "beforeResultsSHA256": "b486896f8abff369783da4fe266154ce27b4b3481f7d6245ab88a9d13325349e",
+    "afterResultsSHA256": "7095cff2734d4205fe4905fa79ccdbee871dc82a3b8a4cb8d3b8c6bc59362808",
+    "matchesHistoricalRun": true
+  },
+  "runs": [
+    {
+      "file": "banner-runs/plain-a.json",
+      "variant": "plain",
+      "wasmSHA256": "58a691130b3df19c45cd9c1dfbad81813866129f4bdf37be83212d3c606337ac",
+      "workerBodySHA256": "e4cf0fad445dca02d338bf8932587d0740e7e60913958e680e2cfe88ed045db4",
+      "wallMs": 7050.383333,
+      "blocks": 1024,
+      "origins": 42912,
+      "wasmMs": 25790.178535999978,
+      "stageMs": {},
+      "pctOfStages": {},
+      "totalsAcrossWorkers": [
+        {
+          "blocks": 256,
+          "origins": 10725,
+          "wasmMs": 6449.01691099999,
+          "stages": {}
+        },
+        {
+          "blocks": 256,
+          "origins": 10728,
+          "wasmMs": 6444.725198999995,
+          "stages": {}
+        },
+        {
+          "blocks": 256,
+          "origins": 10739,
+          "wasmMs": 6459.755092999998,
+          "stages": {}
+        },
+        {
+          "blocks": 256,
+          "origins": 10720,
+          "wasmMs": 6436.681332999993,
+          "stages": {}
+        }
+      ]
+    },
+    {
+      "file": "banner-runs/profile-a.json",
+      "variant": "profile",
+      "wasmSHA256": "7d8c41f6213cb4d669b7d278b1a959c282bd6a70c92bf90cfb8b3385b439da5c",
+      "workerBodySHA256": "b58c3442d201a1a9b2a1db85012b496f2bd2b5cf3053cc8c7f4f5b020b746cdb",
+      "wallMs": 6923.338041,
+      "blocks": 1024,
+      "origins": 42912,
+      "wasmMs": 25267.04688599999,
+      "stageMs": {
+        "tree": 23549.600567000074,
+        "destinations": 704.6415290000041,
+        "reverse": 950.6725399998686,
+        "residual": 61.14457999999286
+      },
+      "pctOfStages": {
+        "tree": 93.20646471091581,
+        "destinations": 2.7888857655877892,
+        "reverse": 3.7626466868954673,
+        "residual": 0.24200283660093913
+      },
+      "totalsAcrossWorkers": [
+        {
+          "blocks": 256,
+          "origins": 10721,
+          "wasmMs": 6310.825423000004,
+          "stages": {
+            "tree": 5881.91513600004,
+            "destinations": 175.67977100001917,
+            "reverse": 238.29323299992575,
+            "residual": 14.706992999996146
+          }
+        },
+        {
+          "blocks": 256,
+          "origins": 10726,
+          "wasmMs": 6303.229504999999,
+          "stages": {
+            "tree": 5875.0223300000125,
+            "destinations": 175.3526949999723,
+            "reverse": 237.88839300006293,
+            "residual": 14.702289999941058
+          }
+        },
+        {
+          "blocks": 256,
+          "origins": 10734,
+          "wasmMs": 6322.782757999994,
+          "stages": {
+            "tree": 5893.437640000051,
+            "destinations": 176.38403999990624,
+            "reverse": 238.04621800007044,
+            "residual": 14.659609999942404
+          }
+        },
+        {
+          "blocks": 256,
+          "origins": 10731,
+          "wasmMs": 6330.20919999999,
+          "stages": {
+            "tree": 5899.225460999971,
+            "destinations": 177.22502300010638,
+            "reverse": 236.44469599980948,
+            "residual": 17.07568700011325
+          }
+        }
+      ]
+    },
+    {
+      "file": "banner-runs/profile-b.json",
+      "variant": "profile",
+      "wasmSHA256": "7d8c41f6213cb4d669b7d278b1a959c282bd6a70c92bf90cfb8b3385b439da5c",
+      "workerBodySHA256": "b58c3442d201a1a9b2a1db85012b496f2bd2b5cf3053cc8c7f4f5b020b746cdb",
+      "wallMs": 6928.408291999999,
+      "blocks": 1024,
+      "origins": 42912,
+      "wasmMs": 25403.295403999982,
+      "stageMs": {
+        "tree": 23681.53731200019,
+        "destinations": 706.6985900001418,
+        "reverse": 953.0893799998139,
+        "residual": 61.030641999877844
+      },
+      "pctOfStages": {
+        "tree": 93.22575190605053,
+        "destinations": 2.7820198729380707,
+        "reverse": 3.751972387330184,
+        "residual": 0.24025583368122322
+      },
+      "totalsAcrossWorkers": [
+        {
+          "blocks": 256,
+          "origins": 10720,
+          "wasmMs": 6355.752117000018,
+          "stages": {
+            "tree": 5922.4282100001,
+            "destinations": 176.80701300004148,
+            "reverse": 239.53112900004635,
+            "residual": 16.773738999807392
+          }
+        },
+        {
+          "blocks": 256,
+          "origins": 10733,
+          "wasmMs": 6353.6391709999825,
+          "stages": {
+            "tree": 5924.033661000025,
+            "destinations": 176.45541699997375,
+            "reverse": 238.20704799993473,
+            "residual": 14.662208000081591
+          }
+        },
+        {
+          "blocks": 256,
+          "origins": 10734,
+          "wasmMs": 6348.662916999985,
+          "stages": {
+            "tree": 5919.88611099996,
+            "destinations": 176.85107600009906,
+            "reverse": 236.86700699995708,
+            "residual": 14.80292900000859
+          }
+        },
+        {
+          "blocks": 256,
+          "origins": 10725,
+          "wasmMs": 6345.241198999998,
+          "stages": {
+            "tree": 5915.189330000103,
+            "destinations": 176.58508400002756,
+            "reverse": 238.48419599987574,
+            "residual": 14.79176599998027
+          }
+        }
+      ]
+    },
+    {
+      "file": "banner-runs/plain-b.json",
+      "variant": "plain",
+      "wasmSHA256": "58a691130b3df19c45cd9c1dfbad81813866129f4bdf37be83212d3c606337ac",
+      "workerBodySHA256": "e4cf0fad445dca02d338bf8932587d0740e7e60913958e680e2cfe88ed045db4",
+      "wallMs": 7418.285250000001,
+      "blocks": 1024,
+      "origins": 42912,
+      "wasmMs": 26956.076629999963,
+      "stageMs": {},
+      "pctOfStages": {},
+      "totalsAcrossWorkers": [
+        {
+          "blocks": 256,
+          "origins": 10722,
+          "wasmMs": 6727.232378999999,
+          "stages": {}
+        },
+        {
+          "blocks": 256,
+          "origins": 10734,
+          "wasmMs": 6750.66138099998,
+          "stages": {}
+        },
+        {
+          "blocks": 256,
+          "origins": 10721,
+          "wasmMs": 6722.229328999983,
+          "stages": {}
+        },
+        {
+          "blocks": 256,
+          "origins": 10735,
+          "wasmMs": 6755.953540999999,
+          "stages": {}
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "plainWallMs": 7050.383333,
+      "profileWallMs": 6923.338041,
+      "wallOverheadPct": -1.8019629004475846,
+      "outerSolveOverheadPct": -2.028414224700925
+    },
+    {
+      "plainWallMs": 7418.285250000001,
+      "profileWallMs": 6928.408291999999,
+      "wallOverheadPct": -6.60364142778146,
+      "outerSolveOverheadPct": -5.760412567872953
+    }
+  ],
+  "combinedStagePct": {
+    "tree": 93.2161342495077,
+    "destinations": 2.785443584727341,
+    "reverse": 3.757295180319871,
+    "residual": 0.24112698544506078
+  },
+  "meanWallOverheadPct": -4.263849479038151,
+  "meanOuterSolveOverheadPct": -3.935659260485469
+}

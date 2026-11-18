@@ -1,0 +1,9 @@
+{
+  "startedAt": "2026-11-17T06:24:03.254Z",
+  "sourceRevision": "f9706d42faffdd7c3b99720923aa0259f8181943",
+  "method": "actual quarter/year button handlers; natural boundary from derived Jan31 23:59 setup",
+  "saveSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "profile": "/var/folders/n5/_4pxtjbd4977vwnbzxx01r340000gn/T/metro-workers-0ohhxW",
+  "cases": [],
+  "error": "TypeError: fetch failed"
+}

@@ -1,0 +1,143 @@
+{
+  "sourceSHA256": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+  "embeddedKernelSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "fixtures": {
+    "large": {
+      "file": "Shanghai-2010-01-278.cmsave.json",
+      "sha256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+      "map": "sh",
+      "clock": {
+        "y": 2010,
+        "m": 1,
+        "d": 16,
+        "minute": 547.3584000004513
+      },
+      "stations": 278
+    },
+    "small": {
+      "file": "London-1860-01.cmsave.json",
+      "sha256": "ac642250139a6c3fc8dd9ddfc00d8ffbaa4ff29de2c94c49b0ac0dd9e5eac7fe",
+      "map": "ld",
+      "clock": {
+        "y": 1860,
+        "m": 1,
+        "d": 1,
+        "minute": 360
+      },
+      "stations": 0
+    }
+  },
+  "cases": [
+    {
+      "mapSize": "small",
+      "scenario": "quarter",
+      "round": 1,
+      "variant": "WASM",
+      "profile": "desktop",
+      "token": "small/quarter/1/WASM/1794904548118",
+      "check": {
+        "clock": {
+          "y": 1860,
+          "m": 1,
+          "d": 1,
+          "minute": 360
+        },
+        "stations": 0,
+        "map": "ld",
+        "road": 4,
+        "mode": 2,
+        "metro": 2,
+        "off": [
+          false,
+          false,
+          false
+        ],
+        "bad": [],
+        "coarse": false,
+        "touch": 0,
+        "hardwareConcurrency": 12,
+        "deviceMemory": 16,
+        "hasWasm": true,
+        "workerSHA256": "f1be0b317daac475d00fc1e6cde7cf6827bbfc16939c7892ce8a3d8776b67fce"
+      },
+      "before": {},
+      "timing": {
+        "ms": 1286.300000011921,
+        "hidden": false,
+        "months": 3,
+        "paused": true,
+        "pools": [
+          4,
+          2,
+          2
+        ],
+        "off": [
+          false,
+          false,
+          false
+        ],
+        "kernelBlocks": {
+          "WASM": 1024,
+          "JS": 0
+        },
+        "acks": {
+          "0": 278,
+          "1": 254,
+          "2": 240,
+          "3": 252
+        },
+        "bad": []
+      },
+      "blocks": {
+        "count": 1024,
+        "graphs": {
+          "1715/2091/5012": 512,
+          "1715/2097/5022": 512
+        },
+        "weightedDensity": 0.074987542568626,
+        "density": {
+          "min": 0.040604293665518154,
+          "median": 0.06569484936831875,
+          "p95": 0.13351002738757842,
+          "max": 0.18234826398091705
+        },
+        "handlerMs": {
+          "min": 0.19999998807907104,
+          "median": 1.5999999940395355,
+          "p95": 2.5999999940395355,
+          "max": 5.4000000059604645
+        }
+      },
+      "blockFile": "small-quarter-1-WASM-desktop-blocks.json",
+      "after": {}
+    }
+  ],
+  "comparisons": [],
+  "errors": [],
+  "budgetSeconds": 480,
+  "startedAt": "2026-11-17T08:35:45.935Z",
+  "profile": "/var/folders/n5/_4pxtjbd4977vwnbzxx01r340000gn/T/metro-dispatch-calibration-vvm543",
+  "browser": "Chrome/156.0.8078.80",
+  "stampLoaded": "aa8b23f8eab7d27392e64681a6d21a691cea0bc370b6b25349e6c74681ef5aef",
+  "workerSources": {
+    "baseline": "\"use strict\";\nconst INF = 1e30;\nfunction roadKernelWorker(module,G){\n  const e=new WebAssembly.Instance(module,{}).exports;let views,capacity=0;\n  const fixed=['outStart','outArc','arcTo','arcFrom','start','nodes','times','km','zones','arcKm'];\n  function configure(rows){\n    capacity=Math.max(rows,Math.min(G.Z,Math.max(16,Math.ceil(G.Z/32))));\n    if(!e.init(G.nN,G.nA,G.Z,G.nodes.length,G.zones.length,capacity))throw Error('Road kernel capacity');\n    views=fixed.map((key,i)=>new G[key].constructor(e.memory.buffer,e.ptr(i),G[key].length));for(let i=0;i<fixed.length;i++)views[i].set(G[fixed[i]]);\n    for(const [id,Type,len]of [[10,Float32Array,G.nA],[11,Int32Array,capacity],[12,Float32Array,capacity*G.Z],[13,Float32Array,capacity*G.Z],[14,Float32Array,capacity*G.Z],[15,Float32Array,G.nA]])views[id]=new Type(e.memory.buffer,e.ptr(id),len);\n  }\n  configure(1);\n  return {solve(m){const n=m.origins.length;if(n>capacity)configure(n);views[10].set(m.time);views[11].set(m.origins);views[12].set(m.dem);if(!e.solve(n))throw Error('Road kernel input');return {rowsT:views[13].slice(0,n*G.Z),rowsK:views[14].slice(0,n*G.Z),aux:views[15].slice()};}};\n}\nfunction carTree(G, time, origin, W, need, stamp) {\n    const dist = W.dist, dkm = W.dkm, pred = W.pred, order = W.order, keys = W.heapK, values = W.heapV, mark = W.mark;\n    const start = G.start, node = G.nodes, initial = G.times, km = G.km;\n    const outStart = G.outStart, outArc = G.outArc, arcTo = G.arcTo, arcKm = G.arcKm;\n    dist.fill(INF);\n    let count = 0;\n    for (let k = start[origin]; k < start[origin + 1]; k++) {\n      const v = node[k], t = initial[k];\n      if (t < dist[v]) {\n        dist[v] = t; dkm[v] = km[k]; pred[v] = -1;\n        let i = count++;\n        while (i > 0) { const p = (i - 1) >> 1; if (keys[p] <= t) break; keys[i] = keys[p]; values[i] = values[p]; i = p; }\n        keys[i] = t; values[i] = v;\n      }\n    }\n    let no = 0;\n    while (count) {\n      const u = values[0], du = keys[0], n = --count;\n      if (n > 0) {\n        const key = keys[n], val = values[n];\n        let i = 0;\n        for (;;) {\n          const left = i * 2 + 1; if (left >= n) break;\n          const right = left + 1, child = right < n && keys[right] < keys[left] ? right : left;\n          if (keys[child] >= key) break;\n          keys[i] = keys[child]; values[i] = values[child]; i = child;\n        }\n        keys[i] = key; values[i] = val;\n      }\n      if (du > dist[u]) continue;\n      order[no++] = u;\n      if (need > 0 && mark[u] === stamp && --need === 0) break;\n      for (let k = outStart[u]; k < outStart[u + 1]; k++) {\n        const a = outArc[k], v = arcTo[a], nd = du + time[a];\n        if (nd < dist[v]) {\n          dist[v] = nd; dkm[v] = dkm[u] + arcKm[a]; pred[v] = a;\n          let i = count++;\n          while (i > 0) { const p = (i - 1) >> 1; if (keys[p] <= nd) break; keys[i] = keys[p]; values[i] = values[p]; i = p; }\n          keys[i] = nd; values[i] = v;\n        }\n      }\n    }\n    return no;\n  }\nfunction carOriginRow(G, time, o, dests, q0, q1, dem, W, outT, outK, shift, auxP) {\n    const dist = W.dist, dkm = W.dkm, pred = W.pred, order = W.order, accN = W.accN, arcFrom = G.arcFrom;\n    const connStart = G.start, connNode = G.nodes, connTime = G.times, connKm = G.km;\n    // 终点小区的接入节点都标出来，搜索到它们全部定下来为止（v2.7.1，见 carTree）；没有要算的终点就不搜\n    const mark = W.mark;\n    if (W.stamp >= 2147480000) { mark.fill(0); W.stamp = 0; }\n    const stamp = ++W.stamp;\n    let need = 0;\n    for (let q = q0; q < q1; q++) {\n      const d = dests[q];\n      if (d === o) continue;\n      for (let k = connStart[d]; k < connStart[d + 1]; k++) { const nd = connNode[k]; if (mark[nd] !== stamp) { mark[nd] = stamp; need++; } }\n    }\n    const no = need > 0 ? carTree(G, time, o, W, need, stamp) : 0;\n    for (let q = q0; q < q1; q++) {\n      const d = dests[q];\n      if (d === o) continue;\n      let best = INF, bk = 0, bn = -1;\n      for (let k = connStart[d]; k < connStart[d + 1]; k++) { const nd = connNode[k], v = dist[nd] + connTime[k]; if (v < best) { best = v; bk = dkm[nd] + connKm[k]; bn = nd; } }\n      if (bn < 0 || best >= INF) continue;\n      outT[q - shift] = best; outK[q - shift] = bk;\n      const x = dem[q];\n      if (x > 0) accN[bn] += x;\n    }\n    for (let q = no - 1; q >= 0; q--) {\n      const n = order[q], a = accN[n];\n      if (a > 0) { const e = pred[n]; if (e >= 0) { auxP[e] += a; accN[arcFrom[e]] += a; } accN[n] = 0; }\n    }\n  }\nfunction carWork(G) {\n    return { dist: new Float64Array(G.nN), dkm: new Float32Array(G.nN), pred: new Int32Array(G.nN), order: new Int32Array(G.nN), accN: new Float64Array(G.nN), heapK: new Float64Array(G.nA + 4), heapV: new Int32Array(G.nA + 4), mark: new Int32Array(G.nN), stamp: 0 };\n  }\nfunction carWorkerMain() {\n    let G = null, W = null, kernel = null, module = null;\n    onmessage = function (e) {\n      const m = e.data;\n      if (m.type === 'graph') { G = m.G; W = null; kernel = null; module = m.kernel; return; }\n      if (m.type !== 'block') return;\n      if (!G || G.id !== m.gid) { postMessage({ req: m.req, b: m.b, stale: true }); return; }\n      // 本块各起点需要的终点：tDest[tStart[i]..tStart[i+1])，需求 dem 与之对齐；结果也只回传这些终点（v2.7.1）\n      const n = m.origins.length, tStart = m.tStart, tDest = m.tDest, nt = tDest.length;\n      const rowsT = new Float32Array(nt).fill(NaN), rowsK = new Float32Array(nt).fill(NaN);\n      if (module && nt >= n * G.Z * 0.75) {\n        try {\n          if (!kernel) kernel = roadKernelWorker(module, G);\n          const dense = new Float32Array(n * G.Z);\n          for (let i = 0; i < n; i++) for (let q = tStart[i]; q < tStart[i + 1]; q++) dense[i * G.Z + tDest[q]] = m.dem[q];\n          const result = kernel.solve({ origins: m.origins, dem: dense, time: m.time });\n          for (let i = 0; i < n; i++) for (let q = tStart[i]; q < tStart[i + 1]; q++) {\n            const k = i * G.Z + tDest[q]; rowsT[q] = result.rowsT[k]; rowsK[q] = result.rowsK[k];\n          }\n          postMessage({ req: m.req, b: m.b, rowsT, rowsK, aux: result.aux, kernel: true }, [rowsT.buffer, rowsK.buffer, result.aux.buffer]);\n          return;\n        } catch (e) { module = kernel = null; }\n      }\n      if (!W) W = carWork(G);\n      const aux = new Float32Array(G.nA);\n      for (let i = 0; i < n; i++) carOriginRow(G, m.time, m.origins[i], tDest, tStart[i], tStart[i + 1], m.dem, W, rowsT, rowsK, 0, aux);\n      postMessage({ req: m.req, b: m.b, rowsT: rowsT, rowsK: rowsK, aux: aux }, [rowsT.buffer, rowsK.buffer, aux.buffer]);\n    };\n  }\ncarWorkerMain();\n",
+    "WASM": "\"use strict\";\nconst INF = 1e30;\nfunction roadKernelWorker(module,G){\n  const e=new WebAssembly.Instance(module,{}).exports;let views,capacity=0;\n  const fixed=['outStart','outArc','arcTo','arcFrom','start','nodes','times','km','zones','arcKm'];\n  function configure(rows){\n    capacity=Math.max(rows,Math.min(G.Z,Math.max(16,Math.ceil(G.Z/32))));\n    if(!e.init(G.nN,G.nA,G.Z,G.nodes.length,G.zones.length,capacity))throw Error('Road kernel capacity');\n    views=fixed.map((key,i)=>new G[key].constructor(e.memory.buffer,e.ptr(i),G[key].length));for(let i=0;i<fixed.length;i++)views[i].set(G[fixed[i]]);\n    for(const [id,Type,len]of [[10,Float32Array,G.nA],[11,Int32Array,capacity],[12,Float32Array,capacity*G.Z],[13,Float32Array,capacity*G.Z],[14,Float32Array,capacity*G.Z],[15,Float32Array,G.nA]])views[id]=new Type(e.memory.buffer,e.ptr(id),len);\n  }\n  configure(1);\n  return {solve(m){const n=m.origins.length;if(n>capacity)configure(n);views[10].set(m.time);views[11].set(m.origins);views[12].set(m.dem);if(!e.solve(n))throw Error('Road kernel input');return {rowsT:views[13].slice(0,n*G.Z),rowsK:views[14].slice(0,n*G.Z),aux:views[15].slice()};}};\n}\nfunction carTree(G, time, origin, W, need, stamp) {\n    const dist = W.dist, dkm = W.dkm, pred = W.pred, order = W.order, keys = W.heapK, values = W.heapV, mark = W.mark;\n    const start = G.start, node = G.nodes, initial = G.times, km = G.km;\n    const outStart = G.outStart, outArc = G.outArc, arcTo = G.arcTo, arcKm = G.arcKm;\n    dist.fill(INF);\n    let count = 0;\n    for (let k = start[origin]; k < start[origin + 1]; k++) {\n      const v = node[k], t = initial[k];\n      if (t < dist[v]) {\n        dist[v] = t; dkm[v] = km[k]; pred[v] = -1;\n        let i = count++;\n        while (i > 0) { const p = (i - 1) >> 1; if (keys[p] <= t) break; keys[i] = keys[p]; values[i] = values[p]; i = p; }\n        keys[i] = t; values[i] = v;\n      }\n    }\n    let no = 0;\n    while (count) {\n      const u = values[0], du = keys[0], n = --count;\n      if (n > 0) {\n        const key = keys[n], val = values[n];\n        let i = 0;\n        for (;;) {\n          const left = i * 2 + 1; if (left >= n) break;\n          const right = left + 1, child = right < n && keys[right] < keys[left] ? right : left;\n          if (keys[child] >= key) break;\n          keys[i] = keys[child]; values[i] = values[child]; i = child;\n        }\n        keys[i] = key; values[i] = val;\n      }\n      if (du > dist[u]) continue;\n      order[no++] = u;\n      if (need > 0 && mark[u] === stamp && --need === 0) break;\n      for (let k = outStart[u]; k < outStart[u + 1]; k++) {\n        const a = outArc[k], v = arcTo[a], nd = du + time[a];\n        if (nd < dist[v]) {\n          dist[v] = nd; dkm[v] = dkm[u] + arcKm[a]; pred[v] = a;\n          let i = count++;\n          while (i > 0) { const p = (i - 1) >> 1; if (keys[p] <= nd) break; keys[i] = keys[p]; values[i] = values[p]; i = p; }\n          keys[i] = nd; values[i] = v;\n        }\n      }\n    }\n    return no;\n  }\nfunction carOriginRow(G, time, o, dests, q0, q1, dem, W, outT, outK, shift, auxP) {\n    const dist = W.dist, dkm = W.dkm, pred = W.pred, order = W.order, accN = W.accN, arcFrom = G.arcFrom;\n    const connStart = G.start, connNode = G.nodes, connTime = G.times, connKm = G.km;\n    // 终点小区的接入节点都标出来，搜索到它们全部定下来为止（v2.7.1，见 carTree）；没有要算的终点就不搜\n    const mark = W.mark;\n    if (W.stamp >= 2147480000) { mark.fill(0); W.stamp = 0; }\n    const stamp = ++W.stamp;\n    let need = 0;\n    for (let q = q0; q < q1; q++) {\n      const d = dests[q];\n      if (d === o) continue;\n      for (let k = connStart[d]; k < connStart[d + 1]; k++) { const nd = connNode[k]; if (mark[nd] !== stamp) { mark[nd] = stamp; need++; } }\n    }\n    const no = need > 0 ? carTree(G, time, o, W, need, stamp) : 0;\n    for (let q = q0; q < q1; q++) {\n      const d = dests[q];\n      if (d === o) continue;\n      let best = INF, bk = 0, bn = -1;\n      for (let k = connStart[d]; k < connStart[d + 1]; k++) { const nd = connNode[k], v = dist[nd] + connTime[k]; if (v < best) { best = v; bk = dkm[nd] + connKm[k]; bn = nd; } }\n      if (bn < 0 || best >= INF) continue;\n      outT[q - shift] = best; outK[q - shift] = bk;\n      const x = dem[q];\n      if (x > 0) accN[bn] += x;\n    }\n    for (let q = no - 1; q >= 0; q--) {\n      const n = order[q], a = accN[n];\n      if (a > 0) { const e = pred[n]; if (e >= 0) { auxP[e] += a; accN[arcFrom[e]] += a; } accN[n] = 0; }\n    }\n  }\nfunction carWork(G) {\n    return { dist: new Float64Array(G.nN), dkm: new Float32Array(G.nN), pred: new Int32Array(G.nN), order: new Int32Array(G.nN), accN: new Float64Array(G.nN), heapK: new Float64Array(G.nA + 4), heapV: new Int32Array(G.nA + 4), mark: new Int32Array(G.nN), stamp: 0 };\n  }\nfunction carWorkerMain() {\n    let G = null, W = null, kernel = null, module = null;\n    onmessage = function (e) {\n      const m = e.data;\n      if (m.type === 'graph') { G = m.G; W = null; kernel = null; module = m.kernel; return; }\n      if (m.type !== 'block') return;\n      if (!G || G.id !== m.gid) { postMessage({ req: m.req, b: m.b, stale: true }); return; }\n      // 本块各起点需要的终点：tDest[tStart[i]..tStart[i+1])，需求 dem 与之对齐；结果也只回传这些终点（v2.7.1）\n      const n = m.origins.length, tStart = m.tStart, tDest = m.tDest, nt = tDest.length;\n      const rowsT = new Float32Array(nt).fill(NaN), rowsK = new Float32Array(nt).fill(NaN);\n      if (module && true) {\n        try {\n          if (!kernel) kernel = roadKernelWorker(module, G);\n          const dense = new Float32Array(n * G.Z);\n          for (let i = 0; i < n; i++) for (let q = tStart[i]; q < tStart[i + 1]; q++) dense[i * G.Z + tDest[q]] = m.dem[q];\n          const result = kernel.solve({ origins: m.origins, dem: dense, time: m.time });\n          for (let i = 0; i < n; i++) for (let q = tStart[i]; q < tStart[i + 1]; q++) {\n            const k = i * G.Z + tDest[q]; rowsT[q] = result.rowsT[k]; rowsK[q] = result.rowsK[k];\n          }\n          postMessage({ req: m.req, b: m.b, rowsT, rowsK, aux: result.aux, kernel: true }, [rowsT.buffer, rowsK.buffer, result.aux.buffer]);\n          return;\n        } catch (e) { module = kernel = null; }\n      }\n      if (!W) W = carWork(G);\n      const aux = new Float32Array(G.nA);\n      for (let i = 0; i < n; i++) carOriginRow(G, m.time, m.origins[i], tDest, tStart[i], tStart[i + 1], m.dem, W, rowsT, rowsK, 0, aux);\n      postMessage({ req: m.req, b: m.b, rowsT: rowsT, rowsK: rowsK, aux: aux }, [rowsT.buffer, rowsK.buffer, aux.buffer]);\n    };\n  }\ncarWorkerMain();\n"
+  },
+  "error": "TypeError: Cannot read properties of undefined (reading 'y')",
+  "final": {
+    "map": "ld",
+    "clock": {
+      "y": 1860,
+      "m": 4,
+      "d": 1,
+      "minute": 360
+    },
+    "speed": 0,
+    "jumping": false,
+    "ready": true,
+    "settled": true,
+    "road": 4,
+    "variant": "WASM"
+  },
+  "elapsedMs": 7144
+}

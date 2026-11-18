@@ -1,0 +1,78 @@
+{
+  "source": "docs/Trace-20261117T130822.json.gz",
+  "scope": "All recorded road profiles; no explicit user timing markers; not directly comparable wall window to two-month capture",
+  "profiles": [
+    {
+      "tid": 2476362,
+      "profile": "0x6",
+      "selfMs": {
+        "carTree": 12143.633,
+        "(idle)": 4956.077,
+        "carOriginRow": 639.012,
+        "postMessage": 75.382,
+        "onmessage": 29.82,
+        "(garbage collector)": 2.512,
+        "(program)": 1.976,
+        "carWork": 0.632,
+        "get data": 0.452
+      }
+    },
+    {
+      "tid": 2476364,
+      "profile": "0x7",
+      "selfMs": {
+        "carTree": 12143.435,
+        "(idle)": 4948.304,
+        "carOriginRow": 646.89,
+        "postMessage": 75.036,
+        "onmessage": 23.809,
+        "(garbage collector)": 3.242,
+        "(program)": 1.968,
+        "get data": 0.384,
+        "carWork": 0.382
+      }
+    },
+    {
+      "tid": 2476363,
+      "profile": "0x8",
+      "selfMs": {
+        "carTree": 12136.439,
+        "(idle)": 4981.299,
+        "carOriginRow": 629.941,
+        "postMessage": 70.164,
+        "onmessage": 24.224,
+        "(garbage collector)": 2.061,
+        "(program)": 0.984,
+        "carWork": 0.411,
+        "get data": 0.159
+      }
+    },
+    {
+      "tid": 2476366,
+      "profile": "0x9",
+      "selfMs": {
+        "carTree": 12191.106,
+        "(idle)": 4899.228,
+        "carOriginRow": 629.771,
+        "postMessage": 90.089,
+        "onmessage": 23.36,
+        "(garbage collector)": 3.882,
+        "(program)": 1.746,
+        "carWork": 0.134,
+        "get data": 0.017
+      }
+    }
+  ],
+  "selfMs": {
+    "carTree": 48614.613,
+    "(idle)": 19784.908,
+    "carOriginRow": 2545.614,
+    "postMessage": 310.671,
+    "onmessage": 101.213,
+    "(garbage collector)": 11.697,
+    "(program)": 6.674,
+    "carWork": 1.559,
+    "get data": 1.012
+  },
+  "carTreeActiveShare": 0.9423924288231201
+}

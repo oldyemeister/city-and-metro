@@ -1,0 +1,2118 @@
+{
+  "node": "v23.11.0",
+  "v8": "12.9.202.28-node.14",
+  "arch": "arm64",
+  "binarySHA256": "58a691130b3df19c45cd9c1dfbad81813866129f4bdf37be83212d3c606337ac",
+  "captureSHA256": "6968674c27e7b5325a7513358999d3f3a6532e4ef551844ec12c4dad219b3d89",
+  "rawLogSHA256": "5a71326d2a577aa21b383653ff03f049df5d6df09bc1ea6df6d6e221e3e922c9",
+  "asmSHA256": "8951f298c0fc142936c564d7015b28ea7547a4d5783287ae003b85b1acee2eea",
+  "sampleIntervalUs": 700,
+  "method": "V8 --prof actual top native PCs, stock binary/default tiering, 2 warmups and 4 measured full allocations. Every pass verified pinned time/km/32 block flows/ordered merged flow. V8 first-execution timestamps delimit passes, including checks outside solve. Only TurboFan solve(7) instruction spans count as optimized. Native PC offsets converted through V8 source positions relative to solve body at 0x27bd. Exact listed PC or consistent bracketing source group; unresolved brackets unassigned. Weighted by samples, not instructions or hardware cycles. Compiler rearrangement, interrupts, sampling skid and sparse position tables limit line attribution. Histograms retain every sampled solve PC and bracketing evidence per pass.",
+  "wasmByteRanges": [
+    [
+      10173,
+      12580,
+      "residual"
+    ],
+    [
+      12580,
+      13107,
+      "treeInitAndSources"
+    ],
+    [
+      13107,
+      13376,
+      "heapPopAndSift"
+    ],
+    [
+      13376,
+      13405,
+      "staleAndOrder"
+    ],
+    [
+      13405,
+      13710,
+      "arcRelaxAndPush"
+    ],
+    [
+      13710,
+      14376,
+      "destinations"
+    ],
+    [
+      14376,
+      14688,
+      "reverse"
+    ],
+    [
+      14688,
+      14713,
+      "treeOrderLoopTail"
+    ],
+    [
+      14713,
+      14740,
+      "residual"
+    ]
+  ],
+  "passes": [
+    {
+      "allTicks": 918,
+      "outsideSolve": 8,
+      "otherTier": 0,
+      "optimizedTicks": 910,
+      "groupCounts": {
+        "heapPopAndSift": 465,
+        "arcRelaxAndPush": 250,
+        "unattributed": 129,
+        "destinations": 26,
+        "reverse": 24,
+        "staleAndOrder": 10,
+        "residual": 4,
+        "treeInitAndSources": 2
+      },
+      "exactPositionCounts": {
+        "heapPopAndSift": 52,
+        "arcRelaxAndPush": 57,
+        "staleAndOrder": 10,
+        "treeInitAndSources": 2,
+        "destinations": 3,
+        "reverse": 3
+      }
+    },
+    {
+      "allTicks": 937,
+      "outsideSolve": 10,
+      "otherTier": 0,
+      "optimizedTicks": 927,
+      "groupCounts": {
+        "heapPopAndSift": 476,
+        "arcRelaxAndPush": 251,
+        "unattributed": 128,
+        "destinations": 25,
+        "reverse": 36,
+        "staleAndOrder": 8,
+        "treeInitAndSources": 3
+      },
+      "exactPositionCounts": {
+        "arcRelaxAndPush": 54,
+        "heapPopAndSift": 40,
+        "reverse": 6,
+        "treeInitAndSources": 3,
+        "staleAndOrder": 5,
+        "destinations": 5
+      }
+    },
+    {
+      "allTicks": 915,
+      "outsideSolve": 10,
+      "otherTier": 0,
+      "optimizedTicks": 905,
+      "groupCounts": {
+        "destinations": 27,
+        "arcRelaxAndPush": 251,
+        "reverse": 29,
+        "unattributed": 107,
+        "heapPopAndSift": 479,
+        "staleAndOrder": 9,
+        "treeInitAndSources": 3
+      },
+      "exactPositionCounts": {
+        "destinations": 7,
+        "heapPopAndSift": 58,
+        "arcRelaxAndPush": 48,
+        "staleAndOrder": 9,
+        "reverse": 5,
+        "treeInitAndSources": 2
+      }
+    },
+    {
+      "allTicks": 922,
+      "outsideSolve": 7,
+      "otherTier": 0,
+      "optimizedTicks": 915,
+      "groupCounts": {
+        "heapPopAndSift": 472,
+        "unattributed": 116,
+        "arcRelaxAndPush": 267,
+        "destinations": 19,
+        "reverse": 25,
+        "staleAndOrder": 11,
+        "treeInitAndSources": 2,
+        "residual": 3
+      },
+      "exactPositionCounts": {
+        "arcRelaxAndPush": 43,
+        "heapPopAndSift": 52,
+        "destinations": 2,
+        "staleAndOrder": 11,
+        "treeInitAndSources": 2,
+        "residual": 1,
+        "reverse": 6
+      }
+    }
+  ],
+  "totalByGroup": {
+    "heapPopAndSift": 1892,
+    "arcRelaxAndPush": 1019,
+    "unattributed": 480,
+    "destinations": 97,
+    "reverse": 114,
+    "staleAndOrder": 38,
+    "residual": 7,
+    "treeInitAndSources": 10
+  },
+  "boundariesUs": [
+    1938875,
+    2745166,
+    3568458,
+    4371500,
+    5183791
+  ],
+  "optimizedNativeHistograms": [
+    {
+      "instructionsBytes": 9768,
+      "positionTableEntries": 227,
+      "sampledOffsets": [
+        {
+          "pcOffset": 1852,
+          "previous": [
+            1408,
+            11019
+          ],
+          "next": [
+            1868,
+            11496
+          ],
+          "label": "residual",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 2064,
+          "previous": [
+            1980,
+            11569
+          ],
+          "next": [
+            2192,
+            11750
+          ],
+          "label": "residual",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "pcOffset": 2072,
+          "previous": [
+            1980,
+            11569
+          ],
+          "next": [
+            2192,
+            11750
+          ],
+          "label": "residual",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 2076,
+          "previous": [
+            1980,
+            11569
+          ],
+          "next": [
+            2192,
+            11750
+          ],
+          "label": "residual",
+          "exact": false,
+          "counts": [
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 2340,
+          "previous": [
+            2336,
+            11838
+          ],
+          "next": [
+            2340,
+            11857
+          ],
+          "label": "residual",
+          "exact": true,
+          "counts": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 3612,
+          "previous": [
+            3484,
+            12621
+          ],
+          "next": [
+            3616,
+            12661
+          ],
+          "label": "treeInitAndSources",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 3656,
+          "previous": [
+            3648,
+            12737
+          ],
+          "next": [
+            3656,
+            12756
+          ],
+          "label": "treeInitAndSources",
+          "exact": true,
+          "counts": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 3668,
+          "previous": [
+            3664,
+            12775
+          ],
+          "next": [
+            3668,
+            12794
+          ],
+          "label": "treeInitAndSources",
+          "exact": true,
+          "counts": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 3740,
+          "previous": [
+            3736,
+            12775
+          ],
+          "next": [
+            3740,
+            12794
+          ],
+          "label": "treeInitAndSources",
+          "exact": true,
+          "counts": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 3812,
+          "previous": [
+            3808,
+            12775
+          ],
+          "next": [
+            3812,
+            12794
+          ],
+          "label": "treeInitAndSources",
+          "exact": true,
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4192,
+          "previous": [
+            4152,
+            13072
+          ],
+          "next": [
+            4216,
+            13120
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            11,
+            9,
+            9,
+            13
+          ]
+        },
+        {
+          "pcOffset": 4196,
+          "previous": [
+            4152,
+            13072
+          ],
+          "next": [
+            4216,
+            13120
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            10,
+            13,
+            9,
+            10
+          ]
+        },
+        {
+          "pcOffset": 4220,
+          "previous": [
+            4216,
+            13120
+          ],
+          "next": [
+            4220,
+            13127
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            6,
+            5,
+            8,
+            6
+          ]
+        },
+        {
+          "pcOffset": 4244,
+          "previous": [
+            4240,
+            13152
+          ],
+          "next": [
+            4244,
+            13165
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            1,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4272,
+          "previous": [
+            4244,
+            13165
+          ],
+          "next": [
+            4304,
+            13223
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            5,
+            3,
+            3,
+            6
+          ]
+        },
+        {
+          "pcOffset": 4276,
+          "previous": [
+            4244,
+            13165
+          ],
+          "next": [
+            4304,
+            13223
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            8,
+            11,
+            16,
+            10
+          ]
+        },
+        {
+          "pcOffset": 4288,
+          "previous": [
+            4244,
+            13165
+          ],
+          "next": [
+            4304,
+            13223
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            6,
+            11,
+            10,
+            14
+          ]
+        },
+        {
+          "pcOffset": 4304,
+          "previous": [
+            4244,
+            13165
+          ],
+          "next": [
+            4304,
+            13223
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            1,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4324,
+          "previous": [
+            4320,
+            13239
+          ],
+          "next": [
+            4324,
+            13252
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            19,
+            5,
+            12,
+            11
+          ]
+        },
+        {
+          "pcOffset": 4336,
+          "previous": [
+            4324,
+            13252
+          ],
+          "next": [
+            4364,
+            13295
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            67,
+            77,
+            78,
+            79
+          ]
+        },
+        {
+          "pcOffset": 4344,
+          "previous": [
+            4324,
+            13252
+          ],
+          "next": [
+            4364,
+            13295
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            127,
+            120,
+            99,
+            95
+          ]
+        },
+        {
+          "pcOffset": 4352,
+          "previous": [
+            4324,
+            13252
+          ],
+          "next": [
+            4364,
+            13295
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4380,
+          "previous": [
+            4376,
+            13310
+          ],
+          "next": [
+            4380,
+            13323
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            13,
+            8,
+            10,
+            19
+          ]
+        },
+        {
+          "pcOffset": 4392,
+          "previous": [
+            4380,
+            13323
+          ],
+          "next": [
+            4408,
+            13223
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            5,
+            6,
+            8,
+            5
+          ]
+        },
+        {
+          "pcOffset": 4404,
+          "previous": [
+            4380,
+            13323
+          ],
+          "next": [
+            4408,
+            13223
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4428,
+          "previous": [
+            4424,
+            13239
+          ],
+          "next": [
+            4428,
+            13252
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            4,
+            5,
+            12,
+            6
+          ]
+        },
+        {
+          "pcOffset": 4440,
+          "previous": [
+            4428,
+            13252
+          ],
+          "next": [
+            4464,
+            13295
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            61,
+            65,
+            72,
+            78
+          ]
+        },
+        {
+          "pcOffset": 4448,
+          "previous": [
+            4428,
+            13252
+          ],
+          "next": [
+            4464,
+            13295
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            100,
+            115,
+            111,
+            99
+          ]
+        },
+        {
+          "pcOffset": 4456,
+          "previous": [
+            4428,
+            13252
+          ],
+          "next": [
+            4464,
+            13295
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4472,
+          "previous": [
+            4468,
+            13310
+          ],
+          "next": [
+            4472,
+            13323
+          ],
+          "label": "heapPopAndSift",
+          "exact": true,
+          "counts": [
+            8,
+            15,
+            12,
+            9
+          ]
+        },
+        {
+          "pcOffset": 4480,
+          "previous": [
+            4472,
+            13323
+          ],
+          "next": [
+            4524,
+            13359
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            2,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4492,
+          "previous": [
+            4472,
+            13323
+          ],
+          "next": [
+            4524,
+            13359
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            3,
+            4,
+            5,
+            5
+          ]
+        },
+        {
+          "pcOffset": 4496,
+          "previous": [
+            4472,
+            13323
+          ],
+          "next": [
+            4524,
+            13359
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            4,
+            3,
+            1,
+            5
+          ]
+        },
+        {
+          "pcOffset": 4504,
+          "previous": [
+            4472,
+            13323
+          ],
+          "next": [
+            4524,
+            13359
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            14,
+            14,
+            7,
+            13
+          ]
+        },
+        {
+          "pcOffset": 4516,
+          "previous": [
+            4472,
+            13323
+          ],
+          "next": [
+            4524,
+            13359
+          ],
+          "label": "heapPopAndSift",
+          "exact": false,
+          "counts": [
+            10,
+            6,
+            10,
+            9
+          ]
+        },
+        {
+          "pcOffset": 4536,
+          "previous": [
+            4528,
+            13372
+          ],
+          "next": [
+            4536,
+            13386
+          ],
+          "label": "staleAndOrder",
+          "exact": true,
+          "counts": [
+            10,
+            5,
+            9,
+            11
+          ]
+        },
+        {
+          "pcOffset": 4548,
+          "previous": [
+            4536,
+            13386
+          ],
+          "next": [
+            4560,
+            13402
+          ],
+          "label": "staleAndOrder",
+          "exact": false,
+          "counts": [
+            0,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4572,
+          "previous": [
+            4568,
+            13417
+          ],
+          "next": [
+            4572,
+            13427
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            5,
+            8,
+            4,
+            7
+          ]
+        },
+        {
+          "pcOffset": 4588,
+          "previous": [
+            4572,
+            13427
+          ],
+          "next": [
+            4608,
+            13458
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            20,
+            14,
+            16,
+            12
+          ]
+        },
+        {
+          "pcOffset": 4592,
+          "previous": [
+            4572,
+            13427
+          ],
+          "next": [
+            4608,
+            13458
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            6,
+            3,
+            3,
+            6
+          ]
+        },
+        {
+          "pcOffset": 4600,
+          "previous": [
+            4572,
+            13427
+          ],
+          "next": [
+            4608,
+            13458
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4604,
+          "previous": [
+            4572,
+            13427
+          ],
+          "next": [
+            4608,
+            13458
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4624,
+          "previous": [
+            4608,
+            13458
+          ],
+          "next": [
+            4624,
+            13469
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4628,
+          "previous": [
+            4624,
+            13469
+          ],
+          "next": [
+            4628,
+            13483
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4636,
+          "previous": [
+            4628,
+            13483
+          ],
+          "next": [
+            4636,
+            13494
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            15,
+            18,
+            22,
+            12
+          ]
+        },
+        {
+          "pcOffset": 4648,
+          "previous": [
+            4636,
+            13494
+          ],
+          "next": [
+            4664,
+            13509
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4652,
+          "previous": [
+            4636,
+            13494
+          ],
+          "next": [
+            4664,
+            13509
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4656,
+          "previous": [
+            4636,
+            13494
+          ],
+          "next": [
+            4664,
+            13509
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            149,
+            147,
+            164,
+            158
+          ]
+        },
+        {
+          "pcOffset": 4664,
+          "previous": [
+            4636,
+            13494
+          ],
+          "next": [
+            4664,
+            13509
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4668,
+          "previous": [
+            4664,
+            13509
+          ],
+          "next": [
+            4668,
+            13516
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            7,
+            2,
+            2,
+            4
+          ]
+        },
+        {
+          "pcOffset": 4704,
+          "previous": [
+            4700,
+            13545
+          ],
+          "next": [
+            4704,
+            13555
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            15,
+            10,
+            6,
+            10
+          ]
+        },
+        {
+          "pcOffset": 4712,
+          "previous": [
+            4704,
+            13555
+          ],
+          "next": [
+            4756,
+            13593
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4732,
+          "previous": [
+            4704,
+            13555
+          ],
+          "next": [
+            4756,
+            13593
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            8,
+            7,
+            6,
+            8
+          ]
+        },
+        {
+          "pcOffset": 4756,
+          "previous": [
+            4704,
+            13555
+          ],
+          "next": [
+            4756,
+            13593
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            6,
+            4,
+            6,
+            3
+          ]
+        },
+        {
+          "pcOffset": 4768,
+          "previous": [
+            4756,
+            13593
+          ],
+          "next": [
+            4776,
+            13619
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            8,
+            13,
+            12,
+            23
+          ]
+        },
+        {
+          "pcOffset": 4788,
+          "previous": [
+            4784,
+            13634
+          ],
+          "next": [
+            4788,
+            13647
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            1,
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "pcOffset": 4808,
+          "previous": [
+            4788,
+            13647
+          ],
+          "next": [
+            4808,
+            13593
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            2,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4820,
+          "previous": [
+            4808,
+            13593
+          ],
+          "next": [
+            4824,
+            13619
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            2,
+            4,
+            0,
+            11
+          ]
+        },
+        {
+          "pcOffset": 4940,
+          "previous": [
+            4920,
+            13647
+          ],
+          "next": [
+            4956,
+            13677
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 4944,
+          "previous": [
+            4920,
+            13647
+          ],
+          "next": [
+            4956,
+            13677
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": false,
+          "counts": [
+            0,
+            2,
+            2,
+            3
+          ]
+        },
+        {
+          "pcOffset": 4960,
+          "previous": [
+            4956,
+            13677
+          ],
+          "next": [
+            4960,
+            13690
+          ],
+          "label": "arcRelaxAndPush",
+          "exact": true,
+          "counts": [
+            3,
+            8,
+            3,
+            4
+          ]
+        },
+        {
+          "pcOffset": 4964,
+          "previous": [
+            4960,
+            13690
+          ],
+          "next": [
+            5184,
+            13740
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            63,
+            58,
+            50,
+            56
+          ]
+        },
+        {
+          "pcOffset": 4968,
+          "previous": [
+            4960,
+            13690
+          ],
+          "next": [
+            5184,
+            13740
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 4976,
+          "previous": [
+            4960,
+            13690
+          ],
+          "next": [
+            5184,
+            13740
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            32,
+            37,
+            27,
+            30
+          ]
+        },
+        {
+          "pcOffset": 5160,
+          "previous": [
+            4960,
+            13690
+          ],
+          "next": [
+            5184,
+            13740
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            0,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5184,
+          "previous": [
+            4960,
+            13690
+          ],
+          "next": [
+            5184,
+            13740
+          ],
+          "label": "destinations",
+          "exact": true,
+          "counts": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5200,
+          "previous": [
+            5184,
+            13740
+          ],
+          "next": [
+            5220,
+            13799
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5204,
+          "previous": [
+            5184,
+            13740
+          ],
+          "next": [
+            5220,
+            13799
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5232,
+          "previous": [
+            5228,
+            13812
+          ],
+          "next": [
+            5380,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5300,
+          "previous": [
+            5228,
+            13812
+          ],
+          "next": [
+            5380,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5360,
+          "previous": [
+            5228,
+            13812
+          ],
+          "next": [
+            5380,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            2,
+            0,
+            5,
+            2
+          ]
+        },
+        {
+          "pcOffset": 5372,
+          "previous": [
+            5228,
+            13812
+          ],
+          "next": [
+            5380,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5380,
+          "previous": [
+            5228,
+            13812
+          ],
+          "next": [
+            5380,
+            13910
+          ],
+          "label": "destinations",
+          "exact": true,
+          "counts": [
+            0,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "pcOffset": 5392,
+          "previous": [
+            5380,
+            13910
+          ],
+          "next": [
+            5412,
+            13937
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            3,
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5416,
+          "previous": [
+            5412,
+            13937
+          ],
+          "next": [
+            5416,
+            13942
+          ],
+          "label": "destinations",
+          "exact": true,
+          "counts": [
+            1,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "pcOffset": 5432,
+          "previous": [
+            5416,
+            13942
+          ],
+          "next": [
+            5464,
+            13970
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5444,
+          "previous": [
+            5416,
+            13942
+          ],
+          "next": [
+            5464,
+            13970
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            3,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "pcOffset": 5452,
+          "previous": [
+            5416,
+            13942
+          ],
+          "next": [
+            5464,
+            13970
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "pcOffset": 5488,
+          "previous": [
+            5468,
+            13981
+          ],
+          "next": [
+            5512,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 5492,
+          "previous": [
+            5468,
+            13981
+          ],
+          "next": [
+            5512,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "pcOffset": 5500,
+          "previous": [
+            5468,
+            13981
+          ],
+          "next": [
+            5512,
+            13910
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5524,
+          "previous": [
+            5512,
+            13910
+          ],
+          "next": [
+            5540,
+            13937
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5544,
+          "previous": [
+            5540,
+            13937
+          ],
+          "next": [
+            5544,
+            13942
+          ],
+          "label": "destinations",
+          "exact": true,
+          "counts": [
+            0,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5560,
+          "previous": [
+            5544,
+            13942
+          ],
+          "next": [
+            5584,
+            13970
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            6,
+            11,
+            2,
+            4
+          ]
+        },
+        {
+          "pcOffset": 5612,
+          "previous": [
+            5588,
+            13981
+          ],
+          "next": [
+            5676,
+            14081
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "pcOffset": 5624,
+          "previous": [
+            5588,
+            13981
+          ],
+          "next": [
+            5676,
+            14081
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            4,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "pcOffset": 5644,
+          "previous": [
+            5588,
+            13981
+          ],
+          "next": [
+            5676,
+            14081
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5696,
+          "previous": [
+            5676,
+            14081
+          ],
+          "next": [
+            5696,
+            14099
+          ],
+          "label": "destinations",
+          "exact": true,
+          "counts": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5712,
+          "previous": [
+            5696,
+            14099
+          ],
+          "next": [
+            5712,
+            14114
+          ],
+          "label": "destinations",
+          "exact": true,
+          "counts": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5724,
+          "previous": [
+            5712,
+            14114
+          ],
+          "next": [
+            5748,
+            14169
+          ],
+          "label": "destinations",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "pcOffset": 5792,
+          "previous": [
+            5756,
+            14176
+          ],
+          "next": [
+            5924,
+            14406
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5892,
+          "previous": [
+            5756,
+            14176
+          ],
+          "next": [
+            5924,
+            14406
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5904,
+          "previous": [
+            5756,
+            14176
+          ],
+          "next": [
+            5924,
+            14406
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "pcOffset": 5916,
+          "previous": [
+            5756,
+            14176
+          ],
+          "next": [
+            5924,
+            14406
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5928,
+          "previous": [
+            5924,
+            14406
+          ],
+          "next": [
+            5948,
+            14426
+          ],
+          "label": "reverse",
+          "exact": false,
+          "counts": [
+            6,
+            7,
+            4,
+            1
+          ]
+        },
+        {
+          "pcOffset": 5948,
+          "previous": [
+            5924,
+            14406
+          ],
+          "next": [
+            5948,
+            14426
+          ],
+          "label": "reverse",
+          "exact": true,
+          "counts": [
+            2,
+            5,
+            3,
+            4
+          ]
+        },
+        {
+          "pcOffset": 5956,
+          "previous": [
+            5948,
+            14426
+          ],
+          "next": [
+            5972,
+            14461
+          ],
+          "label": "reverse",
+          "exact": false,
+          "counts": [
+            0,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pcOffset": 5960,
+          "previous": [
+            5948,
+            14426
+          ],
+          "next": [
+            5972,
+            14461
+          ],
+          "label": "reverse",
+          "exact": false,
+          "counts": [
+            14,
+            21,
+            18,
+            18
+          ]
+        },
+        {
+          "pcOffset": 5984,
+          "previous": [
+            5972,
+            14461
+          ],
+          "next": [
+            6000,
+            14494
+          ],
+          "label": "reverse",
+          "exact": false,
+          "counts": [
+            1,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 6056,
+          "previous": [
+            6048,
+            14539
+          ],
+          "next": [
+            6056,
+            14543
+          ],
+          "label": "reverse",
+          "exact": true,
+          "counts": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "pcOffset": 6068,
+          "previous": [
+            6056,
+            14543
+          ],
+          "next": [
+            6068,
+            14551
+          ],
+          "label": "reverse",
+          "exact": true,
+          "counts": [
+            1,
+            0,
+            2,
+            2
+          ]
+        },
+        {
+          "pcOffset": 6072,
+          "previous": [
+            6068,
+            14551
+          ],
+          "next": [
+            6132,
+            14192
+          ],
+          "label": "unattributed",
+          "exact": false,
+          "counts": [
+            6,
+            5,
+            7,
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

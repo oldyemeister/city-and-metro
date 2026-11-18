@@ -1,0 +1,49 @@
+{
+  "profile": "/var/folders/n5/_4pxtjbd4977vwnbzxx01r340000gn/T/metro-trace-ZeGvsM",
+  "url": "http://localhost:8001/",
+  "completed": true,
+  "errors": [
+    "Uncaught (in promise)"
+  ],
+  "saveSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "browser": "Chrome/156.0.8078.80",
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "stations": 278,
+    "ready": true,
+    "review": false,
+    "pending": false,
+    "jumping": false,
+    "settled": true,
+    "sharp": true,
+    "speed": 0,
+    "visible": "visible"
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 3,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "stations": 278,
+    "ready": true,
+    "review": false,
+    "pending": false,
+    "jumping": false,
+    "settled": true,
+    "sharp": false,
+    "speed": 0,
+    "visible": "visible"
+  },
+  "elapsedMs": 7059.199999988079,
+  "dataLoss": false,
+  "trace": "trace.json"
+}

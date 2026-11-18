@@ -1,0 +1,68 @@
+{
+  "shortKm": 5,
+  "sampleSHA256": "bc8df9e749bb7d5312b2bb5baeb589fb86c9983f38cd5dd4d783d578a859a600",
+  "fixtureSHA256": "a2e1a3cc1fce0982d0b2e8e557ebb445ff8a7b921d01a71888eda03ac1a56f00",
+  "stockSimSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "hybridSHA256": "db49d6d1d26974b3c66aaf550819ec8ec643a882821f48116977695b4012af04",
+  "method": "First restored weekday road allocation. Requested off-diagonal zone pairs with an origin scheduled to run. Short rows compare to the original full tree under the same arc times, before congestion feedback. Single-pair checks reassemble directed unit arc flows into a complete original-connector path, reproduce the cost and length including both connectors, and prohibit an interior feeder between major arcs on long trips.",
+  "zones": 2160,
+  "origins": 2057,
+  "fullGraph": {
+    "nodes": 10636,
+    "arcs": 30272
+  },
+  "demandUnit": "passenger vehicles per model period hour",
+  "groups": {
+    "short": {
+      "requests": 57818,
+      "carDemand": 282197.52734604746,
+      "originalUnreachable": 24,
+      "hybridUnreachable": 24,
+      "newLoss": 0,
+      "lostCarDemand": 0,
+      "baselineRoutedCarDemand": 282195.4822581889,
+      "originalReachable": 57794,
+      "gained": 0,
+      "common": 57794,
+      "exactCost": 57794,
+      "exactKm": 57794,
+      "maxFasterMin": 0,
+      "maxSlowerMin": 0,
+      "sameKmDiff": 0,
+      "commonDemand": 282195.4822581889,
+      "demandTimeChange": 0
+    },
+    "long": {
+      "requests": 575869,
+      "carDemand": 838177.2414199656,
+      "originalUnreachable": 459,
+      "hybridUnreachable": 459,
+      "newLoss": 0,
+      "lostCarDemand": 0,
+      "baselineRoutedCarDemand": 838106.7755595264,
+      "originalReachable": 575410,
+      "gained": 0,
+      "common": 575410,
+      "exactCost": 414016,
+      "exactKm": 413500,
+      "maxFasterMin": 0.000003814697265625,
+      "maxSlowerMin": 12.357460021972656,
+      "sameKmDiff": 16.149598121643066,
+      "commonDemand": 838106.7755595264,
+      "demandTimeChange": 75623.60053257796
+    }
+  },
+  "losses": {
+    "noLegalTrunkPath": 0,
+    "noLegalTrunkPathDemand": 0,
+    "legalPathOmitted": 0,
+    "legalPathOmittedDemand": 0
+  },
+  "unitTests": {
+    "traced": 76,
+    "long": 57,
+    "longUsingFeeder": 22,
+    "longUsingFeederAtEachEnd": 19
+  },
+  "manualSyntheticCases": 8
+}

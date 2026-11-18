@@ -85,14 +85,14 @@
         goals: [{ id: 'sh-g1', from: 1996, type: 'connect', months: 48, reward: 45000, title: '张江高科技园区', desc: '张江高科技园区招商引资，科研人员需要往返陆家嘴与浦西。用地铁连接张江与陆家嘴。', anchors: [anchor('张江', 31.2030, 121.5870, 4), anchor('陆家嘴', 31.2380, 121.5000, 3)] }] },
       { id: 'sh-e3', from: 2000, name: '迎世博建设期', tag: '史实',
         summary: '史实：2002 年上海获得 2010 年世博会主办权，卢浦大桥（2003 年）、上海南站（2006 年）建成，2008 年上海环球金融中心落成。估算：陆家嘴成为金融中心，宝山、闵行、嘉定与浦东外围出现大型居住区，平均通勤距离明显变长。',
-        grow: { pop: { dachang: 1.5, minhang: 1.4, xinzhuang: 1.3, beicai: 1.5, jiading: 1.3, chuansha: 1.2, pudong: 1.3, huangpu: 0.5, jingan: 0.6 }, jobs: { lujiazui: 2.0, jinqiao: 1.5, xuhui: 1.3, jingan: 1.2, huangpu: 0.9 } },
+        grow: { pop: { songjiang_jiuting: 2.0, songjiang_sijing: 1.8, dachang: 1.5, minhang: 1.4, xinzhuang: 1.3, beicai: 1.5, jiading: 1.3, chuansha: 1.2, pudong: 1.3, huangpu: 0.5, jingan: 0.6 }, jobs: { lujiazui: 2.0, jinqiao: 1.5, xuhui: 1.3, jingan: 1.2, huangpu: 0.9 } },
         relocate: { pop: { huangpu: 0.0006 } },
         demand: { sh: 1.05, decayHW: 1.15 },
         corridors: [{ a: 'lujiazui', b: 'jingan', f: 1.15 }, { a: 'dachang', b: 'jingan', f: 1.15 }, { a: 'minhang', b: 'xuhui', f: 1.15 }, { a: 'beicai', b: 'lujiazui', f: 1.15 }],
         goals: [{ id: 'sh-g2', from: 2005, type: 'connect', months: 48, reward: 45000, title: '莘庄与上海南站', desc: '上海南站启用后，莘庄、梅陇的居民经南站换乘进城。用地铁连接莘庄与上海南站。', anchors: [anchor('莘庄', 31.1110, 121.3850, 3), anchor('上海南站', 31.1540, 121.4300, 3)] }] },
       { id: 'sh-e4', from: 2010, name: '超大城市网络化时期', tag: '史实',
         summary: '史实：2010 年 3 月虹桥综合交通枢纽启用、5 月世博会开幕；2015 年上海中心大厦落成，2018 年起每年举办进口博览会。估算：虹桥商务区成长为西部中心，就业向陆家嘴、虹桥、张江等多个中心扩散，郊区与中心城之间的长距离通勤增加。',
-        grow: { pop: { pudong: 1.4, jiading: 1.3, minhang: 1.3, dachang: 1.2, chuansha: 1.2, huangpu: 0.5, jingan: 0.6 }, jobs: { hqcbd: 2.2, lujiazui: 1.5, jinqiao: 1.5, xuhui: 1.3, huangpu: 0.85 } },
+        grow: { pop: { songjiang_jiuting: 1.6, songjiang_sijing: 1.7, pudong: 1.4, jiading: 1.3, minhang: 1.3, dachang: 1.2, chuansha: 1.2, huangpu: 0.5, jingan: 0.6 }, jobs: { hqcbd: 2.2, lujiazui: 1.5, jinqiao: 1.5, xuhui: 1.3, huangpu: 0.85 } },
         relocate: { jobs: { huangpu: 0.0004 } },
         demand: { sh: 1.08, lz: 1.1, decayHW: 1.2, hub: 1.15 },
         corridors: [{ a: 'hqcbd', b: 'jingan', f: 1.15 }, { a: 'jinqiao', b: 'lujiazui', f: 1.15 }, { a: 'pudong', b: 'lujiazui', f: 1.15 }, { a: 'jiading', b: 'putuo', f: 1.15 }],
@@ -137,6 +137,9 @@
       { id: 'jiading', name: '嘉定（江桥·真新）', district: ['嘉定区'], open: 2005, plan: 'res', pop: 12.35e6 },
       { id: 'sh_circuit_site', name: '上海国际赛车场', open: 2004, plan: 'mix', noGen: true, poly: [[31.34239, 121.21130], [31.33825, 121.21414], [31.33594, 121.21487], [31.33497, 121.21614], [31.33479, 121.21862], [31.33577, 121.22188], [31.33400, 121.22610], [31.33384, 121.22823], [31.33420, 121.23027], [31.33576, 121.22961], [31.34288, 121.22406], [31.34546, 121.22305], [31.34672, 121.22164], [31.34691, 121.21886], [31.34416, 121.21467], [31.34391, 121.21216], [31.34340, 121.21157]].map(p => llW(p[0], p[1])) },
       { id: 'sh_minhang_campus', name: '交大闵行校区', open: 1990, plan: 'mix', noGen: true, poly: [[31.02951, 121.41843], [31.01895, 121.42300], [31.02030, 121.42712], [31.01987, 121.42772], [31.02070, 121.43038], [31.02102, 121.43026], [31.02119, 121.43090], [31.02090, 121.43101], [31.02407, 121.44028], [31.02447, 121.44043], [31.02593, 121.44598], [31.03585, 121.44180], [31.03588, 121.43864]].map(p => llW(p[0], p[1])) },
+      // 现代街镇边界只用来分配增长；九里亭与历史九亭合计。开放年份与权重为玩法估算。
+      { id: 'songjiang_jiuting', name: '松江九亭·九里亭', streets: ['九亭镇', '九里亭街道'], open: 1998, plan: 'resind', noGen: true },
+      { id: 'songjiang_sijing', name: '松江泗泾', streets: ['泗泾镇'], open: 2000, plan: 'resind', noGen: true },
     ],
     defaultRegion: { id: 'outer', name: '外围地区', open: 2008, plan: 'res', pop: 13.95e6 },
     plans: CM.DATA.plans,
@@ -160,6 +163,9 @@
       at(31.1700, 121.4300, { pop: 15000, jobs: 10000, r: 1.3 }),   // 漕河泾、田林
       // v2.1 扩大范围（1990 年估算）
       at(31.1900, 121.7000, { pop: 8000, jobs: 5000, r: 0.9 }),     // 川沙镇
+      // 松江老镇中心的近似位置和 1990 密度；后续开发另由时代增长权重分配。
+      atW(31.1338, 121.3248, { pop: 5000, jobs: 2500, r: 1.0 }),    // 九亭镇区
+      atW(31.1150, 121.2670, { pop: 6000, jobs: 3000, r: 1.0 }),    // 泗泾老镇
     ],
     rural: { pop: 800, jobs: 150 },
     // 越江桥隧与高架道路通车年份（名称前缀匹配；1990 年已有的道路按所在区域开放年份出现）。1990 年黄浦江上还没有桥；

@@ -1,0 +1,137 @@
+{
+  "mapSha256": "b76d6f96ee1cea62924d7e12403edc1f8defbfa5942f1c244be1f4a14437c8e6",
+  "sourceSha256": "d38c36d4affc38c6da9bec1aaf5986b960468771da10c04ec72efbe8f380aac8",
+  "source": "Geofabrik Shanghai, replication timestamp 2026-11-17T21:24:30Z",
+  "classifiedRoadPolylines": 42130,
+  "nonRampMajorAndExpressPolylines": 21908,
+  "flaggedMajorAndExpressRampPolylines": 5165,
+  "lowerStreetPolylines": 28191,
+  "examples": [
+    {
+      "row": 1298,
+      "region": "original",
+      "name": "都市路",
+      "gameClass": 3,
+      "osmWay": "w191104453",
+      "highway": "secondary",
+      "mapVerticesMatchedInOrder": 7,
+      "osmVertices": 18,
+      "firstMatchedLonLat": [
+        121.3986187,
+        31.0760321
+      ],
+      "lastMatchedLonLat": [
+        121.3991224,
+        31.0803028
+      ]
+    },
+    {
+      "row": 37127,
+      "region": "expansion",
+      "name": "都市路",
+      "gameClass": 2,
+      "osmWay": "w1070951330",
+      "highway": "secondary",
+      "mapVerticesMatchedInOrder": 3,
+      "osmVertices": 7,
+      "firstMatchedLonLat": [
+        121.4111493,
+        31.0524099
+      ],
+      "lastMatchedLonLat": [
+        121.4128827,
+        31.0490597
+      ]
+    },
+    {
+      "row": 1162,
+      "region": "original",
+      "name": "锦绣东路",
+      "gameClass": 3,
+      "osmWay": "w1391144442",
+      "highway": "secondary",
+      "mapVerticesMatchedInOrder": 8,
+      "osmVertices": 12,
+      "firstMatchedLonLat": [
+        121.6445722,
+        31.2446743
+      ],
+      "lastMatchedLonLat": [
+        121.6446514,
+        31.2443441
+      ]
+    },
+    {
+      "row": 32466,
+      "region": "expansion",
+      "name": "华徐公路",
+      "gameClass": 2,
+      "osmWay": "w186999879",
+      "highway": "secondary",
+      "mapVerticesMatchedInOrder": 12,
+      "osmVertices": 23,
+      "firstMatchedLonLat": [
+        121.2581469,
+        31.2071615
+      ],
+      "lastMatchedLonLat": [
+        121.2552584,
+        31.2104216
+      ]
+    },
+    {
+      "row": 33962,
+      "region": "expansion",
+      "name": "华翔路",
+      "gameClass": 3,
+      "osmWay": "w341726208",
+      "highway": "primary",
+      "mapVerticesMatchedInOrder": 7,
+      "osmVertices": 9,
+      "firstMatchedLonLat": [
+        121.2999961,
+        31.2331724
+      ],
+      "lastMatchedLonLat": [
+        121.3015195,
+        31.2383744
+      ]
+    },
+    {
+      "row": 24383,
+      "region": "original",
+      "name": "外环高速",
+      "gameClass": 4,
+      "osmWay": "w268316750",
+      "highway": "motorway",
+      "mapVerticesMatchedInOrder": 13,
+      "osmVertices": 36,
+      "firstMatchedLonLat": [
+        121.3614733,
+        31.3361559
+      ],
+      "lastMatchedLonLat": [
+        121.3559468,
+        31.3294946
+      ]
+    },
+    {
+      "row": 75,
+      "region": "original",
+      "name": "华夏高架路",
+      "gameClass": 4,
+      "osmWay": "w142591549",
+      "highway": "trunk",
+      "mapVerticesMatchedInOrder": 11,
+      "osmVertices": 60,
+      "firstMatchedLonLat": [
+        121.6520943,
+        31.1948856
+      ],
+      "lastMatchedLonLat": [
+        121.7162425,
+        31.2074408
+      ]
+    }
+  ]
+}

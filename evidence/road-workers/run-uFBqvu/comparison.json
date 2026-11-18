@@ -1,0 +1,113 @@
+[
+  {
+    "scenario": "normal",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 787.3584000004513
+    },
+    "before": {
+      "metricsCompared": 20,
+      "metricsDifferent": [],
+      "arraysCompared": 40,
+      "arraysDifferent": [],
+      "ledgerEqual": true
+    },
+    "after": {
+      "metricsCompared": 20,
+      "metricsDifferent": [],
+      "arraysCompared": 40,
+      "arraysDifferent": [],
+      "ledgerEqual": true
+    },
+    "4workers": {
+      "elapsedMs": 9994.90000000596,
+      "peak": 263.2148561585304,
+      "average": 199.27057837340115,
+      "samples": 40,
+      "medianIntervalMs": 254.23775000000023
+    },
+    "2workers": {
+      "elapsedMs": 10000.89999999106,
+      "peak": 274.7035155050679,
+      "average": 211.93440630327402,
+      "samples": 40,
+      "medianIntervalMs": 254.99804200000654
+    }
+  },
+  {
+    "scenario": "two",
+    "clock": {
+      "y": 2010,
+      "m": 3,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "before": {
+      "metricsCompared": 20,
+      "metricsDifferent": [],
+      "arraysCompared": 40,
+      "arraysDifferent": [],
+      "ledgerEqual": true
+    },
+    "after": {
+      "metricsCompared": 20,
+      "metricsDifferent": [],
+      "arraysCompared": 40,
+      "arraysDifferent": [],
+      "ledgerEqual": true
+    },
+    "4workers": {
+      "elapsedMs": 6109.100000008941,
+      "peak": 554.5473516669961,
+      "average": 471.70364508570617,
+      "samples": 25,
+      "medianIntervalMs": 253.14604200000758
+    },
+    "2workers": {
+      "elapsedMs": 10834.09999999404,
+      "peak": 355.69902369032513,
+      "average": 290.1535885492826,
+      "samples": 43,
+      "medianIntervalMs": 253.44166699999187
+    }
+  },
+  {
+    "scenario": "year",
+    "clock": {
+      "y": 2011,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "before": {
+      "metricsCompared": 20,
+      "metricsDifferent": [],
+      "arraysCompared": 40,
+      "arraysDifferent": [],
+      "ledgerEqual": true
+    },
+    "after": {
+      "metricsCompared": 20,
+      "metricsDifferent": [],
+      "arraysCompared": 40,
+      "arraysDifferent": [],
+      "ledgerEqual": true
+    },
+    "4workers": {
+      "elapsedMs": 50296.89999999106,
+      "peak": 610.2788140874928,
+      "average": 474.25248595645405,
+      "samples": 198,
+      "medianIntervalMs": 253.40291699999943
+    },
+    "2workers": {
+      "elapsedMs": 86865.79999999702,
+      "peak": 446.496704312634,
+      "average": 286.36583390113987,
+      "samples": 343,
+      "medianIntervalMs": 253.2074170000269
+    }
+  }
+]

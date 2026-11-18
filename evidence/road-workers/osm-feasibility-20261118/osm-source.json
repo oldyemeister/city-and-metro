@@ -1,0 +1,26 @@
+{
+  "pbfSHA256": "d38c36d4affc38c6da9bec1aaf5986b960468771da10c04ec72efbe8f380aac8",
+  "bboxWGS84": [
+    121.2049027850762,
+    31.013036400633055,
+    121.70936941671046,
+    31.42
+  ],
+  "rule": "One count per OSM way with at least one source node inside the playable map. Modern geometry inventory, all access values, only explicit oneway counted.",
+  "ways": {
+    "motorway": 2496,
+    "motorway_link": 2553,
+    "primary": 9613,
+    "primary_link": 647,
+    "trunk": 2078,
+    "trunk_link": 1727
+  },
+  "explicitOneWay": {
+    "motorway": 2490,
+    "motorway_link": 2550,
+    "primary": 9356,
+    "primary_link": 640,
+    "trunk": 2067,
+    "trunk_link": 1725
+  }
+}

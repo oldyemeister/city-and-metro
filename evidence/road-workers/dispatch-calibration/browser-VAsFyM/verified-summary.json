@@ -1,0 +1,151 @@
+{
+  "scope": "Foreground player time starts at jump button dispatch or the natural endDay call and ends at jumpDone or settled month review. Handler times are individual road Worker blocks and overlap across slots. Work fingerprints compare block shapes and request grouping; they do not contain input array bytes.",
+  "sourceSHA256": "4115bd77bcb571c41e0e1c3713ac69f2f225eeaf68e8de138d4757ce3dab23b8",
+  "kernelSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "browser": "Chrome/156.0.8078.80",
+  "verifiedPerSnapshot": {
+    "periods": 8,
+    "typedArraySHA256s": 232,
+    "metrics": 20,
+    "periodStatsPerPeriod": 29,
+    "dailySHA256s": 43,
+    "additionalSHA256s": 6
+  },
+  "forced": [
+    {
+      "map": "large",
+      "scenario": "quarter",
+      "profile": "desktop",
+      "round": 2,
+      "order": [
+        "WASM",
+        "JS"
+      ],
+      "playerJsMs": 8946,
+      "playerComparedMs": 7247.9,
+      "playerPctLess": 18.982,
+      "mapClock": [
+        {
+          "y": 2010,
+          "m": 1,
+          "d": 16,
+          "minute": 547.3584000004513
+        },
+        {
+          "y": 2010,
+          "m": 4,
+          "d": 16,
+          "minute": 547.3584000004513
+        }
+      ],
+      "economyKeys": [
+        28,
+        28
+      ],
+      "matchedBlocks": 864,
+      "matchedShapeSHA256": "e2d044c45c61d68c9d8d5fef29d1392db7896e03388e825791566fea552b1877",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 864
+      },
+      "atLeast11PctShare": 1,
+      "density": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 513,
+          "share": 0.594,
+          "jsHandlerMedianMs": 34.5,
+          "comparedHandlerMedianMs": 26.2
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "blocks": 351,
+          "share": 0.406,
+          "jsHandlerMedianMs": 36.4,
+          "comparedHandlerMedianMs": 27.2
+        }
+      ]
+    },
+    {
+      "map": "large",
+      "scenario": "boundary",
+      "profile": "desktop",
+      "round": 2,
+      "order": [
+        "JS",
+        "WASM"
+      ],
+      "playerJsMs": 3126.7,
+      "playerComparedMs": 2341.7,
+      "playerPctLess": 25.106,
+      "mapClock": [
+        {
+          "y": 2010,
+          "m": 1,
+          "d": 31,
+          "minute": 1439
+        },
+        {
+          "y": 2010,
+          "m": 2,
+          "d": 1,
+          "minute": 0
+        }
+      ],
+      "economyKeys": [
+        28,
+        28
+      ],
+      "matchedBlocks": 256,
+      "matchedShapeSHA256": "71fe6446b2c423fd9213278332fb908ad3a7e054ecae110e1f85d0769dcd5e3a",
+      "comparedBackend": {
+        "JS": 0,
+        "WASM": 256
+      },
+      "atLeast11PctShare": 1,
+      "density": [
+        {
+          "minPct": 11,
+          "maxPct": 20,
+          "blocks": 152,
+          "share": 0.594,
+          "jsHandlerMedianMs": 37.1,
+          "comparedHandlerMedianMs": 26.85
+        },
+        {
+          "minPct": 20,
+          "maxPct": 75,
+          "blocks": 104,
+          "share": 0.406,
+          "jsHandlerMedianMs": 39.45,
+          "comparedHandlerMedianMs": 28.3
+        }
+      ]
+    }
+  ],
+  "policy": [],
+  "primaryHandlerBandsByMap": {},
+  "runnerErrors": [],
+  "runnerError": null,
+  "matchesOriginalGameStatesAndForcedSources": true,
+  "missingReversedShanghai": [
+    "year"
+  ],
+  "elapsedMs": 420824,
+  "final": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 2,
+      "d": 1,
+      "minute": 0
+    },
+    "speed": 0,
+    "jumping": false,
+    "ready": true,
+    "settled": true,
+    "road": 4
+  }
+}

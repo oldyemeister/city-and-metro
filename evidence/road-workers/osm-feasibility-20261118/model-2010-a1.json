@@ -1,0 +1,97 @@
+{
+  "method": "Independent cold Node process. Current production map, migrated export, shipping Worker code and 4/2/2 pools. Replace only carOn threshold in memory and rebuild normal zone connectors. Cold restore through traffic settlement; then add one express on the first eligible long line and time through settlement. Wall times omit browser UI.",
+  "threshold": 2,
+  "fixture": "Shanghai-2010-01-278.cmsave.json",
+  "fixtureSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "mapVersion": 4,
+  "modelYear": 2010,
+  "unmodifiedRuntimeSHA256": "19b239840ed4073e336ddfd5dcd4ce0906fdd3529fa08a01cb26efaa27d3fed8",
+  "citySHA256": "42b9867d588c24ab4bcbcffcae860f1c662bb1c1df5ef6384018d7fbd3caa475",
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "geoSHA256": "b76d6f96ee1cea62924d7e12403edc1f8defbfa5942f1c244be1f4a14437c8e6",
+  "simDataSHA256": "92759c03b5d0e7f7a357f0dae610e21c3215196caf2ce4330aeacd1caf13b7ec",
+  "clock": {
+    "y": 2010,
+    "m": 1,
+    "d": 16,
+    "minute": 547.3584000004513
+  },
+  "stations": 278,
+  "routesBefore": 19,
+  "action": {
+    "line": "1 号线",
+    "skippedStations": [
+      "s91",
+      "s27",
+      "s15",
+      "s260",
+      "s264",
+      "s277"
+    ],
+    "route": "l7"
+  },
+  "graph": {
+    "nodes": 10560,
+    "arcs": 29876,
+    "linksByClass": {
+      "2": 4636,
+      "3": 7014,
+      "4": 3288
+    },
+    "zones": 2160,
+    "zonesWithAccess": 2154,
+    "walkSHA256": "e0d7d2e5ec05c3c22e49e992f73fd8b7aa1e331a6bd8e82354e7bdedf0af4dae"
+  },
+  "restoreMs": 17303.164083,
+  "coldRoadCalls": 32,
+  "coldBlocks": {
+    "wasm": 512,
+    "js": 512
+  },
+  "before": {
+    "population": 17106859.354520798,
+    "jobs": 9493767.410253525,
+    "dailyTrips": 28378865.125805724,
+    "dailyRiders": 10507275.608704094,
+    "dailyCar": 17667348.173655458,
+    "metroShare": 0.37025002804462126,
+    "roadCongestion": 1.1921582013978487,
+    "weekdayAMCongestion": 1.5366096466806027,
+    "meanCarMinutes": 23.29317744848019,
+    "meanCarKm": 14.994108739780902,
+    "weekdayCommuteMinutes": 28.05173399521797,
+    "coverage": 0.6053393442249816,
+    "predictedDailyFares": 41916520.80722751,
+    "assignedDailyVehicleKmByClass": {
+      "2": 4328537.004287044,
+      "3": 40987209.18391147,
+      "4": 105274177.47322011
+    }
+  },
+  "actionMs": 15617.920750000001,
+  "actionRoadCalls": 32,
+  "actionBlocks": {
+    "js": 512,
+    "wasm": 512
+  },
+  "after": {
+    "population": 17106859.354520798,
+    "jobs": 9493767.410253525,
+    "dailyTrips": 28381148.884567514,
+    "dailyRiders": 10523051.152463522,
+    "dailyCar": 17653315.025985483,
+    "metroShare": 0.37077608081558383,
+    "roadCongestion": 1.1315236312676744,
+    "weekdayAMCongestion": 1.3488683475139918,
+    "meanCarMinutes": 23.546985268718892,
+    "meanCarKm": 14.811641603869564,
+    "weekdayCommuteMinutes": 28.37762055547078,
+    "coverage": 0.6053393442249816,
+    "predictedDailyFares": 42031828.986589044,
+    "assignedDailyVehicleKmByClass": {
+      "2": 4317485.203558802,
+      "3": 40739657.09070136,
+      "4": 104469681.45378636
+    }
+  }
+}

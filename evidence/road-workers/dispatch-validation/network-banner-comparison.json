@@ -1,0 +1,239 @@
+{
+  "scope": "Offline Node worker_threads adapter runs the same Blob handlers. Only the Worker density guard is selected for replay. Offline wall time starts at saveService, ends when paused live model is settled. No rendering or browser frame pacing. Alternate policies also counted on the same shapes. Stops at formal live settlement before post-settlement UI work.",
+  "host": "darwin arm64",
+  "node": "v23.11.0",
+  "sameShapesSHA256": "6b4b3e9464d074b1dcebf0f6a08338461709b8dc9072d1906796c7d74c951b5c",
+  "fixtureSHA256": "f6027c5bbbd9aff5c4dcb850f846a0ce5ca45ee75638cce3e38c5fd26827c7f2",
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "action": {
+    "line": "l7",
+    "lineName": "1 号线",
+    "service": {
+      "id": "v2",
+      "name": "大站快车",
+      "skip": [
+        "s91",
+        "s27",
+        "s15",
+        "s260",
+        "s264",
+        "s277"
+      ]
+    }
+  },
+  "before": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "speed": 0,
+    "stations": 278,
+    "routes": 19,
+    "netVersion": 0,
+    "ready": true,
+    "settled": true,
+    "hasReview": false,
+    "bannerCondition": false,
+    "funds": 1071639.94612432,
+    "ledgerSHA256": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c"
+  },
+  "afterAction": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "speed": 0,
+    "stations": 278,
+    "routes": 20,
+    "netVersion": 1,
+    "ready": false,
+    "settled": false,
+    "hasReview": false,
+    "bannerCondition": true,
+    "funds": 1071639.94612432,
+    "ledgerSHA256": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c"
+  },
+  "after": {
+    "map": "sh",
+    "clock": {
+      "y": 2010,
+      "m": 1,
+      "d": 16,
+      "minute": 547.3584000004513
+    },
+    "speed": 0,
+    "stations": 278,
+    "routes": 20,
+    "netVersion": 1,
+    "ready": true,
+    "settled": true,
+    "hasReview": false,
+    "bannerCondition": false,
+    "funds": 1071639.94612432,
+    "ledgerSHA256": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c"
+  },
+  "beforeHashes": {
+    "period": {
+      "wd0": "6666e914088dafa34d3ca4c0533e6d55708564a900dfc8c080427d465e7d8abc",
+      "wd1": "242a1a90ceb533e41392141fc950b3e293f0aaf5406ada21d3a1fc5fa7028e57",
+      "wd2": "3e864308da2c68f9be1318eb0ae6eb470dcb46f642bd886ebe5ebbdbc626d242",
+      "wd3": "5cd558ba78a9e33f00b331b5decbe82c9b9f1c4cea8f68c3e506373c03cae519",
+      "we0": "35330ccd0fa44310de9aa5908c35ce9b6f4ee4d9ae1db0b97972c4bfcc0171c9",
+      "we1": "701ea66b515a777068ddb5a3055cee893f0f6a5fa0d768c2c19e1d6a08841148",
+      "we2": "794f67cdf4f4fdbe6014d40440a4d94f4ab78a8f0725cb2968ae6f615c933c0e",
+      "we3": "469846d5ae611eec229c2540694181c2140703b4ebbe2703b3a27e0ccfe70028"
+    },
+    "daily": {
+      "wd": "13dc41bdea989f3735440b29bede218991115f7937f6622d06a987eb237a73f1",
+      "average": "32fb3b8a33acd9977553ee1a045fc29d663c564a5acfcc100fda95ce9b8ee327",
+      "weekend": "b877e746c460af3f40f6649e1bdbb42be7d20e9df33888792041905b3f6a4176",
+      "stW": "2006e7a90ea73a311d2e964601a682644011c817479dabbcad3b83f015667a11",
+      "stE": "8a4c2361cc8d2f47a6f32bade3ee1f946565d8c6109148c4e8bc3577e1c7cd7c",
+      "st": "55e396dc4a0bbe830419c4adf0953646347c7bc3070259c2b06a033bd2e4424d",
+      "facW": "21b793fbca7d5ace6914882044d83f97d2e5093fd946f73f6432dd7aaa2ed9f2",
+      "facE": "7dd7b3828d35c853abc89b5bbd18a1121c2fab3ad6054efe4fbdbf4733a825af"
+    },
+    "extra": {
+      "metrics": "43244b9216022c8334b4050097a06315e03a81b039382323f7386cea6537a191",
+      "economy": "37aa7ec35a6f03d06f7649cdc9981c4145e89b2b5a369afb47213e14cdf39099",
+      "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+      "net": "881b95793d8abdf6660dbc292dac55c9b1ef0bafc70b8c28943aa7b14902ba37",
+      "clock": "53fc5b1e155975cf494c76648fdfef9110aee945df2981b713a51ac15f3c9e57",
+      "history": "d5c4967ed7b06ddba8f2ba1778ee0c1e8cb7510fd2b9af4039131d3d17092f7c",
+      "corp": "1ed40727e6300a6d529cdc84a0b2eab159c938d70e246e9fac393144b702117b",
+      "tasks": "40b502b57e0f8bfacce46b3933bb87bd223aa284c2ad31ca62b408e172004123",
+      "fleet": "90c3b43ccc55cf123e1ec822f196af0b9971bd024e666811ee9b94b6830ccf24",
+      "events": "9d368e60880e3a60a0c6921134193475422d93d1f482c04d6e818cc881f2d210"
+    }
+  },
+  "afterHashes": {
+    "period": {
+      "wd0": "46692c37d1a87d2b6459b80f7eb28d635ed47d9820138e9fa64a5c303b0e76a6",
+      "wd1": "673299487dc6e087056beec7fc0f1acf9cf874a064a6677985a7b4c6a86e281b",
+      "wd2": "c3fec596c44e6ec0ddb3b0061f1ad2c8ba114f09c325ef88ade94e0ac56cafb2",
+      "wd3": "6599883c17286324395031b1364f446c2eb42780fed032b8bf1d907df62fdb93",
+      "we0": "f51d52dc6ca3e6a4655124098ad6102483545946e9d9999c17707428973a1e28",
+      "we1": "04fb3e6c5e8b04f452d2a8b10db297f93f5f5485a9283aa420802df0b5c79bc9",
+      "we2": "0c047b56333273dd0b941821386bf9f3e642694a8daccab89e9dbcd723929ff0",
+      "we3": "55a28a13cbb5541681a8f8c572bb6b68a5b231745fb5c7b0cbe969e35f6c6797"
+    },
+    "daily": {
+      "wd": "9ff104578da361ceff3941662b3178f8f109bb53487763b6f7024ecf89187ed1",
+      "average": "d94bf50d156602910b0f2832bcc2d331e950f172522de009f290556babf97d86",
+      "weekend": "9e35ee95b12c2cf94d97fdddb56b166102d80d3da351db8c7d6d6cb7cfca0bbc",
+      "stW": "e7d4c63419956f2e92db4c44dd10ff824b542ecc85013dd5a26cd68ee6362ebf",
+      "stE": "d0c1fc12ae3c04d2f13d0ec4c1c4015af8cdd9f11ae2b81efcc32c623b62a23f",
+      "st": "6849990e6cc98101514bd4d08fe4aeb4255b9833df62aad005c42fc1299fe06f",
+      "facW": "f90ba7f84e91ee1c038559d6f5170c305fabdc0a03dc8b06d25b2aebb1e1bb73",
+      "facE": "28ca79f3fc0513895842523f7667d616f3d8f129d7cef4bce08349329ecf7a95"
+    },
+    "extra": {
+      "metrics": "6cd5741468087d59835ecfc7a5de35724595060e221fc6a9e0e215385c56b00b",
+      "economy": "37aa7ec35a6f03d06f7649cdc9981c4145e89b2b5a369afb47213e14cdf39099",
+      "ledger": "c454404b4eef4e922ab06d4b1d7df642c3b413ce784dca8a79439bd93124a49c",
+      "net": "61ce2a4d7876885c6dc25cc8197c9233b7fbe4e65857aa2ac9f7d36520e48919",
+      "clock": "53fc5b1e155975cf494c76648fdfef9110aee945df2981b713a51ac15f3c9e57",
+      "history": "d5c4967ed7b06ddba8f2ba1778ee0c1e8cb7510fd2b9af4039131d3d17092f7c",
+      "corp": "1ed40727e6300a6d529cdc84a0b2eab159c938d70e246e9fac393144b702117b",
+      "tasks": "40b502b57e0f8bfacce46b3933bb87bd223aa284c2ad31ca62b408e172004123",
+      "fleet": "38beed62b67289bc3d8974dab18806aa7f38a4b21baa45ee3f5f75042bbd4576",
+      "events": "332bd5d41189116e81b25c175bd654c42a6bfb2cf8426eea0ab7a9f19f891683"
+    }
+  },
+  "pools": [
+    4,
+    2,
+    2
+  ],
+  "requests": 32,
+  "blocks": 1024,
+  "rules": [
+    {
+      "threshold": 0.75,
+      "wasm": 0,
+      "js": 1024
+    },
+    {
+      "threshold": 0.11,
+      "wasm": 1024,
+      "js": 0
+    },
+    {
+      "threshold": 0.1,
+      "wasm": 1024,
+      "js": 0
+    }
+  ],
+  "minDensity": 0.11484302862419206,
+  "medianDensity": 0.17784593061601373,
+  "maxDensity": 0.4531724046959504,
+  "runs": [
+    {
+      "threshold": 0.75,
+      "ms": 9871.647292,
+      "workerSourceSHA256": "ccd9436bba7b3b83ab9b7397400eb8d774d0837f677146c3ede7eb4541df0373",
+      "blocksBySlot": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "actualWasm": 0
+    },
+    {
+      "threshold": 0.1,
+      "ms": 7618.897917,
+      "workerSourceSHA256": "f19bfabae9caa8d109229da3d14306535045ed18c961a792bcfa544b53811a1f",
+      "blocksBySlot": [
+        257,
+        256,
+        256,
+        255
+      ],
+      "actualWasm": 1024
+    },
+    {
+      "threshold": 0.1,
+      "ms": 7492.7215830000005,
+      "workerSourceSHA256": "f19bfabae9caa8d109229da3d14306535045ed18c961a792bcfa544b53811a1f",
+      "blocksBySlot": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "actualWasm": 1024
+    },
+    {
+      "threshold": 0.75,
+      "ms": 9943.850583000001,
+      "workerSourceSHA256": "ccd9436bba7b3b83ab9b7397400eb8d774d0837f677146c3ede7eb4541df0373",
+      "blocksBySlot": [
+        259,
+        253,
+        257,
+        255
+      ],
+      "actualWasm": 0
+    }
+  ],
+  "pairs": [
+    {
+      "oldMs": 9871.647292,
+      "newMs": 7618.897917,
+      "pctLess": 22.820399760692744
+    },
+    {
+      "oldMs": 9943.850583000001,
+      "newMs": 7492.7215830000005,
+      "pctLess": 24.649696609384385
+    }
+  ],
+  "pctLess": 23.73838096157349
+}

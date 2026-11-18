@@ -1,0 +1,244 @@
+{
+  "source": "evidence/road-workers/repeated-SjxJDO/results.json",
+  "browser": "Chrome/156.0.8078.80",
+  "error": null,
+  "completed": 18,
+  "comparisons": [
+    {
+      "scenario": "quarter",
+      "round": 1,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "quarter",
+      "round": 2,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "quarter",
+      "round": 3,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "year",
+      "round": 1,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "year",
+      "round": 2,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "year",
+      "round": 3,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "boundary",
+      "round": 1,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "boundary",
+      "round": 2,
+      "beforeDiff": [],
+      "afterDiff": []
+    },
+    {
+      "scenario": "boundary",
+      "round": 3,
+      "beforeDiff": [],
+      "afterDiff": []
+    }
+  ],
+  "summary": [
+    {
+      "scenario": "quarter",
+      "n": 4,
+      "runs": 3,
+      "elapsedMs": {
+        "min": 9288.40000000596,
+        "median": 9641.800000011921,
+        "max": 9882.59999999404
+      },
+      "cpuPeak": {
+        "min": 567.9292014224635,
+        "median": 571.2188893598269,
+        "max": 594.2610659893287
+      },
+      "cpuAverage": {
+        "min": 450.8077335245481,
+        "median": 460.9531905257665,
+        "max": 463.7137199068379
+      },
+      "acrossRoundsAfterDiff": [
+        {
+          "round": 2,
+          "diff": []
+        },
+        {
+          "round": 3,
+          "diff": []
+        }
+      ]
+    },
+    {
+      "scenario": "quarter",
+      "n": 2,
+      "runs": 3,
+      "elapsedMs": {
+        "min": 16653.20000000298,
+        "median": 16872.59999999404,
+        "max": 17141.59999999404
+      },
+      "cpuPeak": {
+        "min": 366.3780995000225,
+        "median": 386.0272042823324,
+        "max": 387.75344286572545
+      },
+      "cpuAverage": {
+        "min": 275.69306954066775,
+        "median": 276.9955965559981,
+        "max": 278.66938610425075
+      },
+      "acrossRoundsAfterDiff": [
+        {
+          "round": 2,
+          "diff": []
+        },
+        {
+          "round": 3,
+          "diff": []
+        }
+      ]
+    },
+    {
+      "scenario": "year",
+      "n": 4,
+      "runs": 3,
+      "elapsedMs": {
+        "min": 39922.5,
+        "median": 40228.90000000596,
+        "max": 41691.80000001192
+      },
+      "cpuPeak": {
+        "min": 582.8316599220194,
+        "median": 597.9848191376911,
+        "max": 604.2184844394621
+      },
+      "cpuAverage": {
+        "min": 467.7867610809813,
+        "median": 473.5827347793498,
+        "max": 474.01223100297506
+      },
+      "acrossRoundsAfterDiff": [
+        {
+          "round": 2,
+          "diff": []
+        },
+        {
+          "round": 3,
+          "diff": []
+        }
+      ]
+    },
+    {
+      "scenario": "year",
+      "n": 2,
+      "runs": 3,
+      "elapsedMs": {
+        "min": 71621,
+        "median": 71996.70000000298,
+        "max": 74484.29999999702
+      },
+      "cpuPeak": {
+        "min": 405.7603357059008,
+        "median": 473.06796485691876,
+        "max": 513.8681042502549
+      },
+      "cpuAverage": {
+        "min": 277.4850310979291,
+        "median": 278.0021242096483,
+        "max": 279.12260435445353
+      },
+      "acrossRoundsAfterDiff": [
+        {
+          "round": 2,
+          "diff": []
+        },
+        {
+          "round": 3,
+          "diff": []
+        }
+      ]
+    },
+    {
+      "scenario": "boundary",
+      "n": 4,
+      "runs": 3,
+      "elapsedMs": {
+        "min": 3057,
+        "median": 3307.3999999910593,
+        "max": 4668.5
+      },
+      "cpuPeak": {
+        "min": 636.1564072462488,
+        "median": 681.9745503412113,
+        "max": 705.8779349335599
+      },
+      "cpuAverage": {
+        "min": 460.65693402130887,
+        "median": 548.7527150312785,
+        "max": 555.9377141865401
+      },
+      "acrossRoundsAfterDiff": [
+        {
+          "round": 2,
+          "diff": []
+        },
+        {
+          "round": 3,
+          "diff": []
+        }
+      ]
+    },
+    {
+      "scenario": "boundary",
+      "n": 2,
+      "runs": 3,
+      "elapsedMs": {
+        "min": 5205.9000000059605,
+        "median": 5232.20000000298,
+        "max": 6554.899999991059
+      },
+      "cpuPeak": {
+        "min": 452.17299605195075,
+        "median": 456.5719206786964,
+        "max": 495.65696034552656
+      },
+      "cpuAverage": {
+        "min": 388.9718807767675,
+        "median": 393.19248931481576,
+        "max": 395.2429510889008
+      },
+      "acrossRoundsAfterDiff": [
+        {
+          "round": 2,
+          "diff": []
+        },
+        {
+          "round": 3,
+          "diff": []
+        }
+      ]
+    }
+  ]
+}

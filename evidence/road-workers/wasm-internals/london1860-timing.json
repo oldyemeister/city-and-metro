@@ -1,0 +1,340 @@
+{
+  "node": "v23.11.0",
+  "v8": "12.9.202.28-node.14",
+  "platform": "darwin",
+  "arch": "arm64",
+  "method": "Shipped WASM and exact bytecode with phase probes, persistent instances in one Node isolate. Timers bracket exported solve only. Two warmup passes (first verifies stock/probe correctness before timed pairs), six measured pairs with alternating arm order. Both arms compute all 32 blocks. Qualifying group filters blocks meeting the actual shipping cutoff. Hashing, adapter copies and JS input preparation outside measured export. Phase shares divide by observed outer solve. Blocks are summed within each pass before taking median across passes.",
+  "correctness": "Each pass checks all requested time/km (including NaNs), each block flow and ordered merged flow against the pinned synchronous-JS hashes. All dense time/km rows including unrequested pairs also match stock WASM on every block and pass.",
+  "captureSHA256": "f41efe32daff4470dc8dc6b4a7318d3dc5ee5b7cc55009b88cfead63c77c500c",
+  "moduleSHA256": "58a691130b3df19c45cd9c1dfbad81813866129f4bdf37be83212d3c606337ac",
+  "probeSHA256": "7d8c41f6213cb4d669b7d278b1a959c282bd6a70c92bf90cfb8b3385b439da5c",
+  "embeddedSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "cutoff": 0.1,
+  "zones": 1715,
+  "nodes": 2091,
+  "arcs": 5012,
+  "origins": 1059,
+  "requests": 136043,
+  "blocks": 32,
+  "qualifyingBlocks": 6,
+  "verifiedPassesPerArm": 8,
+  "summary": {
+    "all": {
+      "stockMs": {
+        "min": 38.76029399999993,
+        "median": 39.13058150000016,
+        "max": 39.48641900000001
+      },
+      "probeMs": {
+        "min": 38.65195800000015,
+        "median": 39.028395999999645,
+        "max": 39.391540000000305
+      },
+      "pairedProbeMinusStockMs": {
+        "min": -0.7355040000001623,
+        "median": -0.07735650000043393,
+        "max": 0.2854149999998299
+      },
+      "phases": {
+        "tree": {
+          "ms": {
+            "min": 29.166830999999263,
+            "median": 29.54929200000072,
+            "max": 29.630442999999445
+          },
+          "sharePct": {
+            "min": 75.22032141926722,
+            "median": 75.60394762686843,
+            "max": 75.76646872377798
+          }
+        },
+        "destinations": {
+          "ms": {
+            "min": 6.56032099999959,
+            "median": 6.695322499999264,
+            "max": 6.8872569999997495
+          },
+          "sharePct": {
+            "min": 16.92896093143502,
+            "median": 17.129474298996456,
+            "max": 17.48410191629902
+          }
+        },
+        "reverse": {
+          "ms": {
+            "min": 1.983880000002216,
+            "median": 2.010000000001213,
+            "max": 2.015034000000128
+          },
+          "sharePct": {
+            "min": 5.098711359038139,
+            "median": 5.1299771753108,
+            "max": 5.196913957120446
+          }
+        },
+        "residual": {
+          "ms": {
+            "min": 0.8212530000010361,
+            "median": 0.8253060000011487,
+            "max": 0.8455580000007217
+          },
+          "sharePct": {
+            "min": 2.0989287643457537,
+            "median": 2.1230712097923514,
+            "max": 2.1465472027768278
+          }
+        }
+      }
+    },
+    "qualifying": {
+      "stockMs": {
+        "min": 9.942042000000015,
+        "median": 10.13722899999999,
+        "max": 10.383458000000047
+      },
+      "probeMs": {
+        "min": 9.855707999999936,
+        "median": 10.061208999999963,
+        "max": 10.299208000000021
+      },
+      "pairedProbeMinusStockMs": {
+        "min": -0.2747920000001045,
+        "median": -0.0674799999999749,
+        "max": 0.006206999999903928
+      },
+      "phases": {
+        "tree": {
+          "ms": {
+            "min": 7.7704519999999775,
+            "median": 7.937246999999701,
+            "max": 8.064835999999389
+          },
+          "sharePct": {
+            "min": 78.30539979384213,
+            "median": 78.86107551808288,
+            "max": 79.22128956367287
+          }
+        },
+        "destinations": {
+          "ms": {
+            "min": 1.3210879999996905,
+            "median": 1.3461494999998536,
+            "max": 1.4456240000005778
+          },
+          "sharePct": {
+            "min": 13.162780567248145,
+            "median": 13.506128129410023,
+            "max": 14.036263759316006
+          }
+        },
+        "reverse": {
+          "ms": {
+            "min": 0.5997110000003545,
+            "median": 0.6126165000003425,
+            "max": 0.6307489999998666
+          },
+          "sharePct": {
+            "min": 6.040095510253721,
+            "median": 6.084446787492243,
+            "max": 6.249217298533292
+          }
+        },
+        "residual": {
+          "ms": {
+            "min": 0.15122300000007272,
+            "median": 0.15271099999995386,
+            "max": 0.16437700000034283
+          },
+          "sharePct": {
+            "min": 1.5067241286896784,
+            "median": 1.5259071295103221,
+            "max": 1.5960159266648706
+          }
+        }
+      }
+    }
+  },
+  "pairs": [
+    {
+      "order": [
+        "stock",
+        "probe"
+      ],
+      "stock": {
+        "all": {
+          "outerMs": 39.191249000000056
+        },
+        "qualifying": {
+          "outerMs": 10.383458000000047
+        }
+      },
+      "probe": {
+        "all": {
+          "outerMs": 39.391540000000305,
+          "tree": 29.630442999999445,
+          "destinations": 6.8872569999997495,
+          "reverse": 2.015034000000128,
+          "residual": 0.8455580000007217
+        },
+        "qualifying": {
+          "outerMs": 10.299208000000021,
+          "tree": 8.064835999999389,
+          "destinations": 1.4456240000005778,
+          "reverse": 0.6220819999996934,
+          "residual": 0.16437700000034283
+        }
+      }
+    },
+    {
+      "order": [
+        "probe",
+        "stock"
+      ],
+      "probe": {
+        "all": {
+          "outerMs": 39.127245000000016,
+          "tree": 29.5605309999994,
+          "destinations": 6.716176999999618,
+          "reverse": 2.011291000000085,
+          "residual": 0.8212530000010361
+        },
+        "qualifying": {
+          "outerMs": 10.093248000000017,
+          "tree": 7.923415999999804,
+          "destinations": 1.3789149999999495,
+          "reverse": 0.6307489999998666,
+          "residual": 0.15225300000037123
+        }
+      },
+      "stock": {
+        "all": {
+          "outerMs": 39.44883199999998
+        },
+        "qualifying": {
+          "outerMs": 10.143957999999941
+        }
+      }
+    },
+    {
+      "order": [
+        "stock",
+        "probe"
+      ],
+      "stock": {
+        "all": {
+          "outerMs": 39.48641900000001
+        },
+        "qualifying": {
+          "outerMs": 10.13050000000004
+        }
+      },
+      "probe": {
+        "all": {
+          "outerMs": 38.75091499999985,
+          "tree": 29.166830999999263,
+          "destinations": 6.762829999998985,
+          "reverse": 1.983880000002216,
+          "residual": 0.8245849999994448
+        },
+        "qualifying": {
+          "outerMs": 9.855707999999936,
+          "tree": 7.7704519999999775,
+          "destinations": 1.3302520000002005,
+          "reverse": 0.5997110000003545,
+          "residual": 0.15316899999953648
+        }
+      }
+    },
+    {
+      "order": [
+        "probe",
+        "stock"
+      ],
+      "probe": {
+        "all": {
+          "outerMs": 39.01108299999953,
+          "tree": 29.55732000000171,
+          "destinations": 6.60417099999961,
+          "reverse": 2.0133340000006683,
+          "residual": 0.8263449999975592
+        },
+        "qualifying": {
+          "outerMs": 10.085875999999985,
+          "tree": 7.9684110000006285,
+          "destinations": 1.3477949999999055,
+          "reverse": 0.6136230000004161,
+          "residual": 0.15396399999895038
+        }
+      },
+      "stock": {
+        "all": {
+          "outerMs": 38.84420900000043
+        },
+        "qualifying": {
+          "outerMs": 10.311207999999965
+        }
+      }
+    },
+    {
+      "order": [
+        "stock",
+        "probe"
+      ],
+      "stock": {
+        "all": {
+          "outerMs": 38.76029399999993
+        },
+        "qualifying": {
+          "outerMs": 9.942042000000015
+        }
+      },
+      "probe": {
+        "all": {
+          "outerMs": 39.04570899999976,
+          "tree": 29.541263999999728,
+          "destinations": 6.67446799999891,
+          "reverse": 1.990827999999965,
+          "residual": 0.8253120000013041
+        },
+        "qualifying": {
+          "outerMs": 9.948248999999919,
+          "tree": 7.847178999999642,
+          "destinations": 1.3445039999998016,
+          "reverse": 0.6031609999993179,
+          "residual": 0.15173900000104368
+        }
+      }
+    },
+    {
+      "order": [
+        "probe",
+        "stock"
+      ],
+      "probe": {
+        "all": {
+          "outerMs": 38.65195800000015,
+          "tree": 29.247961999997074,
+          "destinations": 6.56032099999959,
+          "reverse": 2.008709000002341,
+          "residual": 0.8253000000009934
+        },
+        "qualifying": {
+          "outerMs": 10.03654199999994,
+          "tree": 7.9510779999995975,
+          "destinations": 1.3210879999996905,
+          "reverse": 0.6116100000002689,
+          "residual": 0.15122300000007272
+        }
+      },
+      "stock": {
+        "all": {
+          "outerMs": 39.06991400000027
+        },
+        "qualifying": {
+          "outerMs": 10.03137500000014
+        }
+      }
+    }
+  ]
+}

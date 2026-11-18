@@ -121,7 +121,7 @@
       // 本块各起点需要的终点：tDest[tStart[i]..tStart[i+1])，需求 dem 与之对齐；结果也只回传这些终点（v2.7.1）
       const n = m.origins.length, tStart = m.tStart, tDest = m.tDest, nt = tDest.length;
       const rowsT = new Float32Array(nt).fill(NaN), rowsK = new Float32Array(nt).fill(NaN);
-      if (module && nt >= n * G.Z * 0.75) {
+      if (module && nt >= n * G.Z * 0.10) {
         try {
           if (!kernel) kernel = roadKernelWorker(module, G);
           const dense = new Float32Array(n * G.Z);

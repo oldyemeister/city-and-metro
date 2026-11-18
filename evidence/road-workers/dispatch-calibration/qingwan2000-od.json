@@ -1,0 +1,83 @@
+{
+  "scenario": "Qingwan2000",
+  "fixture": {
+    "sha256": "0c6cadc57dcbb73f731998074480cf83d52b1041e555959030a6939508de4543",
+    "map": "tutorial",
+    "seed": 20000101,
+    "clock": {
+      "y": 2000,
+      "m": 1,
+      "d": 1,
+      "minute": 360
+    },
+    "stations": 0,
+    "mode": "free"
+  },
+  "simSourceSHA256": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+  "captureSHA256": "94791e09520ebbbdd57b3ef7c35423d2354ce2a3876432fce9d5045994f0df7d",
+  "zones": 120,
+  "origins": 120,
+  "nodes": 461,
+  "arcs": 1216,
+  "widthKm": 12,
+  "heightKm": 10,
+  "activeCenterBboxKm": {
+    "width": 11,
+    "height": 9,
+    "diagonal": 14.212670403551897
+  },
+  "activeCenterBboxDefinition": "Bounding box of centers of every requested origin and destination. Grid dimensions additionally include cell extents.",
+  "requested": 12186,
+  "positiveDemandPairs": 12186,
+  "totalModeledCarDemand": 33136.893425451024,
+  "meanDestinations": 101.55,
+  "destinationsPerOrigin": {
+    "min": 16,
+    "median": 115,
+    "p90": 118,
+    "p95": 119,
+    "max": 119
+  },
+  "density": 0.84625,
+  "blockDensity": {
+    "min": 0.6055555555555555,
+    "median": 0.9041666666666667,
+    "p90": 0.9833333333333333,
+    "p95": 0.9875,
+    "max": 0.9916666666666667
+  },
+  "meanSettledFraction": 0.9240238611713666,
+  "settledFractionPerOrigin": {
+    "min": 0.013015184381778741,
+    "median": 0.9631236442516269,
+    "p90": 0.9631236442516269,
+    "p95": 0.9674620390455532,
+    "max": 0.9718004338394793
+  },
+  "straightKm": {
+    "min": 1,
+    "median": 5.099019513592785,
+    "p90": 8.602325267042627,
+    "p95": 9.486832980505138,
+    "max": 12.806248474865697,
+    "mean": 5.3578922396304955,
+    "demandWeightedMean": 3.176177536874279,
+    "fractionOfRequestedWithin5Km": 0.47612013786312163,
+    "fractionOfDemandWithin5Km": 0.8510451039703025,
+    "p90OverActiveCenterDiagonal": 0.6052574936862544
+  },
+  "roadKm": {
+    "min": 1,
+    "median": 7.060659885406494,
+    "p90": 12.560660362243652,
+    "p95": 13.77713394165039,
+    "max": 17.984243392944336,
+    "reachablePairs": 11352,
+    "mean": 7.435648900866928,
+    "demandWeightedMean": 4.368844708245107,
+    "fractionOfReachableRequestedWithin5Km": 0.290169133192389,
+    "fractionOfReachableDemandWithin5Km": 0.6987616848364876,
+    "reachableDemandFraction": 0.9856963108656228
+  },
+  "period": "first road allocation of following monthly jump; weekday period zero"
+}

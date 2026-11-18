@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-11-17T06:38:57.267Z",
+  "state": {
+    "clock": {
+      "y": 2010,
+      "m": 2,
+      "d": 1,
+      "minute": 0
+    },
+    "map": "sh",
+    "stations": 278,
+    "speed": 0,
+    "ready": true,
+    "settled": true,
+    "pending": false,
+    "jumping": false,
+    "review": false,
+    "road": 2,
+    "mode": 2,
+    "metro": 2,
+    "visible": true,
+    "focus": false,
+    "sharp": true,
+    "hooksRemoved": true,
+    "resourceFailures": []
+  },
+  "errors": []
+}

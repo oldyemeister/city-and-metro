@@ -1,0 +1,287 @@
+{
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "embeddedSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "captureSHA256": "6968674c27e7b5325a7513358999d3f3a6532e4ef551844ec12c4dad219b3d89",
+  "node": "v23.11.0",
+  "v8": "12.9.202.28-node.14",
+  "os": "darwin",
+  "arch": "arm64",
+  "graph": {
+    "zones": 1444,
+    "nodes": 8747,
+    "arcs": 25386,
+    "origins": 1341,
+    "blocks": 32,
+    "targets": 407301
+  },
+  "method": "One Node isolate, persistent shipped handler and kernel for each arm, natural dispatch. Two warmup passes per arm (including lazy module setup on first block), six measured alternating pairs. Eight performance.now markers/block in observed path, two outer clocks per block in both arms. Stage clocks and preemption/GC land inside the timed intervals. setInputs includes the adapter call and three typed-array sets; sliceOutputs includes two dense row slices, arc-flow slice and return; gatherRequested writes requested rows. otherHandler includes stub callback and outer overhead. Elapsed handler time excludes message transport, scheduling, post-run hashing and main ordered merge. Data from first road allocation of next Shanghai month.",
+  "correctness": "Each warmup and timed pass checks production WASM use and full time/km, each of 32 block flow hashes and ordered merged flow against the independently verified synchronous-JS reference.",
+  "totalMs": {
+    "plain": {
+      "min": 786.7940849999977,
+      "median": 791.749147999999,
+      "max": 794.3335439999937
+    },
+    "observed": {
+      "min": 784.9826230000035,
+      "median": 789.9197470000022,
+      "max": 799.2166229999966
+    }
+  },
+  "emptyMarkerLoopMsPer32Blocks": {
+    "min": 0.007930041999999958,
+    "median": 0.010293832999999723,
+    "max": 0.010654749999999694
+  },
+  "pairedObservedMinusPlainMs": {
+    "min": -8.53591699999015,
+    "median": -1.4083984999979293,
+    "max": 6.033577999996851
+  },
+  "breakdown": {
+    "sparseRowsAllocNaN": {
+      "ms": {
+        "min": 0.40966499999922235,
+        "median": 0.476000000001477,
+        "max": 0.6145459999997911
+      },
+      "medianSharePct": 0.060423573508834
+    },
+    "denseAlloc": {
+      "ms": {
+        "min": 0.13600199999382312,
+        "median": 0.16854200000216224,
+        "max": 0.2435440000026574
+      },
+      "medianSharePct": 0.021316741026332797
+    },
+    "scatterDemand": {
+      "ms": {
+        "min": 0.51850000000195,
+        "median": 0.5739779999962593,
+        "max": 0.6455429999987246
+      },
+      "medianSharePct": 0.07285393471552154
+    },
+    "setInputs": {
+      "ms": {
+        "min": 0.28537299999788956,
+        "median": 0.3028340000037133,
+        "max": 0.32508400000187976
+      },
+      "medianSharePct": 0.038438817552483726
+    },
+    "wasmSolve": {
+      "ms": {
+        "min": 781.2750389999983,
+        "median": 786.4154155000019,
+        "max": 795.3197499999997
+      },
+      "medianSharePct": 99.53692271429759
+    },
+    "sliceOutputs": {
+      "ms": {
+        "min": 1.1678800000045158,
+        "median": 1.3573349999992388,
+        "max": 1.478294000004098
+      },
+      "medianSharePct": 0.17085879403016568
+    },
+    "gatherRequested": {
+      "ms": {
+        "min": 0.6418340000018361,
+        "median": 0.6509989999976824,
+        "max": 0.6603269999941404
+      },
+      "medianSharePct": 0.08250177238666997
+    },
+    "otherHandler": {
+      "ms": {
+        "min": 0.07591899999806628,
+        "median": 0.08724750000237691,
+        "max": 0.10858200000257057
+      },
+      "medianSharePct": 0.011080410258823083
+    }
+  },
+  "warmups": [
+    {
+      "order": [
+        "plain",
+        "observed"
+      ],
+      "plain": {
+        "totalMs": 878.2037920000002
+      },
+      "observed": {
+        "totalMs": 906.4395420000003,
+        "stageMs": {
+          "sparseRowsAllocNaN": 2.442834999998695,
+          "denseAlloc": 0.8793750000004366,
+          "scatterDemand": 3.8104150000003756,
+          "setInputs": 0.4757930000005217,
+          "wasmSolve": 891.7784989999996,
+          "sliceOutputs": 4.377168000000438,
+          "gatherRequested": 2.4157079999997677,
+          "otherHandler": 0.25974900000051093
+        }
+      }
+    },
+    {
+      "order": [
+        "observed",
+        "plain"
+      ],
+      "observed": {
+        "totalMs": 806.6820869999992,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.5797520000000986,
+          "denseAlloc": 0.22570899999959693,
+          "scatterDemand": 1.074750000000904,
+          "setInputs": 0.2681660000012016,
+          "wasmSolve": 801.4504989999975,
+          "sliceOutputs": 2.322209000000612,
+          "gatherRequested": 0.663913999999977,
+          "otherHandler": 0.09708799999930307
+        }
+      },
+      "plain": {
+        "totalMs": 802.7520000000013
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "order": [
+        "plain",
+        "observed"
+      ],
+      "plain": {
+        "totalMs": 793.1830449999998
+      },
+      "observed": {
+        "totalMs": 799.2166229999966,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.6145459999997911,
+          "denseAlloc": 0.2119539999985136,
+          "scatterDemand": 0.6455429999987246,
+          "setInputs": 0.32508400000187976,
+          "wasmSolve": 795.3197499999997,
+          "sliceOutputs": 1.3321689999993396,
+          "gatherRequested": 0.659496000001127,
+          "otherHandler": 0.1080809999975827
+        }
+      }
+    },
+    {
+      "order": [
+        "observed",
+        "plain"
+      ],
+      "observed": {
+        "totalMs": 791.6090429999995,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.4131679999982225,
+          "denseAlloc": 0.1545010000008915,
+          "scatterDemand": 0.51850000000195,
+          "setInputs": 0.28537299999788956,
+          "wasmSolve": 788.129460000001,
+          "sliceOutputs": 1.3902879999996003,
+          "gatherRequested": 0.6418340000018361,
+          "otherHandler": 0.07591899999806628
+        }
+      },
+      "plain": {
+        "totalMs": 793.9611239999995
+      }
+    },
+    {
+      "order": [
+        "plain",
+        "observed"
+      ],
+      "plain": {
+        "totalMs": 790.3152509999982
+      },
+      "observed": {
+        "totalMs": 789.8505350000023,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.40966499999922235,
+          "denseAlloc": 0.18258300000343297,
+          "scatterDemand": 0.5821249999980864,
+          "setInputs": 0.2894589999996242,
+          "wasmSolve": 786.2658740000034,
+          "sliceOutputs": 1.382500999999138,
+          "gatherRequested": 0.651291999996829,
+          "otherHandler": 0.08703600000262668
+        }
+      }
+    },
+    {
+      "order": [
+        "observed",
+        "plain"
+      ],
+      "observed": {
+        "totalMs": 789.9889590000021,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.5319199999976263,
+          "denseAlloc": 0.15074700000150187,
+          "scatterDemand": 0.5334159999965777,
+          "setInputs": 0.29504300000189687,
+          "wasmSolve": 786.5649570000005,
+          "sliceOutputs": 1.1678800000045158,
+          "gatherRequested": 0.6603269999941404,
+          "otherHandler": 0.08466900000530586
+        }
+      },
+      "plain": {
+        "totalMs": 786.7940849999977
+      }
+    },
+    {
+      "order": [
+        "plain",
+        "observed"
+      ],
+      "plain": {
+        "totalMs": 789.1332910000019
+      },
+      "observed": {
+        "totalMs": 784.9826230000035,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.42008000000532775,
+          "denseAlloc": 0.13600199999382312,
+          "scatterDemand": 0.617288000006738,
+          "setInputs": 0.3177549999945768,
+          "wasmSolve": 781.2750389999983,
+          "sliceOutputs": 1.478294000004098,
+          "gatherRequested": 0.6507059999985358,
+          "otherHandler": 0.08745900000212714
+        }
+      }
+    },
+    {
+      "order": [
+        "observed",
+        "plain"
+      ],
+      "observed": {
+        "totalMs": 785.7976270000036,
+        "stageMs": {
+          "sparseRowsAllocNaN": 0.577832999999373,
+          "denseAlloc": 0.2435440000026574,
+          "scatterDemand": 0.5658309999944322,
+          "setInputs": 0.31062500000552973,
+          "wasmSolve": 782.0540439999913,
+          "sliceOutputs": 1.2889970000051107,
+          "gatherRequested": 0.6481710000025487,
+          "otherHandler": 0.10858200000257057
+        }
+      },
+      "plain": {
+        "totalMs": 794.3335439999937
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "method": "Independent cold Node process with 4/2/2 Worker pools, actual service edit, all eight traffic periods. Times exclude browser rendering. Pre-edit metrics are calculated from a fresh restore of the unmodified export.",
+  "threshold": 3,
+  "fixture": "城市与地铁_经营挑战 · 上海 1990_2015年7月.cmsave.json",
+  "fixtureSHA256": "a2e1a3cc1fce0982d0b2e8e557ebb445ff8a7b921d01a71888eda03ac1a56f00",
+  "mapVersion": 4,
+  "modelYear": 2015.5,
+  "unmodifiedRuntimeSHA256": "19b239840ed4073e336ddfd5dcd4ce0906fdd3529fa08a01cb26efaa27d3fed8",
+  "citySHA256": "42b9867d588c24ab4bcbcffcae860f1c662bb1c1df5ef6384018d7fbd3caa475",
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "geoSHA256": "b76d6f96ee1cea62924d7e12403edc1f8defbfa5942f1c244be1f4a14437c8e6",
+  "simDataSHA256": "92759c03b5d0e7f7a357f0dae610e21c3215196caf2ce4330aeacd1caf13b7ec",
+  "clock": {
+    "y": 2015,
+    "m": 7,
+    "d": 1,
+    "minute": 790.7904000000049
+  },
+  "stations": 342,
+  "routesBefore": 20,
+  "action": {
+    "line": "1 号线",
+    "skippedStations": [
+      "s91",
+      "s27",
+      "s15",
+      "s260",
+      "s264",
+      "s277",
+      "s687"
+    ],
+    "route": "l7"
+  },
+  "graph": {
+    "nodes": 7403,
+    "arcs": 20176,
+    "linksByClass": {
+      "3": 6516,
+      "4": 3572
+    },
+    "zones": 2160,
+    "zonesWithAccess": 2149,
+    "walkSHA256": "f0696d9ce7177df0efb9c684dc67310d922e1b20157cfc382977c7af40a1c6f2",
+    "zoneConnSHA256": "d42596cd76d5c4c5d26b94043548e7758a28dc08752eb1611a3278337de87ea2"
+  },
+  "restoreMs": 10145.253792,
+  "coldRoadCalls": 32,
+  "before": {
+    "population": 18054296.95182419,
+    "jobs": 10407539.816573143,
+    "dailyTrips": 32396073.970824696,
+    "dailyRiders": 12141043.660110697,
+    "dailyCar": 20020903.78378111,
+    "metroShare": 0.37476898191566965,
+    "roadCongestion": 1.1729769025204442,
+    "weekdayAMCongestion": 1.4916447011316187,
+    "meanCarMinutes": 23.33434158929561,
+    "meanCarKm": 15.266736750301515,
+    "weekdayCommuteMinutes": 28.498441404175676,
+    "coverage": 0.6539387239412177,
+    "predictedDailyFares": 59729821.92959413,
+    "assignedDailyVehicleKmByClass": {
+      "3": 49072493.70791048,
+      "4": 132726172.498962
+    }
+  },
+  "actionMs": 9363.372582999998,
+  "actionRoadCalls": 32,
+  "after": {
+    "population": 18054296.95182419,
+    "jobs": 10407539.816573143,
+    "dailyTrips": 32396824.77681437,
+    "dailyRiders": 12139741.345854444,
+    "dailyCar": 20022392.691922184,
+    "metroShare": 0.3747200977097782,
+    "roadCongestion": 1.1268481925770515,
+    "weekdayAMCongestion": 1.3326949199796354,
+    "meanCarMinutes": 23.435804961282315,
+    "meanCarKm": 15.070444371813167,
+    "weekdayCommuteMinutes": 28.61995985877739,
+    "coverage": 0.6539387239412177,
+    "predictedDailyFares": 59805902.25392868,
+    "assignedDailyVehicleKmByClass": {
+      "3": 48753330.55705262,
+      "4": 131912930.39782584
+    }
+  },
+  "variant": "major",
+  "shortTripKm": null,
+  "workerResults": {
+    "cold": {
+      "hybrid": 0,
+      "stockJS": 448,
+      "stockWASM": 576
+    },
+    "action": {
+      "hybrid": 0,
+      "stockJS": 448,
+      "stockWASM": 576
+    },
+    "responsesByWorker": [
+      507,
+      514,
+      515,
+      512
+    ]
+  }
+}

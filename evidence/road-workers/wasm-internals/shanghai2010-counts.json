@@ -1,0 +1,396 @@
+{
+  "node": "v23.11.0",
+  "v8": "12.9.202.28-node.14",
+  "simSHA256": "bfac2c660ec06d1259a595e1baffa5283b26e44f662e7d0fb0f340c399cd124c",
+  "rustSourceSHA256": "9ba33c46bdcc6c0966be05f872c6fd1a1f882925ecafb0a6f6be0288579aaddf",
+  "binarySHA256": "58a691130b3df19c45cd9c1dfbad81813866129f4bdf37be83212d3c606337ac",
+  "instrumentedBinarySHA256": "4fe381d297eb4f7a5c3550183a0921745fb1059547da0d8aa95dc69738473cf0",
+  "embeddedSHA256": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "captureSHA256": "6968674c27e7b5325a7513358999d3f3a6532e4ef551844ec12c4dad219b3d89",
+  "note": "Untimed counters, one full 32-block allocation on the original road Worker handler. Only Wasm globals, their exports, and stack-neutral increments inside the embedded solve function are added. Feasible dense destinations include nonrequested zones. Counts describe logical operations, not time or hardware instructions.",
+  "graph": {
+    "origins": 1341,
+    "zones": 1444,
+    "roadZones": 1438,
+    "nodes": 8747,
+    "arcs": 25386,
+    "denseLayoutCells": 1936404,
+    "requested": 407301,
+    "positive": 407301
+  },
+  "toyCounts": {
+    "originTrees": 1,
+    "sourceGateVisits": 1,
+    "sourceGatePushes": 1,
+    "sourcePushKeyComparisons": 0,
+    "sourcePushMoves": 0,
+    "pops": 5,
+    "popSiblingKeyComparisons": 0,
+    "popStopKeyComparisons": 0,
+    "popDownMoves": 0,
+    "settledNodes": 4,
+    "outgoingArcScans": 4,
+    "improvingArcs": 4,
+    "relaxPushKeyComparisons": 3,
+    "relaxPushMoves": 3,
+    "candidateDestinations": 4,
+    "nonSelfDestinations": 3,
+    "destinationGateComparisons": 3,
+    "destinationGateImprovements": 3,
+    "reachableDenseDestinations": 3,
+    "positiveReachableDemandAssignments": 2,
+    "reverseNodeVisits": 4,
+    "reversePositiveNodes": 4,
+    "reverseArcPropagations": 3
+  },
+  "sites": [
+    [
+      "originTrees",
+      12580,
+      "block $label40"
+    ],
+    [
+      "sourceGateVisits",
+      12856,
+      "block $label45"
+    ],
+    [
+      "sourceGatePushes",
+      12901,
+      "local.get $var10"
+    ],
+    [
+      "sourcePushKeyComparisons",
+      12982,
+      "f64.le"
+    ],
+    [
+      "sourcePushMoves",
+      12993,
+      "local.get $var5"
+    ],
+    [
+      "pops",
+      13118,
+      "local.get $var9"
+    ],
+    [
+      "popSiblingKeyComparisons",
+      13257,
+      "f64.lt"
+    ],
+    [
+      "popStopKeyComparisons",
+      13276,
+      "f64.ge"
+    ],
+    [
+      "popDownMoves",
+      13287,
+      "local.get $var5"
+    ],
+    [
+      "settledNodes",
+      13392,
+      "local.get $var22"
+    ],
+    [
+      "outgoingArcScans",
+      13497,
+      "f64.lt"
+    ],
+    [
+      "improvingArcs",
+      13501,
+      "local.get $var39"
+    ],
+    [
+      "relaxPushKeyComparisons",
+      13600,
+      "f64.le"
+    ],
+    [
+      "relaxPushMoves",
+      13611,
+      "local.get $var5"
+    ],
+    [
+      "candidateDestinations",
+      13730,
+      "block $label66"
+    ],
+    [
+      "nonSelfDestinations",
+      13750,
+      "block $label78"
+    ],
+    [
+      "destinationGateComparisons",
+      13950,
+      "f64.lt"
+    ],
+    [
+      "destinationGateImprovements",
+      13954,
+      "local.get $var1"
+    ],
+    [
+      "reachableDenseDestinations",
+      14056,
+      "local.get $var70"
+    ],
+    [
+      "positiveReachableDemandAssignments",
+      14148,
+      "block $label80"
+    ],
+    [
+      "reverseNodeVisits",
+      14440,
+      "f64.gt"
+    ],
+    [
+      "reversePositiveNodes",
+      14444,
+      "local.get $var4"
+    ],
+    [
+      "reverseArcPropagations",
+      14471,
+      "local.get $var4"
+    ]
+  ],
+  "counts": {
+    "originTrees": 1341,
+    "sourceGateVisits": 4013,
+    "sourceGatePushes": 4013,
+    "sourcePushKeyComparisons": 2672,
+    "sourcePushMoves": 0,
+    "pops": 12638767,
+    "popSiblingKeyComparisons": 75267000,
+    "popStopKeyComparisons": 75512110,
+    "popDownMoves": 73040497,
+    "settledNodes": 11521512,
+    "outgoingArcScans": 33786990,
+    "improvingArcs": 12634754,
+    "relaxPushKeyComparisons": 14725047,
+    "relaxPushMoves": 2094824,
+    "candidateDestinations": 1928358,
+    "nonSelfDestinations": 1927017,
+    "destinationGateComparisons": 5669758,
+    "destinationGateImprovements": 2396470,
+    "reachableDenseDestinations": 1921571,
+    "positiveReachableDemandAssignments": 406820,
+    "reverseNodeVisits": 11521512,
+    "reversePositiveNodes": 2032579,
+    "reverseArcPropagations": 2030042
+  },
+  "derived": {
+    "stalePops": 1117255,
+    "distResetCells": 11729727,
+    "denseOutputCellsWrittenAsPairs": 1921571,
+    "reachableRequestedDestinations": 406820,
+    "extraReachableUnrequestedDestinations": 1514751,
+    "heapKeyComparisons": 165506829,
+    "upMoves": 2094824
+  },
+  "exact": {
+    "timeSHA256": "f4ad4e87135eba43c80b4ec24e286b8ebc990ca36d8ca53c473c96cb3133ff1d",
+    "kmSHA256": "57ba78fb3d467b4bee4dc0ab54de44dcb4133abc4ca51d36e73e68a599c3167b",
+    "mergedFlowSHA256": "194469e50cba37c124752b591604b46bcc483d44cf3b918c9455bcf826110de8",
+    "blocks": [
+      {
+        "b": 0,
+        "origins": 41,
+        "requested": 7378,
+        "flowSHA256": "528511022e72781638866cf7427c18d726e59dfa59a109574c88ee48db51ee60"
+      },
+      {
+        "b": 1,
+        "origins": 42,
+        "requested": 8339,
+        "flowSHA256": "b203a937cac606c4b45eb4b49a18f209ec70c2b04ab91522ea2b5dd664f11ee0"
+      },
+      {
+        "b": 2,
+        "origins": 42,
+        "requested": 10274,
+        "flowSHA256": "bd55b3529244150b1087421b2a31513dac1e8e2f8577a4e702d1b531e889b197"
+      },
+      {
+        "b": 3,
+        "origins": 42,
+        "requested": 8961,
+        "flowSHA256": "a87555d12719b80e4f2b2db43da4ee9e34c1deeafc5ce6d892827b8fd25b2865"
+      },
+      {
+        "b": 4,
+        "origins": 42,
+        "requested": 8178,
+        "flowSHA256": "843f8fbc5d45c297d77a498d8c736ffd1298b2537641de3f7781aeda587c3632"
+      },
+      {
+        "b": 5,
+        "origins": 42,
+        "requested": 7574,
+        "flowSHA256": "0c41b108849a0dbc7b330b00412d71557b46e387775183fe746096d98c251e37"
+      },
+      {
+        "b": 6,
+        "origins": 42,
+        "requested": 8632,
+        "flowSHA256": "6c247e07b4a20edc7f5ba47ee859c035612ab8500fd8b49e19a887e73cd2cb0a"
+      },
+      {
+        "b": 7,
+        "origins": 42,
+        "requested": 10801,
+        "flowSHA256": "25f1f0a738adf78b2b03fec961577d30bb6d4c8c932e29b67ed4e639301ceed5"
+      },
+      {
+        "b": 8,
+        "origins": 42,
+        "requested": 11344,
+        "flowSHA256": "4267c7a106361f5797bbbe44b638548cb3686dfb82aeef20024cda3947d4e1fd"
+      },
+      {
+        "b": 9,
+        "origins": 42,
+        "requested": 11431,
+        "flowSHA256": "8a4c385ee663080a28d5aa3802f6d7edf9c0ff9863fb12312444cdd19cd0e44e"
+      },
+      {
+        "b": 10,
+        "origins": 41,
+        "requested": 11992,
+        "flowSHA256": "f67dfc03235544131db9b47ff7486ddeb168e959880b123eaf632d5acbf4a5c7"
+      },
+      {
+        "b": 11,
+        "origins": 42,
+        "requested": 14399,
+        "flowSHA256": "26a3de349ec80672c7de5c24c3bd97edda458c3eef0e07a27474e2e3ad1734af"
+      },
+      {
+        "b": 12,
+        "origins": 42,
+        "requested": 14324,
+        "flowSHA256": "dbc7c8cda43ad1131b448a2b3f28b572a9801982704758ae22d222a09848e306"
+      },
+      {
+        "b": 13,
+        "origins": 42,
+        "requested": 17502,
+        "flowSHA256": "bb6f0ca393a360718344ca3fd40e800c0d7ae095e4e1b145d0321d701566d5cf"
+      },
+      {
+        "b": 14,
+        "origins": 42,
+        "requested": 17805,
+        "flowSHA256": "a5dd629e7eed1cebe3f6a8ab1f49692a7ffdd145ebc6b5af4c0ffd4e571ab93c"
+      },
+      {
+        "b": 15,
+        "origins": 42,
+        "requested": 21884,
+        "flowSHA256": "fab04f7533d72388857e211e30b7764d532206b8fae6c2623973da9a1aa4b6ff"
+      },
+      {
+        "b": 16,
+        "origins": 42,
+        "requested": 27481,
+        "flowSHA256": "3fb931464e7b0e6538fac36ecfdd63d337ed456bbfa8f260db56d377c823e8d2"
+      },
+      {
+        "b": 17,
+        "origins": 42,
+        "requested": 26385,
+        "flowSHA256": "8db5df76986685fbe6adc20dd923d3dff628650aa2f904aacb0d97382c9cf1e5"
+      },
+      {
+        "b": 18,
+        "origins": 42,
+        "requested": 22623,
+        "flowSHA256": "9fe9bc6d4af58046f17f336048166c5ea79b17e139e221e01a6972fa478214f5"
+      },
+      {
+        "b": 19,
+        "origins": 42,
+        "requested": 20460,
+        "flowSHA256": "e9346ff0bd687533d705f11f2eb46a1d9dbb99c5d13ce336d8fc340bda5c6025"
+      },
+      {
+        "b": 20,
+        "origins": 42,
+        "requested": 15911,
+        "flowSHA256": "11043823fcbc2c078d2357fed82b16d23602df1e752a69d7def05ce69539f53e"
+      },
+      {
+        "b": 21,
+        "origins": 41,
+        "requested": 15889,
+        "flowSHA256": "0135c59dd1e8b5e7002da6cb8c018a476b90f7e17970d102335a82db58ba5093"
+      },
+      {
+        "b": 22,
+        "origins": 42,
+        "requested": 12424,
+        "flowSHA256": "50e68c5be20f5ee03b7d64b76900cd45f0d25a4456e6a99ef0340b2c75628f37"
+      },
+      {
+        "b": 23,
+        "origins": 42,
+        "requested": 10068,
+        "flowSHA256": "514c74b92102c8a709c0985b9109c51e2577304d1a75b1e2bc37fcba89dff484"
+      },
+      {
+        "b": 24,
+        "origins": 42,
+        "requested": 10450,
+        "flowSHA256": "50c7f3a983bafd1d64c727e33b7bebc9167a66175e6aa94c911704398c373ec5"
+      },
+      {
+        "b": 25,
+        "origins": 42,
+        "requested": 9959,
+        "flowSHA256": "c5bcf7e24433b59d87ce23a49cb51b70332bbe305b44d459da4cbbd39945e9ac"
+      },
+      {
+        "b": 26,
+        "origins": 42,
+        "requested": 7400,
+        "flowSHA256": "80f4988e3fae3121cdeb6f5fb9fa02a96176b69fadd61c57257464b3a36ad23e"
+      },
+      {
+        "b": 27,
+        "origins": 42,
+        "requested": 7367,
+        "flowSHA256": "2e4e28a275d270d3729785e92f590db049fd6d36b8962a87f7c3f389f2a2b9bc"
+      },
+      {
+        "b": 28,
+        "origins": 42,
+        "requested": 7490,
+        "flowSHA256": "fd8011bd2ecf881a4ff6306ad7e6d78107ec71c9f6031b4697c5ab1d9e10b4f8"
+      },
+      {
+        "b": 29,
+        "origins": 42,
+        "requested": 8464,
+        "flowSHA256": "96baca477b8fda0f167d06cb2719173ae582c12a61866beeb787c23463a019d9"
+      },
+      {
+        "b": 30,
+        "origins": 42,
+        "requested": 7147,
+        "flowSHA256": "b11fd4f387a7f263d15520fb24e877b118f136034f048ace706f3e2836eb4d92"
+      },
+      {
+        "b": 31,
+        "origins": 42,
+        "requested": 6965,
+        "flowSHA256": "3adf06f492b2c72482047d2596cad8a50f23b93b9678f1b872440d9d84d07085"
+      }
+    ]
+  }
+}

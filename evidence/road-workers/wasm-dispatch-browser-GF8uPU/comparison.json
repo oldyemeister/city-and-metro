@@ -1,0 +1,86 @@
+{
+  "scope": "Visible isolated localhost:8001 Chrome for Testing. Matched July 2000 Shanghai 121-station save, 4 road, 2 mode-choice, 2 metro Workers. Only the WASM dispatch guard in the generated Worker body varies. Timed real game UI quarterly jumps; boundary setup positions the fixture at July's final minute before natural 1x advancement, measured cross→ready/settled. Exact pre/post arrays, economic state, ledger, network, clocks and period stats verified. A single save and one machine.",
+  "browser": "Chrome/156.0.8078.80",
+  "source": "bbf06057c8e40b3f1b27c3a00035d3869873cb51e3fdc9c4bbf07f8a288adf0a",
+  "embeddedKernel": "6a8550f05ce80d4f34460da86d59f606ee8d6fdaece39bd79d4e4fe48ba072c3",
+  "save": "e7f36e23da7e6b2201fbed4f4d77f1488be8db249f79450f973aab16095a7f38",
+  "elapsedMs": 102349,
+  "errorCount": 0,
+  "pairs": [
+    {
+      "scenario": "quarter",
+      "round": 1,
+      "order": [
+        "stock JS",
+        "force existing WASM"
+      ],
+      "JSms": 10015.700000017881,
+      "WASMms": 7510.5999999940395,
+      "msSaved": 2505.100000023842,
+      "pctLess": 25.01173158161056,
+      "speedRatio": 1.3335419274127007,
+      "verifiedBlocksPerVariant": 1280,
+      "pairedBeforeAndAfterExact": true,
+      "arrays": 232,
+      "metrics": 20,
+      "economyKeys": 25
+    },
+    {
+      "scenario": "quarter",
+      "round": 2,
+      "order": [
+        "force existing WASM",
+        "stock JS"
+      ],
+      "JSms": 9616.800000011921,
+      "WASMms": 7370.5,
+      "msSaved": 2246.300000011921,
+      "pctLess": 23.35808169047018,
+      "speedRatio": 1.304769011601916,
+      "verifiedBlocksPerVariant": 1280,
+      "pairedBeforeAndAfterExact": true,
+      "arrays": 232,
+      "metrics": 20,
+      "economyKeys": 25
+    },
+    {
+      "scenario": "boundary",
+      "round": 1,
+      "order": [
+        "stock JS",
+        "force existing WASM"
+      ],
+      "JSms": 7788.199999988079,
+      "WASMms": 5886.5,
+      "msSaved": 1901.699999988079,
+      "pctLess": 24.41770884146517,
+      "speedRatio": 1.3230612418224885,
+      "verifiedBlocksPerVariant": 1024,
+      "pairedBeforeAndAfterExact": true,
+      "arrays": 232,
+      "metrics": 20,
+      "economyKeys": 25
+    }
+  ],
+  "quarterMean": {
+    "JSms": 9816.250000014901,
+    "WASMms": 7440.54999999702,
+    "pctLess": 24.20170635440494,
+    "speedRatio": 1.3192909126366779
+  },
+  "final": {
+    "map": "sh",
+    "clock": {
+      "y": 2000,
+      "m": 8,
+      "d": 1,
+      "minute": 0
+    },
+    "speed": 0,
+    "jumping": false,
+    "ready": true,
+    "settled": true,
+    "road": 4,
+    "variant": "new"
+  }
+}
