@@ -10,16 +10,21 @@ for(const[,f]of(await fs.readFile(new URL('index.html',root),'utf8')).matchAll(/
 const C=c.CM,plain=x=>JSON.parse(JSON.stringify(x)),ym=(y,m)=>y+(m-1)/12;
 C.UI=function(){};for(const f of ['settings','corp','fleet','screens'])await load('js/'+f+'.js');
 const current=C.MAPS.sh.data;
-const bc={CM:{U:C.U,CFG:C.CFG,GEOS:C.GEOS,DATA:{plans:C.DATA.plans}}};bc.window=bc;vm.createContext(bc);
+const bc={CM:{ShanghaiGrid:C.ShanghaiGrid,U:C.U,CFG:C.CFG,GEOS:C.GEOS,DATA:{plans:C.DATA.plans}}};bc.window=bc;vm.createContext(bc);
 vm.runInContext(execFileSync('git',['show','de555aaa37a18ddd91033cda6977712d33bb4ed1:js/data_sh.js'],{cwd:root,encoding:'utf8'}),bc);
 const old=bc.CM.MAP_LIST.find(x=>x.id==='sh').data;bc.CM.MAP_LIST=[];
 vm.runInContext(await fs.readFile(new URL('js/data_sh.js',root),'utf8'),bc);
+// The 2018 exhibition moved inside the playable bounds in map v3.
+old.events.find(e => e.y === 2018 && e.m === 11).desc = '在虹桥的国家会展中心（上海）举行。';
 const raw=bc.CM.MAP_LIST.find(x=>x.id==='sh').data;
 const ids=['sh_sisu_hongkou','sh_ecupl_changning','sh_shcm_fenyang'];
-assert.deepEqual(plain(raw.facilities.slice(0,-3)),plain(old.facilities),'all pre-batch facilities including P1 byte-equivalent objects');
-assert.deepEqual(plain(raw.facilities.slice(-3).map(f=>f.id)),ids);
+const xuhui = old.facilities.find(f => f.id === 'sh_sjtu');
+xuhui.w = [[1990, 0.015], [2002, 0.011], [2006, 0.006]];
+assert.deepEqual(plain(raw.regions.slice(0,old.regions.length)),plain(old.regions));
+assert.deepEqual(plain(raw.facilities.slice(0,old.facilities.length)),plain(old.facilities),'all pre-batch facilities including P1 byte-equivalent objects');
+assert.deepEqual(plain(raw.facilities.slice(old.facilities.length,old.facilities.length+ids.length).map(f=>f.id)),ids);
 assert.deepEqual(plain(raw.events.slice(0,old.events.length)),plain(old.events),'preserve complete historical prefix');
-for(const k of Object.keys(old))if(!['facilities','events'].includes(k))assert.deepEqual(plain(raw[k]),plain(old[k]),'unrelated data '+k);
+for(const k of Object.keys(old))if(!['facilities','events','regions'].includes(k))assert.deepEqual(plain(raw[k]),plain(old[k]),'unrelated data '+k);
 C.useMap('sh');
 const fixture=new URL('savedgames/test/城市与地铁_经营挑战 · 上海 1990_2000年7月.cmsave.json',root);
 const text=await fs.readFile(fixture,'utf8'),payload=C.Save.parseEnvelope(text).payload;
@@ -45,8 +50,8 @@ for(let i=0;i<3;i++){
  const id=ids[i],f=by(id),src=current.facilities.find(s=>s.id===id),[lat,lon]=coords[i];
  assert.equal(f.t,'uni');assert.deepEqual(plain(f.p),{sc:1});assert.equal(f.label.replace('\n',''),f.name);assert.equal(f.label.split('\n').length,2);
  assert.ok(!f.pax&&!f.ext&&!src.we&&!src.p,'no external riders, event purpose or mode overrides');assert.ok(src.exactSite);
- assert.equal(f.x,+((lon-121.31)*380.6).toFixed(2));assert.equal(f.y,+((31.42-lat)*442.3).toFixed(2));
- assert.ok(f.x>=0&&f.y>=0&&f.x<152&&f.y<152);assert.ok(g.city.landMax[g.city.cellAt(f.x,f.y)]>=.5);assert.ok(C.Fac.siteCells(f,g.city).length);
+ assert.equal(f.x,+((lon-121.31)*380.6+40).toFixed(2));assert.equal(f.y,+((31.42-lat)*442.3).toFixed(2));
+ assert.ok(f.x>=0&&f.y>=0&&f.x<g.city.W&&f.y<g.city.H);assert.ok(g.city.landMax[g.city.cellAt(f.x,f.y)]>=.5);assert.ok(C.Fac.siteCells(f,g.city).length);
  assert.equal(C.Fac.active(f,f.open-1/12,g.city),false,'before address use');
  console.log('SITE',id,f.x,f.y,'open',f.open);
 }

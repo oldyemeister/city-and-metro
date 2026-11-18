@@ -21,6 +21,9 @@
     return new Float32Array(out);
   }
   Geo.dec = dec;
+  Geo.sameProjection = function (a, b) {
+    return !!a && !!b && a.lon0 === b.lon0 && a.lat0 === b.lat0 && a.kx === b.kx && a.ky === b.ky;
+  };
   Geo.bbox = function (p) { return bboxOf(p); };
   function bboxOf(p, bb) {
     bb = bb || [1e9, 1e9, -1e9, -1e9];

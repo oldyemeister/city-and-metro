@@ -104,3 +104,5 @@ Develop Shanghai map improvements from an unmodified upstream baseline, with rec
 ## GitHub synchronization
 
 User authorized origin/codex/shanghai-map publication. Current runtime, supporting records/skill/checks and diagnostic evidence are included; player save exports remain local/ignored. See latest DEVELOPMENT entry for verification and publication result.
+
+- 上海西南扩图与七处设施独立整理于 performance，基于 f9706d4。地图 192×180 格，沿用东方明珠固定原点；检查覆盖旧档线路、设施、合同和任务。

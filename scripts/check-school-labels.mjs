@@ -9,7 +9,7 @@ const load = file => vm.runInContext(readFileSync(new URL(file, root), 'utf8'), 
 load('js/util.js'); load('js/config.js');
 c.CM.DATA = { plans: {}, landmarks: [] };
 c.CM.GEOS = { sh: { proj: { lon0: 121.31, lat0: 31.42, kx: 380.6, ky: 442.3 } } };
-load('js/data_sh.js');
+load('js/shanghai-grid.js'); load('js/data_sh.js');
 const data = c.CM.MAP_LIST.find(m => m.id === 'sh').data;
 c.CM.MAP_LIST = [];
 vm.runInContext(execFileSync('git', ['show', 'HEAD:js/data_sh.js'], { cwd: root, encoding: 'utf8' }), c);

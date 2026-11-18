@@ -311,6 +311,19 @@
     this.emit('day');
     return false;
   };
+  // 普通时钟与跳月共用日界；仅在地图指定的赛事开始或结束时刷新设施需求。
+  Game.prototype.advanceDay = function () {
+    if (this.endDay()) return this.monthGen();
+    if (D.facilityDemandPhase && D.facilityDemandPhase(this.year()) !== D.facilityDemandPhase(this.model.year))
+      return this.refreshFacilityDay();
+    return null;
+  };
+  Game.prototype.refreshFacilityDay = function* () {
+    if (this.draft) this.invalidatePrediction('设施客流正在更新');
+    this.model.setYear(this.year());
+    yield* this.model.refreshCityGen(this.compiled);
+    yield* this.model.solveGen(2);
+  };
   // 交通模型升级过渡期（旧存档升级当月，至该月月末结算）：满意度不因统计口径变化而下降，任务不判失败、连续进度不清零
   Game.prototype.inTransition = function (ym) { const t = this.traffic; return !!(t && t.until != null && ym <= t.until); };
   Game.prototype.onFailure = function (f) {
@@ -328,6 +341,8 @@
   Game.prototype.trafficDue = function (yr, bigChange) {
     const model = this.model, ym = this.ym();
     if (bigChange || !model.trafficReady()) return true;
+    if (D.facilityDemandPhase && D.facilityDemandPhase(yr) !== D.facilityDemandPhase(model.year)) return true;
+    if (D.trafficRefreshMonths && D.trafficRefreshMonths.includes(ym)) return true;
     // 网络、票价与车队的变动：记下月份，存档保存
     const fareKey = CM.Model.fareKey(model.fare), fleetVer = this.fleet ? this.fleet.ver : 0;
     if (this._seenNet !== this.netVersion || this._seenFare !== fareKey || this._seenFleet !== fleetVer) {
@@ -530,13 +545,10 @@
     let n = 0;
     const tgt = U.ymIndex(ty, tm) * 32 + td;
     while (U.ymIndex(this.clock.y, this.clock.m) * 32 + this.clock.d < tgt && !this.econ.failed) {
-      const crossed = this.endDay();
+      const update = this.advanceDay();
       n++;
       this.jumping.progress = Math.min(0.98, n / total);
-      if (crossed) {
-        yield* this.monthGen();
-        // monthGen 已发布本月的两类日期结果，避免重复求解。
-      }
+      if (update) yield* update;
       if ((n & 7) === 0) yield;
     }
     if (!this.model.trafficReady()) yield* this.model.solveGen(1);
@@ -950,6 +962,8 @@
       g.model.habitAge = Game.habitAge(g);
       g.model.fare = g.econ.fare; g.model.crossFee = g.econ.cross;
       g.model.setYear(s.trafficYear != null ? s.trafficYear : g.clock.y + (g.clock.m - 1) / 12);   // 不刷新的月份里，交通结果对应的年份早于当前日期（v2.6）
+      if (D.facilityDemandPhase && D.facilityDemandPhase(g.year()) !== D.facilityDemandPhase(g.model.year))
+        g.model.setYear(g.year());
       g.model.setDayType(CM.Model.dayType(g.clock.y, g.clock.m, g.clock.d));
       g.model.buildZones(); g.model.buildDemand();
       g.net = s.net;
@@ -1097,7 +1111,8 @@
       this.clock.minute = edge;
       if (edge >= 1440) {
         this.clock.minute = 0;
-        if (this.endDay()) { this.pending = this.monthGen(); return; }
+        this.pending = this.advanceDay();
+        if (this.pending) return;
       }
     }
   };

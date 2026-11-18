@@ -108,9 +108,9 @@
     };
   };
   function migrateStep(p, spec, from0) {
-    const ZN = CFG.ZONE, from = spec.from;
+    const from = spec.from;
     {
-      const m = MAPS[p.meta.map || 'gz'], W = spec.newW || m.cfg.W, H = spec.newH || m.cfg.H, oW = spec.oldW, oH = spec.oldH, dx = spec.dx, dy = spec.dy;
+      const m = MAPS[p.meta.map || 'gz'], ZN = m.cfg.ZONE, W = spec.newW || m.cfg.W, H = spec.newH || m.cfg.H, oW = spec.oldW, oH = spec.oldH, dx = spec.dx, dy = spec.dy;
       if (dx < 0 || dy < 0 || dx + oW > W || dy + oH > H) throw new Error('新旧格网尺寸不匹配');
       const C = p.city;
       // 逐格数据（前一步迁移留下的待生成标记一并平移）
@@ -138,10 +138,15 @@
       }
       // 片区编号
       const oZW = oW / ZN, nZW = W / ZN, zmap = function (z) { return ((z / oZW) | 0) * nZW + (z % oZW) + dx / ZN + (dy / ZN) * nZW; };
-      const fixTask = function (t) { if (!t) return; if (t.anchors) t.anchors.forEach(sh); if (typeof t.zone === 'number') t.zone = zmap(t.zone); if (typeof t.coolKey === 'string') t.coolKey = t.coolKey.replace(/^(cong|cov):(\d+)$/, function (s0, a, z) { return a + ':' + zmap(+z); }); };
+      const fixTask = function (t) {
+        if (t.anchors) t.anchors.forEach(sh);
+        if (typeof t.zone === 'number') t.zone = zmap(t.zone);
+        if (typeof t.coolKey === 'string') t.coolKey = t.coolKey.replace(/^(cong|cov):(\d+)$/, (key, kind, z) => kind + ':' + zmap(+z));
+      };
       const T = p.tasks;
       for (const list of [T.active, T.done, T.failed]) (list || []).forEach(fixTask);
       if (T.cool) { const nc = {}; for (const k in T.cool) nc[k.replace(/^(cong|cov):(\d+)$/, function (s0, a, z) { return a + ':' + zmap(+z); })] = T.cool[k]; T.cool = nc; }
+      if (m.migrateObjectiveDetails) m.migrateObjectiveDetails(p, sh, fixTask, zmap, nZW);
       // 城市经济：载入后按新增范围调整统计口径（连续迁移时原范围随后续步骤平移）
       if (p.macro) { const ar = p.macro.areaRebase; if (ar && ar.oldBox && from > from0) { ar.oldBox[0] += dx; ar.oldBox[1] += dy; } else p.macro.areaRebase = { from: from, oldBox: [dx, dy, oW, oH] }; }
       const prevNote = p.mapUpgrade && from > from0 ? p.mapUpgrade.note : '';
@@ -187,11 +192,14 @@
         s.onload = s.onerror = null;
         s.remove(); delete geoLoads[id];
         const full = CM.GEOS[id]; CM.GEOS[id] = stub;   // 数据文件整体替换 CM.GEOS[id]：取出完整数据补进原对象
+        if (ok && full && full !== stub && !CM.Geo.sameProjection(stub.proj, full.proj)) {
+          rej(new Error('地图索引与底图坐标不一致，请刷新页面：' + m.name)); return;
+        }
         if (ok && full && full !== stub) for (const k of GEO_HEAVY) stub[k] = full[k];
         if (stub.water) res(m); else rej(new Error('地图数据载入失败：' + (m.data.city || id) + '（' + stub.file + '）'));
       };
       s.onload = function () { end(true); }; s.onerror = function () { end(false); };
-      s.src = stub.file; document.head.appendChild(s);
+      s.src = stub.asset || stub.file; document.head.appendChild(s);
     }));
   };
   // 占用期间（缩略图绘制中）不释放；当前地图与正在进行的进度所在地图始终保留（载入别的存档失败时要切回）

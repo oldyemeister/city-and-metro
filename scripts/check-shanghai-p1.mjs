@@ -10,10 +10,12 @@ for(const[,f]of(await fs.readFile(new URL('index.html',root),'utf8')).matchAll(/
 const C=c.CM,plain=x=>JSON.parse(JSON.stringify(x)),ym=(y,m)=>y+(m-1)/12;
 C.UI=function(){};for(const f of ['settings','corp','fleet','screens'])await load('js/'+f+'.js');
 const current=C.MAPS.sh.data;
-const bc={CM:{U:C.U,CFG:C.CFG,GEOS:C.GEOS,DATA:{plans:C.DATA.plans}}};bc.window=bc;vm.createContext(bc);
+const bc={CM:{ShanghaiGrid:C.ShanghaiGrid,U:C.U,CFG:C.CFG,GEOS:C.GEOS,DATA:{plans:C.DATA.plans}}};bc.window=bc;vm.createContext(bc);
 vm.runInContext(execFileSync('git',['show','bd76a322970ae250b8920aed03fd7661a882342a:js/data_sh.js'],{cwd:root,encoding:'utf8'}),bc);
 const old=bc.CM.MAP_LIST.find(x=>x.id==='sh').data;bc.CM.MAP_LIST=[];
 vm.runInContext(await fs.readFile(new URL('js/data_sh.js',root),'utf8'),bc);
+// The 2018 exhibition moved inside the playable bounds in map v3.
+old.events.find(e => e.y === 2018 && e.m === 11).desc = '在虹桥的国家会展中心（上海）举行。';
 const raw=bc.CM.MAP_LIST.find(x=>x.id==='sh').data;
 const mutable=new Set(['sh_fudan','sh_shu','sh_renji','sh_sjtu','sh_dhu']);for(const f of raw.facilities){const prev=old.facilities.find(b=>b.id===f.id);if(prev&&!mutable.has(f.id))assert.deepEqual(plain(f),plain(prev),'unrelated facility '+f.id);}
 const oldIds=old.facilities.map(f=>f.id);assert.deepEqual(plain(current.facilities.slice(0,oldIds.length).map(f=>f.id)),plain(oldIds),'existing ID order');assert.deepEqual(plain(raw.landmarks),plain(old.landmarks),'landmark IDs/locations unchanged');assert.deepEqual(plain(raw.events.slice(0,old.events.length)),plain(old.events),'historical event prefix unchanged');
@@ -25,11 +27,21 @@ assert.deepEqual(plain(g.net),plain(payload.net),'old network survives');assert.
 const all=C.Fac.list(g.city),by=id=>{const f=all.find(f=>f.id===id);assert.ok(f,'missing '+id);return f;};
 assert.equal(C.DATA.facilities.find(f=>f.id==='sh_jinjiang').noModel,true,'Jinjiang uses existing map, no oversized theme park model');
 assert.equal(all.find(f=>f.id==='sh_jinjiang').noModel,true,'model suppression survives facility compilation');
+// The museum moves between two sites with an eleven-month gap in public access.
+for (const [year, month, expected] of [
+  [2014, 4, ['sh_natural_history_old']], [2014, 5, []],
+  [2015, 3, []], [2015, 4, ['sh_natural_history_new']],
+]) {
+  const probe = { city: g.city, Z: 0, year: ym(year, month) };
+  const nodes = C.Model.prototype.buildFacNodes.call(probe);
+  assert.deepEqual(Array.from(nodes.ids).filter(id => id.startsWith('sh_natural_history_')),
+    expected, 'natural history museum demand nodes ' + year + '/' + month);
+}
 const phase=process.argv[2]||'all';
 const groups={a:['sh_renji_east','sh_science','sh_jinjiang','sh_oriental_sports','sh_global_harbor','sh_cpc_first'],b:['sh_shnu_xuhui','sh_usst_jungong','sh_shu_yanchang'],c:['sh_fudan_jiangwan','sh_fudan_zhangjiang','sh_pediatric_minhang','sh_pediatric_fenglin']};
 const ids=Object.entries(groups).filter(([k])=>phase==='all'||k<=phase).flatMap(([,v])=>v);
 assert.equal(new Set(all.map(f=>f.id)).size,all.length,'unique real/generated IDs');
-for(const id of ids){const f=by(id),src=current.facilities.find(s=>s.id===id);assert.ok(f.x>=0&&f.y>=0&&f.x<152&&f.y<152,id+' bounds');assert.ok(!f.pax&&!f.ext,id+' ordinary facility');assert.ok(src.exactSite,id+' bypass station snapping');assert.ok(Math.hypot(f.x-src.at[0],f.y-src.at[1])<.01,id+' no land relocation');assert.ok(g.city.landMax[g.city.cellAt(f.x,f.y)]>=.5,id+' land');assert.ok(C.Fac.siteCells(f,g.city).length,id+' site cells');console.log('SITE',id,f.x,f.y,'open',f.open);}
+for(const id of ids){const f=by(id),src=current.facilities.find(s=>s.id===id);assert.ok(f.x>=0&&f.y>=0&&f.x<g.city.W&&f.y<g.city.H,id+' bounds');assert.ok(!f.pax&&!f.ext,id+' ordinary facility');assert.ok(src.exactSite,id+' bypass station snapping');assert.ok(Math.hypot(f.x-src.at[0],f.y-src.at[1])<.01,id+' no land relocation');assert.ok(g.city.landMax[g.city.cellAt(f.x,f.y)]>=.5,id+' land');assert.ok(C.Fac.siteCells(f,g.city).length,id+' site cells');console.log('SITE',id,f.x,f.y,'open',f.open);}
 const w=(id,y,m=1)=>C.Fac.share(by(id),ym(y,m))/C.CFG.trips.facBoost;
 assert.equal(by('sh_jinjiang').noModel,true,'Jinjiang must not get the 820x660m generic themepark model');
 await load('js/render.js');await load('js/scenery.js');const renderer=Object.create(C.Renderer.prototype);renderer.game=g;assert.ok(!renderer.facModels(g.city,2000.5).some(x=>x.fac==='sh_jinjiang'),'Actual renderer skips Jinjiang generic model');
