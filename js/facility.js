@@ -117,7 +117,7 @@
     (D.facilities || []).forEach(function (s, i) {
       const T = TYPES[s.t]; if (!T) return;
       const f = { k: out.length, id: s.id || ('f' + i), name: s.n, label: s.label || s.n, t: s.t, T: T, x: 0, y: 0, r: s.r != null ? s.r : T.r, lmK: -1,
-        open: null, close: yrOf(s.y1), w: s.w != null ? curve(s.w) : null, pax: s.pax || null, p: s.p || T.p, we: s.we || null, note: s.note || '', src: s.src || null,
+        open: null, close: yrOf(s.y1), w: s.w != null ? curve(s.w) : null, eventWeight: s.eventWeight, pax: s.pax || null, p: s.p || T.p, we: s.we || null, note: s.note || '', src: s.src || null,
         ext: s.ext ? { dir: s.ext[0], km: s.ext[1], v: EXT_DIR[s.ext[0]] || [0, 0], gate: !!s.gate, to: s.to || null } : null, rw: s.rw || null, noModel: !!s.noModel };   // rw：机场自己的跑道（格坐标，v2.2，用于模型选址）
       if (s.lm) {
         const k = lms.findIndex(function (l) { return l.id === s.lm; });
@@ -225,7 +225,11 @@
   // 枢纽：接驳出行（汽车 + 地铁，到达与离开合计，人次/日，工作日）；其他：占全市该目的出行吸引的比例（周期规模，估算）
   Fac.pax = function (f, yr) { return f.pax ? U.interp(f.pax, yr) * 1e4 : 0; };
   // 吸引比例按 trips.facBoost 放大（v2.1 第二轮：设施出行需求整体偏少）；sim.js 中各目的的设施合计另有上限
-  Fac.share = function (f, yr) { return f.w ? U.interp(f.w, yr) * (CM.CFG.trips.facBoost || 1) : 0; };
+  Fac.share = function (f, yr) {
+    const weight = f.eventWeight && D.facilityDemandPhase && D.facilityDemandPhase(yr) === f.id
+      ? f.eventWeight : f.w ? U.interp(f.w, yr) : 0;
+    return weight * (CM.CFG.trips.facBoost || 1);
+  };
   // 场地格：地标场地或以设施为中心、半径 r 的格（只取陆地）
   Fac.siteCells = function (f, city) {
     const out = [];

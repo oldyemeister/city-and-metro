@@ -16,6 +16,7 @@ self.matchMedia = function () { return {matches:false}; };
     if (m.geoFile) importScripts(m.geoFile);
     CM.mapId = m.geoId;
     CM.GEO = m.geoFile ? CM.GEOS[m.geoId] : m.geo;
+    if (m.projection && !Geo.sameProjection(m.projection, CM.GEO.proj)) throw Error('地面块与主地图坐标不一致');
     for (const k of Object.keys(CM.DATA)) delete CM.DATA[k];
     Object.assign(CM.DATA, m.data);
     Object.assign(CFG, m.cfg);

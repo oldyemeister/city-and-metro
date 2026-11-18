@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import vm from 'node:vm';
+import { verifyShanghaiGrid } from './check-shanghai-world-grid.mjs';
 import { geoIndex } from './geo-index.mjs';
 
 export const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -79,7 +80,7 @@ export async function inspectGame(root = projectRoot) {
   let loaded = false;
   for (const file of scripts) {
     // 数据检查不启动DOM、渲染、工作线程或存储。
-    if (!/^js\/(?:util|config|news|legal|geo(?:_\w+|-index)?|data_\w+|traits|maps)\.js$/.test(file)) continue;
+    if (!/^js\/(?:util|config|news|legal|shanghai-grid|geo(?:_\w+|-index)?|data_\w+|traits|maps)\.js$/.test(file)) continue;
     if (html.includes('<script src="' + file + '" type="application/city-metro-geo">')) continue;
     const asset = requireAsset(root, file);
     vm.runInContext(files.get(asset).bytes.toString(), context, { filename: file, timeout: 10000 });
@@ -93,6 +94,7 @@ export async function inspectGame(root = projectRoot) {
   for (const file of ['LICENSE.txt', 'THIRD_PARTY_NOTICES.txt']) {
     if (String(CM.LEGAL?.[file]).replace(/\r\n/g, '\n') !== files.get(path.join(root, file)).bytes.toString().replace(/\r\n/g, '\n')) throw new Error('游戏内许可副本过期：' + file);
   }
+  verifyShanghaiGrid(CM);
   const maps = CM.MAP_ORDER.map(id => {
     const m = CM.MAPS[id], c = m.cfg, p = m.geo.proj;
     const traitErrors = CM.Traits.validate(m);

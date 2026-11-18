@@ -119,7 +119,8 @@
     try {
       const cores = navigator.hardwareConcurrency || 2, n = (navigator.deviceMemory <= 4 || matchMedia('(pointer:coarse)').matches) ? 1 : cores >= 8 ? 2 : 1, id = CM.mapId, mp = CM.curMap ? CM.curMap() : null;
       const data = { landmarks: D.landmarks, runways: D.runways, airport: D.airport, reclaim: (D.reclaim || []).map(function (r) { return { id: r.id, year: r.year, name: r.name }; }), hsrYear: D.hsrYear };
-      const msg = { type: 'map', data: data, cfg: { W: CFG.W, H: CFG.H, START: CFG.START }, region: mp ? mp.region : null, geoId: id, geoFile: GEO_FILES[id] ? 'geo_' + id + '.js' : null, geo: GEO_FILES[id] ? null : CM.GEO };
+      const geoFile = CM.GEO.asset ? new URL(CM.GEO.asset, document.baseURI).href : GEO_FILES[id] ? 'geo_' + id + '.js' : null;
+      const msg = { type: 'map', data: data, cfg: { W: CFG.W, H: CFG.H, START: CFG.START }, region: mp ? mp.region : null, geoId: id, geoFile: geoFile, projection: CM.GEO.proj, geo: geoFile ? null : CM.GEO };
       this.list = [];
       for (let i = 0; i < n; i++) {
         const w = new Worker('js/tile-worker.js'), slot = { w: w, n: 0 };

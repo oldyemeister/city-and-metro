@@ -4,10 +4,13 @@
 // 真实性：浦东开发开放、陆家嘴开发、越江桥隧与高架通车年份、地标落成年份、世博会与虹桥枢纽为史实参考；1990 年人口与就业分布、增长曲线、造价、票价与拨款为估算；2020 年之后为模拟。
 (function (CM) {
   const G = CM.GEOS && CM.GEOS.sh; if (!G) return;
-  // 本文件的经纬度按国内地图常用的 GCJ-02 坐标填写，换算为 OSM 使用的 WGS-84 后再投影
-  const P = G.proj, ll = function (lat, lon) { const w = CM.U.gcj2wgs(lat, lon); return [+((w[1] - P.lon0) * P.kx).toFixed(2), +((P.lat0 - w[0]) * P.ky).toFixed(2)]; };
-  // 取自 OpenStreetMap 的地标位置（WGS-84，不再换算）
-  const llW = function (lat, lon) { return [+((lon - P.lon0) * P.kx).toFixed(2), +((P.lat0 - lat) * P.ky).toFixed(2)]; };
+  // 扩图前的索引没有资产版本；刷新旧页面也要请求第 3 版底图并校验投影。
+  if (G.file && !G.asset) G.asset = G.file + '?extent=sh-v3';
+  const P = G.proj;
+  const grid = CM.ShanghaiGrid;
+  const windowOrigin = grid.windowFor(P);
+  const llW = (lat, lon) => grid.localPoint(grid.fromWGS(lat, lon), windowOrigin);
+  const ll = function (lat, lon) { const w = CM.U.gcj2wgs(lat, lon); return llW(w[0], w[1]); };
   const atW = function (lat, lon, o) { const p = llW(lat, lon); return Object.assign({ x: p[0], y: p[1] }, o); };
   const poly = function (pts) { return pts.map(function (p) { return ll(p[0], p[1]); }); };
   const at = function (lat, lon, o) { const p = ll(lat, lon); return Object.assign({ x: p[0], y: p[1] }, o); };
@@ -19,6 +22,33 @@
   const lujiazui = poly([[31.2455, 121.4960], [31.2455, 121.5130], [31.2330, 121.5200], [31.2275, 121.5110], [31.2300, 121.4990]]);
   const hqcbd = poly([[31.2100, 121.3100], [31.2100, 121.3280], [31.1830, 121.3280], [31.1830, 121.3100]]);
 
+  // 这些特色事件原由 traits.js 追加；显式保留其存档序号，再追加新的城市纪事。
+  const plateAuction = { y: 1994, m: 1, title: '私车牌照开始拍卖', desc: '上海从 1994 年起对新增私车牌照实行拍卖，控制中心城区的汽车增长。' };
+  const expoRelocation = { y: 2004, m: 1, title: '世博园区工厂开始搬迁', desc: '为建设世博园区，上钢三厂、江南造船厂等沿江工厂陆续搬迁。' };
+  const yangpuClosure = { y: 1995, m: 1, title: '杨浦老工厂陆续关停', desc: '1990 年代起，杨浦的纺织、机械和钢铁企业陆续转移、关停，大批工人下岗。' };
+  const yangpuRenewal = { y: 2003, m: 1, title: '杨浦知识创新区', desc: '上海决定建设杨浦知识创新区，推动大学校区、科技园区和公共社区融合发展。' };
+  const lineFourAccident = { y: 2003, m: 7, title: '轨道交通 4 号线董家渡事故', desc: '7 月 1 日，在建的 4 号线联络通道发生涌水塌陷，地面沉降，黄浦江防汛墙受损，软土中施工的风险引起全国关注。' };
+
+  // 上海 F1 正赛实际举办月份（2004–2026）；月均观赛出行权重为游戏估算。
+  const f1Months = [[2004, 9], [2005, 10], [2006, 10], [2007, 10], [2008, 10],
+    [2009, 4], [2010, 4], [2011, 4], [2012, 4], [2013, 4], [2014, 4], [2015, 4],
+    [2016, 4], [2017, 4], [2018, 4], [2019, 4], [2024, 4], [2025, 3], [2026, 3]];
+  const circuitWeight = [[2004, 0.0008]];
+  const trafficRefreshMonths = [];
+  for (const [year, month] of f1Months) {
+    const start = year + (month - 1) / 12, end = year + month / 12;
+    circuitWeight.push([start - 1e-6, 0.0008], [start, 0.012], [end - 1e-6, 0.012], [end, 0.0008]);
+    trafficRefreshMonths.push(year * 12 + month - 1, year * 12 + month);
+  }
+
+  // 2027 年以后为模拟赛历。Game.year 的日内日期使用月份起点加 (日 - 1) / 365。
+  function facilityDemandPhase(t) {
+    const year = Math.floor(t), march = year + 2 / 12;
+    if (year < 2027 || t < march || t >= march + 15 / 365) return null;
+    const secondSaturdayOffset = 7 + (6 - new Date(Date.UTC(year, 2, 1)).getUTCDay() + 7) % 7;
+    return t >= march + secondSaturdayOffset / 365 && t < march + (secondSaturdayOffset + 2) / 365 ? 'sh_circuit' : null;
+  }
+
   const data = {
     // 城市特色（traits.js，规则见《地图设计与城市特色机制.md》）。新条目加在末尾，已触发事件按序号记录
     traits: [
@@ -28,13 +58,14 @@
         foresight: { id: 'sh-expo', level: 'mid', at: 'sh_cnpav', ym: [2002, 12], before: 2000, r: 7, region: 'pdriver', title: '世博园区选址浦江两岸',
           hit: '世博园区选在黄浦江两岸的老工业带，早已通车的{st}站让这里抢先有了依托。', miss: '世博园区选在黄浦江两岸的老工业带，这里的地铁还不够，几年内要补上。' },
         why: '2002 年 12 月上海获得 2010 年世博会主办权，世博前上海地铁进入大规模建设期。' },
-      { use: 'carLimit', level: 'mid', star: true, icon: 'car', label: '车牌拍卖', text: '1994 年起私车牌照要靠拍卖取得，开车更贵，地铁更有吸引力', on: { y: 1994, m: 1, title: '私车牌照开始拍卖', desc: '上海从 1994 年起对新增私车牌照实行拍卖，控制中心城区的汽车增长。' }, why: '上海 1994 年起实行新增机动车额度拍卖。' },
+      { use: 'carLimit', level: 'mid', star: true, icon: 'car', label: '车牌拍卖', text: '1994 年起私车牌照要靠拍卖取得，开车更贵，地铁更有吸引力', on: plateAuction, why: '上海 1994 年起实行新增机动车额度拍卖。' },
       { use: 'guard', level: 'mid', label: '外滩与老城古建', guards: ['sh_bund', 'sh_yuyuan', 'sh_xjh', 'sh_longhua', 'sh_jingan'], why: '外滩建筑群、豫园、徐家汇天主堂、龙华寺和静安寺都是上海的历史名胜，地铁要小心避让。' },
-      { use: 'transition', level: 'light', label: '世博园区工厂搬迁', region: 'pdriver', close: { y: 2004, m: 1, title: '世博园区工厂开始搬迁', desc: '为建设世博园区，上钢三厂、江南造船厂等沿江工厂陆续搬迁。' }, replan: [{ year: 2005, region: 'pdriver', plan: 'mix' }], why: '世博园区选址在浦江两岸的老工业带，沿江工厂在 2000 年代中期陆续搬迁。' },
-      { use: 'transition', level: 'light', label: '杨浦转型', region: 'yangpu', close: { y: 1995, m: 1, title: '杨浦老工厂陆续关停', desc: '1990 年代起，杨浦的纺织、机械和钢铁企业陆续转移、关停，大批工人下岗。' }, renew: { y: 2003, m: 1, title: '杨浦知识创新区', desc: '上海决定建设杨浦知识创新区，推动大学校区、科技园区和公共社区融合发展。' }, replan: [{ year: 2004, region: 'yangpu', plan: 'mix' }], why: '杨浦 1990 年代起转移、关停传统工业，2003 年上海决定建设杨浦知识创新区。' },
-      { use: 'accident', level: 'light', label: '2003 年 4 号线事故', on: { y: 2003, m: 7, title: '轨道交通 4 号线董家渡事故', desc: '7 月 1 日，在建的 4 号线联络通道发生涌水塌陷，地面沉降，黄浦江防汛墙受损，软土中施工的风险引起全国关注。' }, why: '2003 年 7 月 1 日，上海轨道交通 4 号线隧道事故。' },
+      { use: 'transition', level: 'light', label: '世博园区工厂搬迁', region: 'pdriver', close: expoRelocation, replan: [{ year: 2005, region: 'pdriver', plan: 'mix' }], why: '世博园区选址在浦江两岸的老工业带，沿江工厂在 2000 年代中期陆续搬迁。' },
+      { use: 'transition', level: 'light', label: '杨浦转型', region: 'yangpu', close: yangpuClosure, renew: yangpuRenewal, replan: [{ year: 2004, region: 'yangpu', plan: 'mix' }], why: '杨浦 1990 年代起转移、关停传统工业，2003 年上海决定建设杨浦知识创新区。' },
+      { use: 'accident', level: 'light', label: '2003 年 4 号线事故', on: lineFourAccident, why: '2003 年 7 月 1 日，上海轨道交通 4 号线隧道事故。' },
       { use: 'finance', flavor: 'cn' },
     ],
+    trafficRefreshMonths, facilityDemandPhase,
     city: '上海', riverName: '黄浦江', seaName: '长江口', hsrYear: 2010,
     stages: [[1993, '无地铁时代'], [2000, '浦东开发初期'], [2010, '迎世博建设期']], stageLast: '超大城市网络化时期',
     // 历史发展阶段（v2.2，eras.js）：summary 中「史实」可查证，「估算」为模型设定的发展倾向；grow 只改变人口与岗位增长的去向（总量仍按人口曲线），
@@ -104,6 +135,8 @@
       // 上海迪士尼度假区（v2.2，OSM 坐标）：乐园、迪士尼小镇与星愿公园；2016 年 6 月开园，之前为预留用地（乐园用地不分配普通住宅与就业）
       { id: 'disney', name: '上海迪士尼度假区', park: true, open: 2016, plan: 'res', poly: [[31.1506, 121.6497], [31.1506, 121.6626], [31.1455, 121.6697], [31.1375, 121.6697], [31.1375, 121.6557], [31.1411, 121.6497]].map(function (p) { return llW(p[0], p[1]); }), note: '2016 年 6 月上海迪士尼乐园开园（史实）；同年 4 月地铁 11 号线迪士尼站启用（史实）' },
       { id: 'jiading', name: '嘉定（江桥·真新）', district: ['嘉定区'], open: 2005, plan: 'res', pop: 12.35e6 },
+      { id: 'sh_circuit_site', name: '上海国际赛车场', open: 2004, plan: 'mix', noGen: true, poly: [[31.34239, 121.21130], [31.33825, 121.21414], [31.33594, 121.21487], [31.33497, 121.21614], [31.33479, 121.21862], [31.33577, 121.22188], [31.33400, 121.22610], [31.33384, 121.22823], [31.33420, 121.23027], [31.33576, 121.22961], [31.34288, 121.22406], [31.34546, 121.22305], [31.34672, 121.22164], [31.34691, 121.21886], [31.34416, 121.21467], [31.34391, 121.21216], [31.34340, 121.21157]].map(p => llW(p[0], p[1])) },
+      { id: 'sh_minhang_campus', name: '交大闵行校区', open: 1990, plan: 'mix', noGen: true, poly: [[31.02951, 121.41843], [31.01895, 121.42300], [31.02030, 121.42712], [31.01987, 121.42772], [31.02070, 121.43038], [31.02102, 121.43026], [31.02119, 121.43090], [31.02090, 121.43101], [31.02407, 121.44028], [31.02447, 121.44043], [31.02593, 121.44598], [31.03585, 121.44180], [31.03588, 121.43864]].map(p => llW(p[0], p[1])) },
     ],
     defaultRegion: { id: 'outer', name: '外围地区', open: 2008, plan: 'res', pop: 13.95e6 },
     plans: CM.DATA.plans,
@@ -182,7 +215,7 @@
       { id: 'sh_hqair', n: '虹桥机场', t: 'air', at: llW(31.1965, 121.3425), rw: [llW(31.2131, 121.3355), llW(31.1826, 121.3371)], pax: [[1990, 1.4], [1999.8, 3.5], [2000, 2.5], [2005, 4.9], [2010, 8.5], [2019, 12.5], [2030, 13]], note: '1999 年浦东国际机场（地图东缘以外）启用后国际航线逐步迁出；2010 年 T2 航站楼启用。' },
       { id: 'sh_fudan', n: '复旦大学（邯郸校区）', label: '复旦大学\n（邯郸校区）', t: 'uni', lm: 'sh_fudan', w: [[1990, 0.035], [2005 + 8 / 12 - 1e-6, 0.035], [2005 + 8 / 12, 0.032], [2008 + 6 / 12 - 1e-6, 0.032], [2008 + 6 / 12, 0.0305], [2008 + 7 / 12 - 1e-6, 0.0305], [2008 + 7 / 12, 0.0285], [2017 + 7 / 12, 0.0285], [2019, 0.0275], [2020 + 8 / 12, 0.026]], note: '邯郸、江湾、张江合计权重恒为原0.035，仅重新分配校园教学需求；不据近期全校人数扩增，枫林暂不单列。' },
       { id: 'sh_tongji', n: '同济大学', t: 'uni', lm: 'sh_tongji', w: 0.03 },
-      { id: 'sh_sjtu', n: '上海交通大学（徐汇校区）', label: '上海交通大学\n（徐汇校区）', t: 'uni', lm: 'sh_sjtu', w: 0.02 },
+      { id: 'sh_sjtu', n: '上海交通大学（徐汇校区）', label: '上海交通大学\n（徐汇校区）', t: 'uni', lm: 'sh_sjtu', w: [[1990, 0.015], [2002, 0.011], [2006, 0.006]] },
       { id: 'sh_ecnu', n: '华东师范大学', t: 'uni', lm: 'sh_ecnu', w: 0.025 },
       { id: 'sh_sufe', n: '上海财经大学', t: 'uni', at: ll(31.3075, 121.4985), w: 0.012 },
       { id: 'sh_shu', n: '上海大学（宝山校区）', label: '上海大学\n（宝山校区）', t: 'uni', at: ll(31.3160, 121.3920), y0: 1999, w: [[1999, 0.012], [2005, 0.015], [2010, 0.017], [2020, 0.017]], note: '1999年宝山校区启用；与延长合计权重0.02，分配为游戏估算，不是全校人数。' },
@@ -279,6 +312,22 @@
       { id: 'sh_shcm_fenyang', n: '上海音乐学院（汾阳路校区）', label: '上海音乐学院\n（汾阳路校区）', t: 'uni', at: llW(31.2146606, 121.4503251), exactSite: true, y0: 1958, r: 0.5,
         w: [[1990, 0.0006], [2000, 0.0008], [2010, 0.001], [2019 + 8 / 12 - 1e-6, 0.001], [2019 + 8 / 12, 0.00065], [2020, 0.00065]],
         note: '1927年创校、1958年迁入汾阳路20号。零陵路2017年宿舍交付不等于教学整体迁出；2019年秋音教、音乐剧、现打、音工、数媒、艺管等迁入新教学楼后下调此址教学权重。不另计考试、演出或歌剧院观众，不添加零陵路设施；规模为保守估算。', src: { pos: '位置：OSM入口5176444834，汾阳路20号', year: '年份：上音92周年校庆、2019零陵校区教学楼启用公告' } },
+      { id: 'sh_waigaoqiao', n: '外高桥保税区', t: 'cbd', at: llW(31.3488, 121.5852), exactSite: true, y0: [1990, 9], r: 0.8,
+        w: [[1990, 0.001], [2000, 0.004], [2010, 0.008]], note: '1990年9月启动。基隆路一带代表园区陆侧办事需求，职工通勤由既有区域岗位承担；商务到访规模为估算。', src: { pos: '位置：基隆路服务区近似点', year: '年份：浦东新区外高桥保税区资料' } },
+      { id: 'sh_sspu_caolu', n: '上海第二工业大学（曹路校区）', label: '上海第二工业大学\n（曹路校区）', t: 'uni', at: llW(31.26230, 121.65012), exactSite: true, y0: 2002, r: 0.9,
+        w: [[2002, 0.004], [2010, 0.009], [2020, 0.012]], note: '2002年整体迁入曹路金海路校区，迁入时间按年记录。权重估算校区教学需求。', src: { pos: '位置：OSM金海路校区范围', year: '年份：二工大校史资料' } },
+      { id: 'sh_circus', n: '上海马戏城', t: 'scenic', noModel: true, at: llW(31.28001, 121.44693), exactSite: true, y0: [1999, 9], r: 0.5,
+        w: [[1999, 0.002], [2005 + 8 / 12, 0.002], [2006 + 8 / 12, 0.004]], note: '1999年9月开业，2005年推出驻场演出《时空之旅》。按演出观众的休闲出行估算日常需求。', src: { pos: '位置：OSM马戏城主馆', year: '年份：上海市政府静安场馆资料' } },
+      { id: 'sh_natural_history_old', n: '上海自然博物馆（老馆）', t: 'scenic', at: llW(31.23350, 121.48274), exactSite: true, y1: [2014, 5], r: 0.5, w: 0.003,
+        note: '延安东路老馆在1990年开局时已开放，2014年5月闭馆。按月停用，参观权重为估算。', src: { pos: '位置：OSM自然博物馆旧馆建筑', year: '年份：上海国际自然保护周迁馆记录' } },
+      { id: 'sh_natural_history_new', n: '上海自然博物馆（新馆）', t: 'scenic', at: llW(31.23688, 121.45801), exactSite: true, y0: [2015, 4], r: 0.6, w: 0.008,
+        note: '静安雕塑公园新馆于2015年4月19日向公众开放。按月启用，参观权重为估算。', src: { pos: '位置：OSM静安新馆建筑', year: '年份：上海科技馆馆史' } },
+      { id: 'sh_circuit', n: '上海国际赛车场', t: 'stadium', noModel: true, at: llW(31.3352, 121.2198), exactSite: true, y0: [2004, 6], r: 1,
+        w: circuitWeight, eventWeight: 0.045, note: '2004至2026年按F1中国大奖赛实际举办月折算月均观赛需求。2027年起采用模拟赛历，每年3月第二个星期六及次日为比赛日，周一起恢复日常客流。', src: { pos: '位置：OSM赛车场主看台一带', year: '年份：F1官方赛果' } },
+      { id: 'sh_necc', n: '国家会展中心（上海）', t: 'venue', at: llW(31.19170, 121.29751), exactSite: true, y0: [2014, 10], r: 1.2,
+        w: [[2014, 0.005], [2018, 0.014]], note: '2014年10月19日迎来首个大型展会，2018年11月举办首届进博会。日常会展吸引权重为估算。', src: { pos: '位置：OSM国家会展中心主体建筑', year: '年份：上海市政府首展记录' } },
+      { id: 'sh_sjtu_minhang', n: '上海交通大学（闵行校区）', label: '上海交通大学\n（闵行校区）', t: 'uni', at: llW(31.024591, 121.440846), exactSite: true, y0: 1987, r: 1,
+        w: [[1990, 0.005], [2002, 0.009], [2006, 0.014]], note: '1987年秋首批学生入学。2002至2006年主体院系陆续迁入；两校区共享原有教学权重，分配比例为估算。', src: { pos: '位置：OSM闵行校区凯旋门', year: '年份：交大校史与闵行新校区回顾' } },
     ],
     districtLabels: [['黄浦', ['黄浦区']], ['静安', ['静安区']], ['徐汇', ['徐汇区']], ['长宁', ['长宁区']], ['普陀', ['普陀区']], ['虹口', ['虹口区']], ['杨浦', ['杨浦区']], ['浦东', ['浦东新区']], ['宝山', ['宝山区']], ['闵行', ['闵行区']], ['嘉定', ['嘉定区']]],
     // 纪事（只能在末尾追加：已发生记录按序号保存）
@@ -302,13 +351,16 @@
       { y: 2010, m: 5, tag: '史实', title: '2010 年上海世博会开幕', desc: '184 天里参观人次约 7300 万，园区横跨黄浦江两岸。', fx: { demand: { hub: 1.1, months: 6 }, sat: { v: 2, months: 6 } } },
       { y: 2015, m: 12, tag: '史实', title: '上海中心大厦落成', desc: '高 632 m，中国最高的建筑。' },
       { y: 2016, m: 6, tag: '史实', title: '上海迪士尼乐园开园', desc: '浦东川沙的主题乐园与度假区开园，带来大量周末与假日的休闲出行；地铁 11 号线迪士尼站同年 4 月启用。' },
-      { y: 2018, m: 11, tag: '史实', title: '首届中国国际进口博览会', desc: '在虹桥的国家会展中心（地图范围外附近）举行。', fx: { demand: { hub: 1.1, months: 1 } } },
+      { y: 2018, m: 11, tag: '史实', title: '首届中国国际进口博览会', desc: '在虹桥的国家会展中心（上海）举行。', fx: { demand: { hub: 1.1, months: 1 } } },
       { y: 2020, m: 1, tag: '史实', title: '新冠肺炎疫情', desc: '春节后城市活动大幅减少，客流骤降，之后逐步恢复。', fx: { demand: { sc: 0.7, sh: 0.75, lz: 0.6, hub: 0.5, months: 3, fade: 1 } } },
       { y: 2021, m: 1, tag: '模拟', title: '进入模拟发展阶段', desc: '此后人口、道路和区域变化按模拟规则推演，不代表真实历史。' },
       { y: 2021, m: 6, tag: '史实', title: '中共一大纪念馆新馆开放', desc: '6月3日新馆开放，迎接建党百年；本场景按6月切换同一设施的扩馆规模，历史会址继续服务。此为模拟发展阶段的一项指定史实例外。' },
       { y: 2001, m: 10, tag: '史实', title: '上外松江校区首届开学典礼', desc: '10月11日松江校区举行2001级开学典礼；虹口教学需求随后逐步分流，仍保留研究生、留学生等教学。松江校区在本地图外，不另增设施。' },
       { y: 2005, m: 8, tag: '史实', title: '华政主体迁往松江', desc: '2003年建设松江校区后，学校主体于2005年8月迁往松江；长宁校区继续办学，教学权重保留研究生等需求。' },
       { y: 2019, m: 9, tag: '史实', title: '上音部分系部迁入零陵路教学楼', desc: '零陵路教学楼6月28日启用，部分系部于秋季学期迁入；本场景9月下调汾阳路教学需求，不另加零陵路、考试或演出目的地。' },
+      ...[plateAuction, expoRelocation, yangpuClosure, yangpuRenewal, lineFourAccident].map(e => ({ tag: '史实', ...e })),
+      { y: 2005, m: 9, tag: '史实', title: '《时空之旅》在上海马戏城首演', desc: '多媒体杂技剧《时空之旅》在共和新路的上海马戏城开始驻场演出。此后，前往马戏城看演出的出行需求逐步增加。' },
+      { y: 2015, m: 4, tag: '史实', title: '上海自然博物馆新馆开放', desc: '4 月 19 日，静安雕塑公园内的新馆向公众开放。延安东路老馆闭馆近一年后，市民又能在新馆看到熟悉的马门溪龙。' },
     ],
     // 本地历史主题任务：参考上海的发展需求，不要求复刻真实线路走向（奖励单位：万元，1990 年价格）
     histTasks: [
@@ -356,19 +408,106 @@
   for (const f of data.facilities) if (f.at && !f.exactSite) { const p = nearSt(f.n, f.at[0], f.at[1]); if (p) f.at = [p[1], p[2]]; }
   for (const t of data.histTasks.concat(data.dynTasks)) for (const a of t.anchors || []) { const p = nearSt(a.name, a.x, a.y); if (p) { a.x = p[1]; a.y = p[2]; } }
 
+  function migrateObjectiveDetails(save, shift, shiftTask, remapZone, zoneColumns) {
+    const tasks = save.tasks;
+    for (const list of [tasks.offers, tasks.adjusted]) (list || []).forEach(shiftTask);
+    for (const list of [tasks.active, tasks.done, tasks.failed, tasks.offers, tasks.adjusted]) {
+      for (const t of list || []) {
+        shift(t); shift(t.avoid);
+        for (const part of t.parts || []) { shift(part); shift(part.avoid); }
+      }
+    }
+    const corp = save.corp;
+    if (!corp) return;
+    for (const group of ['tenders', 'contracts', 'closed']) for (const item of corp[group] || []) {
+      shift(item.area);
+      for (const a of item.anchors || []) shift(a);
+      if (item.area) item.zone = Math.floor(item.area.y / 4) * zoneColumns + Math.floor(item.area.x / 4);
+    }
+    if (corp.cool) {
+      const cool = {};
+      for (const [key, until] of Object.entries(corp.cool)) {
+        cool[key.replace(/^z:(\d+)$/, (_, z) => 'z:' + remapZone(+z))] = until;
+      }
+      corp.cool = cool;
+    }
+  }
+
+  // 早期第 3 版存档可能同时含扩图前后的项目。按目标区编号与目标点所在格
+  // 辨认旧合同；任务中只修正与已知地点恰好相差扩图偏移的坐标。
+  function repairObjectiveLocations(save) {
+    const dx = 40, zoneSize = 4;
+    const zoneAt = (a, width) => Math.floor(a.y / zoneSize) * (width / zoneSize) + Math.floor(a.x / zoneSize);
+    const corp = save.corp;
+    if (corp) {
+      const oldKeys = new Map(), currentZones = new Set();
+      for (const group of ['tenders', 'contracts', 'closed']) for (const item of corp[group] || []) {
+        const a = item.area;
+        if (!a || !Number.isInteger(item.zone)) continue;
+        if (item.zone === zoneAt(a, 192)) {
+          // In the northernmost row the old and new row strides yield the same ID.
+          // Only shift that ambiguous case when the saved hub proves the displacement.
+          const hub = item.anchors && item.anchors[0];
+          const oldHub = a.y < 4 && hub && Object.values(save.net.stations).some(st =>
+            st.name === hub.name && Math.abs(st.x - hub.x - dx) < 1e-6 && Math.abs(st.y - hub.y) < 1e-6);
+          if (!oldHub) { currentZones.add(item.zone); continue; }
+        }
+        if (![152, 124].some(w => a.x >= 0 && a.x < w && zoneAt(a, w) === item.zone)) continue;
+        const old = item.zone;
+        a.x += dx;
+        for (const anchor of item.anchors || []) anchor.x += dx;
+        item.zone = zoneAt(a, 192);
+        oldKeys.set(old, item.zone);
+      }
+      const before = corp.cool || {};
+      const cool = { ...before };
+      for (const old of oldKeys.keys()) if (!currentZones.has(old)) delete cool['z:' + old];
+      for (const [old, zone] of oldKeys) if (before['z:' + old] != null) {
+        const key = 'z:' + zone;
+        cool[key] = Math.max(cool[key] || 0, before['z:' + old]);
+      }
+      if (corp.cool) corp.cool = cool;
+    }
+    const stations = new Map();
+    for (const p of data.places) if (!stations.has(p[0])) stations.set(p[0], { x: p[1], y: p[2] });
+    const correct = (point, reference, fromCurrentMap) => {
+      if (!point || !reference) return;
+      const x = reference.x + (fromCurrentMap ? windowOrigin.col : 0);
+      const y = reference.y + (fromCurrentMap ? windowOrigin.row : 0);
+      if (Math.abs(point.x + dx - x) < 0.011 && Math.abs(point.y - y) < 0.011) point.x += dx;
+    };
+    const definitions = data.histTasks.concat(data.dynTasks, data.scenarios, data.eras.flatMap(era => era.goals || []));
+    for (const group of ['active', 'offers', 'done', 'failed', 'adjusted']) for (const t of save.tasks[group] || []) {
+      const definition = definitions.find(d => d.id === (t.scenario || t.cityId || t.id));
+      const own = definition && definition.anchors || [];
+      for (const a of t.anchors || []) correct(a, own.find(q => q.name === a.name) || stations.get(a.name), true);
+      for (const part of t.parts || []) {
+        const repair = (point, name) => {
+          const anchor = (t.anchors || []).find(a => a.name === name);
+          correct(point, anchor || stations.get(name), !anchor);
+        };
+        repair(part, part.at);
+        if (part.avoid) repair(part.avoid, part.avoid.name);
+      }
+    }
+  }
+
   (CM.MAP_LIST = CM.MAP_LIST || []).push({
     id: 'sh', name: '上海', title: '上海 · 1990', sub: '真实地理 · 1990 年起 · 人民币',
     desc: '从 1990 年尚无地铁的上海开始：七百多万人挤在浦西，黄浦江上没有一座桥，浦东开发开放即将宣布。陆家嘴、虹桥枢纽与世博会将陆续到来，地铁要追上中国最大城市的扩张。',
-    facts: [['范围', '38 km × 38 km'], ['起始', '1990 年'], ['人口', '约 830 万'], ['货币', '人民币（元）'], ['模式', '经营挑战 / 自由建造']],
-    modes: ['challenge', 'free'], kind: 'real', mapVersion: 2, extent: { from: 1, dx: 0, dy: 0, oldW: 124, oldH: 136, note: '地图向东扩大到川沙、曹路，向南扩大到梅陇、康桥一带', oldRegionIds: ['airport', 'lujiazui', 'hqcbd', 'huangpu', 'jingan', 'xuhui', 'changning', 'putuo', 'hongkou', 'yangpu', 'pdriver', 'jinqiao', 'waigaoqiao', 'beicai', 'pudong', 'wusong', 'dachang', 'xinzhuang', 'minhang', 'jiading', 'outer'], oldLandmarkIds: ['sh_bund', 'sh_park', 'sh_expoctr', 'sh_yuyuan', 'sh_jingan', 'sh_jade', 'sh_longhua', 'sh_xjh', 'sh_station', 'sh_fudan', 'sh_tongji', 'sh_sjtu', 'sh_ecnu', 'sh_pearl', 'sh_museum', 'sh_stadium', 'sh_gt', 'sh_jinmao', 'sh_hongkou', 'sh_sniec', 'sh_south', 'sh_swfc', 'sh_hqstation', 'sh_cnpav', 'sh_tower'] }, scenario: 'sh-1990',
+    facts: [['范围', '48 km × 45 km'], ['起始', '1990 年'], ['人口', '约 830 万'], ['货币', '人民币（元）'], ['模式', '经营挑战 / 自由建造']],
+    modes: ['challenge', 'free'], kind: 'real', mapVersion: 4, worldGrid: grid, extent: [{ from: 1, newW: 152, newH: 152, dx: 0, dy: 0, oldW: 124, oldH: 136, note: '地图向东扩大到川沙、曹路，向南扩大到梅陇、康桥一带', oldRegionIds: ['airport', 'lujiazui', 'hqcbd', 'huangpu', 'jingan', 'xuhui', 'changning', 'putuo', 'hongkou', 'yangpu', 'pdriver', 'jinqiao', 'waigaoqiao', 'beicai', 'pudong', 'wusong', 'dachang', 'xinzhuang', 'minhang', 'jiading', 'outer'], oldLandmarkIds: ['sh_bund', 'sh_park', 'sh_expoctr', 'sh_yuyuan', 'sh_jingan', 'sh_jade', 'sh_longhua', 'sh_xjh', 'sh_station', 'sh_fudan', 'sh_tongji', 'sh_sjtu', 'sh_ecnu', 'sh_pearl', 'sh_museum', 'sh_stadium', 'sh_gt', 'sh_jinmao', 'sh_hongkou', 'sh_sniec', 'sh_south', 'sh_swfc', 'sh_hqstation', 'sh_cnpav', 'sh_tower'] },
+      { from: 2, newW: 192, newH: 180, dx: 40, dy: 0, oldW: 152, oldH: 152, note: '向西扩展10公里至上海国际赛车场，向南扩展7公里至交大闵行校区',
+        oldRegionIds: ['airport','lujiazui','hqcbd','huangpu','jingan','xuhui','changning','putuo','hongkou','yangpu','pdriver','jinqiao','waigaoqiao','beicai','pudong','wusong','dachang','xinzhuang','minhang','chuansha','disney','jiading','outer'],
+        oldLandmarkIds: ['sh_bund', 'sh_park', 'sh_expoctr', 'sh_yuyuan', 'sh_jingan', 'sh_jade', 'sh_longhua', 'sh_xjh', 'sh_station', 'sh_fudan', 'sh_tongji', 'sh_sjtu', 'sh_ecnu', 'sh_pearl', 'sh_museum', 'sh_stadium', 'sh_gt', 'sh_jinmao', 'sh_hongkou', 'sh_sniec', 'sh_south', 'sh_swfc', 'sh_hqstation', 'sh_cnpav', 'sh_tower', 'sh_disney'] }], scenario: 'sh-1990',
     region: '中国内地', tagline: '浦江两岸，从零开始的超大网络', difficulty: 3, tags: ['无地铁开局', '越江', '超大城市'],
     intro: '1990 年的上海，七百多万人挤在黄浦江西岸，公交车厢里人贴着人；对岸的浦东还是农田与码头，江上一座桥也没有。4 月，浦东开发开放的消息传来。你要从第一条南北线开始，跨过黄浦江，跟上一座超大城市三十年的扩张。',
     features: [['building', '陆家嘴天际线', '东方明珠、金茂、环球金融中心与上海中心按年份出现']],
     highlights: [[1990, '浦东开发开放'], [1991, '南浦大桥通车'], [1994, '东方明珠落成'], [2010, '虹桥枢纽启用、世博会开幕'], [2015, '上海中心大厦落成']],
-    geo: G, data: data,
+    geo: G, data: data, migrateObjectiveDetails, repairObjectiveLocations,
     econ: { devOffset: 2, money: 1 },   // 出行选择参数：上海 1990 年约对应广州样本 1992 年的发展阶段
     cfg: {
-      W: 152, H: 152, START: { y: 1990, m: 1, d: 1, minute: 360 },
+      W: 192, H: 180, ZONE: 4, START: { y: 1990, m: 1, d: 1, minute: 360 },
       growth: Object.assign({}, CM.CFG.growth, { popCurve: [[1990, 8.3e6], [1995, 9.0e6], [2000, 10.6e6], [2005, 12.6e6], [2010, 14.8e6], [2015, 15.7e6], [2020, 16.3e6], [2030, 16.9e6], [2050, 17.2e6], [2300, 17.5e6]], histEnd: 2020, jobsRatio: [[1990, 0.56], [2000, 0.55], [2010, 0.58], [2020, 0.6]] }),
       money: { code: 'CNY', unit: '元', wan: '万元', yi: '亿元', sym: '¥' },
       econBase: 1990,
@@ -405,6 +544,6 @@
         ],
       },
     },
-    cam: { cx: 63, cy: 80, zoom: 16 },
+    cam: { cx: 103, cy: 80, zoom: 16 },
   });
 })(window.CM);

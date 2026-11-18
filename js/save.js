@@ -118,8 +118,12 @@
   Save.available = function () {
     try { const k = P + '__t'; localStorage.setItem(k, '1'); localStorage.removeItem(k); return true; } catch (e) { return false; }
   };
+  function saveBody(p) {
+    const map = CM.MAPS[p.meta.map || 'gz'];
+    return JSON.stringify(map && map.worldGrid ? map.worldGrid.encode(p, map) : p);
+  }
   Save.envelope = function (game) {
-    const body = JSON.stringify(game.serialize());
+    const body = saveBody(game.serialize());
     return { format: CFG.SAVE_FORMAT, version: CFG.SAVE_VERSION, gameVersion: CFG.GAME_VERSION, savedAt: Date.now(), checksum: U.fnv(body), body: body };
   };
   // kind: 'auto' | 'manual'；opts: { slotId（覆盖）, label }。返回 Promise<{ok, error, slotId}>
@@ -214,7 +218,8 @@
     const mv = payload.meta.mapVersion || 1;
     if (mv > mp.mapVersion) throw new Error('存档使用的「' + mp.name + '」地图数据为第 ' + mv + ' 版，当前游戏使用第 ' + mp.mapVersion + ' 版，暂不兼容。请使用支持第 ' + mv + ' 版地图的游戏载入，或导出原存档进行兼容检查；刷新当前游戏不能保证解决。');
     if (mv < (mp.minVersion || 1)) throw new Error('存档的「' + mp.name + '」地图数据版本（第 ' + mv + ' 版）过旧，当前版本无法兼容');
-    if (mv < mp.mapVersion) {
+    if (mp.worldGrid) mp.worldGrid.decode(payload, mp, mv);
+    else if (mv < mp.mapVersion) {
       if (!mp.migrate) throw new Error('「' + mp.name + '」地图数据已从第 ' + mv + ' 版更新到第 ' + mp.mapVersion + ' 版，且没有可用的迁移方法');
       try { mp.migrate(payload, mv); payload.meta.mapVersion = mp.mapVersion; } catch (e) { throw new Error('存档迁移失败（' + (e && e.message || e) + '），原存档未改动'); }
       payload.__mapMigratedFrom = mv;   // 载入时先为原存档建立「升级前备份」（见 Save.load）
@@ -258,7 +263,7 @@
     const parsed = Save.parseEnvelope(r.text);
     if (typeof r.meta.name === 'string' && parsed.payload.meta.name !== r.meta.name) {
       parsed.payload.meta.name = r.meta.name;
-      parsed.env.body = JSON.stringify(parsed.payload);
+      parsed.env.body = saveBody(parsed.payload);
       parsed.env.checksum = U.fnv(parsed.env.body);
     }
     return parsed;
@@ -381,7 +386,7 @@
       if (p.mapUpgrade) p.mapUpgrade.imported = true;
       let gameId = p.meta.gameId, name = p.meta.name;
       if (idx.games[gameId]) { gameId = U.uid('g'); name = name + '（导入）'; p.meta.gameId = gameId; p.meta.name = name; }
-      const body = JSON.stringify(p);
+      const body = saveBody(p);
       const env = { format: CFG.SAVE_FORMAT, version: CFG.SAVE_VERSION, gameVersion: CFG.GAME_VERSION, savedAt: savedAt(), checksum: U.fnv(body), body: body };
       const str = JSON.stringify(env);
       const slotId = gameId + '.m' + uniqueWriteId();
